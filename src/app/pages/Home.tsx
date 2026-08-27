@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import React from "react";
 import { Link } from "react-router";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, MotionValue, useScroll, useTransform } from "motion/react";
 import heroVideo from "../../assets/hero-video.mp4";
 import {
   ArrowRight,
@@ -152,6 +152,7 @@ const membershipPlans = [
     gradient: "from-[#8D2A8B] to-[#FF6B5E]",
   },
 ];
+
 export function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -414,84 +415,78 @@ export function Home() {
       {/* ── STATS ── */}
 
       {/* Stats Section */}
-<section className="bg-[#4B4F5D] px-6 py-16 md:px-10 lg:px-16">
-  <div className="mx-auto max-w-6xl overflow-hidden rounded-[24px] border border-[#FF6B5E]/40 bg-[#4B4F5D] p-4 md:p-5">
+      <section className="bg-[#4B4F5D] px-6 py-16 md:px-10 lg:px-16">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-[24px] border border-[#FF6B5E]/40 bg-[#4B4F5D] p-4 md:p-5">
+          <div className="flex flex-col md:flex-row md:items-center">
+            {/* Left Gradient Content */}
+            <div className="relative flex h-[280px] w-full flex-col justify-end overflow-hidden rounded-[18px] bg-gradient-to-br from-[#FF6B5E] via-[#FF6B5E] to-[#4B4F5D] p-7 md:h-[320px] md:w-[42%]">
+              {/* Decorative Glow */}
+              <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
 
-    <div className="flex flex-col md:flex-row md:items-center">
+              {/* Content */}
+              <div className="relative z-10">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+                  About Fitness
+                </p>
 
-      {/* Left Gradient Content */}
-      <div className="relative flex h-[280px] w-full flex-col justify-end overflow-hidden rounded-[18px] bg-gradient-to-br from-[#FF6B5E] via-[#FF6B5E] to-[#4B4F5D] p-7 md:h-[320px] md:w-[42%]">
+                <h3 className="max-w-sm text-3xl font-semibold leading-tight text-white md:text-4xl">
+                  Stronger body.
+                  <br />
+                  Stronger mindset.
+                </h3>
 
-        {/* Decorative Glow */}
-        <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
+                <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/70">
+                  Train with purpose, stay consistent, and become your strongest
+                  self.
+                </p>
+              </div>
+            </div>
 
-        {/* Content */}
-        <div className="relative z-10">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-            About Fitness
-          </p>
+            {/* Stats */}
+            <div className="grid w-full grid-cols-2 gap-x-8 gap-y-10 px-6 py-10 sm:px-8 md:w-[58%] md:gap-x-12 md:gap-y-12 md:px-12 md:py-0">
+              {/* Stat 1 */}
+              <div>
+                <h3 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+                  20+
+                </h3>
+                <p className="mt-2 text-sm font-medium text-gray-400">
+                  Active Members
+                </p>
+              </div>
 
-          <h3 className="max-w-sm text-3xl font-semibold leading-tight text-white md:text-4xl">
-            Stronger body.
-            <br />
-            Stronger mindset.
-          </h3>
+              {/* Stat 2 */}
+              <div>
+                <h3 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+                  2+
+                </h3>
+                <p className="mt-2 text-sm font-medium text-gray-400">
+                  Expert Trainers
+                </p>
+              </div>
 
-          <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/70">
-            Train with purpose, stay consistent, and become your strongest self.
-          </p>
+              {/* Stat 3 */}
+              <div>
+                <h3 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+                  10+
+                </h3>
+                <p className="mt-2 text-sm font-medium text-gray-400">
+                  Years Experience
+                </p>
+              </div>
+
+              {/* Stat 4 */}
+              <div>
+                <h3 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+                  100%
+                </h3>
+                <p className="mt-2 text-sm font-medium text-gray-400">
+                  Certified
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* Stats */}
-      <div className="grid w-full grid-cols-2 gap-x-8 gap-y-10 px-6 py-10 sm:px-8 md:w-[58%] md:gap-x-12 md:gap-y-12 md:px-12 md:py-0">
-
-        {/* Stat 1 */}
-        <div>
-          <h3 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            20+
-          </h3>
-          <p className="mt-2 text-sm font-medium text-gray-400">
-            Active Members
-          </p>
-        </div>
-
-        {/* Stat 2 */}
-        <div>
-          <h3 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            2+
-          </h3>
-          <p className="mt-2 text-sm font-medium text-gray-400">
-            Expert Trainers
-          </p>
-        </div>
-
-        {/* Stat 3 */}
-        <div>
-          <h3 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            10+
-          </h3>
-          <p className="mt-2 text-sm font-medium text-gray-400">
-            Years Experience
-          </p>
-        </div>
-
-        {/* Stat 4 */}
-        <div>
-          <h3 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            100%
-          </h3>
-          <p className="mt-2 text-sm font-medium text-gray-400">
-            Certified
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* <div className="bg-gradient-to-b from-[#0a0b0f] to-[#0f1015] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -518,24 +513,23 @@ export function Home() {
             ))}
           </div>
         </div>
-      </div> */}
+      </div>
 
-      {/* ── FEATURED PROGRAMS ── */}
-      <section className="py-24 bg-[#0a0b0f]">
+      
+{/* ── FEATURED PROGRAMS ── */}
+
+      <section className="py-24 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
-            <span className="inline-block text-[#FF6B2C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+            <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
               Our Programs
             </span>
-            <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-6xl md:text-7xl text-white mb-4"
-            >
+
+            <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
               ONE PLATFORM.{" "}
-              <span className="text-[#FF6B2C]">EVERY JOURNEY.</span>
+              <span className="bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
+                EVERY JOURNEY.
+              </span>
             </h2>
             <p className="text-white/50 text-base max-w-2xl mx-auto">
               Whether you're preparing for motherhood, seeking senior vitality,
@@ -588,20 +582,26 @@ export function Home() {
           <FadeIn className="text-center mt-10">
             <Link
               to="/programs"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl border border-[#FF6B2C]/40 text-[#FF6B2C] font-semibold hover:bg-[#FF6B2C]/10 hover:border-[#FF6B2C] transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-[8px] bg-white text-[#FF6B5E] text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8F27C]"
             >
-              View All Programs <ArrowRight size={16} />
+              View All Programs
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform duration-200"
+              />
             </Link>
           </FadeIn>
         </div>
       </section>
 
       {/* ── ABOUT PREVIEW ── */}
-      <section className="py-24 bg-[#0f1015]">
+      <section className="py-24 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* ── IMAGE SIDE ── */}
             <FadeIn>
               <div className="relative">
+                {/* Main Image */}
                 <div className="rounded-3xl overflow-hidden h-[600px]">
                   <img
                     src={trainerImg}
@@ -609,64 +609,72 @@ export function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-[#FF6B2C] to-[#FF4500] rounded-3xl p-6 shadow-2xl">
-                  <div
-                    style={{
-                      fontFamily: "'Bebas Neue', sans-serif",
-                      letterSpacing: "0.05em",
-                    }}
-                    className="text-4xl text-white"
-                  >
+
+                {/* Experience Card - Coral */}
+                <div className="absolute -bottom-6 -right-6 bg-[#FFFFFF] rounded-3xl p-6 shadow-2xl">
+                  <div className="text-4xl font-extrabold text-[#FF6B5E] tracking-tight">
                     10+
                   </div>
-                  <div className="text-white/80 text-sm">Years Combined</div>
-                  <div className="text-white/80 text-sm">Experience</div>
+
+                  <div className="text-[#FF6B5E] text-sm">Years Combined</div>
+
+                  <div className="text-[#FF6B5E] text-sm">Experience</div>
                 </div>
-                <div className="absolute -top-6 -left-6 bg-[#111318] border border-white/10 rounded-3xl p-5 shadow-2xl">
-                  <div className="flex items-center gap-2 mb-1">
+
+                {/* Certification Card */}
+                <div className="absolute -top-6 -left-6 bg-[#232631] border border-[#4B4F5D] rounded-3xl p-5 shadow-2xl">
+                  <div className="flex items-center gap-2 mb-2">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
                         size={14}
-                        className="text-[#FFD700] fill-[#FFD700]"
+                        className="text-[#E5C74D] fill-[#E5C74D]"
                       />
                     ))}
                   </div>
+
                   <div className="text-white text-sm font-semibold">
                     USA Certified
                   </div>
-                  <div className="text-white/50 text-xs">
+
+                  <div className="text-[#A7A8AF] text-xs mt-1">
                     CPT • CNC • WFS • CES
                   </div>
                 </div>
               </div>
             </FadeIn>
+
+            {/* ── CONTENT SIDE ── */}
             <FadeIn delay={0.2}>
               <div>
-                <span className="inline-block text-[#FF6B2C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+                {/* Section Label */}
+                <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
                   About Us
                 </span>
-                <h2
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    letterSpacing: "0.05em",
-                  }}
-                  className="text-6xl text-white mb-6"
-                >
+
+                {/* Heading */}
+                <h2 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]">
                   FITNESS THAT{" "}
-                  <span className="text-[#FF6B2C]">MOVES WITH YOU</span>
+                  <span className="bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
+                    MOVES WITH YOU
+                  </span>
                 </h2>
-                <p className="text-white/60 text-base leading-relaxed mb-6">
+
+                {/* Description */}
+                <p className="text-[#A7A8AF] text-base leading-relaxed mb-6">
                   At Sculpt & Strive, fitness fits your life. Whether you're
                   working out at home, at the gym, or while traveling — our
                   flexible programs make it easy to stay consistent anywhere.
                 </p>
-                <p className="text-white/60 text-base leading-relaxed mb-8">
+
+                <p className="text-[#A7A8AF] text-base leading-relaxed mb-8">
                   We design programs that go beyond the physical — focusing on
                   your strength, mobility, confidence, and overall well-being.
                   Led by USA certified coaches Namita Lamba and Sagar Lamba.
                 </p>
-                <div className="grid grid-cols-2 gap-4 mb-8">
+
+                {/* Features */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                   {[
                     "Personalized Programs",
                     "Expert Certified Coaches",
@@ -675,21 +683,24 @@ export function Home() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="flex items-center gap-2 text-sm text-white/70"
+                      className="flex items-center gap-2 text-sm text-white/75"
                     >
                       <CheckCircle
                         size={16}
-                        className="text-[#FF6B2C] shrink-0"
+                        className="text-[#B8F27C] shrink-0"
                       />
                       {item}
                     </div>
                   ))}
                 </div>
+
+                {/* CTA Button - Coral */}
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] rounded-2xl text-white font-bold hover:shadow-[0_8px_30px_rgba(255,107,44,0.5)] transition-all duration-300 hover:scale-105"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#FFFFFF] rounded-2xl text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300 hover:scale-105"
                 >
-                  Our Story <ArrowRight size={16} />
+                  Our Story
+                  <ArrowRight size={16} />
                 </Link>
               </div>
             </FadeIn>

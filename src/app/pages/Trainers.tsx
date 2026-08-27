@@ -2,10 +2,13 @@ import { Link } from 'react-router';
 import React from 'react';
 import { motion } from 'motion/react';
 import { Star, Instagram, Facebook, Award, ArrowRight } from 'lucide-react';
+import trainerWoman from "../../assets/Namita.jpeg";
+import trainerMan from "../../assets/Sagar.jpeg";
+
 
 const heroImg = 'https://images.unsplash.com/photo-1758875570137-8691b7c55033?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb25hbCUyMHRyYWluZXIlMjBjb2FjaGluZyUyMGd5bSUyMG1vdGl2YXRpb258ZW58MXx8fHwxNzc1ODc2NTU3fDA&ixlib=rb-4.1.0&q=80&w=1080';
-const trainerWomanImg = 'https://images.unsplash.com/photo-1533560586907-f0bd1db0da77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwY29hY2glMjB3b21hbiUyMHByb2Zlc3Npb25hbCUyMHRyYWluZXJ8ZW58MXx8fHwxNzc1ODc2NTY1fDA&ixlib=rb-4.1.0&q=80&w=1080';
-const trainerManImg = 'https://images.unsplash.com/photo-1708011108842-30966718105a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwbWFuJTIwY29hY2glMjBtYWxlJTIwdHJhaW5lciUyMG11c2N1bGFyfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=1080';
+// const trainerWomanImg = 'https://images.unsplash.com/photo-1533560586907-f0bd1db0da77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwY29hY2glMjB3b21hbiUyMHByb2Zlc3Npb25hbCUyMHRyYWluZXJ8ZW58MXx8fHwxNzc1ODc2NTY1fDA&ixlib=rb-4.1.0&q=80&w=1080';
+// const trainerManImg = 'https://images.unsplash.com/photo-1708011108842-30966718105a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwbWFuJTIwY29hY2glMjBtYWxlJTIwdHJhaW5lciUyMG11c2N1bGFyfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=1080';
 
 const certMeanings: Record<string, string> = {
   CPT: 'Certified Personal Trainer',
@@ -27,7 +30,7 @@ const trainers = [
     rating: 4.9,
     exp: '10 Years',
     certs: ['CPT', 'CNC', 'PBC', 'SFS', 'WLS', 'YES'],
-    img: trainerManImg,
+    img: trainerMan,
     color: '#FF6B2C',
     bio: 'Sagar brings a decade of elite coaching experience, specializing in performance enhancement, youth fitness, and weight transformation. His evidence-based approach combines cutting-edge training science with personalized attention to help every client exceed their goals.',
     specialties: ['Performance Training', 'Youth Athletics', 'Weight Loss', 'Senior Fitness', 'Prenatal Coaching'],
@@ -39,7 +42,7 @@ const trainers = [
     rating: 4.8,
     exp: '6 Years',
     certs: ['CPT', 'CNC', 'WFS', 'SFC', 'CES', 'PES'],
-    img: trainerWomanImg,
+    img: trainerWoman,
     color: '#FF6B8A',
     bio: 'Namita is a passionate wellness advocate with deep expertise in women\'s fitness, corrective exercise, and sports nutrition. Her holistic approach addresses not just physical training but hormonal health, bone density, and metabolic optimization for lasting transformation.',
     specialties: ["Women's Fitness", 'Corrective Exercise', 'Nutrition Coaching', 'Senior Vitality', 'Performance Enhancement'],
