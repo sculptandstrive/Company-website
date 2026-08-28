@@ -227,9 +227,9 @@ export function Programs() {
     useState<keyof typeof progressionPaths>("Youth (6-16)");
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero */}
-      <div className="relative h-[70vh] min-h-[650px] flex items-center overflow-hidden bg-[#171A26]">
+      <div className="relative h-[70vh] min-h-[680px] flex items-center overflow-hidden bg-[#171A26]">
         <div className="absolute inset-0">
           <video
             src={heroVideo}

@@ -202,7 +202,7 @@ export function GetPlan() {
   };
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero */}
       <div className="relative h-[65vh] min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">

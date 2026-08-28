@@ -154,7 +154,7 @@ function FadeIn({
 
 export function Assessments() {
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero */}
       <div className="relative h-[70vh] min-h-[650px] flex items-center overflow-hidden bg-[#171A26]">
         <div className="absolute inset-0">
