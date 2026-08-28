@@ -5,8 +5,8 @@ import { motion } from "motion/react";
 import { ArrowRight, CheckCircle, ChevronRight } from "lucide-react";
 import heroVideo from "../../assets/hero-video.mp4";
 
-const heroImg =
-  "https://images.unsplash.com/photo-1731325632701-90d4e869a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3b3Jrb3V0JTIwdGVhbSUyMGdyb3VwJTIwZml0bmVzcyUyMGNsYXNzfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=1080";
+// const heroImg =
+//   "https://images.unsplash.com/photo-1731325632701-90d4e869a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3b3Jrb3V0JTIwdGVhbSUyMGdyb3VwJTIwZml0bmVzcyUyMGNsYXNzfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=1080";
 
 const programs = [
   {
@@ -229,7 +229,7 @@ export function Programs() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <div className="relative h-[70vh] min-h-[500px] flex items-center overflow-hidden bg-[#171A26]">
+      <div className="relative h-[70vh] min-h-[650px] flex items-center overflow-hidden bg-[#171A26]">
         <div className="absolute inset-0">
           <video
             src={heroVideo}
@@ -240,42 +240,28 @@ export function Programs() {
             className="w-full h-full object-cover object-center"
           />
           {/* <img src={heroImg} alt="Programs" className="w-full h-full object-cover" /> */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0b0f]/95 via-[#0a0b0f]/60 to-[#0a0b0f]/30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0b0f]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/60 to-[#171A26]/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-          className="lg:-translate-x-30"
+          className="lg:-translate-x-30 lg:-translate-y-10"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+            <span className="inline-block -translate-y-3 text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4 ml-2 ">
               Specialized Programs
             </span>
 
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
               ONE PLATFORM.
               <br />
-              <span className="bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
+              <span className="text-[#B8F27C] inline-block mt-3">
                 EVERY JOURNEY.
               </span>
             </h1>
-            {/* <span className="inline-block text-[#FF6B2C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
-              Specialized Programs
-            </span>
-            <h1
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-                lineHeight: "0.95",
-              }}
-              className="text-7xl md:text-9xl text-white mb-6"
-            >
-              ONE PLATFORM.
-              <br />
-              <span className="text-[#FF6B2C]">EVERY JOURNEY.</span>
-            </h1> */}
+            
             <p className="text-white/60 text-lg max-w-xl leading-relaxed">
               Whether you're preparing for motherhood, seeking senior vitality,
               or training the next generation — we have a specialized path

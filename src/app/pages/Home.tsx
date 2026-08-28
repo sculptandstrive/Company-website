@@ -213,21 +213,6 @@ export function Home() {
               </span>
             </motion.div>
 
-            {/* <motion.div
-          style={{ opacity: heroOpacity }}
-          className="relative z-10 w-full max-w-[1240px] mx-auto px-6 md:px-10 pt-20"
-        >
-          <div className="max-w-[700px] mx-auto text-left">   
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B2C]/15 border border-[#FF6B2C]/30 mb-8"
-            >
-              <Zap size={14} className="text-[#FF6B2C]" />
-              <span className="text-[#FF6B2C] text-sm font-medium">India and USA Certified Fitness Coaches</span>
-            </motion.div> */}
-
             <motion.h1
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
@@ -285,45 +270,6 @@ export function Home() {
                 Explore Programs
               </Link>
             </motion.div>
-
-            {/* <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.65 }}
-              className="mt-8"
-            >
-              <Link
-                to="/get-plan"
-                className="inline-flex items-center justify-center px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral font-bold text-sm md:text-base transition-all duration-200 hover:brightness-95"
-              >
-                EXPLORE SCULPT AND STRIVE PASS
-              </Link>
-            </motion.div> */}
-
-            {/* <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.65 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <Link
-                to="/get-plan"
-                className="group flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] rounded-2xl text-white font-bold text-base shadow-[0_8px_30px_rgba(255,107,44,0.5)] hover:shadow-[0_8px_50px_rgba(255,107,44,0.7)] transition-all duration-300 hover:scale-105"
-              >
-                Start Your Journey
-                <ArrowRight
-                  size={18}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </Link>
-              <Link
-                to="/programs"
-                className="group flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border border-white/20 text-white font-semibold text-base hover:border-white/40 hover:bg-white/5 transition-all duration-300 backdrop-blur-sm"
-              >
-                <Play size={16} className="text-[#FF6B2C]" />
-                Explore Programs
-              </Link>
-            </motion.div> */}
           </div>
         </motion.div>
 
@@ -347,22 +293,6 @@ export function Home() {
             <ChevronDown size={20} className="text-white/60" />
           </motion.div>
         </motion.div>
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-white/30 text-xs tracking-widest uppercase">
-            Scroll
-          </span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-          >
-            <ChevronDown size={20} className="text-white/30" />
-          </motion.div>
-        </motion.div> */}
       </div>
 
       {/* ── MEMBERSHIP SELECTOR ── */}
@@ -488,35 +418,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* <div className="bg-gradient-to-b from-[#0a0b0f] to-[#0f1015] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, i) => (
-              <FadeIn key={stat.label} delay={i * 0.1}>
-                <div className="text-center p-8 rounded-2xl bg-white/[0.03] border border-white/8 hover:border-[#FF6B2C]/30 hover:bg-[#FF6B2C]/5 transition-all duration-500 group">
-                  <stat.icon
-                    size={28}
-                    className="text-[#FF6B2C] mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div
-                    style={{
-                      fontFamily: "'Bebas Neue', sans-serif",
-                      letterSpacing: "0.05em",
-                    }}
-                    className="text-5xl text-white mb-2"
-                  >
-                    {stat.value}
-                  </div>
-                  <div className="text-white/50 text-sm">{stat.label}</div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      
-{/* ── FEATURED PROGRAMS ── */}
+      {/* ── FEATURED PROGRAMS ── */}
 
       <section className="py-24 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -527,7 +429,7 @@ export function Home() {
 
             <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
               ONE PLATFORM.{" "}
-              <span className="bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
+              <span className="text-[#B8F27C]">
                 EVERY JOURNEY.
               </span>
             </h2>
@@ -595,7 +497,7 @@ export function Home() {
       </section>
 
       {/* ── ABOUT PREVIEW ── */}
-      <section className="py-24 bg-[#171A26]">
+      <section className="py-24 bg-[#4B4F5D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* ── IMAGE SIDE ── */}
@@ -655,7 +557,7 @@ export function Home() {
                 {/* Heading */}
                 <h2 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]">
                   FITNESS THAT{" "}
-                  <span className="bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
+                  <span className="text-[#B8F27C]">
                     MOVES WITH YOU
                   </span>
                 </h2>
@@ -709,29 +611,26 @@ export function Home() {
       </section>
 
       {/* ── WHY CHOOSE US ── */}
-      <section className="py-24 bg-[#0a0b0f]">
+      <section className="py-24 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
-            <span className="inline-block text-[#FF6B2C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+            <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
               Why Sculpt & Strive
             </span>
             <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-6xl md:text-7xl text-white"
-            >
+              // className="text-6xl md:text-7xl text-white">
+                className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]">
+            
               THE DIFFERENCE IS{" "}
-              <span className="text-[#FF6B2C]">IN THE DETAIL</span>
+              <span className="text-[#B8F27C]">IN THE DETAIL</span>
             </h2>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feat, i) => (
               <FadeIn key={feat.title} delay={i * 0.1}>
-                <div className="p-8 rounded-3xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/8 hover:border-[#FF6B2C]/30 hover:bg-[#FF6B2C]/5 transition-all duration-500 group h-full">
-                  <div className="w-14 h-14 rounded-2xl bg-[#FF6B2C]/15 flex items-center justify-center mb-6 group-hover:bg-[#FF6B2C]/25 transition-all duration-300">
-                    <feat.icon size={24} className="text-[#FF6B2C]" />
+                <div className="p-8 rounded-3xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/8 hover:border-[#B8F27C]/30 hover:bg-[#B8F27C]/5 transition-all duration-500 group h-full">
+                  <div className="w-14 h-14 rounded-2xl bg-[#B8F27C]/15 flex items-center justify-center mb-6 group-hover:bg-[#B8F27C]/25 transition-all duration-300">
+                    <feat.icon size={24} className="text-[#B8F27C]" />
                   </div>
                   <h3
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -750,7 +649,7 @@ export function Home() {
       </section>
 
       {/* ── SPLIT IMAGE SECTIONS ── */}
-      <section className="py-16 bg-[#0f1015]">
+      <section className="py-16 bg-[#4B4F5D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -804,17 +703,14 @@ export function Home() {
       <section className="py-24 bg-[#0a0b0f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
-            <span className="inline-block text-[#FF6B2C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+            <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
               Testimonials
             </span>
             <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-6xl text-white"
+              // className="text-6xl text-white"
+              className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]"
             >
-              REAL RESULTS, <span className="text-[#FF6B2C]">REAL STORIES</span>
+              REAL RESULTS, <span className="text-[#B8F27C]">REAL STORIES</span>
             </h2>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -842,7 +738,7 @@ export function Home() {
               },
             ].map((t, i) => (
               <FadeIn key={t.name} delay={i * 0.1}>
-                <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/8 hover:border-[#FF6B2C]/20 transition-all duration-500">
+                <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/8 hover:border-[#B8F27C]/20 transition-all duration-500">
                   <div className="flex gap-1 mb-4">
                     {[...Array(t.rating)].map((_, j) => (
                       <Star
@@ -859,7 +755,7 @@ export function Home() {
                     <div className="text-white font-semibold text-sm">
                       {t.name}
                     </div>
-                    <div className="text-[#FF6B2C] text-xs">{t.role}</div>
+                    <div className="text-[#B8F27C] text-xs">{t.role}</div>
                   </div>
                 </div>
               </FadeIn>
@@ -876,18 +772,16 @@ export function Home() {
             alt="CTA Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#0a0b0f]/85" />
+          <div className="absolute inset-0 bg-[#4B4F5D]/85" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
             <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-7xl md:text-8xl text-white mb-6"
-            >
-              YOUR JOURNEY <span className="text-[#FF6B2C]">STARTS NOW</span>
+              
+              // className="text-7xl md:text-8xl text-white mb-6"
+              className="text-6xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]">
+          
+              YOUR JOURNEY <span className="text-[#B8F27C]">STARTS NOW</span>
             </h2>
             <p className="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
               Join Sculpt and Strive and experience the transformation that
@@ -895,13 +789,23 @@ export function Home() {
               support system.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
+              {/* <Link
                 to="/signup"
-                className="group flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] rounded-2xl text-white font-bold text-lg shadow-[0_8px_40px_rgba(255,107,44,0.5)] hover:shadow-[0_8px_60px_rgba(255,107,44,0.7)] transition-all duration-300 hover:scale-105"
+                className="group flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-[#FFFFFF] to-[#FFFFFF] rounded-2xl text-[#FF6B5E] font-bold text-lg shadow-[0_8px_40px_rgba(255,107,44,0.5)] hover:shadow-[0_8px_60px_rgba(255,107,44,0.7)] transition-all duration-300 hover:scale-105"
               >
                 Get Started Free{" "}
                 <ArrowRight
                   size={20}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </Link> */}
+              <Link
+                to="/signup"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+              >
+                Get Started Free{" "}
+                <ArrowRight
+                  size={18}
                   className="group-hover:translate-x-1 transition-transform"
                 />
               </Link>

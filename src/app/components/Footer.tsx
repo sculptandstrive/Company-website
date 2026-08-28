@@ -21,9 +21,6 @@ export function Footer() {
           {/* <div className="bg-gradient-to-r from-[#1a0d05] via-[#220e06] to-[#1a0d05] rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-6"> */}
           <div className="p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              {/* <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }} className="text-4xl md:text-5xl text-white mb-2">
-                READY TO TRANSFORM?
-              </h3> */}
               <h3 className="text-3xl md:text-4xl font-extrabold leading-tight text-white mb-2">
                 READY TO TRANSFORM?
               </h3>
@@ -33,7 +30,6 @@ export function Footer() {
             </div>
             <Link
               to="/get-plan"
-              // className="shrink-0 flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] rounded-2xl text-white font-bold text-base hover:shadow-[0_8px_30px_rgba(255,107,44,0.5)] transition-all duration-300 hover:scale-105"
               className="shrink-0 flex items-center gap-2 px-7 py-3 min-h-11 rounded-sculpt-button bg-[#FF6B5E] text-white font-bold text-sm md:text-base transition-all duration-200 hover:brightness-95"
             >
               Get Your Plan <ArrowRight size={18} />
@@ -113,21 +109,7 @@ export function Footer() {
           </div>
 
           {/* Programs */}
-          {/* <div>
-            <h4 className="text-white font-semibold text-sm mb-5 tracking-wider uppercase">Programs</h4>
-            <ul className="space-y-3">
-              {['Prenatal Fitness', 'Senior Vitality', "Women's Fitness", 'Youth Training', 'Weight Loss', 'Corrective Exercise'].map((item) => (
-                <li key={item}>
-                  <Link to="/programs" className="text-white/45 hover:text-[#FF6B5E] transition-colors text-sm flex items-center group">
-                    <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div> */}
 
-          {/* Programs */}
           <div>
             <h4 className="text-white font-semibold text-sm mb-5 tracking-wider uppercase">
               Programs
