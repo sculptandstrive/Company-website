@@ -104,15 +104,15 @@ export function About() {
       </div>
 
       {/* Stats */}
-      <section className="py-20 bg-[#0a0b0f]">
+      <section className="py-20 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <FadeIn key={stat.label} delay={i * 0.1}>
-                <div className="text-center p-8 rounded-2xl bg-gradient-to-b from-[#FF6B2C]/8 to-transparent border border-[#FF6B2C]/15 hover:border-[#FF6B2C]/40 transition-all duration-500 group">
+                <div className="text-center p-8 rounded-2xl bg-gradient-to-b from-[#B8F27C]/8 to-transparent border border-[#B8F27C]/15 hover:border-[#B8F27C]/40 transition-all duration-500 group">
                   <stat.icon
                     size={28}
-                    className="text-[#FF6B2C] mx-auto mb-3 group-hover:scale-110 transition-transform"
+                    className="text-[#B8F27C] mx-auto mb-3 group-hover:scale-110 transition-transform"
                   />
                   <div
                     style={{
@@ -132,23 +132,20 @@ export function About() {
       </section>
 
       {/* Our Story */}
-      <section className="py-24 bg-[#0f1015]">
+      <section className="py-24 bg-[#232631]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             <FadeIn>
               <div>
-                <span className="inline-block text-[#FF6B2C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+                <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4 ml-1">
                   Our Story
                 </span>
                 <h2
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    letterSpacing: "0.05em",
-                  }}
-                  className="text-5xl md:text-6xl text-white mb-6"
+                className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
+                  // className="text-5xl md:text-6xl text-white mb-6"
                 >
                   FITNESS THAT{" "}
-                  <span className="text-[#FF6B2C]">MOVES WITH YOU</span>
+                  <span className="text-[#B8F27C]">MOVES WITH YOU</span>
                 </h2>
                 <p className="text-white/60 text-base leading-relaxed mb-5">
                   At Sculpt & Strive, fitness fits your life. Whether you're
@@ -190,9 +187,9 @@ export function About() {
           {/* Mission & Vision */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
             <FadeIn>
-              <div className="p-10 rounded-3xl bg-gradient-to-br from-[#FF6B2C]/15 to-[#FF4500]/5 border border-[#FF6B2C]/20 h-full">
-                <div className="w-14 h-14 rounded-2xl bg-[#FF6B2C]/20 flex items-center justify-center mb-6">
-                  <Target size={26} className="text-[#FF6B2C]" />
+              <div className="p-10 rounded-3xl bg-gradient-to-br from-[#B8F27C]/15 to-[#B8F27C]/5 border border-[#B8F27C]/20 h-full">
+                <div className="w-14 h-14 rounded-2xl bg-[#B8F27C]/20 flex items-center justify-center mb-6">
+                  <Target size={26} className="text-[#B8F27C]" />
                 </div>
                 <h3
                   style={{
@@ -213,9 +210,9 @@ export function About() {
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <div className="p-10 rounded-3xl bg-gradient-to-br from-[#A855F7]/15 to-[#6366F1]/5 border border-[#A855F7]/20 h-full">
-                <div className="w-14 h-14 rounded-2xl bg-[#A855F7]/20 flex items-center justify-center mb-6">
-                  <Eye size={26} className="text-[#A855F7]" />
+              <div className="p-10 rounded-3xl bg-gradient-to-br from-[#42C7C5]/15 to-[#42C7C5]/5 border border-[#42C7C5]/20 h-full">
+                <div className="w-14 h-14 rounded-2xl bg-[#42C7C5]/20 flex items-center justify-center mb-6">
+                  <Eye size={26} className="text-[#42C7C5]" />
                 </div>
                 <h3
                   style={{
@@ -240,21 +237,18 @@ export function About() {
       </section>
 
       {/* Trainers Preview */}
-      <section className="py-24 bg-[#0a0b0f]">
+      <section className="py-24 bg-[#171A26]/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
-            <span className="inline-block text-[#FF6B2C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+            <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
               Leadership
             </span>
             <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-6xl text-white"
+              className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
+              // className="text-6xl text-white"
             >
               LED BY{" "}
-              <span className="text-[#FF6B2C]">USA CERTIFIED COACHES</span>
+              <span className="text-[#B8F27C]">USA CERTIFIED COACHES</span>
             </h2>
           </FadeIn>
 
@@ -274,18 +268,18 @@ export function About() {
                 exp: "10 Years",
                 certs: certifications.sagar,
                 img: trainerManImg,
-                color: "#FF6B2C",
+                color: "#B8F27C",
               },
             ].map((trainer, i) => (
               <FadeIn key={trainer.name} delay={i * 0.15}>
-                <div className="rounded-3xl overflow-hidden border border-white/8 bg-[#0f1015] hover:border-white/15 transition-all duration-500 group">
+                <div className="rounded-3xl overflow-hidden border border-white/8 bg-[#171A26] hover:border-white/15 transition-all duration-500 group">
                   <div className="relative h-80 overflow-hidden">
                     <img
                       src={trainer.img}
                       alt={trainer.name}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1015] via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#171A26] via-transparent to-transparent" />
                     <div className="absolute top-4 right-4">
                       <div className="px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 text-xs text-white font-semibold">
                         {trainer.exp}
@@ -333,7 +327,7 @@ export function About() {
           <FadeIn className="text-center mt-10">
             <Link
               to="/trainers"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl border border-[#FF6B2C]/40 text-[#FF6B2C] font-semibold hover:bg-[#FF6B2C]/10 hover:border-[#FF6B2C] transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-[8px] border border-[#FF6B5E] text-[#FF6B5E] text-sm md:text-base font-bold transition-all duration-200 hover:bg-[#ffff]/20 hover:border-[#FF6B5E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8F27C]"
             >
               Meet Our Trainers <ArrowRight size={16} />
             </Link>

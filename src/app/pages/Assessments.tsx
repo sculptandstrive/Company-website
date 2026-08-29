@@ -210,7 +210,7 @@ export function Assessments() {
               to="/get-plan"
               className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
             >
-              Start Your Journey
+              Book Your Assessment
               <ArrowRight
                 size={18}
                 className="group-hover:translate-x-1 transition-transform"
@@ -227,18 +227,18 @@ export function Assessments() {
       </div>
 
       {/* Assessment Steps */}
-      <section className="py-24 bg-[#0a0b0f]">
+      <section className="py-24 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Body Analysis Graphic */}
             <FadeIn>
               <div className="relative">
                 <div className="relative w-full max-w-md mx-auto">
-                  <div className="bg-gradient-to-b from-[#111318] to-[#0f1015] rounded-3xl p-10 border border-white/8">
+                  <div className="bg-gradient-to-b from-[#232631] to-[#232631] rounded-3xl p-10 border border-white/8">
                     <div className="text-center mb-6">
-                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B2C]/15 border border-[#FF6B2C]/30 mb-3">
-                        <BarChart2 size={14} className="text-[#FF6B2C]" />
-                        <span className="text-[#FF6B2C] text-xs font-bold">
+                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#B8F27C]/15 border border-[#B8F27C]/30 mb-3">
+                        <BarChart2 size={14} className="text-[#B8F27C]" />
+                        <span className="text-[#B8F27C] text-xs font-bold">
                           360° Full Analysis
                         </span>
                       </div>
@@ -309,7 +309,7 @@ export function Assessments() {
                           }}
                         >
                           <div className="flex items-center gap-3 whitespace-nowrap">
-                            <div className="w-3 h-3 rounded-full bg-[#FF6B2C] shadow-[0_0_10px_rgba(255,107,44,0.8)] animate-pulse" />
+                            <div className="w-3 h-3 rounded-full bg-[#B8F27C] animate-pulse" />
                             <span className="text-[10px] text-white/60 hidden sm:block">
                               {pt.label}
                             </span>
@@ -328,12 +328,12 @@ export function Assessments() {
                           transition={{ delay: i * 0.1 + 0.5 }}
                           className="flex items-center gap-3"
                         >
-                          <div className="w-2 h-2 rounded-full bg-[#FF6B2C]" />
+                          <div className="w-2 h-2 rounded-full bg-[#B8F27C]" />
                           <span className="text-white/60 text-xs">
                             {pt.label}
                           </span>
-                          <div className="flex-1 h-px bg-gradient-to-r from-[#FF6B2C]/30 to-transparent" />
-                          <CheckCircle size={12} className="text-[#FF6B2C]" />
+                          <div className="flex-1 h-px bg-gradient-to-r from-[#B8F27C]/30 to-transparent" />
+                          <CheckCircle size={12} className="text-[#B8F27C]" />
                         </motion.div>
                       ))}
                     </div>
@@ -345,18 +345,15 @@ export function Assessments() {
             {/* Assessment Details */}
             <FadeIn delay={0.2}>
               <div>
-                <span className="inline-block text-[#FF6B2C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+                <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
                   Our Method
                 </span>
                 <h2
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    letterSpacing: "0.05em",
-                  }}
-                  className="text-5xl text-white mb-6"
+                  className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4 leading-none whitespace-nowrap"
+                  // className="text-5xl text-white mb-6"
                 >
                   4-POINT{" "}
-                  <span className="text-[#FF6B2C]">ASSESSMENT PROTOCOL</span>
+                  <span className="text-[#B8F27C]">ASSESSMENT PROTOCOL</span>
                 </h2>
                 <p className="text-white/50 text-sm leading-relaxed mb-8">
                   Our detailed assessment covers four key movement categories to
@@ -395,7 +392,7 @@ export function Assessments() {
                 </div>
                 <Link
                   to="/get-plan"
-                  className="mt-8 inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] rounded-2xl text-white font-bold shadow-[0_8px_30px_rgba(255,107,44,0.4)] hover:shadow-[0_8px_50px_rgba(255,107,44,0.6)] transition-all duration-300 hover:scale-105"
+                  className="mt-8 inline-flex items-center gap-3 px-8 py-4 bg-white rounded-2xl text-[#FF6B5E] font-bold transition-all duration-300 hover:scale-105"
                 >
                   Book Your Assessment <ArrowRight size={16} />
                 </Link>
@@ -406,20 +403,17 @@ export function Assessments() {
       </section>
 
       {/* Training Methods */}
-      <section className="py-24 bg-[#0f1015]">
+      <section className="py-24 bg-[#232631]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
-            <span className="inline-block text-[#FF6B2C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+            <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
               Training Methods
             </span>
             <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-6xl text-white mb-4"
+              className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
+              // className="text-6xl text-white mb-4"
             >
-              TRAIN YOUR WAY, <span className="text-[#FF6B2C]">ANYWHERE</span>
+              TRAIN YOUR WAY, <span className="text-[#B8F27C]">ANYWHERE</span>
             </h2>
             <p className="text-white/50 text-base max-w-2xl mx-auto">
               Whether you prefer kettlebells, bands, or pure bodyweight — we
@@ -431,14 +425,14 @@ export function Assessments() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {trainingMethods.map((method, i) => (
               <FadeIn key={method.name} delay={i * 0.1}>
-                <div className="group rounded-3xl overflow-hidden border border-white/8 hover:border-white/20 transition-all duration-500 bg-[#0a0b0f] hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+                <div className="group rounded-3xl overflow-hidden border border-white/8 hover:border-white/20 transition-all duration-500 bg-[#171A26] hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
                   <div className="relative h-56 overflow-hidden">
                     <img
                       src={method.img}
                       alt={method.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0b0f]/90 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#171A26]/90 to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
                       <div className="px-3 py-1 rounded-full text-xs font-bold bg-black/50 backdrop-blur-sm text-white border border-white/20">
                         {method.count} {method.unit}

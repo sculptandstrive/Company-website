@@ -32,7 +32,7 @@ const plans: Plan[] = [
     id: "standard",
     name: "Standard Plan",
     badge: "Popular",
-    color: "#FF6B2C",
+    color: "#3B8F27C",
     features: [
       "Everything in Basic",
       "Nutrition Coaching (Bi-Weekly)",
@@ -248,21 +248,21 @@ export function GetPlan() {
       </div>
 
       {/* Plans Grid */}
-      <section className="py-24 bg-[#0a0b0f]">
+      <section className="py-24 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {plans.map((plan, i) => (
               <FadeIn key={plan.id} delay={i * 0.05}>
                 <div
-                  className={`relative group rounded-3xl border transition-all duration-500 bg-[#0f1015] hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden ${
+                  className={`relative group rounded-3xl border transition-all duration-500 bg-[#232631] hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden ${
                     plan.badge
-                      ? "border-[#FF6B2C]/40 shadow-[0_0_30px_rgba(255,107,44,0.15)]"
+                      ? "border-[#B8F27C]/40 shadow-[0_0_30px_rgba(255,107,44,0.15)]"
                       : "border-white/8 hover:border-white/20"
                   }`}
                 >
                   {plan.badge && (
                     <div className="absolute top-0 left-0 right-0 flex justify-center">
-                      <div className="px-5 py-1.5 bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] rounded-b-2xl text-white text-xs font-bold">
+                      <div className="px-5 py-1.5 bg-gradient-to-r from-[#B8F27C] to-[#B8F27C] rounded-b-2xl text-[#171A26] text-xs font-bold">
                         {plan.badge}
                       </div>
                     </div>
@@ -339,33 +339,30 @@ export function GetPlan() {
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 bg-[#0f1015]">
+      <section className="py-16 bg-[#232631]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
             <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-5xl text-white mb-6"
+              
+              className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
             >
-              HAVE QUESTIONS? <span className="text-[#FF6B2C]">REACH OUT</span>
+              HAVE QUESTIONS? <span className="text-[#B8F27C]">REACH OUT</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <a
                 href="mailto:sculptandstrive@gmail.com"
-                className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#FF6B2C]/50 hover:bg-[#FF6B2C]/10 transition-all duration-300"
+                className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#B8F27C]/50 hover:bg-[#B8F27C]/10 transition-all duration-300"
               >
-                <Mail size={18} className="text-[#FF6B2C]" />
+                <Mail size={18} className="text-[#B8F27C]" />
                 <span className="text-white/70 text-sm">
                   sculptandstrive@gmail.com
                 </span>
               </a>
               <a
                 href="tel:+917302113369"
-                className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#FF6B2C]/50 hover:bg-[#FF6B2C]/10 transition-all duration-300"
+                className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#B8F27C]/50 hover:bg-[#B8F27C]/10 transition-all duration-300"
               >
-                <MessageCircle size={18} className="text-[#FF6B2C]" />
+                <MessageCircle size={18} className="text-[#B8F27C]" />
                 <span className="text-white/70 text-sm">+91 7302113369</span>
               </a>
             </div>

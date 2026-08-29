@@ -229,7 +229,7 @@ export function Programs() {
   return (
     <div>
       {/* Hero */}
-      <div className="relative h-[70vh] min-h-[680px] flex items-center overflow-hidden bg-[#171A26]">
+      <div className="relative h-[70vh] min-h-[650px] flex items-center overflow-hidden bg-[#171A26]">
         <div className="absolute inset-0">
           <video
             src={heroVideo}
@@ -272,7 +272,7 @@ export function Programs() {
       </div>
 
       {/* Programs Grid */}
-      <section className="py-24 bg-[#0a0b0f]">
+      <section className="py-24 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {programs.map((prog, i) => (
@@ -354,21 +354,16 @@ export function Programs() {
       </section>
 
       {/* Progression Paths */}
-      <section className="py-24 bg-[#0f1015]">
+      <section className="py-24 bg-[#4B4F5D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-14">
-            <span className="inline-block text-[#FF6B2C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+            <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
               Structure
             </span>
-            <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-6xl text-white mb-4"
+            <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]"
             >
               SPECIALIZED{" "}
-              <span className="text-[#FF6B2C]">PROGRESSION PATHS</span>
+              <span className="text-[#B8F27C]">PROGRESSION PATHS</span>
             </h2>
             <p className="text-white/50 text-base max-w-xl mx-auto">
               Each program follows a structured progression designed for your
@@ -389,8 +384,8 @@ export function Programs() {
                   onClick={() => setActiveTab(tab)}
                   className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                     activeTab === tab
-                      ? "bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] text-white shadow-[0_4px_20px_rgba(255,107,44,0.4)]"
-                      : "bg-white/5 text-white/60 hover:text-white hover:bg-white/10 border border-white/10"
+                      ? "bg-white text-[#FF6B5E] shadow-[0_4px_20px_rgba(255,107,44,0.2)]"
+    : "bg-white/5 text-white/60 hover:text-white hover:bg-white/10 border border-white/10"
                   }`}
                 >
                   {tab}
@@ -418,8 +413,8 @@ export function Programs() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="relative"
                 >
-                  <div className="p-6 rounded-3xl bg-[#111318] border border-white/8 hover:border-[#FF6B2C]/30 transition-all duration-500 group">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FF6B2C] to-[#FF4500] flex items-center justify-center mb-5 text-white font-bold text-lg shadow-[0_4px_20px_rgba(255,107,44,0.4)] group-hover:scale-110 transition-transform duration-300">
+                  <div className="p-6 rounded-3xl bg-[#171A26] border border-white/8 hover:border-[#B8F27C]/30 transition-all duration-500 group">
+                    <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-[#FFFFFF] text-[#FF6B5E] font-bold text-lg group-hover:scale-110 transition-transform duration-300">
                       {step.stage}
                     </div>
                     <h3
@@ -429,7 +424,7 @@ export function Programs() {
                       {step.title}
                     </h3>
                     {step.sub && (
-                      <div className="text-[#FF6B2C] text-xs font-semibold mb-2">
+                      <div className="text-[#B8F27C] text-xs font-semibold mb-2">
                         {step.sub}
                       </div>
                     )}
@@ -438,7 +433,7 @@ export function Programs() {
                     </p>
                     <ChevronRight
                       size={16}
-                      className="text-[#FF6B2C] mt-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="text-[#B8F27C] mt-4 opacity-0 group-hover:opacity-100 transition-opacity"
                     />
                   </div>
                 </motion.div>
@@ -449,24 +444,24 @@ export function Programs() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#0a0b0f]">
+      <section className="py-20 bg-[#171A26]/60">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
             <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-6xl text-white mb-6"
+            className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]"
+            
+              // className="text-6xl text-white mb-6"
             >
-              READY TO <span className="text-[#FF6B2C]">BEGIN?</span>
+              READY TO <span className="text-[#B8F27C]">BEGIN?</span>
             </h2>
             <p className="text-white/50 text-base mb-10">
               Get a personalized plan tailored to your program and goals.
             </p>
             <Link
               to="/get-plan"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] rounded-2xl text-white font-bold text-lg shadow-[0_8px_40px_rgba(255,107,44,0.5)] hover:shadow-[0_8px_60px_rgba(255,107,44,0.7)] transition-all duration-300 hover:scale-105"
+
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+              // className="inline-flex items-center gap-3 px-10 py-5 bg-white rounded-2xl text-[#FF6B5E] font-bold text-lg  hover:shadow-[0_8px_60px_rgba(255,107,44,0.7)] transition-all duration-300 hover:scale-105"
             >
               Get Your Plan <ArrowRight size={20} />
             </Link>

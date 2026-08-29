@@ -13,9 +13,6 @@ import {
 } from "lucide-react";
 import heroVideo from "../../assets/hero-video.mp4";
 
-const heroImg =
-  "https://images.unsplash.com/photo-1587996616596-b714c1c54146?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxudXRyaXRpb24lMjBoZWFsdGh5JTIwZm9vZCUyMG1lYWwlMjBwcmVwJTIwZml0bmVzc3xlbnwxfHx8fDE3NzU4NzY1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080";
-
 const dailyData = [
   { day: "Mon", pct: 92 },
   { day: "Tue", pct: 88 },
@@ -27,8 +24,8 @@ const dailyData = [
 ];
 
 const macros = [
-  { label: "Protein", pct: 35, color: "#FF6B2C", grams: "154g" },
-  { label: "Carbs", pct: 40, color: "#FFD700", grams: "220g" },
+  { label: "Protein", pct: 35, color: "#B8F27C", grams: "154g" },
+  { label: "Carbs", pct: 40, color: "#42C7C5", grams: "220g" },
   { label: "Fats", pct: 25, color: "#A855F7", grams: "51g" },
 ];
 
@@ -146,15 +143,15 @@ export function Nutrition() {
       </div>
 
       {/* Main Dashboard */}
-      <section className="py-24 bg-[#0a0b0f]">
+      <section className="py-24 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
             {/* Food Database Search */}
             <FadeIn className="xl:col-span-1">
-              <div className="rounded-3xl bg-[#0f1015] border border-white/8 p-6 h-full">
+              <div className="rounded-3xl bg-[#232631] border border-white/8 p-6 h-full">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-8 h-8 rounded-xl bg-[#FF6B2C]/20 flex items-center justify-center">
-                    <Search size={14} className="text-[#FF6B2C]" />
+                  <div className="w-8 h-8 rounded-xl bg-[#B8F27C]/20 flex items-center justify-center">
+                    <Search size={14} className="text-[#B8F27C]" />
                   </div>
                   <h3
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -163,36 +160,36 @@ export function Nutrition() {
                     Food Database
                   </h3>
                 </div>
-                <div className="text-[#FF6B2C] text-xs font-semibold mb-5 ml-10">
+                <div className="text-[#B8F27C] text-xs font-semibold mb-5 ml-10">
                   Global Foods
                 </div>
 
-                <div className="text-white/30 text-xs font-semibold tracking-widest uppercase mb-3">
+                <div className="text-white/70 text-xs font-semibold tracking-widest uppercase mb-3">
                   Global Food Database
                 </div>
                 <div className="relative mb-4">
                   <Search
                     size={14}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70"
                   />
                   <input
                     type="text"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search foods..."
-                    className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-[#FF6B2C]/50 focus:bg-[#FF6B2C]/5 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white text-sm placeholder:text-white/50 focus:outline-none focus:border-[#B8F27C]/50 focus:bg-[#B8F27C]/5 transition-all"
                   />
                 </div>
 
                 {search && (
-                  <div className="text-white/30 text-sm text-center py-4">
+                  <div className="text-white/50 text-sm text-center py-4">
                     No foods found
                   </div>
                 )}
 
                 {/* Popular foods */}
                 <div className="mt-4">
-                  <div className="text-white/30 text-xs font-semibold tracking-widest uppercase mb-3">
+                  <div className="text-white/50 text-xs font-semibold tracking-widest uppercase mb-3">
                     Popular Foods
                   </div>
                   <div className="space-y-2">
@@ -227,7 +224,7 @@ export function Nutrition() {
                             P: {food.p}g • C: {food.c}g • F: {food.f}g
                           </div>
                         </div>
-                        <div className="text-[#FF6B2C] text-xs font-bold">
+                        <div className="text-[#B8F27C] text-xs font-bold">
                           {food.cal} cal
                         </div>
                       </div>
@@ -239,14 +236,14 @@ export function Nutrition() {
 
             {/* Diet Adherence */}
             <FadeIn delay={0.1} className="xl:col-span-1">
-              <div className="rounded-3xl bg-[#0f1015] border border-white/8 p-6 h-full">
+              <div className="rounded-3xl bg-[#232631] border border-white/8 p-6 h-full">
                 <h3
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                   className="font-bold text-white text-base mb-1"
                 >
                   Diet Adherence
                 </h3>
-                <div className="text-white/40 text-xs mb-5">
+                <div className="text-white/70 text-xs mb-5">
                   Weekly Performance
                 </div>
 
@@ -280,8 +277,8 @@ export function Nutrition() {
                           x2="100%"
                           y2="0%"
                         >
-                          <stop offset="0%" stopColor="#FF6B2C" />
-                          <stop offset="100%" stopColor="#FFD700" />
+                          <stop offset="0%" stopColor="#B8F27C" />
+                          <stop offset="100%" stopColor="#42C7C5" />
                         </linearGradient>
                       </defs>
                     </svg>
@@ -292,7 +289,7 @@ export function Nutrition() {
                       >
                         86%
                       </div>
-                      <div className="text-white/40 text-[10px]">
+                      <div className="text-white/70 text-[10px]">
                         Overall Score
                       </div>
                     </div>
@@ -306,7 +303,7 @@ export function Nutrition() {
                       key={d.day}
                       className="flex flex-col items-center gap-1 flex-1"
                     >
-                      <div className="text-white/40 text-[10px]">{d.pct}%</div>
+                      <div className="text-white/70 text-[10px]">{d.pct}%</div>
                       <div
                         className="w-full rounded-t-lg transition-all duration-500"
                         style={{
@@ -319,7 +316,7 @@ export function Nutrition() {
                                 : "#FF6B2C44",
                         }}
                       />
-                      <div className="text-white/30 text-[10px]">{d.day}</div>
+                      <div className="text-white/70 text-[10px]">{d.day}</div>
                     </div>
                   ))}
                 </div>
@@ -327,13 +324,13 @@ export function Nutrition() {
                 {/* Macro scores */}
                 <div className="grid grid-cols-3 gap-3">
                   {[
-                    { label: "Calories", pct: 92, color: "#FF6B2C" },
-                    { label: "Protein", pct: 88, color: "#FFD700" },
+                    { label: "Calories", pct: 92, color: "#B8F27C" },
+                    { label: "Protein", pct: 88, color: "#42C7C5" },
                     { label: "Macros", pct: 78, color: "#A855F7" },
                   ].map((m) => (
                     <div
                       key={m.label}
-                      className="text-center p-3 rounded-xl bg-white/[0.03] border border-white/8"
+                      className="text-center p-3 rounded-xl bg-white/[0.05] border border-white/9"
                     >
                       <div
                         className="text-lg font-bold"
@@ -341,7 +338,7 @@ export function Nutrition() {
                       >
                         {m.pct}%
                       </div>
-                      <div className="text-white/40 text-[10px]">{m.label}</div>
+                      <div className="text-white/50 text-[10px]">{m.label}</div>
                     </div>
                   ))}
                 </div>
@@ -350,7 +347,7 @@ export function Nutrition() {
 
             {/* Today's Nutrition */}
             <FadeIn delay={0.2} className="xl:col-span-1">
-              <div className="rounded-3xl bg-[#0f1015] border border-white/8 p-6 h-full">
+              <div className="rounded-3xl bg-[#232631] border border-white/9 p-6 h-full">
                 <h3
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                   className="font-bold text-white text-base mb-1"
@@ -358,32 +355,32 @@ export function Nutrition() {
                   Today's Nutrition
                 </h3>
                 <div className="flex items-center justify-between mb-5">
-                  <div className="text-white/40 text-xs">1,847 / 2,200 cal</div>
-                  <div className="px-2 py-1 rounded-full bg-[#10B981]/15 text-[#10B981] text-[10px] font-bold border border-[#10B981]/30">
+                  <div className="text-white/70 text-xs">1,847 / 2,200 cal</div>
+                  <div className="px-2 py-1 rounded-full bg-[#42C7C5]/17 text-[#42C7C5] text-[10px] font-bold border border-[#42C7C5]/40">
                     On Track
                   </div>
                 </div>
 
                 {/* Calorie progress */}
                 <div className="mb-6">
-                  <div className="flex justify-between text-xs text-white/40 mb-2">
+                  <div className="flex justify-between text-xs text-white/70 mb-2">
                     <span>Daily Progress</span>
                     <span>84%</span>
                   </div>
-                  <div className="h-3 rounded-full bg-white/5 overflow-hidden">
+                  <div className="h-3 rounded-full bg-white/6 overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: "84%" }}
                       viewport={{ once: true }}
                       transition={{ duration: 1.2, delay: 0.3 }}
-                      className="h-full rounded-full bg-gradient-to-r from-[#FF6B2C] to-[#FFD700]"
+                      className="h-full rounded-full bg-gradient-to-r from-[#B8F27C] to-[#42C7C5]"
                     />
                   </div>
                 </div>
 
                 {/* Macro distribution */}
                 <div className="mb-6">
-                  <div className="text-white/30 text-xs font-semibold tracking-widest uppercase mb-4">
+                  <div className="text-white/50 text-xs font-semibold tracking-widest uppercase mb-4">
                     Macro Distribution
                   </div>
                   <div className="space-y-3">
@@ -398,7 +395,7 @@ export function Nutrition() {
                             {m.pct}% • {m.grams}
                           </span>
                         </div>
-                        <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+                        <div className="h-2 rounded-full bg-white/6 overflow-hidden">
                           <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: `${m.pct}%` }}
@@ -415,14 +412,14 @@ export function Nutrition() {
 
                 {/* Meals */}
                 <div>
-                  <div className="text-white/30 text-xs font-semibold tracking-widest uppercase mb-3">
+                  <div className="text-white/50 text-xs font-semibold tracking-widest uppercase mb-3">
                     Today's Meals
                   </div>
                   <div className="space-y-2">
                     {meals.map((meal) => (
                       <div
                         key={meal.name}
-                        className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/8"
+                        className="flex items-center justify-between p-3 rounded-xl bg-white/[0.05] border border-white/9"
                       >
                         <div className="flex items-center gap-2">
                           <span className="text-base">{meal.icon}</span>
@@ -431,14 +428,14 @@ export function Nutrition() {
                           </span>
                         </div>
                         <div className="flex items-center gap-3">
-                          <span className="text-white/40 text-xs">
+                          <span className="text-white/50 text-xs">
                             {meal.cal} cal
                           </span>
                           <div
                             className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
                               meal.status === "done"
-                                ? "bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/30"
-                                : "bg-white/5 text-white/30 border border-white/10"
+                                ? "bg-[#42C7C5]/15 text-[#42C7C5] border border-[#42C7C5]/30"
+                                : "bg-white/6 text-white/40 border border-white/11"
                             }`}
                           >
                             {meal.status === "done" ? "✓ Done" : "Pending"}
@@ -455,22 +452,19 @@ export function Nutrition() {
       </section>
 
       {/* Goals Section */}
-      <section className="py-24 bg-[#0f1015]">
+      <section className="py-24 bg-[#232631]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
-            <span className="inline-block text-[#FF6B2C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+            <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
               Goal-Based Plans
             </span>
             <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-6xl text-white mb-4"
+              
+              className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
             >
-              NUTRITION FOR <span className="text-[#FF6B2C]">YOUR GOAL</span>
+              NUTRITION FOR <span className="text-[#B8F27C]">YOUR GOAL</span>
             </h2>
-            <p className="text-white/50 text-base max-w-xl mx-auto">
+            <p className="text-white/60 text-base max-w-xl mx-auto">
               Tailored nutrition strategies aligned with your specific fitness
               objectives and lifestyle.
             </p>
@@ -478,7 +472,7 @@ export function Nutrition() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {goals.map((goal, i) => (
               <FadeIn key={goal.label} delay={i * 0.08}>
-                <div className="group p-6 rounded-3xl bg-[#0a0b0f] border border-white/8 hover:border-white/15 transition-all duration-500 cursor-pointer">
+                <div className="group p-6 rounded-3xl bg-[#171A26] border border-white/6 hover:border-white/15 transition-all duration-500 cursor-pointer">
                   <div
                     className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110"
                     style={{ backgroundColor: `${goal.color}20` }}
@@ -502,7 +496,7 @@ export function Nutrition() {
           <FadeIn className="text-center mt-12">
             <Link
               to="/get-plan"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] rounded-2xl text-white font-bold text-lg shadow-[0_8px_40px_rgba(255,107,44,0.5)] hover:shadow-[0_8px_60px_rgba(255,107,44,0.7)] transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-[8px] bg-white text-[#FF6B5E] text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8F27C]"
             >
               Start Tracking Your Diet <ArrowRight size={20} />
             </Link>

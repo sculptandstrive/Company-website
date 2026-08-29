@@ -31,7 +31,7 @@ const trainers = [
     exp: "10 Years",
     certs: ["CPT", "CNC", "PBC", "SFS", "WLS", "YES"],
     img: trainerMan,
-    color: "#FF6B2C",
+    color: "#B8F27C",
     bio: "Sagar brings a decade of elite coaching experience, specializing in performance enhancement, youth fitness, and weight transformation. His evidence-based approach combines cutting-edge training science with personalized attention to help every client exceed their goals.",
     specialties: [
       "Performance Training",
@@ -122,7 +122,7 @@ export function Trainers() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-          className="lg:-translate-x-30 lg:-translate-y-10"
+            className="lg:-translate-x-30 lg:-translate-y-10"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -130,12 +130,12 @@ export function Trainers() {
             <span className="inline-block -translate-y-3 text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4 ml-2">
               Our Expert Trainers
             </span>
-            <h1
-              className="ttext-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6"
-            >
+            <h1 className="ttext-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
               CERTIFIED
               <br />
-              <span className="text-[#B8F27C] inline-block mt-3">PROFESSIONALS</span>
+              <span className="text-[#B8F27C] inline-block mt-3">
+                PROFESSIONALS
+              </span>
             </h1>
             <p className="text-white/60 text-lg max-w-xl leading-relaxed">
               Our certified professionals are here to guide you on your fitness
@@ -146,12 +146,12 @@ export function Trainers() {
       </div>
 
       {/* Trainer Cards */}
-      <section className="py-24 bg-[#0a0b0f]">
+      <section className="py-24 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {trainers.map((trainer, i) => (
               <FadeIn key={trainer.name} delay={i * 0.15}>
-                <div className="group rounded-3xl overflow-hidden border border-white/8 bg-[#0f1015] hover:border-white/20 transition-all duration-500 hover:shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
+                <div className="group rounded-3xl overflow-hidden border border-white/8 bg-[#171A26] hover:border-white/20 transition-all duration-500 hover:shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
                   {/* Image */}
                   <div className="relative h-96 overflow-hidden">
                     <img
@@ -159,11 +159,11 @@ export function Trainers() {
                       alt={trainer.name}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1015] via-[#0f1015]/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#171A26] via-[#171A26]/20 to-transparent" />
 
                     {/* Rating badge */}
                     <div className="absolute top-5 left-5">
-                      <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 backdrop-blur-md border border-white/15">
+                      <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#171A26]/60 backdrop-blur-md border border-white/15">
                         <Star
                           size={14}
                           className="text-[#FFD700] fill-[#FFD700]"
@@ -178,13 +178,13 @@ export function Trainers() {
                     <div className="absolute top-5 right-5 flex gap-2">
                       <a
                         href={trainer.social.ig}
-                        className="w-9 h-9 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:text-[#FF6B2C] hover:border-[#FF6B2C]/50 transition-all duration-300"
+                        className="w-9 h-9 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:text-[#FF6B5E] hover:border-[#FF6B5E]/50 transition-all duration-300"
                       >
                         <Instagram size={16} />
                       </a>
                       <a
                         href={trainer.social.fb}
-                        className="w-9 h-9 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:text-[#FF6B2C] hover:border-[#FF6B2C]/50 transition-all duration-300"
+                        className="w-9 h-9 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:text-[#FF6B5E] hover:border-[#FF6B5E]/50 transition-all duration-300"
                       >
                         <Facebook size={16} />
                       </a>
@@ -287,25 +287,19 @@ export function Trainers() {
       </section>
 
       {/* Why Our Trainers */}
-      <section className="py-24 bg-[#0f1015]">
+      <section className="py-24 bg-[#232631]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-14">
-            <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-6xl text-white"
-            >
-              WHY OUR <span className="text-[#FF6B2C]">COACHES STAND OUT</span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
+              WHY OUR <span className="text-[#B8F27C]">COACHES STAND OUT</span>
             </h2>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {highlights.map((h, i) => (
               <FadeIn key={h.label} delay={i * 0.1}>
-                <div className="text-center p-10 rounded-3xl bg-[#0a0b0f] border border-white/8 hover:border-[#FF6B2C]/20 transition-all duration-500 group">
-                  <div className="w-16 h-16 rounded-2xl bg-[#FF6B2C]/15 flex items-center justify-center mx-auto mb-6 group-hover:bg-[#FF6B2C]/25 transition-all duration-300">
-                    <h.icon size={28} className="text-[#FF6B2C]" />
+                <div className="text-center p-10 rounded-3xl bg-[#171A26] border border-white/8 hover:border-[#B8F27C]/20 transition-all duration-500 group">
+                  <div className="w-16 h-16 rounded-2xl bg-[#B8F27C]/20 group-hover:bg-[#B8F27C]/25 flex items-center justify-center mx-auto mb-6">
+                    <h.icon size={28} className="text-[#B8F27C]" />
                   </div>
                   <h3
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -324,17 +318,11 @@ export function Trainers() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#0a0b0f]">
+      <section className="py-20 bg-[#171A26]/70">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
-            <h2
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-              className="text-6xl text-white mb-6"
-            >
-              TRAIN WITH <span className="text-[#FF6B2C]">THE BEST</span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
+              TRAIN WITH <span className="text-[#B8F27C]">THE BEST</span>
             </h2>
             <p className="text-white/50 text-base mb-10">
               Start your journey with a certified coach who truly understands
@@ -342,7 +330,7 @@ export function Trainers() {
             </p>
             <Link
               to="/get-plan"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] rounded-2xl text-white font-bold text-lg shadow-[0_8px_40px_rgba(255,107,44,0.5)] hover:shadow-[0_8px_60px_rgba(255,107,44,0.7)] transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center justify-center gap-2 px-7 py-4 min-h-11 rounded-[8px] bg-white text-[#FF6B5E] text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8F27C]"
             >
               Get Your Plan <ArrowRight size={20} />
             </Link>

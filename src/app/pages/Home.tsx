@@ -342,8 +342,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* ── STATS ── */}
-
       {/* Stats Section */}
       <section className="bg-[#4B4F5D] px-6 py-16 md:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl overflow-hidden rounded-[24px] border border-[#FF6B5E]/40 bg-[#4B4F5D] p-4 md:p-5">
@@ -700,7 +698,7 @@ export function Home() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-24 bg-[#0a0b0f]">
+      <section className="py-24 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
             <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
