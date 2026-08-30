@@ -1,68 +1,98 @@
-import { useState } from 'react';
-import { Link } from 'react-router';
-import { motion } from 'motion/react';
-import { Eye, EyeOff, ArrowRight, Zap } from 'lucide-react';
-import logoImg from '../../imports/image.png';
+import { useState } from "react";
+import { Link } from "react-router";
+import { motion } from "motion/react";
+import { Eye, EyeOff, ArrowRight, Zap } from "lucide-react";
+import logoImg from "../../imports/image.png";
 
-const bgImg = 'https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080';
+const bgImg =
+  "https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080";
 
 export function SignIn() {
   const [showPass, setShowPass] = useState(false);
-  const [form, setForm] = useState({ email: '', password: '' });
+
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
 
   return (
-    <div className="min-h-screen flex">
-      {/* Left - Form */}
+    <div className="h-screen w-full overflow-hidden bg-[#171A26] lg:grid lg:grid-cols-2">
+      {/* LEFT SIDE - FORM */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7 }}
-        className="flex-1 flex flex-col justify-center px-8 lg:px-16 py-12 bg-[#0a0b0f] min-h-screen"
+        className="h-full flex items-center justify-center px-6 sm:px-10 lg:px-16"
       >
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 mb-14">
-          <div className="w-11 h-11 rounded-xl overflow-hidden border-2 border-[#FF6B2C]/40">
-            <img src={logoImg} alt="Sculpt and Strive" className="w-full h-full object-cover" />
-          </div>
-          <div>
-            <div style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.1em' }} className="text-lg text-white leading-none">
-              SCULPT <span className="text-[#FF6B2C]">&</span> STRIVE
-            </div>
-            <div className="text-[9px] text-white/30 tracking-[0.3em] uppercase">Fitness Platform</div>
-          </div>
-        </Link>
+        <div className="w-full max-w-md">
+          {/* Heading */}
+          <div className="mb-7">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
+              WELCOME <span className="text-[#B8F27C]">BACK</span>
+            </h1>
+            {/* <h1
+              
+              className="text-4xl sm:text-5xl text-white mb-2"
+            >
+              WELCOME BACK
+            </h1> */}
 
-        <div className="max-w-sm w-full mx-auto lg:mx-0">
-          <div className="mb-8">
-            <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }} className="text-5xl text-white mb-2">WELCOME BACK</h1>
-            <p className="text-white/50 text-sm">Sign in to continue your fitness journey.</p>
+            <p className="text-white/50 text-sm">
+              Sign in to continue your fitness journey.
+            </p>
           </div>
 
-          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+          {/* FORM */}
+          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            {/* EMAIL */}
             <div>
-              <label className="block text-white/50 text-xs font-semibold mb-2 tracking-wider uppercase">Email Address</label>
+              <label className="block text-white/50 text-xs font-semibold mb-2 tracking-wider uppercase">
+                Email Address
+              </label>
+
               <input
                 type="email"
                 value={form.email}
-                onChange={(e) => setForm(p => ({ ...p, email: e.target.value }))}
+                onChange={(e) =>
+                  setForm((p) => ({
+                    ...p,
+                    email: e.target.value,
+                  }))
+                }
                 placeholder="your@email.com"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#FF6B2C]/60 focus:bg-[#FF6B2C]/5 transition-all"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all"
               />
             </div>
 
+            {/* PASSWORD */}
             <div>
               <div className="flex justify-between mb-2">
-                <label className="text-white/50 text-xs font-semibold tracking-wider uppercase">Password</label>
-                <a href="#" className="text-[#FF6B2C] text-xs hover:text-[#FF8040] transition-colors">Forgot password?</a>
+                <label className="text-white/50 text-xs font-semibold tracking-wider uppercase">
+                  Password
+                </label>
+
+                <a
+                  href="#"
+                  className="text-[#B8F27C] text-xs hover:text-[#B8F27C] transition-colors"
+                >
+                  Forgot password?
+                </a>
               </div>
+
               <div className="relative">
                 <input
-                  type={showPass ? 'text' : 'password'}
+                  type={showPass ? "text" : "password"}
                   value={form.password}
-                  onChange={(e) => setForm(p => ({ ...p, password: e.target.value }))}
+                  onChange={(e) =>
+                    setForm((p) => ({
+                      ...p,
+                      password: e.target.value,
+                    }))
+                  }
                   placeholder="••••••••"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#FF6B2C]/60 focus:bg-[#FF6B2C]/5 transition-all pr-12"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all pr-12"
                 />
+
                 <button
                   type="button"
                   onClick={() => setShowPass(!showPass)}
@@ -73,30 +103,37 @@ export function SignIn() {
               </div>
             </div>
 
+            {/* SIGN IN BUTTON */}
             <motion.button
-              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full py-4 rounded-2xl text-white font-bold text-sm bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] shadow-[0_4px_20px_rgba(255,107,44,0.4)] hover:shadow-[0_4px_30px_rgba(255,107,44,0.6)] transition-all duration-300 flex items-center justify-center gap-2"
+              className="group w-full h-11 rounded-xl bg-white text-[#FF6B5E] text-sm font-bold leading-none flex items-center justify-center gap-2 border border-transparent hover:bg-[#FF6B5E]/30 hover:border-white transition-all duration-200"
             >
-              Sign In <ArrowRight size={16} />
+              Sign In
+              <ArrowRight size={16} />
             </motion.button>
           </form>
 
-          <div className="mt-6 flex items-center gap-4">
+          {/* DIVIDER */}
+          <div className="mt-5 flex items-center gap-4">
             <div className="flex-1 h-px bg-white/10" />
-            <span className="text-white/30 text-xs">or continue with</span>
+
+            <span className="text-white/30 text-xs whitespace-nowrap">
+              or continue with
+            </span>
+
             <div className="flex-1 h-px bg-white/10" />
           </div>
 
-          <div className="mt-5 grid grid-cols-2 gap-3">
+          {/* SOCIAL LOGIN */}
+          <div className="mt-4 grid grid-cols-2 gap-3">
             {[
-              { name: 'Google', icon: '🌐' },
-              { name: 'Facebook', icon: '🔵' },
+              { name: "Google", icon: "🌐" },
+              { name: "Facebook", icon: "🔵" },
             ].map((provider) => (
               <button
                 key={provider.name}
-                className="flex items-center justify-center gap-2 py-3 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300"
+                className="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300"
               >
                 <span>{provider.icon}</span>
                 {provider.name}
@@ -104,41 +141,65 @@ export function SignIn() {
             ))}
           </div>
 
-          <p className="mt-8 text-center text-white/40 text-sm">
-            Don't have an account?{' '}
-            <Link to="/signup" className="text-[#FF6B2C] font-semibold hover:text-[#FF8040] transition-colors">
+          {/* SIGN UP */}
+          <p className="mt-6 text-center text-white/40 text-sm">
+            Don't have an account?{" "}
+            <Link
+              to="/signup"
+              className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
+            >
               Sign up free
             </Link>
           </p>
         </div>
       </motion.div>
 
-      {/* Right - Image */}
+      {/* RIGHT SIDE - IMAGE + CONTENT */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
-        className="hidden lg:block flex-1 relative overflow-hidden"
+        className="hidden lg:block h-full relative overflow-hidden"
       >
-        <img src={bgImg} alt="Fitness" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#0a0b0f]/30 to-[#0a0b0f]" />
+        {/* BACKGROUND IMAGE */}
+        <img
+          src={bgImg}
+          alt="Fitness"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-        {/* Overlay content */}
-        <div className="absolute inset-0 flex flex-col justify-end p-16">
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#171A26]/30 to-[#171A26]/70" />
+
+        {/* CONTENT - CENTERED VERTICALLY */}
+        {/* <div className="absolute inset-0 flex items-center px-12 xl:px-20 pt-0"> */}
+        <div className="absolute top-40 left-0 right-0 px-12 xl:px-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
+            className="max-w-md"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B2C]/20 border border-[#FF6B2C]/40 mb-5">
-              <Zap size={14} className="text-[#FF6B2C]" />
-              <span className="text-[#FF6B2C] text-sm font-semibold">Start Your Journey</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#B8F27C]/20 border border-[#B8F27C]/40 mb-5">
+              <Zap size={14} className="text-[#B8F27C]" />
+
+              <span className="text-[#B8F27C] text-sm font-semibold">
+                Start Your Journey
+              </span>
             </div>
-            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em', lineHeight: '0.95' }} className="text-6xl text-white mb-4">
-              EVERY REP<br />COUNTS
+
+            <h2
+              className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
+              // className="text-5xl xl:text-6xl text-white mb-4"
+            >
+              EVERY REP
+              <br />
+              <span className="text-[#B8F27C] block mt-2"> COUNTS</span>
             </h2>
-            <p className="text-white/60 text-base max-w-xs">
-              Access your personalized fitness plans, track progress, and connect with your coach — all in one place.
+
+            <p className="text-white/90 text-base leading-relaxed max-w-sm">
+              Access your personalized fitness plans, track progress, and
+              connect with your coach — all in one place.
             </p>
           </motion.div>
         </div>
