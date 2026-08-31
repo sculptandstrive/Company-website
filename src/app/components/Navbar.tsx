@@ -135,7 +135,7 @@ export function Navbar() {
                       <ChevronDown
                         size={16}
                         className={`transition-transform duration-200 ${
-                          programsOpen ? "rotate-180" : "rotate-0"
+                          nutritionOpen ? "rotate-180" : "rotate-0"
                         }`}
                       />
                       </Link>
