@@ -5,6 +5,7 @@ import { Menu, X, MapPin, Smartphone, User, ShoppingCart } from "lucide-react";
 import logo from "../../assets/sculpt-and-strive-logo.jpg";
 import ProgramsMegaMenu from "./mega-menu/ProgramsMegaMenu";
 import NutritionMegaMenu from "./mega-menu/NutritionMegaMenu";
+import { ChevronDown } from "lucide-react";
 
 interface NavLink {
   label: string;
@@ -72,28 +73,6 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav — 16–18px, 700 weight, single word (Table 3) */}
-          {/* <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => {
-              const active = location.pathname === link.to;
-              return (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`relative text-[17px] font-bold tracking-wide transition-opacity duration-200 hover:opacity-70 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sculpt-lime ${
-                    active ? "text-sculpt-lime" : "text-white"
-                  }`}
-                >
-                  {link.label}
-                  {active && (
-                    <motion.div
-                      layoutId="navIndicator"
-                      className="absolute -bottom-2 left-0 right-0 h-[2px] rounded-full bg-sculpt-lime"
-                    />
-                  )}
-                </Link>
-              );
-            })}
-          </div> */}
 
           {/* for program mega-menu */}
           <div className="hidden lg:flex items-center gap-8">
@@ -110,11 +89,17 @@ export function Navbar() {
                   >
                     <Link
                       to={link.to}
-                      className={`relative text-[17px] font-bold tracking-wide transition-opacity duration-200 hover:opacity-70 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sculpt-lime ${
+                      className={`relative flex items-center gap-1 text-[17px] font-bold tracking-wide transition-opacity duration-200 hover:opacity-70 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sculpt-lime ${
                         active ? "text-sculpt-lime" : "text-white"
                       }`}
                     >
                       {link.label}
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-200 ${
+                          programsOpen ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
 
                       {active && (
                         <motion.div
@@ -124,11 +109,8 @@ export function Navbar() {
                       )}
                     </Link>
 
-                    {programsOpen && (
-                      <ProgramsMegaMenu
-                        onClose={() => setProgramsOpen(false)}
-                      />
-                    )}
+                    {/* {nutritionOpen && <NutritionMegaMenu />} */}
+                    {programsOpen && <ProgramsMegaMenu />}
                   </div>
                 );
               }
@@ -145,18 +127,18 @@ export function Navbar() {
                   >
                     <Link
                       to={link.to}
-                      className={`relative text-[17px] font-bold tracking-wide transition-opacity duration-200 hover:opacity-70 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sculpt-lime ${
+                      className={`relative flex items-center gap-1 text-[17px] font-bold tracking-wide transition-opacity duration-200 hover:opacity-70 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sculpt-lime ${
                         active ? "text-sculpt-lime" : "text-white"
                       }`}
                     >
                       {link.label}
-                      {active && (
-                        <motion.div
-                          layoutId="navIndicator"
-                          className="absolute -bottom-2 left-0 right-0 h-[2px] rounded-full bg-sculpt-lime"
-                        />
-                      )}
-                    </Link>
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-200 ${
+                          programsOpen ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
+                      </Link>
 
                     {nutritionOpen && <NutritionMegaMenu />}
                   </div>
