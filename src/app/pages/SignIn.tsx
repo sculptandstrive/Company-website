@@ -27,9 +27,9 @@ export function SignIn() {
         <div className="w-full max-w-md">
           {/* Heading */}
           <div className="mb-7">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
+            {/* <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
               WELCOME <span className="text-[#B8F27C]">BACK</span>
-            </h1>
+            </h1> */}
             {/* <h1
               
               className="text-4xl sm:text-5xl text-white mb-2"

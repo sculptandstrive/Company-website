@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, MapPin, Smartphone, User, ShoppingCart } from "lucide-react";
 import logo from "../../assets/sculpt-and-strive-logo.jpg";
+import ProgramsMegaMenu from "./mega-menu/ProgramsMegaMenu";
+import NutritionMegaMenu from "./mega-menu/NutritionMegaMenu";
 
 interface NavLink {
   label: string;
@@ -10,13 +12,15 @@ interface NavLink {
 }
 const navLinks: NavLink[] = [
   { label: "PROGRAMS", to: "/programs" },
-  { label: "ASSESSMENTS", to: "/assessments" },
   { label: "NUTRITION", to: "/nutrition" },
+  { label: "ASSESSMENTS", to: "/assessments" },
   { label: "ABOUT", to: "/about" },
   { label: "TRAINERS", to: "/trainers" },
 ];
 
 export function Navbar() {
+  const [programsOpen, setProgramsOpen] = useState(false);
+  const [nutritionOpen, setNutritionOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [cartCount] = useState(0); // TODO: wire to real cart state
@@ -68,7 +72,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav — 16–18px, 700 weight, single word (Table 3) */}
-          <div className="hidden lg:flex items-center gap-8">
+          {/* <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => {
               const active = location.pathname === link.to;
               return (
@@ -80,6 +84,95 @@ export function Navbar() {
                   }`}
                 >
                   {link.label}
+                  {active && (
+                    <motion.div
+                      layoutId="navIndicator"
+                      className="absolute -bottom-2 left-0 right-0 h-[2px] rounded-full bg-sculpt-lime"
+                    />
+                  )}
+                </Link>
+              );
+            })}
+          </div> */}
+
+          {/* for program mega-menu */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => {
+              const active = location.pathname === link.to;
+
+              if (link.label === "PROGRAMS") {
+                return (
+                  <div
+                    key={link.to}
+                    className="relative h-full flex items-center"
+                    onMouseEnter={() => setProgramsOpen(true)}
+                    onMouseLeave={() => setProgramsOpen(false)}
+                  >
+                    <Link
+                      to={link.to}
+                      className={`relative text-[17px] font-bold tracking-wide transition-opacity duration-200 hover:opacity-70 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sculpt-lime ${
+                        active ? "text-sculpt-lime" : "text-white"
+                      }`}
+                    >
+                      {link.label}
+
+                      {active && (
+                        <motion.div
+                          layoutId="navIndicator"
+                          className="absolute -bottom-2 left-0 right-0 h-[2px] rounded-full bg-sculpt-lime"
+                        />
+                      )}
+                    </Link>
+
+                    {programsOpen && (
+                      <ProgramsMegaMenu
+                        onClose={() => setProgramsOpen(false)}
+                      />
+                    )}
+                  </div>
+                );
+              }
+
+              // for nutrition mega-menu
+
+              if (link.label === "NUTRITION") {
+                return (
+                  <div
+                    key={link.to}
+                    className="relative h-full flex items-center"
+                    onMouseEnter={() => setNutritionOpen(true)}
+                    onMouseLeave={() => setNutritionOpen(false)}
+                  >
+                    <Link
+                      to={link.to}
+                      className={`relative text-[17px] font-bold tracking-wide transition-opacity duration-200 hover:opacity-70 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sculpt-lime ${
+                        active ? "text-sculpt-lime" : "text-white"
+                      }`}
+                    >
+                      {link.label}
+                      {active && (
+                        <motion.div
+                          layoutId="navIndicator"
+                          className="absolute -bottom-2 left-0 right-0 h-[2px] rounded-full bg-sculpt-lime"
+                        />
+                      )}
+                    </Link>
+
+                    {nutritionOpen && <NutritionMegaMenu />}
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`relative text-[17px] font-bold tracking-wide transition-opacity duration-200 hover:opacity-70 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sculpt-lime ${
+                    active ? "text-sculpt-lime" : "text-white"
+                  }`}
+                >
+                  {link.label}
+
                   {active && (
                     <motion.div
                       layoutId="navIndicator"
