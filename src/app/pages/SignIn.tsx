@@ -42,67 +42,67 @@ export function SignIn() {
             </p>
           </div>
 
-{/* FORM */}
-<form
-  className="space-y-4"
-  onSubmit={(e) => {
-    e.preventDefault();
-    window.location.href = "https://sculptandstrive-users.user-sculptandstrive.workers.dev/auth";
-  }}
->
-  {/* EMAIL */}
-  <div>
-    <label className="block text-white/50 text-xs font-semibold mb-2 tracking-wider uppercase">
-      Email Address
-    </label>
-    <input
-      type="email"
-      value={form.email}
-      onChange={(e) =>
-        setForm((p) => ({
-          ...p,
-          email: e.target.value,
-        }))
-      }
-      placeholder="your@email.com"
-      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all"
-    />
-  </div>
-  {/* PASSWORD */}
-  <div>
-    <div className="flex justify-between mb-2">
-           <label className="text-white/50 text-xs font-semibold tracking-wider uppercase">
-        Password
-      </label>
-      
-        href="#"
-        className="text-[#B8F27C] text-xs hover:text-[#B8F27C] transition-colors"
-      >
-        Forgot password?
-      </a>
-    </div>
-    <div className="relative">
-      <input
-        type={showPass ? "text" : "password"}
-        value={form.password}
-        onChange={(e) =>
-          setForm((p) => ({
-            ...p,
-            password: e.target.value,
-          }))
-        }
-        placeholder="••••••••"
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all pr-12"
-      />
-      <button
-        type="button"
-        onClick={() => setShowPass(!showPass)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/70 transition-colors"
-      >
-        {showPass ? <EyeOff size={16} /> : <Eye size={16} />}
-      </button>
-    </div>
-  </div>
+ {/* FORM */}
+          <form
+            className="space-y-4"
+            onSubmit={(e) => {
+              e.preventDefault();
+              window.location.href = "https://sculptandstrive-users.user-sculptandstrive.workers.dev/auth";
+            }}
+          >
+            {/* EMAIL */}
+            <div>
+              <label className="block text-white/50 text-xs font-semibold mb-2 tracking-wider uppercase">
+                Email Address
+              </label>
+              <input
+                type="email"
+                value={form.email}
+                onChange={(e) =>
+                  setForm((p) => ({
+                    ...p,
+                    email: e.target.value,
+                  }))
+                }
+                placeholder="your@email.com"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all"
+              />
+            </div>
+            {/* PASSWORD */}
+            <div>
+              <div className="flex justify-between mb-2">
+                <label className="text-white/50 text-xs font-semibold tracking-wider uppercase">
+                  Password
+                </label>
+                
+                  href="#"
+                  className="text-[#B8F27C] text-xs hover:text-[#B8F27C] transition-colors"
+                >
+                  Forgot password?
+                </a>
+              </div>
+              <div className="relative">
+                <input
+                  type={showPass ? "text" : "password"}
+                  value={form.password}
+                  onChange={(e) =>
+                    setForm((p) => ({
+                      ...p,
+                      password: e.target.value,
+                    }))
+                  }
+                  placeholder="••••••••"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all pr-12"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPass(!showPass)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/70 transition-colors"
+                >
+                  {showPass ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
+              </div>
+            </div>
   
 
             {/* SIGN IN BUTTON */}
