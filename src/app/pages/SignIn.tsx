@@ -71,7 +71,7 @@ export function SignIn() {
   {/* PASSWORD */}
   <div>
     <div className="flex justify-between mb-2">
-      <label className="text-white/50 text-xs font-semibold tracking-wider uppercase">
+           <label className="text-white/50 text-xs font-semibold tracking-wider uppercase">
         Password
       </label>
       
