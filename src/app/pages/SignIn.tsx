@@ -27,6 +27,16 @@ export function SignIn() {
         <div className="w-full max-w-md">
           {/* Heading */}
           <div className="mb-7">
+            {/* <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
+              WELCOME <span className="text-[#B8F27C]">BACK</span>
+            </h1> */}
+            {/* <h1
+              
+              className="text-4xl sm:text-5xl text-white mb-2"
+            >
+              WELCOME BACK
+            </h1> */}
+
             <p className="text-white/50 text-sm">
               Sign in to continue your fitness journey.
             </p>
@@ -34,17 +44,18 @@ export function SignIn() {
 
           {/* FORM */}
           <form
-            className="space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              window.location.href = "https://sculptandstrive-users.user-sculptandstrive.workers.dev/auth";
-            }}
-          >
+  className="space-y-4"
+  onSubmit={(e) => {
+    e.preventDefault();
+    window.location.href = "https://sculptandstrive-users.user-sculptandstrive.workers.dev/auth";
+  }}
+>
             {/* EMAIL */}
             <div>
               <label className="block text-white/50 text-xs font-semibold mb-2 tracking-wider uppercase">
                 Email Address
               </label>
+
               <input
                 type="email"
                 value={form.email}
@@ -65,13 +76,15 @@ export function SignIn() {
                 <label className="text-white/50 text-xs font-semibold tracking-wider uppercase">
                   Password
                 </label>
-                
+
+                <a
                   href="#"
                   className="text-[#B8F27C] text-xs hover:text-[#B8F27C] transition-colors"
                 >
                   Forgot password?
                 </a>
               </div>
+
               <div className="relative">
                 <input
                   type={showPass ? "text" : "password"}
@@ -85,6 +98,7 @@ export function SignIn() {
                   placeholder="••••••••"
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all pr-12"
                 />
+
                 <button
                   type="button"
                   onClick={() => setShowPass(!showPass)}
@@ -109,9 +123,11 @@ export function SignIn() {
           {/* DIVIDER */}
           <div className="mt-5 flex items-center gap-4">
             <div className="flex-1 h-px bg-white/10" />
+
             <span className="text-white/30 text-xs whitespace-nowrap">
               or continue with
             </span>
+
             <div className="flex-1 h-px bg-white/10" />
           </div>
 
@@ -162,6 +178,7 @@ export function SignIn() {
         <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#171A26]/30 to-[#171A26]/70" />
 
         {/* CONTENT - CENTERED VERTICALLY */}
+        {/* <div className="absolute inset-0 flex items-center px-12 xl:px-20 pt-0"> */}
         <div className="absolute top-40 left-0 right-0 px-12 xl:px-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -171,12 +188,16 @@ export function SignIn() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#B8F27C]/20 border border-[#B8F27C]/40 mb-5">
               <Zap size={14} className="text-[#B8F27C]" />
+
               <span className="text-[#B8F27C] text-sm font-semibold">
                 Start Your Journey
               </span>
             </div>
 
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
+            <h2
+              className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
+              // className="text-5xl xl:text-6xl text-white mb-4"
+            >
               EVERY REP
               <br />
               <span className="text-[#B8F27C] block mt-2"> COUNTS</span>
