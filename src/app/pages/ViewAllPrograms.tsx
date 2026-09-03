@@ -1,0 +1,574 @@
+import React from "react";
+import { Navbar } from "../components/Navbar";
+import { motion } from "motion/react";
+import yoga1 from "../../assets/yoga1.jpg";
+import yoga2 from "../../assets/yoga2.jpg";
+import yoga3 from "../../assets/yoga3.jpg";
+import {
+  Dumbbell,
+  PersonStanding,
+  HeartPulse,
+  Leaf,
+  Move,
+  BriefcaseBusiness,
+  UserRoundCheck,
+  ClipboardList,
+  PlayCircle,
+  ChartNoAxesCombined,
+  UsersRound,
+  ArrowRight,
+} from "lucide-react";
+import { Link } from "react-router";
+
+const programPaths = [
+  {
+    number: "01",
+    title: "Become a Certified Personal Trainer",
+    description:
+      "Start your fitness career with confidence through a structured certification pathway.",
+    button: "Explore Personal Trainer Programs",
+  },
+  {
+    number: "02",
+    title: "Fitness + Nutrition",
+    description:
+      "Go beyond training with education across fitness, nutrition, and wellness.",
+    button: "Explore Fitness & Nutrition",
+  },
+  {
+    number: "03",
+    title: "Career-Focused Bundles",
+    description:
+      "Build multiple professional skills through comprehensive education bundles.",
+    button: "Compare Career Bundles",
+  },
+  {
+    number: "04",
+    title: "Specialize Your Expertise",
+    description:
+      "Develop focused knowledge for specific populations, goals, and training areas.",
+    button: "Explore Specializations",
+  },
+  {
+    number: "05",
+    title: "Group Fitness",
+    description: "Develop the skills to lead and train groups.",
+    button: "Explore Group Fitness",
+  },
+  {
+    number: "06",
+    title: "Continuing Education",
+    description:
+      "Keep developing your knowledge across training, nutrition, behavior, and wellness.",
+    button: "Explore Continuing Education",
+  },
+];
+
+const popularPrograms = [
+  {
+    title: "Strength Builder",
+    duration: "8 Weeks Program",
+    description:
+      "Build strength, improve endurance, and develop a stronger foundation through structured training.",
+    image: yoga1,
+  },
+  {
+    title: "Fat Loss Accelerator",
+    duration: "6 Weeks Program",
+    description:
+      "Follow a structured approach to improve fitness, build healthy habits, and work toward your fat-loss goals.",
+    image: yoga2,
+  },
+  {
+    title: "Athletic Performance",
+    duration: "12 Weeks Program",
+    description:
+      "Develop strength, speed, conditioning, and movement skills to perform at your best.",
+    image: yoga3,
+  },
+];
+
+const programCategories = [
+  {
+    title: "Fitness",
+    description: "Build strength and endurance.",
+    icon: Dumbbell,
+  },
+  {
+    title: "Sports Performance",
+    description: "Enhance athletic performance.",
+    icon: PersonStanding,
+  },
+  {
+    title: "Physical Recovery",
+    description: "Recover faster and move better.",
+    icon: HeartPulse,
+  },
+  {
+    title: "Holistic Health",
+    description: "Mind, body and lifestyle balance.",
+    icon: Leaf,
+  },
+  {
+    title: "Movement Optimization",
+    description: "Improve mobility and flexibility.",
+    icon: Move,
+  },
+  {
+    title: "Business Building",
+    description: "Grow your fitness business.",
+    icon: BriefcaseBusiness,
+  },
+];
+
+const programFeatures = [
+  {
+    title: "Expert Coaching",
+    description:
+      "Learn from experienced fitness professionals who guide you throughout your program.",
+    icon: UserRoundCheck,
+  },
+  {
+    title: "Personalized Plans",
+    description:
+      "Follow structured plans designed around your goals, experience, and progress.",
+    icon: ClipboardList,
+  },
+  {
+    title: "Video Workouts",
+    description:
+      "Access guided video workouts to help you train with confidence wherever you are.",
+    icon: PlayCircle,
+  },
+  {
+    title: "Progress Tracking",
+    description:
+      "Track your progress and stay motivated as you work toward your goals.",
+    icon: ChartNoAxesCombined,
+  },
+  {
+    title: "Community Support",
+    description:
+      "Stay connected with a supportive community throughout your fitness journey.",
+    icon: UsersRound,
+  },
+];
+
+export const ViewAllPrograms = () => {
+  return (
+    <div>
+      {/* 1. Hero */}
+      <section className="relative h-[60vh] min-h-[680px] flex items-center overflow-hidden bg-[#171A26]">
+        {/* Background */}
+        <div className="absolute inset-0">
+          {/* <img
+            src="/images/programs-hero.jpg"
+            alt="Sculpt & Strive fitness education"
+            className="h-full w-full object-cover object-center"
+          /> */}
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
+
+          {/* Bottom fade */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 md:px-10 pt-20">
+          {/* <div className="mx-auto max-w-7xl"> */}
+          <motion.div
+            className="max-w-[700px] text-left md:ml-30"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Small Label */}
+            <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
+              Sculpt & Strive
+            </span>
+
+            {/* Heading */}
+            <h1 className="mb-7 text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
+              BUILD YOUR KNOWLEDGE.
+              <br />
+              <span className="mt-3 inline-block bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
+                SHAPE YOUR CAREER.
+              </span>
+              <br />
+              <span className="mt-3 inline-block">TRANSFORM LIVES.</span>
+            </h1>
+
+            {/* Description */}
+            <p className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
+              Explore flexible fitness education programs designed to help you
+              build expertise, advance your career, and transform lives.
+            </p>
+            {/* Buttons */}
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              {/* Explore Programs */}
+              <Link
+                to="#"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+              >
+                {" "}
+                Explore Programs{" "}
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />{" "}
+              </Link>
+
+              {/* Find Your Path */}
+              <Link
+                to="#"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button border border-sculpt-border text-white text-sm md:text-base font-bold transition-all duration-200 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+              >
+                {" "}
+                Find Your Path{" "}
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 2. Choose Your Path */}
+      <section className="bg-[#232631] px-6 py-15 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          {/* Section Heading */}
+          <div className="mb-12 max-w-3xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
+              Choose Your Path
+            </p>
+
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+              Build the skills that move your career forward.
+            </h2>
+
+            <p className="mt-5 text-base leading-7 text-white/60 sm:text-lg">
+              Explore flexible education pathways designed to help you start,
+              specialize, and grow your fitness career.
+            </p>
+          </div>
+
+          {/* Program Path Cards */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {programPaths.map((path) => (
+              <div
+                key={path.number}
+                className="
+            group
+            block
+            min-h-[180px]
+            rounded-2xl
+            border border-[#4B4F5D]
+            bg-[#171A26]
+            p-6
+            transition-all duration-200
+            hover:-translate-y-1
+            hover:border-[#B8F27C]
+            hover:shadow-lg
+          "
+              >
+                {/* Small Number */}
+                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#B8F27C]">
+                  {path.number}
+                </p>
+
+                {/* Program Title */}
+                <h3 className="text-xl font-bold leading-tight text-white">
+                  {path.title}
+                </h3>
+
+                {/* Description */}
+                <p className="mt-3 max-w-sm text-sm leading-[1.4] text-[#A7A8AF]">
+                  {path.description}
+                </p>
+
+                {/* Explore Button */}
+                <button
+                  type="button"
+                  className="
+              mt-5
+              inline-flex
+              items-center
+              gap-2
+              text-sm
+              font-semibold
+              text-[#B8F27C]
+              transition-all
+              duration-200
+              group-hover:gap-3
+            "
+                >
+                  {path.button}
+                  <span>→</span>
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Program Categories */}
+      <section className="bg-[#4B4F5D] px-6 py-18 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          {/* Section Heading */}
+          <div className="mb-12 max-w-3xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
+              Program Categories
+            </p>
+
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+              Explore your area of expertise.
+            </h2>
+
+            <p className="mt-5 max-w-2xl text-base leading-7 text-white/60 sm:text-lg">
+              Discover programs across fitness, performance, recovery, wellness,
+              movement, and business.
+            </p>
+          </div>
+
+          {/* Categories */}
+          <div className="grid gap-4 md:grid-cols-2">
+            {programCategories.map((category, index) => {
+              const Icon = category.icon;
+
+              return (
+                <motion.div
+                  key={category.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.08,
+                  }}
+                  className="group flex items-center justify-between rounded-2xl border border-[#26313D] bg-[#171A26] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#B8F27C]/50"
+                >
+                  {/* Left */}
+                  <div className="flex items-center gap-5">
+                    {/* Icon */}
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#B8F27C]/10">
+                      <Icon
+                        size={23}
+                        strokeWidth={1.8}
+                        className="text-[#B8F27C]"
+                      />
+                    </div>
+
+                    {/* Text */}
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">
+                        {category.title}
+                      </h3>
+
+                      <p className="mt-1 text-sm text-[#A7A8AF]">
+                        {category.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  <span className="ml-4 text-xl text-white/40 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#B8F27C]">
+                    →
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Popular Programs */}
+      <section className="bg-[#171A26] px-6 py-15 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          {/* Section Heading */}
+          <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div className="max-w-3xl">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
+                Popular Programs
+              </p>
+
+              <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+                Programs built to help you move forward.
+              </h2>
+
+              <p className="mt-5 text-base leading-7 text-white/60 sm:text-lg">
+                Explore some of our most popular programs designed around
+                strength, performance, and transformation.
+              </p>
+            </div>
+
+            {/* <button
+              type="button"
+              className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#B8F27C] transition-all duration-200 hover:gap-3"
+            >
+              Explore All Programs
+              <span>→</span>
+            </button> */}
+          </div>
+
+          {/* Program Cards */}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {popularPrograms.map((program, index) => (
+              <motion.div
+                key={program.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
+                className="group overflow-hidden rounded-2xl border border-[#26313D] bg-[#232631] transition-all duration-300 hover:-translate-y-1 hover:border-[#B8F27C]/50"
+              >
+                {/* Image */}
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={program.image}
+                    alt={program.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#232631] via-transparent to-transparent" />
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-[#B8F27C]">
+                    {program.duration}
+                  </p>
+
+                  <h3 className="mt-3 text-2xl font-bold text-white">
+                    {program.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-[#A7A8AF]">
+                    {program.description}
+                  </p>
+
+                  <button
+                    type="button"
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#B8F27C] transition-all duration-200 group-hover:gap-3"
+                  >
+                    View Program
+                    <span>→</span>
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. What's Included */}
+      <section className="bg-[#232631] px-6 py-15 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          {/* Section Heading */}
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
+              What's Included
+            </p>
+
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+              Everything you need to keep moving forward.
+            </h2>
+
+            <p className="mt-5 text-base leading-7 text-white/60 sm:text-lg">
+              Get the tools, guidance, and support you need to make meaningful
+              progress throughout your program.
+            </p>
+          </div>
+
+          {/* Features */}
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {programFeatures.map((feature, index) => {
+              const Icon = feature.icon;
+
+              return (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.08,
+                  }}
+                  className="group rounded-2xl border border-[#26313D] bg-[#171A26] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6B5E]/50 hover:bg-[#FF6B5E]/10"
+                >
+                  {/* Icon */}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FF6B5E]/15">
+                    <Icon
+                      size={23}
+                      strokeWidth={1.8}
+                      className="text-[#FF6B5E]"
+                    />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="mt-5 text-lg font-semibold text-white">
+                    {feature.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="mt-3 text-sm leading-6 text-[#A7A8AF]">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Not Sure Where to Start? */}
+      <section className="bg-[#4B4F5D] px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="relative overflow-hidden rounded-3xl border border-[#26313D] bg-[#232631] px-6 py-12 sm:px-10 lg:px-16"
+          >
+            {/* Background Glow */}
+            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#B8F27C]/10 blur-3xl" />
+            <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#42C7C5]/10 blur-3xl" />
+
+            <div className="relative z-10 flex flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left">
+              {/* Content */}
+              <div className="max-w-2xl">
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
+                  Not Sure Where to Start?
+                </p>
+
+                <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
+                  Find the program that's right for you.
+                </h2>
+
+                <p className="mt-4 text-base leading-7 text-white/60 sm:text-lg">
+                  Take our quick assessment and we'll guide you toward a program
+                  that matches your goals, experience, and needs.
+                </p>
+              </div>
+
+              {/* Button */}
+              <Link
+                to="#"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+              >
+                Take Assessment
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+};

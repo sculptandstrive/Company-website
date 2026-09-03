@@ -1,169 +1,221 @@
 import React from "react";
+import {
+  Apple,
+  Scale,
+  Dumbbell,
+  Trophy,
+  Utensils,
+  Pill,
+  BookOpen,
+  Salad,
+  Calculator,
+  ArrowRight,
+  Target,
+  ClipboardCheck,
+} from "lucide-react";
 import { Link } from "react-router";
-import { ArrowRight } from "lucide-react";
 
-const topics = [
-  "Nutrition Coaching",
-  "Sports Nutrition",
-  "Nutrition & Fitness",
-  "Wellness & Nutrition",
-  "Nutrition Resources",
+type NutritionItem = {
+  icon: React.ComponentType<{ size?: number; className?: string }>;
+  title: string;
+};
+
+const nutritionPlans: NutritionItem[] = [
+  {
+    icon: Target,
+    title: "Personalized Nutrition",
+  },
+  {
+    icon: Scale,
+    title: "Weight Loss Nutrition",
+  },
+  {
+    icon: Dumbbell,
+    title: "Muscle Building Nutrition",
+  },
+  {
+    icon: Trophy,
+    title: "Sports Nutrition",
+  },
+  {
+    icon: Utensils,
+    title: "Meal Planning",
+  },
+  {
+    icon: Pill,
+    title: "Supplement Guidance",
+  },
 ];
 
-const NutritionMegaMenu = () => {
+const nutritionResources: NutritionItem[] = [
+  {
+    icon: BookOpen,
+    title: "Nutrition Guides",
+  },
+  {
+    icon: Salad,
+    title: "Recipes",
+  },
+  {
+    icon: Utensils,
+    title: "Meal Plans",
+  },
+  {
+    icon: Calculator,
+    title: "Nutrition Calculator",
+  },
+];
+
+const getStartedItems: NutritionItem[] = [
+  {
+    icon: Target,
+    title: "Find Your Nutrition Plan",
+  },
+  {
+    icon: Calculator,
+    title: "Calculate Your Calories",
+  },
+  {
+    icon: Utensils,
+    title: "Explore Meal Plans",
+  },
+  {
+    icon: BookOpen,
+    title: "Read Nutrition Guides",
+  },
+];
+
+const ColumnHeading = ({ children }: { children: React.ReactNode }) => (
+  <p className="mb-4 text-[13px] font-semibold uppercase tracking-wide text-[#B8F27C]">
+    {children}
+  </p>
+);
+
+export default function NutritionDropdown() {
   return (
-    <div className="absolute left-1/2 top-full z-50 pt-3 -translate-x-1/2">
-      <div className="overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black/5 border border-[#171A26]/10">
-        <div className="grid grid-cols-[max-content_max-content] gap-x-6 gap-y-1 p-4">
-          {topics.map((topic) => (
-            
-              <a href="#"
-              key={topic}
-              className="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-[#171A26]/80 transition-colors duration-150 whitespace-nowrap hover:bg-sculpt-lime hover:text-[#171A26]"
-            >
-              <ArrowRight
-                size={14}
-                className="text-[#171A26]/40 transition-colors duration-150 group-hover:text-[#171A26]"
-              />
-              <span>{topic}</span>
-            </a>
-          ))}
+    <div className="fixed left-1/2 top-[64px] z-50 -translate-x-1/2 after:absolute after:-top-4 after:left-0 after:h-4 after:w-full">
+      <div
+        className="
+          mx-auto grid grid-cols-2 gap-8 p-6
+          w-[1000px] max-w-[calc(100vw-48px)] min-w-[900px]
+          rounded-2xl border border-[#26313D] bg-[#232631]
+          shadow-[0_20px_60px_rgba(0,0,0,0.40)]
+        "
+      >
+        {/* Column 1 — Nutrition Plans */}
+        <div>
+          <ColumnHeading>Nutrition Plans</ColumnHeading>
+
+          <ul className="space-y-1">
+            {nutritionPlans.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <li key={item.title}>
+                  <button
+                    type="button"
+                    className="
+              group flex w-full items-center gap-3
+              rounded-lg px-3 py-3 text-left
+              transition-colors duration-200
+              hover:bg-[#4B4F5D]
+            "
+                  >
+                    <Icon
+                      size={17}
+                      className="
+                shrink-0 text-[#A7A8AF]
+                transition-colors duration-200
+                group-hover:text-[#FF6B5E]
+              "
+                    />
+
+                    <span
+                      className="
+                text-[15px] font-medium text-[#E2E8F0]
+                transition-colors duration-200
+                group-hover:text-white
+              "
+                    >
+                      {item.title}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
         </div>
 
-        <div className="border-t border-[#171A26]/10 px-3 py-2.5">
-          <Link
-            to="/nutrition"
-            className="group flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium text-[#FF6B5E] transition-colors duration-150 hover:bg-sculpt-lime hover:text-[#171A26]"
-          >
-            <ArrowRight
-              size={14}
-              className="text-[#FF6B5E] transition-colors duration-150 group-hover:text-[#171A26]"
-            />
-            <span>View all programs</span>
-          </Link>
+        {/* Column 2 — Resources */}
+        <div className="border-l border-[#4B4F5D] pl-8">
+          <ColumnHeading>Resources</ColumnHeading>
+
+          <ul className="space-y-1">
+            {nutritionResources.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <li key={item.title}>
+                  <button
+                    type="button"
+                    className="
+              group flex w-full items-center gap-3
+              rounded-lg px-3 py-3 text-left
+              transition-colors duration-200
+              hover:bg-[#4B4F5D]
+            "
+                  >
+                    <Icon
+                      size={17}
+                      className="
+                shrink-0 text-[#A7A8AF]
+                transition-colors duration-200
+                group-hover:text-[#FF6B5E]
+              "
+                    />
+
+                    <span
+                      className="
+                text-[15px] font-medium text-[#E2E8F0]
+                transition-colors duration-200
+                group-hover:text-white
+              "
+                    >
+                      {item.title}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+          {/* CTA Card */}
+          <div className="mt-5 rounded-[10px] bg-[#171A26] p-4">
+            <p className="text-[14px] font-semibold text-white">
+              Ready to improve your nutrition?
+            </p>
+
+            <p className="mt-1 text-[12px] leading-relaxed text-[#A7A8AF]">
+              Explore nutrition plans designed to support your health and
+              fitness goals.
+            </p>
+
+            <Link
+              to="/nutrition/explore"
+              className="
+    mt-5 inline-flex items-center gap-1.5
+    rounded-lg border border-[#FF6B5E]
+    px-3 py-2
+    text-[14px] font-semibold text-[#FF6B5E]
+    transition-colors duration-200
+    hover:bg-[#FF6B5E] hover:text-white
+  "
+            >
+              Explore Nutrition
+              <ArrowRight size={14} />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default NutritionMegaMenu;
-
-
-
-
-
-// import React from "react";
-// import { ArrowUpRight } from "lucide-react";
-
-// const topics = [
-//   "Nutrition Coaching",
-//   "Sports Nutrition",
-//   "Nutrition & Fitness",
-//   "Wellness & Nutrition",
-//   "Nutrition Resources",
-// ];
-
-// const programs = [
-//   {
-//     title: "GLP-1 Education",
-//     description: "Understand and support clients using GLP-1 medications.",
-//   },
-//   {
-//     title: "Nutrition + Fitness",
-//     description: "Combine nutrition coaching with fitness programming.",
-//   },
-//   {
-//     title: "Sports Nutrition",
-//     description: "Learn nutrition strategies for performance.",
-//   },
-// ];
-
-// const NutritionMegaMenu = () => {
-//   return (
-//     <div className="absolute left-1/2 top-full z-50 pt-3 w-[820px] max-w-[92vw] -translate-x-1/2">
-//       <div className="overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/5">
-//         <div className="grid grid-cols-[220px_minmax(0,1fr)]">
-//           {/* LEFT - TOPICS */}
-//           <div className="bg-[#4B4F5D] px-6 py-6">
-//             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#B8F27C]">
-//               Explore Nutrition
-//             </p>
-//             <div className="space-y-1">
-//               {topics.map((topic) => (
-//                 <button
-//                   key={topic}
-//                   className="group flex w-full items-center justify-between border-b border-white/10 py-2 text-left text-sm text-white/80 transition-all duration-200 hover:pl-2 hover:text-[#B8F27C]"
-//                 >
-//                   <span>{topic}</span>
-//                   <ArrowUpRight size={13} className="opacity-0 transition-opacity group-hover:opacity-100" />
-//                 </button>
-//               ))}
-//             </div>
-//           </div>
-
-//           {/* RIGHT - NUTRITION PROGRAMS */}
-//           <div className="px-7 py-6">
-//             <div className="mb-5 flex items-end justify-between">
-//               <div>
-//                 <p className="mb-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#FF6B5E]">
-//                   Nutrition
-//                 </p>
-//                 <h2 className="text-2xl font-semibold tracking-tight text-[#171A26]">
-//                   Find Your Path
-//                 </h2>
-//               </div>
-              
-//                 <a href="#"
-//                 className="text-sm font-medium text-[#171A26] underline underline-offset-4 hover:text-[#FF6B5E]"
-//               >
-//                 View All Programs
-//               </a>
-//             </div>
-
-//             <div className="grid grid-cols-2 gap-4">
-//               {programs.map((program) => (
-                
-//                   <a href="#"
-//                   key={program.title}
-//                   className="group rounded-xl border border-[#171A26]/15 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#B8F27C] hover:shadow-lg"
-//                 >
-//                   <div className="mb-6 flex items-start justify-between">
-//                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#B8F27C] text-sm font-bold text-[#171A26]">
-//                       →
-//                     </span>
-//                     <ArrowUpRight
-//                       size={18}
-//                       className="text-[#171A26]/40 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#FF6B5E]"
-//                     />
-//                   </div>
-//                   <h3 className="text-lg font-semibold text-[#171A26]">{program.title}</h3>
-//                   <p className="mt-1 text-sm leading-6 text-[#171A26]/60">{program.description}</p>
-//                 </a>
-//               ))}
-//             </div>
-
-//             {/* SPORTS NUTRITION CTA */}
-            
-//               <a href="#"
-//               className="group mt-4 flex items-center justify-between rounded-xl bg-[#171A26] px-5 py-4 transition-all duration-300 hover:bg-[#FF6B5E]"
-//             >
-//               <div>
-//                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#B8F27C]">
-//                   Featured Program
-//                 </p>
-//                 <h3 className="mt-1 text-base font-semibold text-white">Sports Nutrition</h3>
-//               </div>
-//               <ArrowUpRight
-//                 size={22}
-//                 className="text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-//               />
-//             </a>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default NutritionMegaMenu;
+}

@@ -9,6 +9,9 @@ import {
   ArrowRight,
 } from "lucide-react";
 import logoImg from "../../assets/sculpt-and-strive-logo.jpg";
+import app1 from "../../assets/play-store.png";
+import app2 from "../../assets/apple-store.jpg";
+import { motion } from "framer-motion";
 
 export function Footer() {
   return (
@@ -38,7 +41,7 @@ export function Footer() {
         </div>
 
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-5">
@@ -201,6 +204,48 @@ export function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Download App */}
+{/* Download App */}
+<div>
+  <h4 className="text-white font-semibold text-sm mb-5 tracking-wider uppercase">
+    Download App
+  </h4>
+
+  <div className="flex flex-col gap-3">
+    <motion.a
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ duration: 0.2 }}
+      className="block w-[160px] h-[48px] rounded-lg overflow-hidden bg-black border border-white/10"
+    >
+      <img
+        src={app1}
+        alt="Get it on Google Play"
+        className="w-full h-full object-cover block"
+      />
+    </motion.a>
+
+    <motion.a
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ duration: 0.2 }}
+      className="block w-[160px] h-[48px] rounded-lg overflow-hidden bg-black border border-white/10"
+    >
+      <img
+        src={app2}
+        alt="Download on the App Store"
+        className="w-full h-full object-cover block"
+      />
+    </motion.a>
+  </div>
+</div>
         </div>
 
         {/* Bottom Bar */}

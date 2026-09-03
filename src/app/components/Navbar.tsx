@@ -6,6 +6,7 @@ import logo from "../../assets/sculpt-and-strive-logo.jpg";
 import ProgramsMegaMenu from "./mega-menu/ProgramsMegaMenu";
 import NutritionMegaMenu from "./mega-menu/NutritionMegaMenu";
 import { ChevronDown } from "lucide-react";
+import AssessmentMegaMenu from "./mega-menu/AssessmentsMegaMenu";
 
 interface NavLink {
   label: string;
@@ -22,10 +23,12 @@ const navLinks: NavLink[] = [
 export function Navbar() {
   const [programsOpen, setProgramsOpen] = useState(false);
   const [nutritionOpen, setNutritionOpen] = useState(false);
+  const [assessmentOpen, setAssessmentOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [cartCount] = useState(0); // TODO: wire to real cart state
   const location = useLocation();
+  // const isViewAllPrograms = location.pathname === "/programs/view-all";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -35,6 +38,9 @@ export function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
+  setProgramsOpen(false);
+  setNutritionOpen(false);
+  setAssessmentOpen(false);
   }, [location.pathname]);
 
   return (
@@ -97,7 +103,7 @@ export function Navbar() {
                       <ChevronDown
                         size={16}
                         className={`transition-transform duration-200 ${
-                          programsOpen ? "rotate-180" : "rotate-0"
+                          programsOpen ? "rotate-180" : ""
                         }`}
                       />
 
@@ -109,14 +115,12 @@ export function Navbar() {
                       )}
                     </Link>
 
-                    {/* {nutritionOpen && <NutritionMegaMenu />} */}
                     {programsOpen && <ProgramsMegaMenu />}
                   </div>
                 );
               }
 
-              // for nutrition mega-menu
-
+              // Nutrition mega-menu
               if (link.label === "NUTRITION") {
                 return (
                   <div
@@ -132,15 +136,60 @@ export function Navbar() {
                       }`}
                     >
                       {link.label}
+
                       <ChevronDown
                         size={16}
                         className={`transition-transform duration-200 ${
                           nutritionOpen ? "rotate-180" : "rotate-0"
                         }`}
                       />
-                      </Link>
+
+                      {active && (
+                        <motion.div
+                          layoutId="navIndicator"
+                          className="absolute -bottom-2 left-0 right-0 h-[2px] rounded-full bg-sculpt-lime"
+                        />
+                      )}
+                    </Link>
 
                     {nutritionOpen && <NutritionMegaMenu />}
+                  </div>
+                );
+              }
+
+              // assesment mega-menu
+              if (link.label === "ASSESSMENTS") {
+                return (
+                  <div
+                    key={link.to}
+                    className="relative h-full flex items-center"
+                    onMouseEnter={() => setAssessmentOpen(true)}
+                    onMouseLeave={() => setAssessmentOpen(false)}
+                  >
+                    <Link
+                      to={link.to}
+                      className={`relative flex items-center gap-1 text-[17px] font-bold tracking-wide transition-opacity duration-200 hover:opacity-70 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sculpt-lime ${
+                        active ? "text-sculpt-lime" : "text-white"
+                      }`}
+                    >
+                      {link.label}
+
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-200 ${
+                          assessmentOpen ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
+
+                      {active && (
+                        <motion.div
+                          layoutId="navIndicator"
+                          className="absolute -bottom-2 left-0 right-0 h-[2px] rounded-full bg-sculpt-lime"
+                        />
+                      )}
+                    </Link>
+
+                    {assessmentOpen && <AssessmentMegaMenu />}
                   </div>
                 );
               }

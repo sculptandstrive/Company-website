@@ -248,95 +248,91 @@ export function GetPlan() {
       </div>
 
       {/* Plans Grid */}
+
       <section className="py-24 bg-[#171A26]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {plans.map((plan, i) => (
-              <FadeIn key={plan.id} delay={i * 0.05}>
-                <div
-                  className={`relative group rounded-3xl border transition-all duration-500 bg-[#232631] hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden ${
-                    plan.badge
-                      ? "border-[#B8F27C]/40 shadow-[0_0_30px_rgba(255,107,44,0.15)]"
-                      : "border-white/8 hover:border-white/20"
-                  }`}
-                >
-                  {plan.badge && (
-                    <div className="absolute top-0 left-0 right-0 flex justify-center">
-                      <div className="px-5 py-1.5 bg-gradient-to-r from-[#B8F27C] to-[#B8F27C] rounded-b-2xl text-[#171A26] text-xs font-bold">
-                        {plan.badge}
-                      </div>
-                    </div>
-                  )}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                  <div className="p-7 pt-8">
-                    {plan.category && (
-                      <div
-                        className="text-xs font-semibold mb-2 px-2 py-1 rounded-lg inline-block"
-                        style={{
-                          color: plan.color,
-                          backgroundColor: `${plan.color}15`,
-                        }}
-                      >
-                        {plan.category}
-                      </div>
-                    )}
-                    <h3
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                      className="text-xl font-bold text-white mb-5"
-                    >
-                      {plan.name}
-                    </h3>
+    {/* Section Header */}
+    <div className="mb-12">
+      <h2
+        style={{ fontFamily: "'Montserrat', sans-serif" }}
+        className="text-3xl md:text-4xl font-bold text-white"
+      >
+        Choose Your Plan
+      </h2>
 
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((f) => (
-                        <li
-                          key={f}
-                          className="flex items-start gap-3 text-sm text-white/65"
-                        >
-                          <CheckCircle
-                            size={16}
-                            className="mt-0.5 shrink-0"
-                            style={{ color: plan.color }}
-                          />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
+      <p className="mt-2 text-white/60 max-w-xl">
+        Explore our coaching plans and find the one that suits your goals.
+      </p>
 
-                    <button
-                      onClick={() => setSelectedPlan(plan)}
-                      className="w-full py-3.5 rounded-2xl text-sm font-bold transition-all duration-300 border"
-                      style={{
-                        backgroundColor: `${plan.color}15`,
-                        borderColor: `${plan.color}40`,
-                        color: plan.color,
-                      }}
-                      onMouseEnter={(e) => {
-                        (
-                          e.currentTarget as HTMLButtonElement
-                        ).style.backgroundColor = `${plan.color}30`;
-                        (
-                          e.currentTarget as HTMLButtonElement
-                        ).style.borderColor = plan.color;
-                      }}
-                      onMouseLeave={(e) => {
-                        (
-                          e.currentTarget as HTMLButtonElement
-                        ).style.backgroundColor = `${plan.color}15`;
-                        (
-                          e.currentTarget as HTMLButtonElement
-                        ).style.borderColor = `${plan.color}40`;
-                      }}
-                    >
-                      Enquire Now
-                    </button>
-                  </div>
+      <button
+        onClick={() => setSelectedPlan(plans[0])}
+        className="mt-4 group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+      >
+        Enquire Now
+      </button>
+    </div>
+
+    {/* Plan Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {plans.map((plan, i) => (
+        <FadeIn key={plan.id} delay={i * 0.05}>
+          <div
+            className={`relative group rounded-3xl border transition-all duration-500 bg-[#232631] hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden ${
+              plan.badge
+                ? "border-[#B8F27C]/40 shadow-[0_0_30px_rgba(255,107,44,0.15)]"
+                : "border-white/8 hover:border-white/20"
+            }`}
+          >
+            {plan.badge && (
+              <div className="absolute top-0 left-0 right-0 flex justify-center">
+                <div className="px-5 py-1.5 bg-gradient-to-r from-[#B8F27C] to-[#B8F27C] rounded-b-2xl text-[#171A26] text-xs font-bold">
+                  {plan.badge}
                 </div>
-              </FadeIn>
-            ))}
+              </div>
+            )}
+
+            <div className="p-7 pt-8">
+              {plan.category && (
+                <div
+                  className="text-xs font-semibold mb-2 px-2 py-1 rounded-lg inline-block"
+                  style={{
+                    color: plan.color,
+                    backgroundColor: `${plan.color}15`,
+                  }}
+                >
+                  {plan.category}
+                </div>
+              )}
+              <h3
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                className="text-xl font-bold text-white mb-5"
+              >
+                {plan.name}
+              </h3>
+
+              <ul className="space-y-3">
+                {plan.features.map((f) => (
+                  <li
+                    key={f}
+                    className="flex items-start gap-3 text-sm text-white/65"
+                  >
+                    <CheckCircle
+                      size={16}
+                      className="mt-0.5 shrink-0"
+                      style={{ color: plan.color }}
+                    />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </FadeIn>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Contact Info */}
       <section className="py-16 bg-[#232631]">
