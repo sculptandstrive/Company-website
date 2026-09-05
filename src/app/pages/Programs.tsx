@@ -2,7 +2,22 @@ import { useState } from "react";
 import React from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
-import { ArrowRight, CheckCircle, ChevronRight } from "lucide-react";
+import {
+  Accessibility,
+  ArrowRight,
+  Briefcase,
+  Check,
+  CheckCircle,
+  ChevronRight,
+  Dumbbell,
+  HeartPulse,
+  Move,
+  PersonStanding,
+  Scale,
+  Users,
+  Venus,
+  Waypoints,
+} from "lucide-react";
 import heroVideo from "../../assets/hero-video.mp4";
 
 // const heroImg =
@@ -15,6 +30,7 @@ const programs = [
     bg: "from-pink-900/20 to-transparent",
     img: "https://images.unsplash.com/photo-1758599878949-4c612c619219?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVuYXRhbCUyMHByZWduYW5jeSUyMHlvZ2ElMjBmaXRuZXNzfGVufDF8fHx8MTc3NTg3NjU1Mnww&ixlib=rb-4.1.0&q=80&w=600",
     desc: "Safe, effective programs designed for every stage of your motherhood journey.",
+    icon: HeartPulse,
     features: [
       "Trimester-specific workouts",
       "Pelvic floor recovery",
@@ -27,6 +43,7 @@ const programs = [
     bg: "from-yellow-900/20 to-transparent",
     img: "https://images.unsplash.com/photo-1619870448322-3eef96ce6cd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW5pb3IlMjBlbGRlcmx5JTIwZml0bmVzcyUyMGV4ZXJjaXNlJTIwc3RyZW5ndGh8ZW58MXx8fHwxNzc1ODc2NTUzfDA&ixlib=rb-4.1.0&q=80&w=600",
     desc: "Age-defying fitness that enhances mobility, strength, and quality of life.",
+    icon: PersonStanding,
     features: [
       "Balance & fall prevention",
       "Joint-friendly movements",
@@ -39,6 +56,7 @@ const programs = [
     bg: "from-green-900/20 to-transparent",
     img: "https://images.unsplash.com/photo-1645005512942-a17817fb7c11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3JyZWN0aXZlJTIwZXhlcmNpc2UlMjBwaHlzaWNhbCUyMHRoZXJhcHklMjBtb3ZlbWVudHxlbnwxfHx8fDE3NzU4NzY1NzB8MA&ixlib=rb-4.1.0&q=80&w=600",
     desc: "Identify imbalances and restore optimal movement patterns through specialized assessment.",
+    icon: Move,
     features: [
       "Postural assessment",
       "Movement screening",
@@ -51,6 +69,7 @@ const programs = [
     bg: "from-purple-900/20 to-transparent",
     img: "https://images.unsplash.com/photo-1758875569071-717cfaa97c4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGZpdG5lc3MlMjBzdHJlbmd0aCUyMHRyYWluaW5nJTIwZ3ltfGVufDF8fHx8MTc3NTg3NjU1M3ww&ixlib=rb-4.1.0&q=80&w=600",
     desc: "Programs honoring the unique physiology of women through every life phase.",
+    icon: Venus,
     features: [
       "Hormonal cycle training",
       "Bone density focus",
@@ -63,6 +82,7 @@ const programs = [
     bg: "from-cyan-900/20 to-transparent",
     img: "https://images.unsplash.com/photo-1761039807514-292d7d33059f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3V0aCUyMGtpZHMlMjBmaXRuZXNzJTIwdHJhaW5pbmclMjBzcG9ydHxlbnwxfHx8fDE3NzU4NzY1NTN8MA&ixlib=rb-4.1.0&q=80&w=600",
     desc: "Building healthy habits and athletic foundations for the next generation.",
+    icon: Users,
     features: [
       "Age-appropriate training",
       "Sport performance",
@@ -75,6 +95,7 @@ const programs = [
     bg: "from-orange-900/20 to-transparent",
     img: "https://images.unsplash.com/photo-1584952811178-17383f34d7f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwdHJhbnNmb3JtYXRpb24lMjB3ZWlnaHQlMjBsb3NzJTIwYmVmb3JlJTIwYWZ0ZXJ8ZW58MXx8fHwxNzc1ODc2NTYzfDA&ixlib=rb-4.1.0&q=80&w=600",
     desc: "Sustainable body composition changes through smart training and nutrition synergy.",
+    icon: Scale,
     features: [
       "Metabolic conditioning",
       "Nutrition tracking",
@@ -87,6 +108,7 @@ const programs = [
     bg: "from-amber-900/20 to-transparent",
     img: "https://images.unsplash.com/photo-1597768233422-18832f306895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b2RhJTIwZmxleGliaWxpdHklMjBzdHJldGNoaW5nJTIwd29tYW58ZW58MXx8fHwxNzc1ODc2NTY0fDA&ixlib=rb-4.1.0&q=80&w=600",
     desc: "Unlock your body's potential with dynamic stretching and mobility protocols.",
+    icon: Waypoints,
     features: ["Dynamic stretching", "Fascial release", "Range of motion"],
   },
   {
@@ -95,6 +117,7 @@ const programs = [
     bg: "from-red-900/20 to-transparent",
     img: "https://images.unsplash.com/photo-1591469945290-a3f13a7041c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3JlJTIwc3RyZW5ndGglMjB0cmFpbmluZyUyMGFiJTIwd29ya291dHxlbnwxfHx8fDE3NzU4NzY1NzB8MA&ixlib=rb-4.1.0&q=80&w=600",
     desc: "Build a powerful foundation with targeted core training and progressive strength.",
+    icon: Dumbbell,
     features: [
       "Functional core work",
       "Progressive overload",
@@ -107,6 +130,7 @@ const programs = [
     bg: "from-indigo-900/20 to-transparent",
     img: "https://images.unsplash.com/photo-1764885531407-5419366dfd76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib2R5d2VpZ2h0JTIwY2FsaXN0aGVuaWNzJTIwd29ya291dCUyMHBhcmt8ZW58MXx8fHwxNzc1ODc2NTU5fDA&ixlib=rb-4.1.0&q=80&w=600",
     desc: "Stay fit anywhere with equipment-free workouts designed for your lifestyle.",
+    icon: Briefcase,
     features: ["No equipment needed", "Quick sessions", "Hotel room ready"],
   },
 ];
@@ -131,6 +155,12 @@ const progressionPaths = {
       sub: "Ages 13-16",
       desc: "Strength foundations, sport-specific training",
     },
+    {
+      stage: "4",
+      title: "Achiever",
+      sub: "Ages 15-16",
+      desc: "Performance training, confidence, independence",
+    },
   ],
   "Women's Fitness": [
     {
@@ -151,6 +181,12 @@ const progressionPaths = {
       sub: "",
       desc: "Advanced training, performance, leadership",
     },
+    {
+      stage: "4",
+      title: "Radiate",
+      sub: "",
+      desc: "Long-term strength, wellness, confidence, and vitality",
+    },
   ],
   "Senior Fitness (55+)": [
     {
@@ -170,6 +206,12 @@ const progressionPaths = {
       title: "Golden Strong",
       sub: "",
       desc: "Advanced strength, sports, active lifestyle",
+    },
+    {
+      stage: "4",
+      title: "Forever Fit",
+      sub: "",
+      desc: "Independence, longevity, strength, and active living",
     },
   ],
   "Pre/Postnatal": [
@@ -245,7 +287,7 @@ export function Programs() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-          className="lg:-translate-x-30 lg:-translate-y-10"
+            className="lg:-translate-x-30 lg:-translate-y-10"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -261,7 +303,7 @@ export function Programs() {
                 EVERY JOURNEY.
               </span>
             </h1>
-            
+
             <p className="text-white/60 text-lg max-w-xl leading-relaxed">
               Whether you're preparing for motherhood, seeking senior vitality,
               or training the next generation — we have a specialized path
@@ -272,83 +314,138 @@ export function Programs() {
       </div>
 
       {/* Programs Grid */}
+
       <section className="py-24 bg-[#171A26]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programs.map((prog, i) => (
-              <FadeIn key={prog.name} delay={i * 0.06}>
-                <div className="group rounded-3xl overflow-hidden border border-white/8 hover:border-white/20 transition-all duration-500 bg-[#0f1015] hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
-                  <div className="relative h-56 overflow-hidden">
-                    <img
-                      src={prog.img}
-                      alt={prog.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-b ${prog.bg}`}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1015]/80 to-transparent" />
-                    <div className="absolute top-4 left-4">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn className="text-center mb-16">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="w-8 h-px bg-[#B8F27C]/40" />
+              <span className="inline-flex items-center gap-2 text-[#B8F27C] text-sm font-bold tracking-[0.2em] uppercase">
+                <Dumbbell size={16} /> Our Programs
+              </span>
+              <span className="w-8 h-px bg-[#B8F27C]/40" />
+            </div>
+
+            <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
+              Find Your
+              <span className="text-[#B8F27C] ml-2">Perfect Program</span>
+            </h2>
+            <p className="text-[#A7A8AF] text-base max-w-2xl mx-auto">
+              Scientifically designed programs to help you move better, feel
+              stronger, and live your healthiest life.
+            </p>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-10 gap-3">
+            {programs.map((prog, i) => {
+              // control which cards are "wide" — adjust indices to match your data order
+              const isWide = i === 7 || i === 8; // Core & Strength, Travel & Bodyweight
+
+              return (
+                <FadeIn
+                  key={prog.name}
+                  delay={i * 0.06}
+                  className={isWide ? "lg:col-span-3" : "lg:col-span-2"}
+                >
+                  <div className="group rounded-2xl overflow-hidden border border-black/5 bg-[#4B4F5D]/50 shadow-sm hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
+                    {/* Image + icon badge + wave */}
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src={prog.img}
+                        alt={prog.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+
                       <div
-                        className="px-3 py-1 rounded-full text-xs font-bold"
-                        style={{
-                          backgroundColor: `${prog.color}22`,
-                          color: prog.color,
-                          border: `1px solid ${prog.color}44`,
-                        }}
+                        className="absolute top-4 left-4 w-11 h-11 rounded-full flex items-center justify-center shadow-md"
+                        style={{ backgroundColor: prog.color }}
+                      >
+                        {prog.icon && (
+                          <prog.icon size={20} className="text-white" />
+                        )}
+                      </div>
+
+                      <svg
+                        className="absolute -bottom-px left-0 w-full"
+                        viewBox="0 0 400 24"
+                        preserveAspectRatio="none"
+                        height="20"
+                      >
+                        <path
+                          d="M0 16 Q100 0 200 16 T400 16 V24 H0 Z"
+                          fill={prog.color}
+                        />
+                      </svg>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-5 flex flex-col flex-1">
+                      {/* <span
+                        className="text-[11px] font-bold tracking-widest uppercase mb-1.5"
+                        style={{ color: prog.color }}
                       >
                         Program
-                      </div>
+                      </span> */}
+
+                      <h3 className="text-base font-extrabold text-[#B8F27C] mb-1.5 leading-snug"
+                      style={{ color: prog.color }}
+                      >
+                        {prog.name}
+                      </h3>
+
+                      <p className="text-[#A7A8AF] text-sm leading-snug mb-3">
+                        {prog.desc}
+                      </p>
+
+                      <ul className="space-y-2 mb-4">
+                        {prog.features.map((f) => (
+                          <li
+                            key={f}
+                            className="flex items-center gap-2 text-xs text-[#ffff]"
+                          >
+                            <span
+                              className="w-4 h-4 rounded-full flex items-center justify-center shrink-0"
+                              style={{ backgroundColor: prog.color }}
+                            >
+                              <Check
+                                size={10}
+                                className="text-white"
+                                strokeWidth={3}
+                              />
+                            </span>
+                            {f}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <Link
+                        to="/get-plan"
+                        className="mt-auto self-start flex items-center gap-1.5 text-xs font-bold rounded-full px-4 py-2 border transition-all duration-300"
+                        style={{
+                          color: prog.color,
+                          borderColor: `${prog.color}66`,
+                        }}
+                        onMouseEnter={(e) => {
+                          (
+                            e.currentTarget as HTMLElement
+                          ).style.backgroundColor = prog.color;
+                          (e.currentTarget as HTMLElement).style.color = "#fff";
+                        }}
+                        onMouseLeave={(e) => {
+                          (
+                            e.currentTarget as HTMLElement
+                          ).style.backgroundColor = "transparent";
+                          (e.currentTarget as HTMLElement).style.color =
+                            prog.color;
+                        }}
+                      >
+                        Learn More <ArrowRight size={12} />
+                      </Link>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                      className="text-xl font-bold text-white mb-2"
-                    >
-                      {prog.name}
-                    </h3>
-                    <p className="text-white/50 text-sm leading-relaxed mb-5">
-                      {prog.desc}
-                    </p>
-                    <ul className="space-y-2 mb-6">
-                      {prog.features.map((f) => (
-                        <li
-                          key={f}
-                          className="flex items-center gap-2 text-sm text-white/60"
-                        >
-                          <CheckCircle
-                            size={14}
-                            style={{ color: prog.color }}
-                            className="shrink-0"
-                          />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link
-                      to="/get-plan"
-                      className="flex items-center justify-between w-full px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 border"
-                      style={{
-                        borderColor: `${prog.color}40`,
-                        color: prog.color,
-                        backgroundColor: `${prog.color}10`,
-                      }}
-                      onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.backgroundColor =
-                          `${prog.color}25`;
-                      }}
-                      onMouseLeave={(e) => {
-                        (e.currentTarget as HTMLElement).style.backgroundColor =
-                          `${prog.color}10`;
-                      }}
-                    >
-                      Learn More <ArrowRight size={14} />
-                    </Link>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -360,8 +457,7 @@ export function Programs() {
             <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
               Structure
             </span>
-            <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]"
-            >
+            <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
               SPECIALIZED{" "}
               <span className="text-[#B8F27C]">PROGRESSION PATHS</span>
             </h2>
@@ -385,7 +481,7 @@ export function Programs() {
                   className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                     activeTab === tab
                       ? "bg-white text-[#FF6B5E] shadow-[0_4px_20px_rgba(255,107,44,0.2)]"
-    : "bg-white/5 text-white/60 hover:text-white hover:bg-white/10 border border-white/10"
+                      : "bg-white/5 text-white/60 hover:text-white hover:bg-white/10 border border-white/10"
                   }`}
                 >
                   {tab}
@@ -448,8 +544,8 @@ export function Programs() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
             <h2
-            className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]"
-            
+              className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]"
+
               // className="text-6xl text-white mb-6"
             >
               READY TO <span className="text-[#B8F27C]">BEGIN?</span>
@@ -459,7 +555,6 @@ export function Programs() {
             </p>
             <Link
               to="/get-plan"
-
               className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
               // className="inline-flex items-center gap-3 px-10 py-5 bg-white rounded-2xl text-[#FF6B5E] font-bold text-lg  hover:shadow-[0_8px_60px_rgba(255,107,44,0.7)] transition-all duration-300 hover:scale-105"
             >

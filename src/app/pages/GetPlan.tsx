@@ -267,7 +267,7 @@ export function GetPlan() {
 
       <button
         onClick={() => setSelectedPlan(plans[0])}
-        className="mt-4 group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+        className="mt-4 group inline-flex items-center justify-center gap-2 px-12 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-[#FF6B5E]/15 border hover:border-[#FF6B5E]"
       >
         Enquire Now
       </button>
@@ -346,7 +346,8 @@ export function GetPlan() {
             </h2>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <a
-                href="mailto:info@sculptandstrive.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@sculptandstrive.com"
+                // href="mailto:info@sculptandstrive.com"
                 className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#B8F27C]/50 hover:bg-[#B8F27C]/10 transition-all duration-300"
               >
                 <Mail size={18} className="text-[#B8F27C]" />
@@ -407,10 +408,7 @@ export function GetPlan() {
                 <>
                   <div className="flex items-start justify-between mb-7">
                     <div>
-                      <h3
-                        style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="text-xl font-bold text-white mb-1"
-                      >
+                      <h3 className="text-2xl font-bold text-[#B8F27C] mb-1">
                         Enquire: {selectedPlan.name}
                       </h3>
                       {selectedPlan.category && (
@@ -465,7 +463,7 @@ export function GetPlan() {
                             }))
                           }
                           required
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#FF6B2C]/60 focus:bg-[#FF6B2C]/5 transition-all"
+                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all"
                         />
                       </div>
                     ))}
@@ -483,12 +481,12 @@ export function GetPlan() {
                           }))
                         }
                         rows={3}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#FF6B2C]/60 focus:bg-[#FF6B2C]/5 transition-all resize-none"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all resize-none"
                       />
                     </div>
                     <button
                       type="submit"
-                      className="w-full py-4 rounded-2xl text-white font-bold text-sm bg-gradient-to-r from-[#FF6B2C] to-[#FF4500] shadow-[0_4px_20px_rgba(255,107,44,0.4)] hover:shadow-[0_4px_30px_rgba(255,107,44,0.6)] transition-all duration-300 hover:scale-[1.02]"
+                      className="w-full py-4 rounded-2xl inline-flex items-center justify-center gap-2 text-[#FF6B5E] font-bold text-md bg-white duration-100 hover:bg-[#FF6B5E]/20 border hover:border-[#FF6B5E]"
                     >
                       Send Enquiry
                     </button>

@@ -28,7 +28,10 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [cartCount] = useState(0); // TODO: wire to real cart state
   const location = useLocation();
-  // const isViewAllPrograms = location.pathname === "/programs/view-all";
+  // for mobile dropdown
+  const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
+  const [mobileNutritionOpen, setMobileNutritionOpen] = useState(false);
+  const [mobileAssessmentsOpen, setMobileAssessmentsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -38,9 +41,9 @@ export function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
-  setProgramsOpen(false);
-  setNutritionOpen(false);
-  setAssessmentOpen(false);
+    setProgramsOpen(false);
+    setNutritionOpen(false);
+    setAssessmentOpen(false);
   }, [location.pathname]);
 
   return (
@@ -225,25 +228,28 @@ export function Navbar() {
               <Smartphone size={16} />
               GET APP
             </button>
+
             <Link
               to="/signin"
-              type="button"
+              onClick={() => setMobileOpen(false)}
               aria-label="Account"
-              className="w-10 h-10 flex items-center justify-center rounded-sculpt-button text-white transition-colors duration-200 hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sculpt-lime"
+              className="w-10 h-10 flex items-center justify-center rounded-sculpt-button text-white transition-colors duration-200 hover:bg-[#B8F27C]/30 hover:text-[#B8F27C]"
             >
-              <User size={22} />
+              <User size={20} />
             </Link>
           </div>
 
           {/* Mobile: compact icon + hamburger (Table 7 — Mobile row) */}
           <div className="lg:hidden flex items-center gap-2">
-            <button
-              type="button"
+            <Link
+              to="/signin"
+              onClick={() => setMobileOpen(false)}
               aria-label="Account"
-              className="w-10 h-10 flex items-center justify-center rounded-sculpt-button text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-sculpt-lime"
+              className="w-10 h-10 flex items-center justify-center rounded-sculpt-button text-white transition-colors duration-200 hover:bg-[#B8F27C]/30 hover:text-[#B8F27C]"
             >
               <User size={20} />
-            </button>
+            </Link>
+            
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -267,22 +273,133 @@ export function Navbar() {
             className="lg:hidden backdrop-blur-xl bg-sculpt-bg/98 border-t border-sculpt-border/30"
           >
             <div className="px-6 py-6 space-y-1">
-              {navLinks.map((link) => {
-                const active = location.pathname === link.to;
-                return (
+              {/* Programs */}
+
+              <div className="flex items-center justify-between">
+                {/* Programs → normal Programs page */}
+                <Link
+                  to="/programs"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex-1 px-4 py-3 rounded-xl text-base font-bold text-white hover:text-[#B8F27C]"
+                >
+                  Programs
+                </Link>
+
+                {/* + → show View All Programs */}
+                <button
+                  type="button"
+                  onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
+                  aria-label="Show Programs options"
+                  className="w-12 h-12 flex items-center justify-center rounded-xl text-white border border-transparent hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
+                >
+                  {mobileProgramsOpen ? "-" : "+"}
+                </button>
+              </div>
+
+              {/* View All Programs */}
+              {mobileProgramsOpen && (
+                <div className="pl-4 pb-2">
                   <Link
-                    key={link.to}
-                    to={link.to}
-                    className={`block px-4 py-3 rounded-xl text-base font-bold transition-colors duration-200 ${
-                      active
-                        ? "text-sculpt-lime bg-sculpt-surface"
-                        : "text-white bg-transparent"
-                    }`}
+                    to="/programs/all-program"
+                    onClick={() => setMobileOpen(false)}
+                    className="block px-4 py-3 rounded-xl text-sm text-white border border-transparent transition-colors duration-200 hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
                   >
-                    {link.label}
+                    View All Programs
                   </Link>
-                );
-              })}
+                </div>
+              )}
+
+              {/* Nutrition */}
+              <div className="flex items-center justify-between">
+                {/* Programs → normal Programs page */}
+                <Link
+                  to="/nutrition"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex-1 px-4 py-3 rounded-xl text-base font-bold text-white hover:text-[#B8F27C]"
+                >
+                  Nutrition
+                </Link>
+
+                {/* + → show View All Programs */}
+                <button
+                  type="button"
+                  onClick={() => setMobileNutritionOpen(!mobileNutritionOpen)}
+                  aria-label="Show Programs options"
+                  className="w-12 h-12 flex items-center justify-center rounded-xl text-white border border-transparent hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
+                >
+                  {mobileNutritionOpen ? "-" : "+"}
+                </button>
+              </div>
+
+              {/* explore nutrition */}
+              {mobileNutritionOpen && (
+                <div className="pl-4 pb-2">
+                  <Link
+                    to="/nutrition/explore"
+                    onClick={() => setMobileOpen(false)}
+                    className="block px-4 py-3 rounded-xl text-sm text-white border border-transparent transition-colors duration-200 hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
+                  >
+                    Explore Nutrition
+                  </Link>
+                </div>
+              )}
+
+              {/* Assessments */}
+
+              <div className="flex items-center justify-between">
+                {/* Programs → normal Programs page */}
+                <Link
+                  to="/assessments"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex-1 px-4 py-3 rounded-xl text-base font-bold text-white hover:text-[#B8F27C]"
+                >
+                  Assessments
+                </Link>
+
+                {/* + → show View All Programs */}
+                <button
+                  type="button"
+                  onClick={() =>
+                    setMobileAssessmentsOpen(!mobileAssessmentsOpen)
+                  }
+                  aria-label="Show Programs options"
+                  className="w-12 h-12 flex items-center justify-center rounded-xl text-white border border-transparent hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
+                >
+                  {mobileAssessmentsOpen ? "-" : "+"}
+                </button>
+              </div>
+
+              {/* explore assessment */}
+              {mobileAssessmentsOpen && (
+                <div className="pl-4 pb-2">
+                  <Link
+                    to="/assessments/details"
+                    onClick={() => setMobileOpen(false)}
+                    className="block px-4 py-3 rounded-xl text-sm text-white border border-transparent transition-colors duration-200 hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
+                  >
+                    Start Your Assessment
+                  </Link>
+                </div>
+              )}
+
+              {/* About */}
+              <Link
+                to="/about"
+                onClick={() => setMobileOpen(false)}
+                className="block px-4 py-3 rounded-xl text-base font-bold text-white hover:text-[#B8F27C]"
+              >
+                About
+              </Link>
+
+              {/* Trainers */}
+              <Link
+                to="/trainers"
+                onClick={() => setMobileOpen(false)}
+                className="block px-4 py-3 rounded-xl text-base font-bold text-white hover:text-[#B8F27C]"
+              >
+                Trainers
+              </Link>
+
               <div className="pt-4 flex flex-col gap-3">
                 <button
                   type="button"

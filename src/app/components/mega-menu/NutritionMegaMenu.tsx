@@ -96,14 +96,14 @@ export default function NutritionDropdown() {
     <div className="fixed left-1/2 top-[64px] z-50 -translate-x-1/2 after:absolute after:-top-4 after:left-0 after:h-4 after:w-full">
       <div
         className="
-          mx-auto grid grid-cols-2 gap-8 p-6
+          mx-auto grid grid-cols-2 gap-0 p-6
           w-[1000px] max-w-[calc(100vw-48px)] min-w-[900px]
           rounded-2xl border border-[#26313D] bg-[#232631]
           shadow-[0_20px_60px_rgba(0,0,0,0.40)]
         "
       >
         {/* Column 1 — Nutrition Plans */}
-        <div>
+        <div className="pr-6">
           <ColumnHeading>Nutrition Plans</ColumnHeading>
 
           <ul className="space-y-1">
@@ -147,7 +147,7 @@ export default function NutritionDropdown() {
         </div>
 
         {/* Column 2 — Resources */}
-        <div className="border-l border-[#4B4F5D] pl-8">
+        <div className="border-l border-[#4B4F5D] pl-6">
           <ColumnHeading>Resources</ColumnHeading>
 
           <ul className="space-y-1">

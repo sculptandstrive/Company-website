@@ -20,34 +20,32 @@ export function SignIn() {
   });
 
   const handleSignIn = async () => {
-  setLoading(true);
-  setError("");
+    setLoading(true);
+    setError("");
 
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: form.email,
-    password: form.password,
-  });
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: form.email,
+      password: form.password,
+    });
 
-  if (error) {
-    console.log("LOGIN FAILED:", error.message);
-    setError(error.message);
-    setLoading(false);
-    return;
-  }
+    if (error) {
+      console.log("LOGIN FAILED:", error.message);
+      setError(error.message);
+      setLoading(false);
+      return;
+    }
 
-  console.log("LOGIN SUCCESS");
-  console.log("USER:", data.user);
+    console.log("LOGIN SUCCESS");
+    console.log("USER:", data.user);
 
-  window.location.href =
-    "https://sculptandstrive-users.user-sculptandstrive.workers.dev/post-measurement";
-};
-  
-    // https://sculptandstrive-users.user-sculptandstrive.workers.dev/auth
-  
+    window.location.href =
+      "https://sculptandstrive-users.user-sculptandstrive.workers.dev/post-measurement";
+  };
+
+  // https://sculptandstrive-users.user-sculptandstrive.workers.dev/auth
 
   return (
     <div className="h-screen w-full overflow-hidden bg-[#171A26] lg:grid lg:grid-cols-2">
-      
       {/* LEFT SIDE - FORM */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
@@ -56,7 +54,6 @@ export function SignIn() {
         className="h-full flex items-center justify-center px-6 sm:px-10 lg:px-16"
       >
         <div className="w-full max-w-md">
-
           {/* Heading */}
           <div className="mb-7">
             <p className="text-white/50 text-sm">
@@ -72,7 +69,6 @@ export function SignIn() {
               handleSignIn();
             }}
           >
-
             {/* EMAIL */}
             <div>
               <label className="block text-white/50 text-xs font-semibold mb-2 tracking-wider uppercase">
@@ -129,21 +125,13 @@ export function SignIn() {
                   onClick={() => setShowPass(!showPass)}
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/70 transition-colors"
                 >
-                  {showPass ? (
-                    <EyeOff size={16} />
-                  ) : (
-                    <Eye size={16} />
-                  )}
+                  {showPass ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
             </div>
 
             {/* ERROR */}
-            {error && (
-              <p className="text-red-400 text-sm">
-                {error}
-              </p>
-            )}
+            {error && <p className="text-red-400 text-sm">{error}</p>}
 
             {/* SIGN IN BUTTON */}
             <motion.button
@@ -156,7 +144,6 @@ export function SignIn() {
 
               {!loading && <ArrowRight size={16} />}
             </motion.button>
-
           </form>
 
           {/* DIVIDER */}
@@ -171,33 +158,30 @@ export function SignIn() {
           </div>
 
           {/* SOCIAL LOGIN */}
-          <div className="mt-4 grid grid-cols-2 gap-3">
-            {[
-              { name: "Google", icon: "🌐" },
-              { name: "Facebook", icon: "🔵" },
-            ].map((provider) => (
-              <button
-                key={provider.name}
-                type="button"
-                className="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300"
-              >
-                <span>{provider.icon}</span>
-                {provider.name}
-              </button>
-            ))}
-          </div>
-
-          {/* SIGN UP */}
-          <p className="mt-6 text-center text-white/40 text-sm">
-            Don't have an account?{" "}
-            <Link
-              to="/signup"
-              className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
+          {/* Google */}
+          <div className="mt-4 flex items-center justify-center gap-4">
+            {/* Google Button */}
+            <a
+              href="https://www.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-46 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300"
             >
-              Sign up free
-            </Link>
-          </p>
+              <span>🌐</span>
+              Google
+            </a>
 
+            {/* Sign Up Text */}
+            <p className="text-white/40 text-sm">
+              Don't have an account?{" "}
+              <Link
+                to="/signup"
+                className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
+              >
+                Sign up free
+              </Link>
+            </p>
+          </div>
         </div>
       </motion.div>
 
@@ -208,7 +192,6 @@ export function SignIn() {
         transition={{ duration: 1, delay: 0.2 }}
         className="hidden lg:block h-full relative overflow-hidden"
       >
-
         {/* BACKGROUND IMAGE */}
         <img
           src={bgImg}
@@ -227,7 +210,6 @@ export function SignIn() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="max-w-md"
           >
-
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#B8F27C]/20 border border-[#B8F27C]/40 mb-5">
               <Zap size={14} className="text-[#B8F27C]" />
 
@@ -239,19 +221,15 @@ export function SignIn() {
             <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
               EVERY REP
               <br />
-              <span className="text-[#B8F27C] block mt-2">
-                COUNTS
-              </span>
+              <span className="text-[#B8F27C] block mt-2">COUNTS</span>
             </h2>
 
             <p className="text-white/90 text-base leading-relaxed max-w-sm">
               Access your personalized fitness plans, track progress, and
               connect with your coach — all in one place.
             </p>
-
           </motion.div>
         </div>
-
       </motion.div>
     </div>
   );

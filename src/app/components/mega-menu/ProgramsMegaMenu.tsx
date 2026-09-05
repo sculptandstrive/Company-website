@@ -82,21 +82,37 @@ const ColumnHeading = ({ children }: { children: React.ReactNode }) => (
   </p>
 );
 
-export default function ProgramsDropdown() {
+
+interface ProgramsMegaMenuProps {
+  mobile?: boolean;
+}
+export default function ProgramsDropdown({ mobile = false }: ProgramsMegaMenuProps) {
   const [activeCategory, setActiveCategory] = useState(0);
 
   return (
     // Outer positioning wrapper — spec §2: 56px top offset.
     // Requires the trigger/nav item that renders this to have `position: relative`.
-    <div className="fixed left-1/2 top-[64px] z-50 -translate-x-1/2 after:absolute after:-top-4 after:left-0 after:h-4 after:w-full">
+    // <div className="fixed left-1/2 top-[64px] z-50 -translate-x-1/2 after:absolute after:-top-4 after:left-0 after:h-4 after:w-full">
+    <div className={
+      mobile
+      ? "w-full"
+      : "fixed left-1/2 top-[64px] z-50 -translate-x-1/2 after:absolute after:-top-4 after:left-0 after:h-4 after:w-full"}>
+      
       <div
+  className={
+    mobile
+      ? "w-full rounded-2xl border border-[#26313D] bg-[#232631] p-4 shadow-[0_20px_60px_rgba(0,0,0,0.40)]"
+      : "mx-auto grid grid-cols-3 gap-8 p-6 w-[1000px] max-w-[calc(100vw-48px)] min-w-[900px] rounded-2xl border border-[#26313D] bg-[#232631] shadow-[0_20px_60px_rgba(0,0,0,0.40)]"
+  }
+>
+      {/* <div
         className="
           mx-auto grid grid-cols-3 gap-8 p-6
           w-[1000px] max-w-[calc(100vw-48px)] min-w-[900px]
           rounded-2xl border border-[#26313D] bg-[#232631]
           shadow-[0_20px_60px_rgba(0,0,0,0.40)]
         "
-      >
+      > */}
         {/* Column 1 — Program Categories */}
         <div>
           <ColumnHeading>Program Categories</ColumnHeading>
@@ -136,12 +152,7 @@ export default function ProgramsDropdown() {
               );
             })}
           </ul>
-          {/* <Link
-            to="/programs/view-all"
-            className="mt-3 inline-flex items-center gap-1 pl-3 text-[14px] font-medium text-[#FF6B5E] hover:underline"
-          >
-            View all programs <ArrowRight size={14} />
-          </Link> */}
+          
         </div>
 
         {/* Column 2 — Popular Programs */}
@@ -182,13 +193,7 @@ export default function ProgramsDropdown() {
             />
             Explore All Programs
           </Link>
-          {/* <button
-            type="button"
-            className="mt-3 flex h-[42px] w-full items-center justify-center gap-2 rounded-lg border border-[#52606D] px-[18px] text-[14px] font-semibold text-white transition-colors duration-200 ease-in-out hover:border-white/40"
-          >
-            <PlayCircle size={16} className="text-[#FF4D4F]" />
-            Explore All Programs
-          </button> */}
+          
         </div>
 
         {/* Column 3 — What's Included + Assessment CTA */}

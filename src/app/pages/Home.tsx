@@ -3,6 +3,18 @@ import React from "react";
 import { Link } from "react-router";
 import { motion, MotionValue, useScroll, useTransform } from "motion/react";
 import heroVideo from "../../assets/hero-video.mp4";
+import card1 from "../../assets/prenatal.jpg";
+import card2 from "../../assets/elderly.jpg";
+import card3 from "../../assets/w-fitness.jpg";
+import card4 from "../../assets/youth.jpg";
+import card5 from "../../assets/waight.jpg";
+import card6 from "../../assets/corrective.jpg";
+// import card2 from "../../assets/elderly fitness.jpg";
+// import card3 from "../../assets/women fitness.jpg";
+// import card4 from "../../assets/youth";
+// import card5 from "../../assets/waight-transformation.jpg";
+// import card6 from "../../assets/corrective fitness.jpg";
+
 import {
   ArrowRight,
   Play,
@@ -15,67 +27,119 @@ import {
   Zap,
   Heart,
   Target,
+  Dumbbell,
+  Sparkles,
 } from "lucide-react";
 
 // const heroImg =
 //   "https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080";
 
-const womenImg =
-  "https://images.unsplash.com/photo-1758875569071-717cfaa97c4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGZpdG5lc3MlMjBzdHJlbmd0aCUyMHRyYWluaW5nJTIwZ3ltfGVufDF8fHx8MTc3NTg3NjU1M3ww&ixlib=rb-4.1.0&q=80&w=1080";
-const trainerImg =
-  "https://images.unsplash.com/photo-1758875570137-8691b7c55033?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb25hbCUyMHRyYWluZXIlMjBjb2FjaGluZyUyMGd5bSUyMG1vdGl2YXRpb258ZW58MXx8fHwxNzc1ODc2NTU3fDA&ixlib=rb-4.1.0&q=80&w=1080";
-const groupImg =
-  "https://images.unsplash.com/photo-1731325632701-90d4e869a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3b3Jrb3V0JTIwdGVhbSUyMGdyb3VwJTIwZml0bmVzcyUyMGNsYXNzfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=1080";
-const nutritionImg =
-  "https://images.unsplash.com/photo-1587996616596-b714c1c54146?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxudXRyaXRpb24lMjBoZWFsdGh5JTIwZm9vZCUyMG1lYWwlMjBwcmVwJTIwZml0bmVzc3xlbnwxfHx8fDE3NzU4NzY1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const wellnessImg =
-  "https://images.unsplash.com/photo-1770026136858-6f12670dd131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwbGlmZXN0eWxlJTIwd2VsbG5lc3MlMjBtb3RpdmF0aW9uJTIwaW5zcGlyaW5nfGVufDF8fHx8MTc3NTg3NjU3MHww&ixlib=rb-4.1.0&q=80&w=1080";
+// const womenImg =
+//   "https://images.unsplash.com/photo-1758875569071-717cfaa97c4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGZpdG5lc3MlMjBzdHJlbmd0aCUyMHRyYWluaW5nJTIwZ3ltfGVufDF8fHx8MTc3NTg3NjU1M3ww&ixlib=rb-4.1.0&q=80&w=1080";
+ const trainerImg =
+   "https://images.unsplash.com/photo-1758875570137-8691b7c55033?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb25hbCUyMHRyYWluZXIlMjBjb2FjaGluZyUyMGd5bSUyMG1vdGl2YXRpb258ZW58MXx8fHwxNzc1ODc2NTU3fDA&ixlib=rb-4.1.0&q=80&w=1080";
+// const groupImg =
+//   "https://images.unsplash.com/photo-1731325632701-90d4e869a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3b3Jrb3V0JTIwdGVhbSUyMGdyb3VwJTIwZml0bmVzcyUyMGNsYXNzfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=1080";
+// const nutritionImg =
+//   "https://images.unsplash.com/photo-1587996616596-b714c1c54146?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxudXRyaXRpb24lMjBoZWFsdGh5JTIwZm9vZCUyMG1lYWwlMjBwcmVwJTIwZml0bmVzc3xlbnwxfHx8fDE3NzU4NzY1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080";
+// const wellnessImg =
+//   "https://images.unsplash.com/photo-1770026136858-6f12670dd131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwbGlmZXN0eWxlJTIwd2VsbG5lc3MlMjBtb3RpdmF0aW9uJTIwaW5zcGlyaW5nfGVufDF8fHx8MTc3NTg3NjU3MHww&ixlib=rb-4.1.0&q=80&w=1080";
+
+// const programs = [
+//   {
+//     name: "Pre & Postnatal",
+//     icon: Heart,
+//     color: "#FF6B8A",
+//     desc: "Safe, effective programs for every stage of motherhood",
+//     img: "https://images.unsplash.com/photo-1758599878949-4c612c619219?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVuYXRhbCUyMHByZWduYW5jeSUyMHlvZ2ElMjBmaXRuZXNzfGVufDF8fHx8MTc3NTg3NjU1Mnww&ixlib=rb-4.1.0&q=80&w=400",
+//   },
+//   {
+//     name: "Senior Vitality 55+",
+//     icon: Star,
+//     color: "#FFD700",
+//     desc: "Age-deafying fitness for strength, balance & mobility",
+//     img: "https://images.unsplash.com/photo-1619870448322-3eef96ce6cd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW5pb3IlMjBlbGRlcmx5JTIwZml0bmVzcyUyMGV4ZXJjaXNlJTIwc3RyZW5ndGh8ZW58MXx8fHwxNzc1ODc2NTUzfDA&ixlib=rb-4.1.0&q=80&w=400",
+//   },
+//   {
+//     name: "Women's Fitness",
+//     icon: Zap,
+//     color: "#A855F7",
+//     desc: "Honoring female physiology through every life phase",
+//     img: womenImg,
+//   },
+//   {
+//     name: "Youth Fitness (6-16)",
+//     icon: Target,
+//     color: "#22D3EE",
+//     desc: "Building healthy habits for the next generation",
+//     img: "https://images.unsplash.com/photo-1761039807514-292d7d33059f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3V0aCUyMGtpZHMlMjBmaXRuZXNzJTIwdHJhaW5pbmclMjBzcG9ydHxlbnwxfHx8fDE3NzU4NzY1NTN8MA&ixlib=rb-4.1.0&q=80&w=400",
+//   },
+//   {
+//     name: "Weight Transformation",
+//     icon: Award,
+//     color: "#FF6B2C",
+//     desc: "Sustainable body composition through smart training",
+//     img: "https://images.unsplash.com/photo-1584952811178-17383f34d7f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwdHJhbnNmb3JtYXRpb24lMjB3ZWlnaHQlMjBsb3NzJTIwYmVmb3JlJTIwYWZ0ZXJ8ZW58MXx8fHwxNzc1ODc2NTYzfDA&ixlib=rb-4.1.0&q=80&w=400",
+//   },
+//   {
+//     name: "Corrective Exercise",
+//     icon: CheckCircle,
+//     color: "#10B981",
+//     desc: "Restore optimal movement & fix imbalances",
+//     img: "https://images.unsplash.com/photo-1645005512942-a17817fb7c11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3JyZWN0aXZlJTIwZXhlcmNpc2UlMjBwaHlzaWNhbCUyMHRoZXJhcHklMjBtb3ZlbWVudHxlbnwxfHx8fDE3NzU4NzY1NzB8MA&ixlib=rb-4.1.0&q=80&w=400",
+//   },
+// ];
 
 const programs = [
   {
     name: "Pre & Postnatal",
+    category: "Pre & Postnatal",
+    desc: "Safe, effective workouts for every stage of motherhood.",
+    color: "#F0609B",
     icon: Heart,
-    color: "#FF6B8A",
-    desc: "Safe, effective programs for every stage of motherhood",
-    img: "https://images.unsplash.com/photo-1758599878949-4c612c619219?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVuYXRhbCUyMHByZWduYW5jeSUyMHlvZ2ElMjBmaXRuZXNzfGVufDF8fHx8MTc3NTg3NjU1Mnww&ixlib=rb-4.1.0&q=80&w=400",
+    img: card1,
   },
   {
     name: "Senior Vitality 55+",
-    icon: Star,
-    color: "#FFD700",
-    desc: "Age-deafying fitness for strength, balance & mobility",
-    img: "https://images.unsplash.com/photo-1619870448322-3eef96ce6cd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW5pb3IlMjBlbGRlcmx5JTIwZml0bmVzcyUyMGV4ZXJjaXNlJTIwc3RyZW5ndGh8ZW58MXx8fHwxNzc1ODc2NTUzfDA&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Senior Wellness",
+    desc: "Stay active, independent, and strong at every age.",
+    color: "#F5A623",
+    icon: Sparkles,
+    img: card2,
   },
   {
     name: "Women's Fitness",
-    icon: Zap,
-    color: "#A855F7",
-    desc: "Honoring female physiology through every life phase",
-    img: womenImg,
+    category: "Women's Fitness",
+    desc: "Strength, confidence, and wellness designed for women.",
+    color: "#7C3AED",
+    icon: Users,
+    img: card3,
   },
   {
-    name: "Youth Fitness (6-16)",
-    icon: Target,
-    color: "#22D3EE",
-    desc: "Building healthy habits for the next generation",
-    img: "https://images.unsplash.com/photo-1761039807514-292d7d33059f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3V0aCUyMGtpZHMlMjBmaXRuZXNzJTIwdHJhaW5pbmclMjBzcG9ydHxlbnwxfHx8fDE3NzU4NzY1NTN8MA&ixlib=rb-4.1.0&q=80&w=400",
+    name: "Youth Fitness (6–16)",
+    category: "Youth Fitness",
+    desc: "Build healthy habits, strength, and confidence early.",
+    color: "#14B8A6",
+    icon: Users,
+    img: card4,
   },
   {
     name: "Weight Transformation",
-    icon: Award,
-    color: "#FF6B2C",
-    desc: "Sustainable body composition through smart training",
-    img: "https://images.unsplash.com/photo-1584952811178-17383f34d7f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwdHJhbnNmb3JtYXRpb24lMjB3ZWlnaHQlMjBsb3NzJTIwYmVmb3JlJTIwYWZ0ZXJ8ZW58MXx8fHwxNzc1ODc2NTYzfDA&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Weight Transformation",
+    desc: "Personalized training and nutrition for real, lasting results.",
+    color: "#FF6B35",
+    icon: Dumbbell,
+    img: card5,
   },
   {
     name: "Corrective Exercise",
-    icon: CheckCircle,
-    color: "#10B981",
-    desc: "Restore optimal movement & fix imbalances",
-    img: "https://images.unsplash.com/photo-1645005512942-a17817fb7c11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3JyZWN0aXZlJTIwZXhlcmNpc2UlMjBwaHlzaWNhbCUyMHRoZXJhcHklMjBtb3ZlbWVudHxlbnwxfHx8fDE3NzU4NzY1NzB8MA&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Corrective Training",
+    desc: "Improve posture, reduce pain, and move better every day.",
+    color: "#65A30D",
+    icon: Users,
+    img: card6,
   },
 ];
-
 const stats = [
   { value: "20+", label: "Active Members", icon: Users },
   { value: "2+", label: "Expert Trainers", icon: Award },
@@ -421,68 +485,164 @@ export function Home() {
       <section className="py-24 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
-            <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
-              Our Programs
-            </span>
-
-            <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
-              ONE PLATFORM.{" "}
-              <span className="text-[#B8F27C]">
-                EVERY JOURNEY.
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="w-8 h-px bg-[#B8F27C]/40" />
+              <span className="inline-flex items-center gap-2 text-[#B8F27C] text-sm font-bold tracking-[0.2em] uppercase">
+                <Dumbbell size={16} /> Our Programs
               </span>
+              <span className="w-8 h-px bg-[#B8F27C]/40" />
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#ffff] mb-4">
+              Programs for Every Goal &amp; Every Stage
             </h2>
-            <p className="text-white/50 text-base max-w-2xl mx-auto">
-              Whether you're preparing for motherhood, seeking senior vitality,
-              or training the next generation — we have a specialized path
-              designed just for you.
+            <p className="text-[#5B5F6B] text-base max-w-2xl mx-auto">
+              Discover expert-designed programs to help you build strength,
+              improve health, and become the best version of yourself.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {programs.map((prog, i) => (
-              <FadeIn key={prog.name} delay={i * 0.08}>
-                <div className="group relative rounded-3xl overflow-hidden cursor-pointer h-80">
-                  <img
-                    src={prog.img}
-                    alt={prog.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                  <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                    <div className="flex items-center gap-2 mb-2">
-                      <prog.icon size={16} style={{ color: prog.color }} />
-                      <span
-                        className="text-xs font-semibold tracking-widest uppercase"
-                        style={{ color: prog.color }}
-                      >
-                        Program
-                      </span>
-                    </div>
-                    <h3
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                      className="text-xl font-bold text-white mb-2"
-                    >
-                      {prog.name}
-                    </h3>
-                    <p className="text-white/60 text-sm leading-snug mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {prog.desc}
-                    </p>
-                    <Link
-                      to="/programs"
-                      className="self-start flex items-center gap-2 text-sm font-semibold text-white border border-white/30 hover:border-white rounded-full px-4 py-2 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
-                    >
-                      Learn More <ArrowRight size={14} />
-                    </Link>
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+            {programs.map((prog, i) => {
+              const stacked = i === 3; // e.g. Youth Fitness — image-below layout
+              const dark = i === 4; // e.g. Weight Transformation — dark card
+
+              return (
+                <FadeIn key={prog.name} delay={i * 0.08} h-full>
+                  <div
+                    className={`group relative rounded-3xl overflow-hidden h-[330px] w-full border ${
+                      dark
+                        ? "bg-[#12141C] border-white/5"
+                        : "bg-white border-black/5"
+                    } ${stacked ? "flex flex-col" : ""}`}
+                  >
+                    {/* --- SIDE-IMAGE LAYOUT --- */}
+                    {!stacked && (
+                      <>
+                        {/* curved image on the right */}
+                        <div
+                          className="absolute top-0 right-0 h-full w-[55%] overflow-hidden"
+                          style={{
+                            clipPath: "ellipse(75% 100% at 100% 50%)",
+                          }}
+                        >
+                          <img
+                            src={prog.img}
+                            alt={prog.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                          <div
+                            className="absolute inset-0"
+                            style={{
+                              border: `3px solid ${prog.color}`,
+                              borderLeft: "none",
+                              clipPath: "ellipse(75% 100% at 100% 50%)",
+                            }}
+                          />
+                        </div>
+
+                        <div className="relative z-10 p-7 flex flex-col h-full w-[62%]">
+                          <div
+                            className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
+                            style={{ backgroundColor: `${prog.color}1A` }}
+                          >
+                            <prog.icon
+                              size={24}
+                              style={{ color: prog.color }}
+                            />
+                          </div>
+
+                          <span
+                            className="text-xs font-bold tracking-widest uppercase mb-2"
+                            style={{ color: prog.color }}
+                          >
+                            {prog.category ?? "Program"}
+                          </span>
+
+                          <h3
+                            className={`text-xl font-extrabold mb-2 ${
+                              dark ? "text-white" : "text-[#0F1117]"
+                            }`}
+                          >
+                            {prog.name}
+                          </h3>
+
+                          <p
+                            className={`text-sm leading-snug mb-6 ${
+                              dark ? "text-white/60" : "text-[#5B5F6B]"
+                            }`}
+                          >
+                            {prog.desc}
+                          </p>
+
+                          <Link
+                            to="/programs"
+                            className="mt-auto self-start flex items-center gap-2 text-sm font-bold text-white rounded-lg px-4 py-2.5 transition-all duration-300 hover:brightness-95"
+                            style={{ backgroundColor: prog.color }}
+                          >
+                            Explore Program <ArrowRight size={14} />
+                          </Link>
+                        </div>
+                      </>
+                    )}
+
+                    {/* --- STACKED (IMAGE-BELOW) LAYOUT --- */}
+                    {stacked && (
+                      <>
+                        <div className="pt-3 px-5 pb-1 flex flex-col">
+                          <div
+                            className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
+                            style={{ backgroundColor: `${prog.color}1A` }}
+                          >
+                            <prog.icon
+                              size={24}
+                              style={{ color: prog.color }}
+                            />
+                          </div>
+
+                          <span
+                            className="text-xs font-bold tracking-widest uppercase mb-2"
+                            style={{ color: prog.color }}
+                          >
+                            {prog.category ?? "Program"}
+                          </span>
+
+                          <h3 className="text-xl font-extrabold text-[#0F1117] mb-2">
+                            {prog.name}
+                          </h3>
+                          <p className="text-[#5B5F6B] text-sm leading-snug mb-4">
+                            {prog.desc}
+                          </p>
+
+                          <Link
+                            to="/programs"
+                            className="self-start flex items-center gap-2 text-sm font-bold text-white rounded-lg px-4 py-2.5 transition-all duration-300 hover:brightness-95"
+                            style={{ backgroundColor: prog.color }}
+                          >
+                            Explore Program <ArrowRight size={14} />
+                          </Link>
+                        </div>
+
+                        <div className="mt-auto h-40 overflow-hidden">
+                          <img
+                            src={prog.img}
+                            alt={prog.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                        </div>
+                      </>
+                    )}
                   </div>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              );
+            })}
           </div>
 
-          <FadeIn className="text-center mt-10">
+          <FadeIn className="text-center mt-12">
             <Link
               to="/programs"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-[8px] bg-white text-[#FF6B5E] text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8F27C]"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-[8px] bg-white border border-[#FF6B5E]/30 text-[#FF6B5E] text-sm md:text-base font-bold transition-all duration-200 hover:bg-[#FF6B5E]/20"
             >
               View All Programs
               <ArrowRight
@@ -493,6 +653,8 @@ export function Home() {
           </FadeIn>
         </div>
       </section>
+
+      
 
       {/* ── ABOUT PREVIEW ── */}
       <section className="py-24 bg-[#4B4F5D]">
@@ -555,9 +717,7 @@ export function Home() {
                 {/* Heading */}
                 <h2 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]">
                   FITNESS THAT{" "}
-                  <span className="text-[#B8F27C]">
-                    MOVES WITH YOU
-                  </span>
+                  <span className="text-[#B8F27C]">MOVES WITH YOU</span>
                 </h2>
 
                 {/* Description */}
@@ -617,8 +777,8 @@ export function Home() {
             </span>
             <h2
               // className="text-6xl md:text-7xl text-white">
-                className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]">
-            
+              className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]"
+            >
               THE DIFFERENCE IS{" "}
               <span className="text-[#B8F27C]">IN THE DETAIL</span>
             </h2>
@@ -652,19 +812,19 @@ export function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                img: groupImg,
+                img: card2,
                 title: "Group Training",
                 desc: "Energy-filled sessions with expert coaching",
                 link: "/get-plan",
               },
               {
-                img: nutritionImg,
+                img: card3,
                 title: "Smart Nutrition",
                 desc: "Global food database & diet tracking",
                 link: "/nutrition",
               },
               {
-                img: wellnessImg,
+                img: card4,
                 title: "Holistic Wellness",
                 desc: "Mind, body & spirit transformation",
                 link: "/about",
@@ -766,7 +926,7 @@ export function Home() {
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={womenImg}
+            src={card3}
             alt="CTA Background"
             className="w-full h-full object-cover"
           />
@@ -775,10 +935,9 @@ export function Home() {
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
             <h2
-              
               // className="text-7xl md:text-8xl text-white mb-6"
-              className="text-6xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]">
-          
+              className="text-6xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]"
+            >
               YOUR JOURNEY <span className="text-[#B8F27C]">STARTS NOW</span>
             </h2>
             <p className="text-white/60 text-lg mb-10 max-w-2xl mx-auto">

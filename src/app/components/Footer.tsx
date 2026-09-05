@@ -1,16 +1,16 @@
 import { Link } from "react-router";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+
 import {
-  Mail,
-  Phone,
-  MapPin,
-  Instagram,
-  Facebook,
-  Youtube,
-  ArrowRight,
-} from "lucide-react";
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+  FaLinkedinIn,
+} from "react-icons/fa";
+
 import logoImg from "../../assets/sculpt-and-strive-logo.jpg";
-import app1 from "../../assets/play-store.png";
-import app2 from "../../assets/apple-store.jpg";
+import app1 from "../../assets/google.svg";
+import app2 from "../../assets/apple.svg";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -54,11 +54,7 @@ export function Footer() {
               </div>
               <div>
                 <div
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    letterSpacing: "0.1em",
-                  }}
-                  className="text-xl text-white leading-none"
+                  className="text-xl text-white leading-none tracking-[0.1em]"
                 >
                   {/* SCULPT <span className="text-[#FF6B2C]">&</span> STRIVE */}
                   SCULPT <span className="text-sculpt-coral">AND</span> STRIVE
@@ -74,7 +70,8 @@ export function Footer() {
             </p>
             <div className="space-y-3">
               <a
-                href="mailto:info@sculptandstrive.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@sculptandstrive.com"
+                // href="mailto:info@sculptandstrive.com"
                 className="flex items-center gap-3 text-white/50 hover:text-[#FF6B5E] transition-colors text-sm"
               >
                 <Mail size={14} className="text-[#FF6B5E] shrink-0" />
@@ -88,16 +85,42 @@ export function Footer() {
                 <Phone size={14} className="text-[#FF6B5E] shrink-0" />
                 +91 7302113369
               </a>
-              <div className="flex items-start gap-3 text-white/50 text-sm">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Sector+1+Meerut+Uttar+Pradesh+India+250002"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 text-white/50 hover:text-[#FF6B5E] transition-colors text-sm"
+              >
+                <MapPin size={14} className="text-[#FF6B5E] shrink-0 mt-0.5" />
+                <span>Sector 1 Meerut, Uttar Pradesh, India 250002</span>
+              </a>
+              {/* <div className="flex items-start gap-3 text-white/50 text-sm">
                 <MapPin size={14} className="text-[#FF6B5E] shrink-0 mt-0.5" />
                 Sector 1 Meerut, Uttar Pradesh, India 250002
-              </div>
+              </div> */}
             </div>
             <div className="flex gap-3 mt-6">
               {[
-                { icon: Instagram, href: "#", label: "Instagram" },
-                { icon: Facebook, href: "#", label: "Facebook" },
-                { icon: Youtube, href: "#", label: "YouTube" },
+                {
+                  icon: FaInstagram,
+                  href: "https://www.instagram.com/sculpt.and.strive/",
+                  label: "Instagram",
+                },
+                {
+                  icon: FaFacebookF,
+                  href: "https://www.facebook.com/people/Sculpt-And-Strive/61576293194411/",
+                  label: "Facebook",
+                },
+                {
+                  icon: FaYoutube,
+                  href: "https://www.youtube.com/",
+                  label: "YouTube",
+                },
+                {
+                  icon: FaLinkedinIn,
+                  href: "https://www.linkedin.com/in/sculpt-and-strive-883ab639b/",
+                  label: "LinkedIn",
+                },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -206,46 +229,48 @@ export function Footer() {
           </div>
 
           {/* Download App */}
-{/* Download App */}
-<div>
-  <h4 className="text-white font-semibold text-sm mb-5 tracking-wider uppercase">
-    Download App
-  </h4>
 
-  <div className="flex flex-col gap-3">
-    <motion.a
-      href="#"
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{ scale: 1.05, y: -2 }}
-      whileTap={{ scale: 0.97 }}
-      transition={{ duration: 0.2 }}
-      className="block w-[160px] h-[48px] rounded-lg overflow-hidden bg-black border border-white/10"
-    >
-      <img
-        src={app1}
-        alt="Get it on Google Play"
-        className="w-full h-full object-cover block"
-      />
-    </motion.a>
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-5 tracking-wider uppercase">
+              Download App
+            </h4>
 
-    <motion.a
-      href="#"
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{ scale: 1.05, y: -2 }}
-      whileTap={{ scale: 0.97 }}
-      transition={{ duration: 0.2 }}
-      className="block w-[160px] h-[48px] rounded-lg overflow-hidden bg-black border border-white/10"
-    >
-      <img
-        src={app2}
-        alt="Download on the App Store"
-        className="w-full h-full object-cover block"
-      />
-    </motion.a>
-  </div>
-</div>
+            <div className="flex flex-col gap-3 -ml-6">
+              {/* Google Play */}
+              <motion.a
+                href="https://play.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.2 }}
+                className="block w-[210px] h-[55px] rounded-[8px] overflow-hidden border-0 outline-none ring-0 focus:outline-none focus:ring-0"
+              >
+                <img
+                  src={app1}
+                  alt="Get it on Google Play"
+                  className="block w-full h-full object-cover border-0 outline-none"
+                />
+              </motion.a>
+
+              {/* Apple App Store */}
+              <motion.a
+                href="https://www.apple.com/app-store"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.2 }}
+                className="block w-[210px] h-[55px] rounded-[8px] overflow-hidden border-0 outline-none ring-0 focus:outline-none focus:ring-0"
+              >
+                <img
+                  src={app2}
+                  alt="Download on the App Store"
+                  className="block w-full h-full object-cover border-0 outline-none"
+                />
+              </motion.a>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}

@@ -95,7 +95,7 @@ export function SignUp() {
         <div className="w-full max-w-md">
           {/* Heading */}
           <div className="mb-3">
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-3 leading-[1.05]">
+            <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-3 leading-[1.05]">
               CREATE <span className="text-[#B8F27C]">ACCOUNT</span>
             </h1>
 
@@ -213,32 +213,30 @@ export function SignUp() {
           </div>
 
           {/* Social Login */}
-          <div className="mt-4 grid grid-cols-2 gap-3">
-            {[
-              { name: "Google", icon: "🌐" },
-              { name: "Facebook", icon: "🔵" },
-            ].map((provider) => (
-              <button
-                key={provider.name}
-                type="button"
-                className="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300"
-              >
-                <span>{provider.icon}</span>
-                {provider.name}
-              </button>
-            ))}
-          </div>
 
-          {/* Sign In */}
-          <p className="mt-5 text-center text-white/40 text-sm">
-            Already have an account?{" "}
-            <Link
-              to="/signin"
-              className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
+          <div className="mt-4 flex items-center justify-center gap-4">
+            {/* Google Button */}
+            <a
+              href="https://www.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-46 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300"
             >
-              Sign in
-            </Link>
-          </p>
+              <span>🌐</span>
+              Google
+            </a>
+
+            {/* Sign Up Text */}
+            <p className="text-white/40 text-sm">
+              Already have an account?{" "}
+              <Link
+                to="/signin"
+                className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
+              >
+                Sign in
+              </Link>
+            </p>
+          </div>
         </div>
       </motion.div>
     </div>
