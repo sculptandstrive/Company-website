@@ -418,7 +418,9 @@ export function Programs() {
                         ))}
                       </ul>
 
-                      <Link
+
+
+                      {/* <Link
                         to="/get-plan"
                         className="mt-auto self-start flex items-center gap-1.5 text-xs font-bold rounded-full px-4 py-2 border transition-all duration-300"
                         style={{
@@ -440,12 +442,23 @@ export function Programs() {
                         }}
                       >
                         Learn More <ArrowRight size={12} />
-                      </Link>
+                      </Link> */}
                     </div>
                   </div>
                 </FadeIn>
               );
             })}
+          </div>
+
+          {/* One Learn More button for all programs */}
+          <div className="flex justify-center mt-12">
+            <Link
+              to="/get-plan"
+              className="group inline-flex items-center justify-center gap-2 px-6 w-52 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+            >
+              Learn More
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

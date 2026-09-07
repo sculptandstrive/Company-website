@@ -556,7 +556,7 @@ export const ViewAllPrograms = () => {
 
               {/* Button */}
               <Link
-                to="#"
+                to="/assessments"
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
               >
                 Take Assessment

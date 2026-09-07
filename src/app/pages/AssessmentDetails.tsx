@@ -66,31 +66,31 @@ export const AssessmentDetails = () => {
       className="max-w-3xl ml-[130px]"
     >
       {/* Eyebrow */}
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C]">
-        Sculpt & Strive Nutrition
+      <p className="ml-1 text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C]">
+        Fitness Assessment
       </p>
 
       {/* Heading */}
-      <h1 className="mt-4 text-5xl font-bold leading-[1.05] text-white sm:text-6xl lg:text-7xl">
-        NOURISH YOUR BODY.{" "}
-        <span className="text-[#42C7C5]">
-          FUEL YOUR GOALS.
+      <h1 className="mt-3 text-5xl md:text-6xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
+        FIND YOUR
+        < br />
+        <span className="text-[#B8F27C] inline-block mt-2">
+         RIGHT PATH{" "} 
         </span>
       </h1>
 
       {/* Description */}
       <p className="mt-6 max-w-2xl text-base leading-7 text-[#A7A8AF] sm:text-lg">
-        Discover nutrition plans designed to support your health, fuel your
-        training, and help you build healthier habits that last.
+        Discover your fitness level, goals, and needs through our comprehensive assessment. Get personalized insights and take the right first step toward your transformation.
       </p>
 
       {/* Button */}
       <div className="mt-8">
         <Link
-          to="#"
+          to="/assessments"
           className="group inline-flex items-center justify-center gap-2 rounded-sculpt-button bg-white px-6 py-3 min-h-11 text-sm font-bold text-sculpt-coral transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime sm:text-base"
         >
-          Explore Nutrition
+          Start Your Assessment
           <ArrowRight
             size={18}
             className="transition-transform duration-200 group-hover:translate-x-1"

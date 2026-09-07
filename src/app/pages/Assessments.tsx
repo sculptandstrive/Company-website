@@ -173,12 +173,11 @@ export function Assessments() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-          className="lg:-translate-x-30"
+            className="lg:-translate-x-30"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-
             <span className="inline-block -translate-y-3 text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4 ml-2">
               Postural Assessment
             </span>
@@ -190,15 +189,7 @@ export function Assessments() {
                 FEEL BETTER.
               </span>
             </h1>
-            {/* <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
-              Postural Assessment
-            </span>
-            <h1 className="text-7xl md:text-9xl text-white mb-6">
-              MOVE BETTER.
-              <br />
-              <span className="text-[#B8F27C]">FEEL BETTER.</span>
-            </h1> */}
-
+            
             <p className="text-white/60 text-lg max-w-xl leading-relaxed mb-8">
               Our comprehensive assessment protocol identifies movement
               dysfunctions before they become injuries. Through detailed
@@ -403,7 +394,7 @@ export function Assessments() {
       </section>
 
       {/* Training Methods */}
-      <section className="py-24 bg-[#232631]">
+      <section className="py-20 bg-[#232631]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
             <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
@@ -491,8 +482,9 @@ export function Assessments() {
                         </span>
                       ))}
                     </div>
-                    <button
-                      className="w-full py-3 rounded-xl text-sm font-bold transition-all duration-300"
+                    <Link
+                      to="/programs/all-program"
+                      className="w-full py-3 rounded-xl text-sm font-bold transition-all duration-300 flex items-center justify-center"
                       style={{
                         backgroundColor: `${method.color}20`,
                         color: method.color,
@@ -500,7 +492,7 @@ export function Assessments() {
                       }}
                     >
                       Explore
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </FadeIn>
