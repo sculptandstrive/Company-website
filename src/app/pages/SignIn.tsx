@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router";
 import { motion } from "motion/react";
-import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+import { Eye, EyeOff, ArrowRight, Zap } from "lucide-react";
 import logoImg from "../../imports/image.png";
 import { supabase } from "../../lib/supabase";
+
+const bgImg =
+  "https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080";
+
+const APP_URL = "https://sculptandstrive-users.user-sculptandstrive.workers.dev";
 
 export function SignIn() {
   const [showPass, setShowPass] = useState(false);
@@ -29,104 +33,168 @@ export function SignIn() {
 
     const { access_token, refresh_token } = data.session;
     window.location.href =
-      `https://sculptandstrive-users.user-sculptandstrive.workers.dev/post-measurement#access_token=${access_token}&refresh_token=${refresh_token}`;
+      `${APP_URL}/post-measurement#access_token=${access_token}&refresh_token=${refresh_token}`;
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-white px-4 py-10">
-      {/* LOGO + TITLE */}
+    <div className="h-screen w-full overflow-hidden bg-[#171A26] lg:grid lg:grid-cols-2">
+      {/* LEFT SIDE - FORM */}
       <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col items-center mb-6"
+        initial={{ opacity: 0, x: -40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+        className="h-full flex items-center justify-center px-6 sm:px-10 lg:px-16"
       >
-        <img src={logoImg} alt="Sculpt and Strive" className="w-20 h-20 mb-3" />
-        <h1 className="text-2xl font-bold text-center">
-          <span className="text-emerald-600">Sculpt</span> And Strive
-        </h1>
-        <p className="text-gray-500 text-sm mt-1">
-          Welcome back! Log in to continue.
-        </p>
-      </motion.div>
+        <div className="w-full max-w-md">
+          {/* Heading */}
+          <div className="mb-7">
+            <p className="text-white/50 text-sm">
+              Sign in to continue your fitness journey.
+            </p>
+          </div>
 
-      {/* BOX */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="w-full max-w-md bg-white border border-gray-200 rounded-xl shadow-sm p-6"
-      >
-        <form className="space-y-4" onSubmit={handleSignIn}>
-          {/* EMAIL */}
-          <div>
-            <label className="block text-sm font-medium text-gray-800 mb-1.5">
-              Email
-            </label>
-            <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+          {/* FORM */}
+          <form className="space-y-4" onSubmit={handleSignIn}>
+            {/* EMAIL */}
+            <div>
+              <label className="block text-white/50 text-xs font-semibold mb-2 tracking-wider uppercase">
+                Email Address
+              </label>
               <input
                 type="email"
                 required
                 value={form.email}
                 onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
-                placeholder="you@example.com"
-                className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all"
+                placeholder="your@email.com"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all"
               />
             </div>
+
+            {/* PASSWORD */}
+            <div>
+              <div className="flex justify-between mb-2">
+                <label className="text-white/50 text-xs font-semibold tracking-wider uppercase">
+                  Password
+                </label>
+                
+                  href={`${APP_URL}/reset-password`}
+                  className="text-[#B8F27C] text-xs hover:text-[#B8F27C] transition-colors"
+                >
+                  Forgot password?
+                </a>
+              </div>
+              <div className="relative">
+                <input
+                  type={showPass ? "text" : "password"}
+                  required
+                  value={form.password}
+                  onChange={(e) => setForm((p) => ({ ...p, password: e.target.value }))}
+                  placeholder="••••••••"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all pr-12"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPass(!showPass)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/70 transition-colors"
+                >
+                  {showPass ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
+              </div>
+            </div>
+
+            {/* ERROR */}
+            {error && <p className="text-red-400 text-sm">{error}</p>}
+
+            {/* SIGN IN BUTTON */}
+            <motion.button
+              type="submit"
+              whileTap={{ scale: 0.98 }}
+              disabled={loading}
+              className="group w-full h-11 rounded-xl bg-white text-[#FF6B5E] text-sm font-bold leading-none flex items-center justify-center gap-2 border border-transparent hover:bg-[#FF6B5E]/30 hover:border-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {loading ? "Signing In..." : "Sign In"}
+              {!loading && <ArrowRight size={16} />}
+            </motion.button>
+          </form>
+
+          {/* DIVIDER */}
+          <div className="mt-5 flex items-center gap-4">
+            <div className="flex-1 h-px bg-white/10" />
+            <span className="text-white/30 text-xs whitespace-nowrap">
+              or continue with
+            </span>
+            <div className="flex-1 h-px bg-white/10" />
           </div>
 
-          {/* PASSWORD */}
-          <div>
-            <div className="flex justify-between items-center mb-1.5">
-              <label className="block text-sm font-medium text-gray-800">
-                Password
-              </label>
-              <Link
-                to="/reset-password"
-                className="text-sm text-emerald-600 hover:underline"
+          {/* SOCIAL LOGIN */}
+          <div className="mt-4 flex items-center justify-center gap-4">
+            
+              href="https://www.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-46 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300"
+            >
+              <span>🌐</span>
+              Google
+            </a>
+
+            <p className="text-white/40 text-sm">
+              Don't have an account?{" "}
+              
+                href={`${APP_URL}/auth`}
+                className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
               >
-                Reset Password
-              </Link>
-            </div>
-            <div className="relative">
-              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-              <input
-                type={showPass ? "text" : "password"}
-                required
-                value={form.password}
-                onChange={(e) => setForm((p) => ({ ...p, password: e.target.value }))}
-                placeholder="••••••••"
-                className="w-full pl-10 pr-10 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all"
-              />
-              <button
-                type="button"
-                onClick={() => setShowPass(!showPass)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-              >
-                {showPass ? <EyeOff size={16} /> : <Eye size={16} />}
-              </button>
-            </div>
+                Sign up free
+              </a>
+            </p>
           </div>
+        </div>
+      </motion.div>
 
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+      {/* RIGHT SIDE - IMAGE + CONTENT */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="hidden lg:block h-full relative overflow-hidden"
+      >
+        {/* BACKGROUND IMAGE */}
+        <img
+          src={bgImg}
+          alt="Fitness"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-          <motion.button
-            whileTap={{ scale: 0.98 }}
-            type="submit"
-            disabled={loading}
-            className="w-full py-2.5 rounded-lg bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-all disabled:opacity-60"
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#171A26]/30 to-[#171A26]/70" />
+
+        {/* CONTENT */}
+        <div className="absolute top-40 left-0 right-0 px-12 xl:px-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="max-w-md"
           >
-            {loading ? "Logging in..." : "Log In"}
-          </motion.button>
-        </form>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#B8F27C]/20 border border-[#B8F27C]/40 mb-5">
+              <Zap size={14} className="text-[#B8F27C]" />
+              <span className="text-[#B8F27C] text-sm font-semibold">
+                Start Your Journey
+              </span>
+            </div>
 
-        <p className="mt-6 text-center text-sm text-gray-500">
-          Don't have an account?{" "}
-          <Link to="/signup" className="text-emerald-600 font-semibold hover:underline">
-            Sign up
-          </Link>
-        </p>
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
+              EVERY REP
+              <br />
+              <span className="text-[#B8F27C] block mt-2">COUNTS</span>
+            </h2>
+
+            <p className="text-white/90 text-base leading-relaxed max-w-sm">
+              Access your personalized fitness plans, track progress, and
+              connect with your coach — all in one place.
+            </p>
+          </motion.div>
+        </div>
       </motion.div>
     </div>
   );
