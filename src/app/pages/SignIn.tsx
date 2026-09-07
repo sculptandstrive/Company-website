@@ -33,12 +33,11 @@ export function SignIn() {
 
     const { access_token, refresh_token } = data.session;
     window.location.href =
-      `${APP_URL}/post-measurement#access_token=${access_token}&refresh_token=${refresh_token}`;
+      APP_URL + "/post-measurement#access_token=" + access_token + "&refresh_token=" + refresh_token;
   };
 
   return (
     <div className="h-screen w-full overflow-hidden bg-[#171A26] lg:grid lg:grid-cols-2">
-      {/* LEFT SIDE - FORM */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
@@ -46,16 +45,13 @@ export function SignIn() {
         className="h-full flex items-center justify-center px-6 sm:px-10 lg:px-16"
       >
         <div className="w-full max-w-md">
-          {/* Heading */}
           <div className="mb-7">
             <p className="text-white/50 text-sm">
               Sign in to continue your fitness journey.
             </p>
           </div>
 
-          {/* FORM */}
           <form className="space-y-4" onSubmit={handleSignIn}>
-            {/* EMAIL */}
             <div>
               <label className="block text-white/50 text-xs font-semibold mb-2 tracking-wider uppercase">
                 Email Address
@@ -70,18 +66,18 @@ export function SignIn() {
               />
             </div>
 
-            {/* PASSWORD */}
             <div>
               <div className="flex justify-between mb-2">
                 <label className="text-white/50 text-xs font-semibold tracking-wider uppercase">
                   Password
                 </label>
-                
-                  href={`${APP_URL}/reset-password`}
+                <button
+                  type="button"
+                  onClick={() => { window.location.href = APP_URL + "/reset-password"; }}
                   className="text-[#B8F27C] text-xs hover:text-[#B8F27C] transition-colors"
                 >
                   Forgot password?
-                </a>
+                </button>
               </div>
               <div className="relative">
                 <input
@@ -102,10 +98,8 @@ export function SignIn() {
               </div>
             </div>
 
-            {/* ERROR */}
             {error && <p className="text-red-400 text-sm">{error}</p>}
 
-            {/* SIGN IN BUTTON */}
             <motion.button
               type="submit"
               whileTap={{ scale: 0.98 }}
@@ -117,7 +111,6 @@ export function SignIn() {
             </motion.button>
           </form>
 
-          {/* DIVIDER */}
           <div className="mt-5 flex items-center gap-4">
             <div className="flex-1 h-px bg-white/10" />
             <span className="text-white/30 text-xs whitespace-nowrap">
@@ -126,49 +119,42 @@ export function SignIn() {
             <div className="flex-1 h-px bg-white/10" />
           </div>
 
-          {/* SOCIAL LOGIN */}
           <div className="mt-4 flex items-center justify-center gap-4">
-            
-              href="https://www.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => { window.open("https://www.google.com", "_blank"); }}
               className="w-46 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300"
             >
               <span>🌐</span>
               Google
-            </a>
+            </button>
 
             <p className="text-white/40 text-sm">
               Don't have an account?{" "}
-              
-                href={`${APP_URL}/auth`}
+              <button
+                type="button"
+                onClick={() => { window.location.href = APP_URL + "/auth"; }}
                 className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
               >
                 Sign up free
-              </a>
+              </button>
             </p>
           </div>
         </div>
       </motion.div>
 
-      {/* RIGHT SIDE - IMAGE + CONTENT */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
         className="hidden lg:block h-full relative overflow-hidden"
       >
-        {/* BACKGROUND IMAGE */}
         <img
           src={bgImg}
           alt="Fitness"
           className="absolute inset-0 w-full h-full object-cover"
         />
-
-        {/* OVERLAY */}
         <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#171A26]/30 to-[#171A26]/70" />
-
-        {/* CONTENT */}
         <div className="absolute top-40 left-0 right-0 px-12 xl:px-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
