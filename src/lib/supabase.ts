@@ -2,15 +2,16 @@ import { createClient } from "@supabase/supabase-js";
 
 function cleanEnvVar(val: string | undefined): string {
   if (!val) return "";
-  let cleaned = val;
+  let cleaned = String(val).trim();
+  cleaned = cleaned.replace(/%(0a|0d|20)/gi, '');
   try {
     cleaned = decodeURIComponent(cleaned);
   } catch (e) {
     // ignore
   }
   return cleaned
-    .replace(/%0[ad]/gi, '')
-    .replace(/[\r\n\t\s]/g, '')
+    .replace(/%(0a|0d|20)/gi, '')
+    .replace(/[\r\n\t\s\u200B-\u200D\uFEFF]/g, '')
     .trim();
 }
 
