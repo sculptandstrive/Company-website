@@ -7,9 +7,7 @@ import trainerManImg from "../../assets/Sagar.jpeg";
 import heroVideo from "../../assets/hero-video.mp4";
 import yoga1 from "../../assets/yoga1.jpg";
 
-// const heroImg = 'https://images.unsplash.com/photo-1770026136858-6f12670dd131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwbGlmZXN0eWxlJTIwd2VsbG5lc3MlMjBtb3RpdmF0aW9uJTIwaW5zcGlyaW5nfGVufDF8fHx8MTc3NTg3NjU3MHww&ixlib=rb-4.1.0&q=80&w=1080';
-// const trainerWomanImg = 'https://images.unsplash.com/photo-1533560586907-f0bd1db0da77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwY29hY2glMjB3b21hbiUyMHByb2Zlc3Npb25hbCUyMHRyYWluZXJ8ZW58MXx8fHwxNzc1ODc2NTY1fDA&ixlib=rb-4.1.0&q=80&w=600';
-// const trainerManImg = 'https://images.unsplash.com/photo-1708011108842-30966718105a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwbWFuJTIwY29hY2glMjBtYWxlJTIwdHJhaW5lciUyMG11c2N1bGFyfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=600';
+
 const groupImg =
   "https://images.unsplash.com/photo-1731325632701-90d4e869a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3b3Jrb3V0JTIwdGVhbSUyMGdyb3VwJTIwZml0bmVzcyUyMGNsYXNzfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=600";
 
@@ -80,7 +78,7 @@ export function About() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-          className="lg:-translate-x-30 lg:-translate-y-10"
+          className="lg:-translate-x-40 lg:-translate-y-5"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
