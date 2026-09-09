@@ -14,7 +14,8 @@ const perks = [
   "Progress analytics & insights",
 ];
 
-const APP_URL = "https://sculptandstrive-users.user-sculptandstrive.workers.dev";
+const APP_URL =
+  "https://sculptandstrive-users.user-sculptandstrive.workers.dev";
 
 export function SignUp() {
   const [showPass, setShowPass] = useState(false);
@@ -51,17 +52,18 @@ export function SignUp() {
     }
 
     try {
-      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
-        email: form.email,
-        password: form.password,
-        options: {
-          data: {
-            full_name: form.name,
-            name: form.name,
-            signup_source: "trial_user",
+      const { data: signUpData, error: signUpError } =
+        await supabase.auth.signUp({
+          email: form.email,
+          password: form.password,
+          options: {
+            data: {
+              full_name: form.name,
+              name: form.name,
+              signup_source: "trial_user",
+            },
           },
-        },
-      });
+        });
 
       if (signUpError) {
         if (signUpError.message.includes("already registered")) {
@@ -77,10 +79,11 @@ export function SignUp() {
 
       // If no session from signUp, attempt direct sign in
       if (!session) {
-        const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
-          email: form.email,
-          password: form.password,
-        });
+        const { data: signInData, error: signInError } =
+          await supabase.auth.signInWithPassword({
+            email: form.email,
+            password: form.password,
+          });
         if (!signInError && signInData?.session) {
           session = signInData.session;
         }
@@ -89,9 +92,15 @@ export function SignUp() {
       if (session) {
         const { access_token, refresh_token } = session;
         window.location.href =
-          APP_URL + "/post-measurement#access_token=" + access_token + "&refresh_token=" + refresh_token;
+          APP_URL +
+          "/post-measurement#access_token=" +
+          access_token +
+          "&refresh_token=" +
+          refresh_token;
       } else {
-        setSuccessMsg("Account created! Please check your email to confirm your account, then sign in.");
+        setSuccessMsg(
+          "Account created! Please check your email to confirm your account, then sign in.",
+        );
         setLoading(false);
       }
     } catch (err: any) {
@@ -258,7 +267,9 @@ export function SignUp() {
             </div>
 
             {error && <p className="text-red-400 text-sm">{error}</p>}
-            {successMsg && <p className="text-[#B8F27C] text-sm">{successMsg}</p>}
+            {successMsg && (
+              <p className="text-[#B8F27C] text-sm">{successMsg}</p>
+            )}
 
             {/* Create Account Button */}
             <motion.button
@@ -267,7 +278,9 @@ export function SignUp() {
               disabled={loading}
               className="group w-full h-11 rounded-xl bg-white text-[#FF6B5E] text-sm font-bold leading-none flex items-center justify-center gap-2 border border-transparent hover:bg-[#FF6B5E]/10 hover:border-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <span>{loading ? "Creating Account..." : "Create Free Account"}</span>
+              <span>
+                {loading ? "Creating Account..." : "Create Free Account"}
+              </span>
 
               {!loading && (
                 <ArrowRight
@@ -305,7 +318,9 @@ export function SignUp() {
             {/* Google Button */}
             <button
               type="button"
-              onClick={() => { window.open("https://www.google.com", "_blank"); }}
+              onClick={() => {
+                window.open("https://www.google.com", "_blank");
+              }}
               className="w-44 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-[#B8F27C]/15 transition-all duration-300"
             >
               <span>🌐</span>
@@ -313,11 +328,11 @@ export function SignUp() {
             </button>
 
             {/* Sign In Text */}
-            <p className="text-white/40 text-sm">
+            <p className="text-white/40 text-sm mb-5">
               Already have an account?{" "}
               <Link
                 to="/signin"
-                className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
+                className="w-44 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-[#B8F27C]/15 transition-all duration-300"
               >
                 Sign in
               </Link>

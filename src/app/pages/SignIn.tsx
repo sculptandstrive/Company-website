@@ -8,8 +8,8 @@ import { supabase } from "../../lib/supabase";
 const bgImg =
   "https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080";
 
- const APP_URL = "https://sculptandstrive-users.user-sculptandstrive.workers.dev";
-
+const APP_URL =
+  "https://sculptandstrive-users.user-sculptandstrive.workers.dev";
 
 export function SignIn() {
   const [showPass, setShowPass] = useState(false);
@@ -35,7 +35,11 @@ export function SignIn() {
 
     const { access_token, refresh_token } = data.session;
     window.location.href =
-      APP_URL + "/post-measurement#access_token=" + access_token + "&refresh_token=" + refresh_token;
+      APP_URL +
+      "/post-measurement#access_token=" +
+      access_token +
+      "&refresh_token=" +
+      refresh_token;
   };
 
   return (
@@ -62,7 +66,9 @@ export function SignIn() {
                 type="email"
                 required
                 value={form.email}
-                onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+                onChange={(e) =>
+                  setForm((p) => ({ ...p, email: e.target.value }))
+                }
                 placeholder="your@email.com"
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all"
               />
@@ -75,7 +81,9 @@ export function SignIn() {
                 </label>
                 <button
                   type="button"
-                  onClick={() => { window.location.href = APP_URL + "/reset-password"; }}
+                  onClick={() => {
+                    window.location.href = APP_URL + "/reset-password";
+                  }}
                   className="text-[#B8F27C] text-xs hover:text-[#B8F27C] transition-colors"
                 >
                   Forgot password?
@@ -86,7 +94,9 @@ export function SignIn() {
                   type={showPass ? "text" : "password"}
                   required
                   value={form.password}
-                  onChange={(e) => setForm((p) => ({ ...p, password: e.target.value }))}
+                  onChange={(e) =>
+                    setForm((p) => ({ ...p, password: e.target.value }))
+                  }
                   placeholder="••••••••"
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all pr-12"
                 />
@@ -124,21 +134,29 @@ export function SignIn() {
           <div className="mt-4 flex items-center justify-center gap-4">
             <button
               type="button"
-              onClick={() => { window.open("https://www.google.com", "_blank"); }}
+              onClick={() => {
+                window.open("https://www.google.com", "_blank");
+              }}
               className="w-44 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-[#B8F27C]/15 transition-all duration-300"
             >
               <span>🌐</span>
               Google
             </button>
 
-            <p className="text-white/40 text-sm">
+            <p className="text-white/40 text-sm mb-5">
               Don't have an account?{" "}
               <Link
+                to="/signup"
+                className="w-44 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-[#B8F27C]/15 transition-all duration-300"
+              >
+                Sign up free
+              </Link>
+              {/* <Link
                 to="/signup"
                 className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
               >
                 Sign up free
-              </Link>
+              </Link> */}
             </p>
           </div>
         </div>
