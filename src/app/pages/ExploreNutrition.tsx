@@ -11,7 +11,6 @@ import {
 import dietPlanImg from "../../assets/diet-plan.jpg";
 import nutritionImg from "../../assets/resources.jpg";
 
-
 const nutritionPlans = [
   {
     title: "Personalized Nutrition",
@@ -84,99 +83,73 @@ export const ExploreNutrition = () => {
   return (
     <div>
       {/* hero */}
-      <section className="relative h-[60vh] min-h-[600px] overflow-hidden bg-[#171A26]">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          {/* <img
-      src="/images/nutrition-hero.jpg"
-      alt="Nutrition and healthy lifestyle"
-      className="h-full w-full object-cover object-center"
-    /> */}
+      <section className="relative h-[70vh] min-h-[680px] flex items-center overflow-hidden bg-[#171A26]">
+  {/* Background */}
+  <div className="absolute inset-0">
+    {/* Left dark overlay for text */}
+    <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
 
-          {/* Left dark overlay for text */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
+    {/* Bottom fade */}
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
+  </div>
 
-          {/* Bottom fade */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
-        </div>
+  {/* Hero Content */}
+  <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 md:px-10 pt-10">
+    <motion.div
+      className="max-w-[700px] text-left md:ml-30"
+      initial={{ opacity: 0, x: -40 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      {/* Small Label */}
+      <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
+        Sculpt & Strive Nutrition
+      </span>
 
-        {/* Hero Content */}
-        <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl items-center px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="max-w-3xl ml-10 lg:ml-[100px]"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            {/* Eyebrow */}
-            <motion.span
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-4 ml-1 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]"
-            >
-              Sculpt & Strive Nutrition
-            </motion.span>
+      {/* Heading */}
+      <h1 className="mb-7 text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
+        NOURISH YOUR BODY.
+        <br />
+        <span className="mt-3 inline-block bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
+          FUEL YOUR GOALS.
+        </span>
+      </h1>
 
-            {/* Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-5 text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl"
-            >
-              NOURISH YOUR BODY.
-              <br />
-              <span className="mt-2 inline-block bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
-                FUEL YOUR GOALS.
-              </span>
-            </motion.h1>
+      {/* Description */}
+      <p className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
+        Discover nutrition plans designed to support your health, fuel
+        your training, and help you build healthier habits that last.
+      </p>
 
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg"
-            >
-              Discover nutrition plans designed to support your health, fuel
-              your training, and help you build healthier habits that last.
-            </motion.p>
+      {/* Buttons */}
+      <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+        {/* Primary CTA */}
+        <Link
+          to="/get-plan"
+          className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+        >
+          Start Your Journey
+          <ArrowRight
+            size={18}
+            className="transition-transform duration-200 group-hover:translate-x-1"
+          />
+        </Link>
 
-            {/* Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-7 flex flex-col gap-3 sm:flex-row"
-            >
-              {/* Primary CTA */}
-              <Link
-                to="/get-plan"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
-              >
-                Start Your Journey
-                <ArrowRight
-                  size={18}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </Link>
-
-              {/* Secondary CTA */}
-              <Link
-                to="/nutrition"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button border border-sculpt-border text-white text-sm md:text-base font-bold transition-all duration-200 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
-              >
-                <Play
-                  size={16}
-                  className="text-sculpt-coral transition-colors group-hover:text-white"
-                />
-                Explore Nutrition
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+        {/* Secondary CTA */}
+        <Link
+          to="/nutrition"
+          className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button border border-sculpt-border text-white text-sm md:text-base font-bold transition-all duration-200 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+        >
+          <Play
+            size={16}
+            className="text-sculpt-coral transition-colors group-hover:text-white"
+          />
+          Explore Nutrition
+        </Link>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       <section className="bg-[#232631] px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -298,46 +271,46 @@ export const ExploreNutrition = () => {
           <div className="grid overflow-hidden rounded-3xl border border-[#26313D] bg-[#171A26] lg:grid-cols-[1.05fr_0.95fr]">
             {/* LEFT — 4 colored cards */}
             {/* LEFT — 4 colored cards */}
-<div className="grid grid-cols-1 sm:grid-cols-2">
-  {resources.map((resource, index) => (
-    <motion.div
-      key={resource.title}
-      initial={{ opacity: 0, x: -40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.1,
-      }}
-      style={{
-        backgroundColor: resource.bgColor,
-        color: resource.textColor,
-      }}
-    //   className="group min-h-[250px] p-7 transition-transform duration-300 hover:scale-[1.02]"
-    className="group min-h-[250px] p-7"
-    >
-      <div className="flex h-full flex-col justify-between">
-        <div>
-          <h3 className="mt-1 text-2xl font-bold">
-            {resource.title}
-          </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2">
+              {resources.map((resource, index) => (
+                <motion.div
+                  key={resource.title}
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                  }}
+                  style={{
+                    backgroundColor: resource.bgColor,
+                    color: resource.textColor,
+                  }}
+                  //   className="group min-h-[250px] p-7 transition-transform duration-300 hover:scale-[1.02]"
+                  className="group min-h-[250px] p-7"
+                >
+                  <div className="flex h-full flex-col justify-between">
+                    <div>
+                      <h3 className="mt-1 text-2xl font-bold">
+                        {resource.title}
+                      </h3>
 
-          <p
-            style={{ color: resource.textMuted }}
-            className="mt-3 text-sm leading-6"
-          >
-            {resource.description}
-          </p>
-        </div>
+                      <p
+                        style={{ color: resource.textMuted }}
+                        className="mt-3 text-sm leading-6"
+                      >
+                        {resource.description}
+                      </p>
+                    </div>
 
-        <ArrowRight
-          size={22}
-          className="mt-6 transition-transform duration-300 group-hover:translate-x-2"
-        />
-      </div>
-    </motion.div>
-  ))}
-</div>
+                    <ArrowRight
+                      size={22}
+                      className="mt-6 transition-transform duration-300 group-hover:translate-x-2"
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
 
             {/* RIGHT — IMAGE */}
             <motion.div
@@ -373,82 +346,76 @@ export const ExploreNutrition = () => {
       </section>
 
       <section className="bg-[#232631] px-6 py-20 lg:px-8">
-  <div className="mx-auto max-w-7xl">
-
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="relative overflow-hidden rounded-3xl border border-[#26313D] bg-[#171A26] p-8 sm:p-10 lg:p-14"
-    >
-
-      {/* Decorative circles */}
-      <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#B8F27C]/10 blur-2xl" />
-
-      <div className="pointer-events-none absolute -bottom-24 left-1/3 h-72 w-72 rounded-full bg-[#42C7C5]/10 blur-3xl" />
-
-      <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[1fr_auto]">
-
-        {/* LEFT */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF6B5E]">
-            Your next step
-          </p>
-
-          <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-            Ready to improve your{" "}
-            <span className="text-[#B8F27C]">
-              nutrition?
-            </span>
-          </h2>
-
-          <p className="mt-5 max-w-2xl text-base leading-7 text-[#A7A8AF] sm:text-lg">
-            Take the next step toward better nutrition, stronger habits,
-            and a healthier lifestyle with guidance built around your goals.
-          </p>
-        </motion.div>
-
-        {/* RIGHT */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.7,
-            delay: 0.15,
-          }}
-          className="flex flex-col items-start gap-4 lg:items-end"
-        >
-          <Link
-            to="/get-plan"
-            className="group inline-flex items-center justify-center gap-2 rounded-sculpt-button bg-white px-6 py-3 min-h-11 text-sm font-bold text-sculpt-coral transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime sm:text-base"
+        <div className="mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="relative overflow-hidden rounded-3xl border border-[#26313D] bg-[#171A26] p-8 sm:p-10 lg:p-14"
           >
-            Start Your Journey
-            <ArrowRight
-              size={18}
-              className="transition-transform duration-200 group-hover:translate-x-1"
-            />
-          </Link>
+            {/* Decorative circles */}
+            <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#B8F27C]/10 blur-2xl" />
 
-          <p className="text-sm text-[#A7A8AF]">
-            Nutrition plans built around you.
-          </p>
-        </motion.div>
+            <div className="pointer-events-none absolute -bottom-24 left-1/3 h-72 w-72 rounded-full bg-[#42C7C5]/10 blur-3xl" />
 
-      </div>
-    </motion.div>
+            <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[1fr_auto]">
+              {/* LEFT */}
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF6B5E]">
+                  Your next step
+                </p>
 
-  </div>
-</section>
+                <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+                  Ready to improve your{" "}
+                  <span className="text-[#B8F27C]">nutrition?</span>
+                </h2>
+
+                <p className="mt-5 max-w-2xl text-base leading-7 text-[#A7A8AF] sm:text-lg">
+                  Take the next step toward better nutrition, stronger habits,
+                  and a healthier lifestyle with guidance built around your
+                  goals.
+                </p>
+              </motion.div>
+
+              {/* RIGHT */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.15,
+                }}
+                className="flex flex-col items-start gap-4 lg:items-end"
+              >
+                <Link
+                  to="/get-plan"
+                  className="group inline-flex items-center justify-center gap-2 rounded-sculpt-button bg-white px-6 py-3 min-h-11 text-sm font-bold text-sculpt-coral transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime sm:text-base"
+                >
+                  Start Your Journey
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-200 group-hover:translate-x-1"
+                  />
+                </Link>
+
+                <p className="text-sm text-[#A7A8AF]">
+                  Nutrition plans built around you.
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -4,12 +4,10 @@ import { Eye, EyeOff, ArrowRight, Zap } from "lucide-react";
 import logoImg from "../../imports/image.png";
 import { supabase } from "../../lib/supabase";
 
-import { Link } from "react-router";
-
 const bgImg =
   "https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080";
 
-const APP_URL = "https://users.sculptandstrive.com";
+const APP_URL = "https://sculptandstrive-users.user-sculptandstrive.workers.dev";
 
 export function SignIn() {
   const [showPass, setShowPass] = useState(false);
@@ -121,24 +119,26 @@ export function SignIn() {
             <div className="flex-1 h-px bg-white/10" />
           </div>
 
-          <div className="mt-4 flex items-center justify-center gap-4">
+          <div className="mt-6 flex items-center justify-center gap-4">
             <button
               type="button"
-              onClick={() => { window.open("https://www.google.com", "_blank"); }}
-              className="w-46 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300"
+              onClick={() => { window.open("https://www.google.com/search?q=sculpt+and+strive&sca_esv=a9c0e99a3096cf33&rlz=1C1CHBF_enIN1130IN1130&sxsrf=APpeQnvEeHLaliNV6bY01aysPF4mcJVlnw%3A1788851060255&ei=dLOfaoD_DraUhvcPiLjduAU&biw=1242&bih=575&ved=2ahUKEwiAiYLAtd6WAxU2iuEIHQhcF1cQ4dUDegQIBhAM&oq=sculpt+and+strive&gs_lp=Egxnd3Mtd2l6LXNlcnAiEXNjdWxwdCBhbmQgc3RyaXZlMggQABiABBiwAzIJEAAYCBgeGLADMgkQABgIGB4YsAMyDhAAGIAEGIoFGIYDGLADMg4QABiABBiKBRiGAxiwAzIOEAAYgAQYigUYhgMYsANIixFQlgFYlgFwAXgAkAEAmAGtAaABrQGqAQMwLjG4AQzIAQD4AQGYAgKgAsUBwgIKECMYsAIYsAMYJ5gDAOIDBRIBMSBAiAYBkAYGkgcDMS4xoAepBLIHAzAuMbgHvgHCBwUyLTEuMcgHEIAIAQ&sclient=gws-wiz-serp", "_blank"); }}
+              className="w-44 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-[#B8F27C]/15 transition-all duration-300"
             >
               <span>🌐</span>
               Google
             </button>
 
-            <p className="text-white/40 text-sm">
+            <p className="text-white/40 text-xs mb-4">
               Don't have an account?{" "}
-              <Link
-                to="/signup"
-                className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
+              <button
+                type="button"
+                onClick={() => { window.location.href = APP_URL + "/auth"; }}
+                className="w-44 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-[#B8F27C]/15 transition-all duration-300"
+                // className="text-[#FF6B5E] font-medium hover:text-[#B8F27C] transition-colors"
               >
                 Sign up free
-              </Link>
+              </button>
             </p>
           </div>
         </div>

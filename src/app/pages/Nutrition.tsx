@@ -119,7 +119,7 @@ export function Nutrition() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-          className="lg:-translate-x-30 lg:-translate-y-10"
+          className="lg:-translate-x-35 lg:-translate-y-5"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -128,7 +128,7 @@ export function Nutrition() {
               Smart Nutrition
             </span>
             <h1
-              className="text-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6"
+              className="text-4xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6"
             >
               FUEL YOUR
               <br />

@@ -158,15 +158,9 @@ export const ViewAllPrograms = () => {
   return (
     <div>
       {/* 1. Hero */}
-      <section className="relative h-[60vh] min-h-[680px] flex items-center overflow-hidden bg-[#171A26]">
+      <section className="relative h-[70vh] min-h-[680px] flex items-center overflow-hidden bg-[#171A26]">
         {/* Background */}
         <div className="absolute inset-0">
-          {/* <img
-            src="/images/programs-hero.jpg"
-            alt="Sculpt & Strive fitness education"
-            className="h-full w-full object-cover object-center"
-          /> */}
-
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
 
@@ -175,13 +169,13 @@ export const ViewAllPrograms = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 md:px-10 pt-20">
+        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 md:px-10 pt-10">
           {/* <div className="mx-auto max-w-7xl"> */}
           <motion.div
             className="max-w-[700px] text-left md:ml-30"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Small Label */}
             <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
@@ -208,7 +202,7 @@ export const ViewAllPrograms = () => {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               {/* Explore Programs */}
               <Link
-                to="#"
+                to="/programs"
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
               >
                 {" "}
@@ -221,7 +215,7 @@ export const ViewAllPrograms = () => {
 
               {/* Find Your Path */}
               <Link
-                to="#"
+                to="/get-plan"
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button border border-sculpt-border text-white text-sm md:text-base font-bold transition-all duration-200 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
               >
                 {" "}
