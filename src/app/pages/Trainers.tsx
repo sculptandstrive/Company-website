@@ -122,7 +122,7 @@ export function Trainers() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="lg:-translate-x-40 lg:-translate-y-5"
+            className="lg:-translate-x-30 lg:-translate-y-10"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}

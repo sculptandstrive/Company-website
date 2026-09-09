@@ -408,7 +408,13 @@ export function Navbar() {
                   <Smartphone size={16} />
                   GET APP
                 </button>
-                
+                <button
+                  type="button"
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold border border-sculpt-border text-white"
+                >
+                  <ShoppingCart size={16} />
+                  Cart {cartCount > 0 && `(${cartCount})`}
+                </button>
               </div>
             </div>
           </motion.div>

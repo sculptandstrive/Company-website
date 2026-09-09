@@ -173,7 +173,7 @@ export function Assessments() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="lg:-translate-x-45 lg:-translate-y-0"
+            className="lg:-translate-x-30"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -182,7 +182,7 @@ export function Assessments() {
               Postural Assessment
             </span>
 
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
+            <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
               MOVE BETTER.
               <br />
               <span className="text-[#B8F27C] inline-block mt-3">

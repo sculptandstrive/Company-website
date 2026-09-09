@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Eye, EyeOff, ArrowRight, CheckCircle } from "lucide-react";
+import { supabase } from "../../lib/supabase";
 
 const bgImg =
   "https://images.unsplash.com/photo-1758875569071-717cfaa97c4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGZpdG5lc3MlMjBzdHJlbmd0aCUyMHRyYWluaW5nJTIwZ3ltfGVufDF8fHx8MTc3NTg3NjU1M3ww&ixlib=rb-4.1.0&q=80&w=1080";
+
+const APP_URL = "https://sculptandstrive-users.user-sculptandstrive.workers.dev";
 
 const perks = [
   "Personalized workout programs",
@@ -15,12 +18,87 @@ const perks = [
 
 export function SignUp() {
   const [showPass, setShowPass] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
 
   const [form, setForm] = useState({
     name: "",
     email: "",
     password: "",
   });
+
+  const handleSignUp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccessMsg("");
+
+    if (!form.name.trim()) {
+      setError("Please enter your full name.");
+      setLoading(false);
+      return;
+    }
+    if (!form.email.trim()) {
+      setError("Please enter a valid email address.");
+      setLoading(false);
+      return;
+    }
+    if (form.password.length < 6) {
+      setError("Password must be at least 6 characters.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+        email: form.email,
+        password: form.password,
+        options: {
+          data: {
+            full_name: form.name,
+            name: form.name,
+            signup_source: "trial_user",
+          },
+        },
+      });
+
+      if (signUpError) {
+        if (signUpError.message.includes("already registered")) {
+          setError("This email is already registered. Please sign in instead.");
+        } else {
+          setError(signUpError.message);
+        }
+        setLoading(false);
+        return;
+      }
+
+      let session = signUpData.session;
+
+      // If no session from signUp, attempt direct sign in
+      if (!session) {
+        const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+          email: form.email,
+          password: form.password,
+        });
+        if (!signInError && signInData?.session) {
+          session = signInData.session;
+        }
+      }
+
+      if (session) {
+        const { access_token, refresh_token } = session;
+        window.location.href =
+          APP_URL + "/post-measurement#access_token=" + access_token + "&refresh_token=" + refresh_token;
+      } else {
+        setSuccessMsg("Account created! Please check your email to confirm your account, then sign in.");
+        setLoading(false);
+      }
+    } catch (err: any) {
+      setError(err.message || "An error occurred during sign up.");
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="h-screen w-full overflow-hidden bg-[#171A26] lg:grid lg:grid-cols-2">
@@ -105,7 +183,7 @@ export function SignUp() {
           </div>
 
           {/* FORM */}
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-4" onSubmit={handleSignUp}>
             {/* Full Name */}
             <div>
               <label className="block text-white/50 text-xs font-semibold mb-2 tracking-wider uppercase">
@@ -114,6 +192,7 @@ export function SignUp() {
 
               <input
                 type="text"
+                required
                 value={form.name}
                 onChange={(e) =>
                   setForm((p) => ({
@@ -134,6 +213,7 @@ export function SignUp() {
 
               <input
                 type="email"
+                required
                 value={form.email}
                 onChange={(e) =>
                   setForm((p) => ({
@@ -155,6 +235,7 @@ export function SignUp() {
               <div className="relative">
                 <input
                   type={showPass ? "text" : "password"}
+                  required
                   value={form.password}
                   onChange={(e) =>
                     setForm((p) => ({
@@ -162,7 +243,7 @@ export function SignUp() {
                       password: e.target.value,
                     }))
                   }
-                  placeholder="Min. 8 characters"
+                  placeholder="Min. 6 characters"
                   className="w-full h-11 bg-white/5 border border-white/10 rounded-xl px-4 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all pr-12"
                 />
 
@@ -176,18 +257,24 @@ export function SignUp() {
               </div>
             </div>
 
+            {error && <p className="text-red-400 text-sm">{error}</p>}
+            {successMsg && <p className="text-[#B8F27C] text-sm">{successMsg}</p>}
+
             {/* Create Account Button */}
             <motion.button
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="group w-full h-11 rounded-xl bg-white text-[#FF6B5E] text-sm font-bold leading-none flex items-center justify-center gap-2 border border-transparent hover:bg-[#FF6B5E]/10 hover:border-white transition-all duration-200"
+              disabled={loading}
+              className="group w-full h-11 rounded-xl bg-white text-[#FF6B5E] text-sm font-bold leading-none flex items-center justify-center gap-2 border border-transparent hover:bg-[#FF6B5E]/10 hover:border-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <span>Create Free Account</span>
+              <span>{loading ? "Creating Account..." : "Create Free Account"}</span>
 
-              <ArrowRight
-                size={16}
-                className="shrink-0 transition-transform duration-200 group-hover:translate-x-1"
-              />
+              {!loading && (
+                <ArrowRight
+                  size={16}
+                  className="shrink-0 transition-transform duration-200 group-hover:translate-x-1"
+                />
+              )}
             </motion.button>
 
             {/* Terms */}
@@ -214,24 +301,24 @@ export function SignUp() {
 
           {/* Social Login */}
 
-          <div className="mt-6 flex items-center justify-center gap-4">
+          <div className="mt-4 flex items-center justify-center gap-4">
             {/* Google Button */}
-            <button
-              type="button"
-              onClick={() => { window.open("https://www.google.com/search?q=sculpt+and+strive&sca_esv=a9c0e99a3096cf33&rlz=1C1CHBF_enIN1130IN1130&sxsrf=APpeQnvEeHLaliNV6bY01aysPF4mcJVlnw%3A1788851060255&ei=dLOfaoD_DraUhvcPiLjduAU&biw=1242&bih=575&ved=2ahUKEwiAiYLAtd6WAxU2iuEIHQhcF1cQ4dUDegQIBhAM&oq=sculpt+and+strive&gs_lp=Egxnd3Mtd2l6LXNlcnAiEXNjdWxwdCBhbmQgc3RyaXZlMggQABiABBiwAzIJEAAYCBgeGLADMgkQABgIGB4YsAMyDhAAGIAEGIoFGIYDGLADMg4QABiABBiKBRiGAxiwAzIOEAAYgAQYigUYhgMYsANIixFQlgFYlgFwAXgAkAEAmAGtAaABrQGqAQMwLjG4AQzIAQD4AQGYAgKgAsUBwgIKECMYsAIYsAMYJ5gDAOIDBRIBMSBAiAYBkAYGkgcDMS4xoAepBLIHAzAuMbgHvgHCBwUyLTEuMcgHEIAIAQ&sclient=gws-wiz-serp", "_blank"); }}
-              className="w-44 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-[#B8F27C]/15 transition-all duration-300"
+            <a
+              href="https://www.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-46 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300"
             >
               <span>🌐</span>
               Google
-            </button>
+            </a>
 
             {/* Sign Up Text */}
-            <p className="text-white/40 text-xs mb-4 ">
+            <p className="text-white/40 text-sm">
               Already have an account?{" "}
               <Link
                 to="/signin"
-                className="w-44 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-sm hover:text-white hover:border-white/20 hover:bg-[#B8F27C]/15 transition-all duration-300"
-                // className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
+                className="text-[#FF6B5E] font-semibold hover:text-[#B8F27C] transition-colors"
               >
                 Sign in
               </Link>

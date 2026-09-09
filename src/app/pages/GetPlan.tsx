@@ -3,8 +3,9 @@ import React from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { CheckCircle, X, Mail, MessageCircle } from "lucide-react";
 import heroVideo from "../../assets/hero-video.mp4";
-import { FaWhatsapp } from "react-icons/fa";
 
+// const heroImg =
+//   "https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080";
 
 interface Plan {
   id: string;
@@ -31,7 +32,7 @@ const plans: Plan[] = [
     id: "standard",
     name: "Standard Plan",
     badge: "Popular",
-    color: "#B8F27C",
+    color: "#3B8F27C",
     features: [
       "Everything in Basic",
       "Nutrition Coaching (Bi-Weekly)",
@@ -213,12 +214,17 @@ export function GetPlan() {
             playsInline
             className="w-full h-full object-cover object-center"
           />
+          {/* <img
+            src={heroImg}
+            alt="Get Plan"
+            className="w-full h-full object-cover"
+          /> */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/97 via-[#171A26]/80 to-[#171A26]/50" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#171A26]" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="lg:-translate-x-40 lg:-translate-y-5"
+            className="lg:-translate-x-30 lg:-translate-y-10"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -299,7 +305,7 @@ export function GetPlan() {
                 </div>
               )}
               <h3
-                
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
                 className="text-xl font-bold text-white mb-5"
               >
                 {plan.name}
@@ -353,8 +359,7 @@ export function GetPlan() {
                 href="tel:+917302113369"
                 className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#B8F27C]/50 hover:bg-[#B8F27C]/10 transition-all duration-300"
               >
-                {/* <MessageCircle size={18} className="text-[#B8F27C]" /> */}
-                <FaWhatsapp size={18} className="text-[#B8F27C]" />
+                <MessageCircle size={18} className="text-[#B8F27C]" />
                 <span className="text-white/70 text-sm">+91 7302113369</span>
               </a>
             </div>

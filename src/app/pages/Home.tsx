@@ -31,9 +31,64 @@ import {
   Sparkles,
 } from "lucide-react";
 
+// const heroImg =
+//   "https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080";
+
+// const womenImg =
+//   "https://images.unsplash.com/photo-1758875569071-717cfaa97c4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGZpdG5lc3MlMjBzdHJlbmd0aCUyMHRyYWluaW5nJTIwZ3ltfGVufDF8fHx8MTc3NTg3NjU1M3ww&ixlib=rb-4.1.0&q=80&w=1080";
  const trainerImg =
    "https://images.unsplash.com/photo-1758875570137-8691b7c55033?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb25hbCUyMHRyYWluZXIlMjBjb2FjaGluZyUyMGd5bSUyMG1vdGl2YXRpb258ZW58MXx8fHwxNzc1ODc2NTU3fDA&ixlib=rb-4.1.0&q=80&w=1080";
+// const groupImg =
+//   "https://images.unsplash.com/photo-1731325632701-90d4e869a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3b3Jrb3V0JTIwdGVhbSUyMGdyb3VwJTIwZml0bmVzcyUyMGNsYXNzfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=1080";
+// const nutritionImg =
+//   "https://images.unsplash.com/photo-1587996616596-b714c1c54146?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxudXRyaXRpb24lMjBoZWFsdGh5JTIwZm9vZCUyMG1lYWwlMjBwcmVwJTIwZml0bmVzc3xlbnwxfHx8fDE3NzU4NzY1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080";
+// const wellnessImg =
+//   "https://images.unsplash.com/photo-1770026136858-6f12670dd131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwbGlmZXN0eWxlJTIwd2VsbG5lc3MlMjBtb3RpdmF0aW9uJTIwaW5zcGlyaW5nfGVufDF8fHx8MTc3NTg3NjU3MHww&ixlib=rb-4.1.0&q=80&w=1080";
 
+// const programs = [
+//   {
+//     name: "Pre & Postnatal",
+//     icon: Heart,
+//     color: "#FF6B8A",
+//     desc: "Safe, effective programs for every stage of motherhood",
+//     img: "https://images.unsplash.com/photo-1758599878949-4c612c619219?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVuYXRhbCUyMHByZWduYW5jeSUyMHlvZ2ElMjBmaXRuZXNzfGVufDF8fHx8MTc3NTg3NjU1Mnww&ixlib=rb-4.1.0&q=80&w=400",
+//   },
+//   {
+//     name: "Senior Vitality 55+",
+//     icon: Star,
+//     color: "#FFD700",
+//     desc: "Age-deafying fitness for strength, balance & mobility",
+//     img: "https://images.unsplash.com/photo-1619870448322-3eef96ce6cd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW5pb3IlMjBlbGRlcmx5JTIwZml0bmVzcyUyMGV4ZXJjaXNlJTIwc3RyZW5ndGh8ZW58MXx8fHwxNzc1ODc2NTUzfDA&ixlib=rb-4.1.0&q=80&w=400",
+//   },
+//   {
+//     name: "Women's Fitness",
+//     icon: Zap,
+//     color: "#A855F7",
+//     desc: "Honoring female physiology through every life phase",
+//     img: womenImg,
+//   },
+//   {
+//     name: "Youth Fitness (6-16)",
+//     icon: Target,
+//     color: "#22D3EE",
+//     desc: "Building healthy habits for the next generation",
+//     img: "https://images.unsplash.com/photo-1761039807514-292d7d33059f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3V0aCUyMGtpZHMlMjBmaXRuZXNzJTIwdHJhaW5pbmclMjBzcG9ydHxlbnwxfHx8fDE3NzU4NzY1NTN8MA&ixlib=rb-4.1.0&q=80&w=400",
+//   },
+//   {
+//     name: "Weight Transformation",
+//     icon: Award,
+//     color: "#FF6B2C",
+//     desc: "Sustainable body composition through smart training",
+//     img: "https://images.unsplash.com/photo-1584952811178-17383f34d7f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwdHJhbnNmb3JtYXRpb24lMjB3ZWlnaHQlMjBsb3NzJTIwYmVmb3JlJTIwYWZ0ZXJ8ZW58MXx8fHwxNzc1ODc2NTYzfDA&ixlib=rb-4.1.0&q=80&w=400",
+//   },
+//   {
+//     name: "Corrective Exercise",
+//     icon: CheckCircle,
+//     color: "#10B981",
+//     desc: "Restore optimal movement & fix imbalances",
+//     img: "https://images.unsplash.com/photo-1645005512942-a17817fb7c11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3JyZWN0aXZlJTIwZXhlcmNpc2UlMjBwaHlzaWNhbCUyMHRoZXJhcHklMjBtb3ZlbWVudHxlbnwxfHx8fDE3NzU4NzY1NzB8MA&ixlib=rb-4.1.0&q=80&w=400",
+//   },
+// ];
 
 const programs = [
   {
@@ -193,7 +248,7 @@ export function Home() {
             className="w-full h-full object-cover object-center"
           /> */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#171A26]/60 via-[#171A26]/40 to-[#171A26]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" /> */}
         </motion.div>
 
         {/* Animated glow orbs */}

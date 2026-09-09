@@ -53,7 +53,9 @@ export function Footer() {
                 />
               </div>
               <div>
-                <div className="text-xl text-white leading-none tracking-[0.1em]">
+                <div
+                  className="text-xl text-white leading-none tracking-[0.1em]"
+                >
                   {/* SCULPT <span className="text-[#FF6B2C]">&</span> STRIVE */}
                   SCULPT <span className="text-sculpt-coral">AND</span> STRIVE
                 </div>
@@ -124,8 +126,7 @@ export function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  // className="w-9 h-9 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 text-white/50 hover:text-[#FF6B5E] hover:border-[#FF6B2C]/40 hover:bg-[#FF6B2C]/10 transition-all duration-300"
                   className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#232631] border border-[#4B4F5D] text-white/60 hover:text-[#FF6B5E] hover:border-[#FF6B5E] transition-all duration-200"
                 >
                   <Icon size={16} />
@@ -275,15 +276,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">
-            © 2026 Sculpt and Strive. All rights reserved. Developed by{" "}
-            <a
-              href={"https://www.vigomerge.com/"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-[#B8F27C] transition-colors"
-            >
-              Vigomerge Inc.
-            </a>
+            © 2026 Sculpt and Strive. All rights reserved. | Develop By Vigomerge Technology
           </p>
           <div className="flex items-center gap-6">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(

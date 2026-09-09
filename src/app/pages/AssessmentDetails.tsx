@@ -54,50 +54,41 @@ export const AssessmentDetails = () => {
     
   return (
     <div>
-        <section className="relative h-[70vh] min-h-[680px] flex items-center overflow-hidden bg-[#171A26]">
-  {/* Background */}
-  <div className="absolute inset-0">
-    {/* Dark overlay */}
-    <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
-
-    {/* Bottom fade */}
-    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
-  </div>
-
-  {/* Hero Content */}
-  <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 md:px-10 pt-2">
+        <section className="relative overflow-hidden bg-[#171A26] px-6 py-24 lg:px-8 lg:py-32">
+  <div className="mx-auto max-w-7xl">
     <motion.div
-      className="max-w-[700px] text-left md:ml-29"
-      initial={{ opacity: 0, x: -40 }}
+      initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="max-w-3xl ml-[130px]"
     >
-      {/* Small Label */}
-      <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
+      {/* Eyebrow */}
+      <p className="ml-1 text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C]">
         Fitness Assessment
-      </span>
+      </p>
 
       {/* Heading */}
-      <h1 className="mb-7 text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
+      <h1 className="mt-3 text-5xl md:text-6xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
         FIND YOUR
-        <br />
-        <span className="mt-3 inline-block bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
-          RIGHT PATH
+        < br />
+        <span className="text-[#B8F27C] inline-block mt-2">
+         RIGHT PATH{" "} 
         </span>
       </h1>
 
       {/* Description */}
-      <p className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
-        Discover your fitness level, goals, and needs through our comprehensive
-        assessment. Get personalized insights and take the right first step
-        toward your transformation.
+      <p className="mt-6 max-w-2xl text-base leading-7 text-[#A7A8AF] sm:text-lg">
+        Discover your fitness level, goals, and needs through our comprehensive assessment. Get personalized insights and take the right first step toward your transformation.
       </p>
 
       {/* Button */}
-      <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+      <div className="mt-8">
         <Link
           to="/assessments"
-          className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+          className="group inline-flex items-center justify-center gap-2 rounded-sculpt-button bg-white px-6 py-3 min-h-11 text-sm font-bold text-sculpt-coral transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime sm:text-base"
         >
           Start Your Assessment
           <ArrowRight
