@@ -9,7 +9,7 @@ const bgImg =
   "https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080";
 
 const APP_URL =
-  "https://sculptandstrive-users.user-sculptandstrive.workers.dev";
+  "https://sculptandstrive.com";
 
 export function SignIn() {
   const [showPass, setShowPass] = useState(false);
