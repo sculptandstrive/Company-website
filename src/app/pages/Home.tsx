@@ -9,11 +9,7 @@ import card3 from "../../assets/w-fitness.jpg";
 import card4 from "../../assets/youth.jpg";
 import card5 from "../../assets/waight.jpg";
 import card6 from "../../assets/corrective.jpg";
-// import card2 from "../../assets/elderly fitness.jpg";
-// import card3 from "../../assets/women fitness.jpg";
-// import card4 from "../../assets/youth";
-// import card5 from "../../assets/waight-transformation.jpg";
-// import card6 from "../../assets/corrective fitness.jpg";
+
 
 import {
   ArrowRight,
@@ -187,11 +183,6 @@ export function Home() {
             playsInline
             className="w-full h-full object-cover object-center"
           />
-          {/* <img
-            src={heroImg}
-            alt="Sculpt and Strive fitness"
-            className="w-full h-full object-cover object-center"
-          /> */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#171A26]/60 via-[#171A26]/40 to-[#171A26]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" />
         </motion.div>
@@ -431,15 +422,16 @@ export function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="w-8 h-px bg-[#B8F27C]/40" />
+              {/* <span className="w-8 h-px bg-[#B8F27C]/40" /> */}
               <span className="inline-flex items-center gap-2 text-[#B8F27C] text-sm font-bold tracking-[0.2em] uppercase">
-                <Dumbbell size={16} /> Our Programs
+                 Our Programs
               </span>
-              <span className="w-8 h-px bg-[#B8F27C]/40" />
+              {/* <span className="w-8 h-px bg-[#B8F27C]/40" /> */}
             </div>
 
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#ffff] mb-4">
-              Programs for Every Goal &amp; Every Stage
+              Programs for 
+              <span className="text-[#B8F27C] ml-4">Every Goal &amp; Every Stage</span>
             </h2>
             <p className="text-[#5B5F6B] text-base max-w-2xl mx-auto">
               Discover expert-designed programs to help you build strength,

@@ -130,7 +130,7 @@ export function Trainers() {
             <span className="inline-block -translate-y-3 text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4 ml-2">
               Our Expert Trainers
             </span>
-            <h1 className="ttext-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
+            <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
               CERTIFIED
               <br />
               <span className="text-[#B8F27C] inline-block mt-3">
