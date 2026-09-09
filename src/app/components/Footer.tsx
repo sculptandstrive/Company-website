@@ -276,7 +276,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">
-            © 2026 Sculpt and Strive. All rights reserved.
+            © 2026 Sculpt and Strive. All rights reserved. | Develop By Vigomerge Technology
           </p>
           <div className="flex items-center gap-6">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
