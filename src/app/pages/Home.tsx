@@ -513,13 +513,13 @@ export function Home() {
                             {prog.desc}
                           </p>
 
-                          <Link
+                          {/* <Link
                             to="/programs"
                             className="mt-auto self-start flex items-center gap-2 text-sm font-bold text-white rounded-lg px-4 py-2.5 transition-all duration-300 hover:brightness-95"
                             style={{ backgroundColor: prog.color }}
                           >
                             Explore Program <ArrowRight size={14} />
-                          </Link>
+                          </Link> */}
                         </div>
                       </>
                     )}
@@ -552,13 +552,13 @@ export function Home() {
                             {prog.desc}
                           </p>
 
-                          <Link
+                          {/* <Link
                             to="/programs"
                             className="self-start flex items-center gap-2 text-sm font-bold text-white rounded-lg px-4 py-2.5 transition-all duration-300 hover:brightness-95"
                             style={{ backgroundColor: prog.color }}
                           >
                             Explore Program <ArrowRight size={14} />
-                          </Link>
+                          </Link> */}
                         </div>
 
                         <div className="mt-auto h-40 overflow-hidden">

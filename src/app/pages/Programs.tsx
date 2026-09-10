@@ -320,11 +320,11 @@ export function Programs() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="w-8 h-px bg-[#B8F27C]/40" />
+              {/* <span className="w-8 h-px bg-[#B8F27C]/40" /> */}
               <span className="inline-flex items-center gap-2 text-[#B8F27C] text-sm font-bold tracking-[0.2em] uppercase">
-                <Dumbbell size={16} /> Our Programs
+                 Our Programs
               </span>
-              <span className="w-8 h-px bg-[#B8F27C]/40" />
+              {/* <span className="w-8 h-px bg-[#B8F27C]/40" /> */}
             </div>
 
             <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4">

@@ -45,7 +45,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-[#FF6B2C]/40">
+              <div className="w-12 h-12 rounded-xl overflow-hidden">
                 <img
                   src={logoImg}
                   alt="Sculpt and Strive"
@@ -53,11 +53,11 @@ export function Footer() {
                 />
               </div>
               <div>
-                <div className="text-xl text-white leading-none tracking-[0.1em]">
+                <div className="text-lg text-white leading-none tracking-[0.1em]">
                   {/* SCULPT <span className="text-[#FF6B2C]">&</span> STRIVE */}
                   SCULPT <span className="text-sculpt-coral">AND</span> STRIVE
                 </div>
-                <div className="text-[10px] text-white/40 tracking-[0.3em] uppercase">
+                <div className="text-[10px] mt-1 text-white/40 tracking-[0.3em] uppercase">
                   Fitness Platform
                 </div>
               </div>
@@ -198,7 +198,7 @@ export function Footer() {
           </div>
 
           {/* Resources */}
-          <div>
+          <div className="">
             <h4 className="text-white font-semibold text-sm mb-5 tracking-wider uppercase">
               Resources
             </h4>
@@ -214,7 +214,7 @@ export function Footer() {
                 <li key={item}>
                   <Link
                     to="/nutrition"
-                    className="relative text-white/45 hover:text-[#FF6B5E] transition-colors text-sm group"
+                    className="relative whitespace-nowrap text-white/45 hover:text-[#FF6B5E] transition-colors text-sm group"
                   >
                     <ArrowRight
                       size={12}
@@ -275,7 +275,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">
-            © 2026 Sculpt and Strive. All rights reserved. Developed by{" "}
+            © 2026 Sculpt and Strive. All rights reserved | Developed by{" "}
             <a
               href={"https://www.vigomerge.com/"}
               target="_blank"
