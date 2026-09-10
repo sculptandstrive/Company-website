@@ -49,15 +49,15 @@ export function Footer() {
                 <img
                   src={logoImg}
                   alt="Sculpt and Strive"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
-              <div>
-                <div className="text-lg text-white leading-none tracking-[0.1em]">
+              <div className="whitespace-nowrap">
+                <div className="text-md text-white font-bold leading-none tracking-wide">
                   {/* SCULPT <span className="text-[#FF6B2C]">&</span> STRIVE */}
                   SCULPT <span className="text-sculpt-coral">AND</span> STRIVE
                 </div>
-                <div className="text-[10px] mt-1 text-white/40 tracking-[0.3em] uppercase">
+                <div className="text-[10px] md:text-[11px] font-medium mt-1 text-white/40 tracking-[0.3em] uppercase">
                   Fitness Platform
                 </div>
               </div>
