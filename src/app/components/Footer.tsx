@@ -25,7 +25,8 @@ export function Footer() {
           <div className="p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-3xl md:text-4xl font-extrabold leading-tight text-white mb-2">
-                READY TO TRANSFORM?
+                READY TO {" "}
+                <span className="text-[#B8F27C]">TRANSFORM?</span>
               </h3>
               <p className="text-white/60 text-base">
                 Start your personalized fitness journey today.
@@ -33,9 +34,10 @@ export function Footer() {
             </div>
             <Link
               to="/get-plan"
-              className="shrink-0 flex items-center gap-2 px-7 py-3 min-h-11 rounded-sculpt-button bg-[#FF6B5E] text-white font-bold text-sm md:text-base transition-all duration-200 hover:brightness-95"
+              className="group inline-flex items-center gap-2 px-5 py-3 bg-[#FF6B5E] rounded-lg text-[#FFFF] font-semibold hover:bg- hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+              // className="shrink-0 flex items-center gap-2 px-7 py-3 min-h-11 rounded-sculpt-button bg-[#FF6B5E] text-white font-bold text-sm md:text-base transition-all duration-200 hover:brightness-95"
             >
-              Get Your Plan <ArrowRight size={18} />
+              Get Your Plan <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-200"/>
             </Link>
           </div>
         </div>

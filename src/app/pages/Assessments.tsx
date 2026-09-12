@@ -407,7 +407,7 @@ export function Assessments() {
               TRAIN YOUR WAY, <span className="text-[#B8F27C]">ANYWHERE</span>
             </h2>
             <p className="text-white/50 text-base max-w-2xl mx-auto">
-              Whether you prefer kettlebells, bands, or pure bodyweight — we
+              Whether you prefer kettlebells, bands, or pure bodyweight, we
               have expertly designed programs for every training style and
               equipment preference.
             </p>

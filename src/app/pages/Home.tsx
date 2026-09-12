@@ -10,7 +10,6 @@ import card4 from "../../assets/youth.jpg";
 import card5 from "../../assets/waight.jpg";
 import card6 from "../../assets/corrective.jpg";
 
-
 import {
   ArrowRight,
   Play,
@@ -27,9 +26,8 @@ import {
   Sparkles,
 } from "lucide-react";
 
- const trainerImg =
-   "https://images.unsplash.com/photo-1758875570137-8691b7c55033?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb25hbCUyMHRyYWluZXIlMjBjb2FjaGluZyUyMGd5bSUyMG1vdGl2YXRpb258ZW58MXx8fHwxNzc1ODc2NTU3fDA&ixlib=rb-4.1.0&q=80&w=1080";
-
+const trainerImg =
+  "https://images.unsplash.com/photo-1758875570137-8691b7c55033?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb25hbCUyMHRyYWluZXIlMjBjb2FjaGluZyUyMGd5bSUyMG1vdGl2YXRpb258ZW58MXx8fHwxNzc1ODc2NTU3fDA&ixlib=rb-4.1.0&q=80&w=1080";
 
 const programs = [
   {
@@ -43,7 +41,7 @@ const programs = [
   {
     name: "Senior Vitality 55+",
     category: "Senior Wellness",
-    desc: "Stay active, independent, and strong at every age.",
+    desc: "Stay active, strong, and independent at every age.",
     color: "#F5A623",
     icon: Sparkles,
     img: card2,
@@ -107,7 +105,7 @@ const features = [
   {
     icon: Heart,
     title: "Holistic Wellness",
-    desc: "Beyond physical fitness — we focus on strength, confidence, and overall well-being.",
+    desc: "Beyond physical fitness, we focus on strength, confidence, and overall well-being.",
   },
 ];
 
@@ -135,25 +133,25 @@ function FadeIn({
 
 const membershipPlans = [
   {
-    label: "MEMBERSHIP",
     name: "ELITE",
     description:
-      "Unlimited access to group classes, all gyms and at-home workouts",
+      // "Unlimited access to group classes, all gyms and at-home workouts"
+      "Unlimited access to group fitness classes, gym facilities, and at-home workouts.",
     // accent: "text-sculpt-lime",
     gradient: "from-[#B8F27C] to-[#E5C74D]",
   },
   {
-    label: "MEMBERSHIP",
     name: "PRO",
-    description: "Premium fitness access with flexible training options",
-    // accent: "text-white",
+    // description: "Premium fitness access with flexible training options",
+    description:
+      "Premium fitness membership with flexible personal training and workout options.",
     gradient: "from-[#42C7C5] to-[#B8F27C]",
   },
   {
-    label: "MEMBERSHIP",
     name: "SELECT",
-    description: "Flexible fitness access designed around your goals",
-    // accent: "text-white",
+    // description: "Flexible fitness access designed around your goals",
+    description:
+      "Flexible fitness membership designed around your fitness goals and lifestyle.",
     gradient: "from-[#8D2A8B] to-[#FF6B5E]",
   },
 ];
@@ -206,7 +204,7 @@ export function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sculpt-lime/10 border border-sculpt-lime/30 mb-8"
             >
-              <Zap size={14} className="text-sculpt-lime" />
+              {/* <Zap size={14} className="text-sculpt-lime" /> */}
 
               <span className="text-sculpt-lime text-sm font-medium">
                 India and USA Certified Fitness Coaches
@@ -237,9 +235,13 @@ export function Home() {
               transition={{ duration: 0.7, delay: 0.5 }}
               className="text-white/70 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed"
             >
-              Your personalized fitness journey starts here. From prenatal to
+              Your personalized fitness journey starts here. From prenatal
+              fitness to senior fitness, elite 1:1 personal training to
+              personalized group fitness programs, we meet you exactly where you
+              are.
+              {/* Your personalized fitness journey starts here. From prenatal to
               senior fitness, elite 1:1 coaching to group programs — we meet you
-              exactly where you are.
+              exactly where you are. */}
             </motion.p>
 
             {/* two CTA button on hero page */}
@@ -252,12 +254,13 @@ export function Home() {
               {/* Primary CTA */}
               <Link
                 to="/get-plan"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+                className="group inline-flex items-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+                // className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
               >
                 Start Your Journey
                 <ArrowRight
                   size={18}
-                  className="group-hover:translate-x-1 transition-transform"
+                  className="group-hover:translate-x-1 transition-transform transition-200"
                 />
               </Link>
 
@@ -318,9 +321,9 @@ export function Home() {
                 className="group block min-h-[180px] rounded-2xl border border-[#4B4F5D] bg-[#232631] p-6 transition-all duration-200 hover:-translate-y-1 hover:border-sculpt-lime hover:shadow-lg"
               >
                 {/* Small label */}
-                <p className="text-xs font-bold tracking-widest text-white/50 uppercase mb-3">
+                {/* <p className="text-xs font-bold tracking-widest text-white/50 uppercase mb-3">
                   {plan.label}
-                </p>
+                </p> */}
 
                 {/* Plan name */}
                 {/* <h3
@@ -353,14 +356,14 @@ export function Home() {
 
               {/* Content */}
               <div className="relative z-10">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+                <p className="mb-3 ml-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
                   About Fitness
                 </p>
 
                 <h3 className="max-w-sm text-3xl font-semibold leading-tight text-white md:text-4xl">
-                  Stronger body.
+                  Stronger body
                   <br />
-                  Stronger mindset.
+                  Stronger mindset
                 </h3>
 
                 <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/70">
@@ -408,7 +411,7 @@ export function Home() {
                   100%
                 </h3>
                 <p className="mt-2 text-sm font-medium text-gray-400">
-                  Certified
+                  Certified Professionals
                 </p>
               </div>
             </div>
@@ -424,18 +427,22 @@ export function Home() {
             <div className="flex items-center justify-center gap-3 mb-4">
               {/* <span className="w-8 h-px bg-[#B8F27C]/40" /> */}
               <span className="inline-flex items-center gap-2 text-[#B8F27C] text-sm font-bold tracking-[0.2em] uppercase">
-                 Our Programs
+                Our Programs
               </span>
               {/* <span className="w-8 h-px bg-[#B8F27C]/40" /> */}
             </div>
 
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#ffff] mb-4">
-              Programs for 
-              <span className="text-[#B8F27C] ml-4">Every Goal &amp; Every Stage</span>
+              Programs for
+              <span className="text-[#B8F27C] ml-4">
+                Every Goal &amp; Every Stage
+              </span>
             </h2>
             <p className="text-[#5B5F6B] text-base max-w-2xl mx-auto">
-              Discover expert-designed programs to help you build strength,
-              improve health, and become the best version of yourself.
+              Discover expert-designed fitness programs to build strength,
+              improve health, and reach your fitness goals.
+              {/* Discover expert-designed programs to help you build strength,
+              improve health, and become the best version of yourself. */}
             </p>
           </FadeIn>
 
@@ -507,7 +514,7 @@ export function Home() {
 
                           <p
                             className={`text-sm leading-snug mb-6 ${
-                              dark ? "text-white/60" : "text-[#5B5F6B]"
+                              dark ? "text-white/60" : "text-[#4B4F5D]"
                             }`}
                           >
                             {prog.desc}
@@ -579,7 +586,8 @@ export function Home() {
           <FadeIn className="text-center mt-12">
             <Link
               to="/programs"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-[8px] bg-white border border-[#FF6B5E]/30 text-[#FF6B5E] text-sm md:text-base font-bold transition-all duration-200 hover:bg-[#FF6B5E]/20"
+              // className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-[8px] bg-white border border-[#FF6B5E]/30 text-[#FF6B5E] text-sm md:text-base font-bold transition-all duration-200 hover:bg-[#FF6B5E]/20"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
             >
               View All Programs
               <ArrowRight
@@ -590,8 +598,6 @@ export function Home() {
           </FadeIn>
         </div>
       </section>
-
-      
 
       {/* ── ABOUT PREVIEW ── */}
       <section className="py-24 bg-[#4B4F5D]">
@@ -659,13 +665,13 @@ export function Home() {
 
                 {/* Description */}
                 <p className="text-[#A7A8AF] text-base leading-relaxed mb-6">
-                  At Sculpt & Strive, fitness fits your life. Whether you're
-                  working out at home, at the gym, or while traveling — our
-                  flexible programs make it easy to stay consistent anywhere.
+                  At Sculpt & Strive, fitness fits your life. Whether you work
+                  out at home, at the gym, or while traveling, our flexible
+                  fitness programs make it easy to stay consistent anywhere.
                 </p>
 
                 <p className="text-[#A7A8AF] text-base leading-relaxed mb-8">
-                  We design programs that go beyond the physical — focusing on
+                  We design programs that go beyond the physical, focusing on
                   your strength, mobility, confidence, and overall well-being.
                   Led by USA certified coaches Namita Lamba and Sagar Lamba.
                 </p>
@@ -694,7 +700,7 @@ export function Home() {
                 {/* CTA Button - Coral */}
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#FFFFFF] rounded-2xl text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300 hover:scale-105"
+                  className="inline-flex items-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
                 >
                   Our Story
                   <ArrowRight size={16} />
@@ -710,7 +716,7 @@ export function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
             <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
-              Why Sculpt & Strive
+              Why Sculpt And Strive
             </span>
             <h2
               // className="text-6xl md:text-7xl text-white">
@@ -727,10 +733,7 @@ export function Home() {
                   <div className="w-14 h-14 rounded-2xl bg-[#B8F27C]/15 flex items-center justify-center mb-6 group-hover:bg-[#B8F27C]/25 transition-all duration-300">
                     <feat.icon size={24} className="text-[#B8F27C]" />
                   </div>
-                  <h3
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    className="text-lg font-bold text-white mb-3"
-                  >
+                  <h3 className="text-lg font-bold text-white mb-3">
                     {feat.title}
                   </h3>
                   <p className="text-white/50 text-sm leading-relaxed">
@@ -779,10 +782,7 @@ export function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                      className="text-xl font-bold text-white"
-                    >
+                    <h3 className="text-xl font-bold text-white">
                       {item.title}
                     </h3>
                     <p className="text-white/60 text-sm mt-1">{item.desc}</p>
@@ -808,7 +808,7 @@ export function Home() {
               REAL RESULTS, <span className="text-[#B8F27C]">REAL STORIES</span>
             </h2>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
             {[
               {
                 name: "Priya Sharma",
@@ -832,25 +832,34 @@ export function Home() {
                 rating: 5,
               },
             ].map((t, i) => (
-              <FadeIn key={t.name} delay={i * 0.1}>
-                <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/8 hover:border-[#B8F27C]/20 transition-all duration-500">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(t.rating)].map((_, j) => (
-                      <Star
-                        key={j}
-                        size={14}
-                        className="text-[#FFD700] fill-[#FFD700]"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-white/70 text-sm leading-relaxed mb-6 italic">
-                    "{t.quote}"
-                  </p>
-                  <div>
-                    <div className="text-white font-semibold text-sm">
-                      {t.name}
+              <FadeIn key={t.name} delay={i * 0.1} className="h-full">
+                <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/8 hover:border-[#B8F27C]/20 transition-all duration-500 h-full">
+                  {/* outer flex */}
+                  <div className="h-full flex flex-col justify-between">
+                    {/*top-star section and quote*/}
+                    <div>
+                      <div className="flex gap-1 mb-4">
+                        {[...Array(t.rating)].map((_, j) => (
+                          <Star
+                            key={j}
+                            size={14}
+                            className="text-[#FFD700] fill-[#FFD700]"
+                          />
+                        ))}
+                      </div>
+
+                      <p className="text-white/70 text-sm leading-relaxed mb-6 italic">
+                        {t.quote}
+                      </p>
                     </div>
-                    <div className="text-[#B8F27C] text-xs">{t.role}</div>
+
+                    {/* bottom -author */}
+                    <div>
+                      <div className="text-white font-semibold text-sm">
+                        {t.name}
+                      </div>
+                      <div className="text-[#B8F27C] text-xs">{t.role}</div>
+                    </div>
                   </div>
                 </div>
               </FadeIn>
@@ -895,7 +904,8 @@ export function Home() {
               </Link> */}
               <Link
                 to="/signup"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+                className="group inline-flex items-center gap-2 px-7 py-3 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+                // className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
               >
                 Get Started Free{" "}
                 <ArrowRight
@@ -905,7 +915,7 @@ export function Home() {
               </Link>
               <Link
                 to="/get-plan"
-                className="flex items-center justify-center gap-3 px-10 py-5 rounded-2xl border border-white/25 text-white font-semibold text-lg hover:border-white/50 hover:bg-white/5 transition-all duration-300"
+                className="flex items-center justify-center gap-3 px-10 py-4 rounded-lg border border-white/25 text-white font-semibold text-lg hover:border-white/50 hover:bg-white/5 transition-all duration-300"
               >
                 View Plans
               </Link>

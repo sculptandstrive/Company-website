@@ -147,18 +147,18 @@ export function About() {
                   <span className="text-[#B8F27C]">MOVES WITH YOU</span>
                 </h2>
                 <p className="text-white/60 text-base leading-relaxed mb-5">
-                  At Sculpt & Strive, fitness fits your life. Whether you're
-                  working out at home, at the gym, or while traveling — our
+                  At Sculpt And Strive, fitness fits your life. Whether you are
+                  working out at home, at the gym, or while traveling our
                   flexible programs make it easy to stay consistent anywhere.
                 </p>
                 <p className="text-white/60 text-base leading-relaxed mb-5">
-                  We design programs that go beyond the physical — focusing on
+                  We design programs that go beyond the physical focusing on
                   your strength, mobility, confidence, and overall well-being.
                   Led by USA certified coaches Namita Lamba and Sagar Lamba.
                 </p>
                 <p className="text-white/60 text-base leading-relaxed">
                   From prenatal fitness to senior vitality, corrective exercise
-                  to youth training — we've built a platform that meets every
+                  to youth training, we have built a platform that meets every
                   human at every stage of life.
                 </p>
               </div>
@@ -200,10 +200,10 @@ export function About() {
                   OUR MISSION
                 </h3>
                 <p className="text-white/60 leading-relaxed">
-                  Sculpt & Strive Fitness is dedicated to creating a space where
+                  Sculpt And Strive Fitness is dedicated to creating a space where
                   every member feels supported, challenged, and motivated to
                   reach their personal best. We believe that fitness is not a
-                  destination — it's a lifelong commitment to becoming the best
+                  destination, it is a lifelong commitment to becoming the best
                   version of yourself.
                 </p>
               </div>
@@ -223,8 +223,8 @@ export function About() {
                   OUR VISION
                 </h3>
                 <p className="text-white/60 leading-relaxed">
-                  At Sculpt and Strive, we believe true fitness is both an art
-                  and a science — deeply personal, purpose-driven, and guided by
+                  At Sculpt And Strive, we believe true fitness is both an art
+                  and a science deeply personal, purpose-driven, and guided by
                   data. We bring together evidence-based training, intelligent
                   nutrition, and mindful recovery to empower every individual to
                   move smarter, grow stronger, and thrive sustainably.

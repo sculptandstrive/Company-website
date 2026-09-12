@@ -307,7 +307,7 @@ export function Programs() {
 
             <p className="text-white/60 text-lg max-w-xl leading-relaxed">
               Whether you're preparing for motherhood, seeking senior vitality,
-              or training the next generation — we have a specialized path
+              or training the next generation, we have a specialized path
               designed just for you.
             </p>
           </motion.div>
@@ -328,8 +328,8 @@ export function Programs() {
             </div>
 
             <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
-              Find Your
-              <span className="text-[#B8F27C] ml-2">Perfect Program</span>
+              Find Your {" "}
+              <span className="text-[#B8F27C]">Perfect Program</span>
             </h2>
             <p className="text-[#A7A8AF] text-base max-w-2xl mx-auto">
               Scientifically designed programs to help you move better, feel
@@ -454,10 +454,11 @@ export function Programs() {
           <div className="flex justify-center mt-12">
             <Link
               to="/get-plan"
-              className="group inline-flex items-center justify-center gap-2 px-6 w-52 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+              className="group inline-flex items-center gap-2 px-9 py-3 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+              
             >
               Learn More
-              <ArrowRight size={16} />
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform"/>
             </Link>
           </div>
         </div>

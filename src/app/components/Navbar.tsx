@@ -223,7 +223,8 @@ export function Navbar() {
             {/* GET APP — high-priority CTA, white surface + coral label */}
             <button
               type="button"
-              className="flex items-center gap-2 px-5 h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+              className="group inline-flex items-center gap-2 px-5 py-3 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-bold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+              // className="flex items-center gap-2 px-5 h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
             >
               <Smartphone size={16} />
               GET APP
