@@ -120,13 +120,13 @@ export const AssessmentDetails = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7 }}
-      className="mb-10 max-w-2xl"
+      className="mb-10 max-w-2xl mx-auto text-center"
     >
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF6B5E]">
         Explore Assessments
       </p>
 
-      <h2 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+      <h2 className="mt-3 text-3xl font-bold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
         Find the right{" "}
         <span className="text-[#B8F27C]">
           starting point.
@@ -184,13 +184,13 @@ export const AssessmentDetails = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7 }}
-      className="mb-14 max-w-2xl"
+      className="mb-14 max-w-2xl mx-auto text-center"
     >
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF6B5E]">
         How It Works
       </p>
 
-      <h2 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+      <h2 className="mt-3 text-3xl font-bold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
         A simple way to{" "}
         <span className="text-[#B8F27C]">
           get started.
