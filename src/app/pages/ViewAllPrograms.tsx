@@ -246,7 +246,7 @@ export const ViewAllPrograms = () => {
           </div>
 
           {/* Program Path Cards */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
             {programPaths.map((path) => (
               <div
                 key={path.number}
@@ -470,7 +470,7 @@ export const ViewAllPrograms = () => {
           </div>
 
           {/* Features */}
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5 items-stretch">
             {programFeatures.map((feature, index) => {
               const Icon = feature.icon;
 
@@ -484,7 +484,7 @@ export const ViewAllPrograms = () => {
                     duration: 0.5,
                     delay: index * 0.08,
                   }}
-                  className="group rounded-2xl border border-[#26313D] bg-[#171A26] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6B5E]/50 hover:bg-[#FF6B5E]/10"
+                  className="group rounded-2xl border border-[#26313D] bg-[#171A26] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6B5E]/50 hover:bg-[#FF6B5E]/10 h-full flex flex-col justify-between"
                 >
                   {/* Icon */}
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FF6B5E]/15">

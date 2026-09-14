@@ -514,37 +514,42 @@ export function Programs() {
             {/* Connecting line */}
             <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FF6B2C]/40 to-transparent mx-20" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
               {progressionPaths[activeTab].map((step, i) => (
                 <motion.div
                   key={step.title}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="relative"
+                  className="relative h-full flex flex-col"
                 >
-                  <div className="p-6 rounded-3xl bg-[#171A26] border border-white/8 hover:border-[#B8F27C]/30 transition-all duration-500 group">
-                    <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-[#FFFFFF] text-[#FF6B5E] font-bold text-lg group-hover:scale-110 transition-transform duration-300">
-                      {step.stage}
-                    </div>
-                    <h3
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                      className="text-lg font-bold text-white mb-1"
-                    >
-                      {step.title}
-                    </h3>
-                    {step.sub && (
-                      <div className="text-[#B8F27C] text-xs font-semibold mb-2">
-                        {step.sub}
+                  <div className="h-full flex flex-col justify-between p-6 rounded-3xl bg-[#171A26] border border-white/8 hover:border-[#B8F27C]/30 transition-all duration-500 group shadow-lg">
+                    <div className="flex-1 flex flex-col">
+                      <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-[#FFFFFF] text-[#FF6B5E] font-bold text-lg group-hover:scale-110 transition-transform duration-300 shrink-0 shadow-sm">
+                        {step.stage}
                       </div>
-                    )}
-                    <p className="text-white/50 text-sm leading-relaxed">
-                      {step.desc}
-                    </p>
-                    <ChevronRight
-                      size={16}
-                      className="text-[#B8F27C] mt-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                    />
+                      <h3
+                        style={{ fontFamily: "'Montserrat', sans-serif" }}
+                        className="text-lg font-bold text-white mb-1"
+                      >
+                        {step.title}
+                      </h3>
+                      {step.sub && (
+                        <div className="text-[#B8F27C] text-xs font-semibold mb-2">
+                          {step.sub}
+                        </div>
+                      )}
+                      <p className="text-white/50 text-sm leading-relaxed flex-1">
+                        {step.desc}
+                      </p>
+                    </div>
+                    <div className="pt-4 flex items-center justify-between border-t border-white/5 mt-4">
+                      <span className="text-[11px] font-semibold text-white/40 group-hover:text-[#B8F27C] transition-colors">Stage {step.stage}</span>
+                      <ChevronRight
+                        size={16}
+                        className="text-[#B8F27C] transform group-hover:translate-x-1 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                      />
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -554,27 +559,38 @@ export function Programs() {
       </section>
 
       {/* CTA */}
+      <section className="relative py-24 bg-[#171A26] overflow-hidden">
+        {/* Subtle Ambient Wave Background */}
+        <div className="absolute inset-0 pointer-events-none opacity-20">
+          <svg className="w-full h-full object-cover" viewBox="0 0 1440 320" fill="none" preserveAspectRatio="none">
+            <path
+              fill="#B8F27C"
+              fillOpacity="0.08"
+              d="M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,112C672,107,768,149,864,176C960,203,1056,213,1152,197.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            />
+          </svg>
+        </div>
 
-      <section className="py-20 bg-[#171A26]/60">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <FadeIn>
-            <h2
-              className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]"
-
-              // className="text-6xl text-white mb-6"
-            >
+        <div className="relative max-w-4xl mx-auto px-4 text-center z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.08]">
               READY TO <span className="text-[#B8F27C]">BEGIN?</span>
             </h2>
-            <p className="text-white/50 text-base mb-10">
-              Get a personalized plan tailored to your program and goals.
+            <p className="text-white/60 text-base max-w-lg mx-auto mb-10 leading-relaxed">
+              Get a personalized plan tailored to your specific fitness goals, routine, and lifestyle.
             </p>
             <Link
               to="/get-plan"
-              className="group inline-flex items-center gap-2 px-9 py-3 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+              className="group inline-flex items-center gap-2 px-9 py-3.5 bg-[#FFFFFF] rounded-xl text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
             >
-              Get Your Plan <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform"/>
+              Get Your Plan <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform duration-300"/>
             </Link>
-          </FadeIn>
+          </motion.div>
         </div>
       </section>
     </div>
