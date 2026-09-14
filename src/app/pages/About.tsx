@@ -113,15 +113,9 @@ export function About() {
                     size={28}
                     className="text-[#B8F27C] mx-auto mb-3 group-hover:scale-110 transition-transform"
                   />
-                  <div
-                    style={{
-                      fontFamily: "'Bebas Neue', sans-serif",
-                      letterSpacing: "0.05em",
-                    }}
-                    className="text-5xl text-white mb-2"
-                  >
-                    {stat.value}
-                  </div>
+                  <div className="text-5xl font-bold text-white mb-2">
+  {stat.value}
+</div>
                   <div className="text-white/50 text-sm">{stat.label}</div>
                 </div>
               </FadeIn>
@@ -190,15 +184,9 @@ export function About() {
                 <div className="w-14 h-14 rounded-2xl bg-[#B8F27C]/20 flex items-center justify-center mb-6">
                   <Target size={26} className="text-[#B8F27C]" />
                 </div>
-                <h3
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    letterSpacing: "0.05em",
-                  }}
-                  className="text-4xl text-white mb-4"
-                >
-                  OUR MISSION
-                </h3>
+               <h3 className="text-4xl font-bold text-white mb-4">
+  OUR MISSION
+</h3>
                 <p className="text-white/60 leading-relaxed">
                   Sculpt And Strive Fitness is dedicated to creating a space where
                   every member feels supported, challenged, and motivated to
@@ -213,15 +201,9 @@ export function About() {
                 <div className="w-14 h-14 rounded-2xl bg-[#42C7C5]/20 flex items-center justify-center mb-6">
                   <Eye size={26} className="text-[#42C7C5]" />
                 </div>
-                <h3
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    letterSpacing: "0.05em",
-                  }}
-                  className="text-4xl text-white mb-4"
-                >
-                  OUR VISION
-                </h3>
+               <h3 className="text-4xl font-bold text-white mb-4">
+  OUR VISION
+</h3>
                 <p className="text-white/60 leading-relaxed">
                   At Sculpt And Strive, we believe true fitness is both an art
                   and a science deeply personal, purpose-driven, and guided by
