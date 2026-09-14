@@ -243,7 +243,7 @@ export function About() {
               Leadership
             </span>
             <h2
-              className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
+              className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
               // className="text-6xl text-white"
             >
               LED BY{" "}
@@ -287,7 +287,7 @@ export function About() {
                   </div>
                   <div className="p-6">
                     <h3
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      
                       className="text-xl font-bold text-white mb-1"
                     >
                       {trainer.name}
@@ -326,9 +326,9 @@ export function About() {
           <FadeIn className="text-center mt-10">
             <Link
               to="/trainers"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-[8px] border border-[#FF6B5E] text-[#FF6B5E] text-sm md:text-base font-bold transition-all duration-200 hover:bg-[#ffff]/20 hover:border-[#FF6B5E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8F27C]"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
             >
-              Meet Our Trainers <ArrowRight size={16} />
+              Meet Our Trainers <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform transition-200"/>
             </Link>
           </FadeIn>
         </div>

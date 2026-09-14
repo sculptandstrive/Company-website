@@ -22,35 +22,35 @@ import { Link } from "react-router";
 
 const programPaths = [
   {
-    number: "01",
+    
     title: "Become a Certified Personal Trainer",
     description:
       "Start your fitness career with confidence through a structured certification pathway.",
     button: "Explore Personal Trainer Programs",
   },
   {
-    number: "02",
+    
     title: "Fitness + Nutrition",
     description:
       "Go beyond training with education across fitness, nutrition, and wellness.",
     button: "Explore Fitness & Nutrition",
   },
   {
-    number: "03",
+    
     title: "Career-Focused Bundles",
     description:
       "Build multiple professional skills through comprehensive education bundles.",
     button: "Compare Career Bundles",
   },
   {
-    number: "04",
+    
     title: "Specialize Your Expertise",
     description:
       "Develop focused knowledge for specific populations, goals, and training areas.",
     button: "Explore Specializations",
   },
   {
-    number: "05",
+    
     title: "Group Fitness",
     description: "Develop the skills to lead and train groups.",
     button: "Explore Group Fitness",
@@ -203,20 +203,20 @@ export const ViewAllPrograms = () => {
               {/* Explore Programs */}
               <Link
                 to="/programs"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
               >
-                {" "}
-                Explore Programs{" "}
+                
+                Explore Programs
                 <ArrowRight
                   size={18}
-                  className="group-hover:translate-x-1 transition-transform"
+                  className="group-hover:translate-x-1 transition-transform transition-200"
                 />{" "}
               </Link>
 
               {/* Find Your Path */}
               <Link
                 to="/get-plan"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button border border-sculpt-border text-white text-sm md:text-base font-bold transition-all duration-200 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-4 min-h-11 rounded-lg border border-sculpt-border bg-transparent text-white text-base font-semibold transition-all duration-300 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
               >
                 {" "}
                 Find Your Path{" "}
@@ -230,18 +230,18 @@ export const ViewAllPrograms = () => {
       <section className="bg-[#232631] px-6 py-15 lg:px-8">
         <div className="mx-auto max-w-7xl">
           {/* Section Heading */}
-          <div className="mb-12 max-w-3xl">
+          <div className="mb-12 max-w-3xl mx-auto text-center">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
               Choose Your Path
             </p>
 
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              Build the skills that move your career forward.
+            <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
+              BUILD YOUR <span className="text-[#B8F27C]">FITNESS CAREER</span>
             </h2>
 
-            <p className="mt-5 text-base leading-7 text-white/60 sm:text-lg">
-              Explore flexible education pathways designed to help you start,
-              specialize, and grow your fitness career.
+            <p className="mt-2 text-base leading-7 text-white/60 sm:text-lg">
+              Explore flexible pathways to start and grow your fitness career.
+
             </p>
           </div>
 
@@ -265,12 +265,9 @@ export const ViewAllPrograms = () => {
           "
               >
                 {/* Small Number */}
-                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#B8F27C]">
-                  {path.number}
-                </p>
 
                 {/* Program Title */}
-                <h3 className="text-xl font-bold leading-tight text-white">
+                <h3 className="text-xl font-bold leading-tight text-[#B8F27C]">
                   {path.title}
                 </h3>
 
@@ -289,7 +286,7 @@ export const ViewAllPrograms = () => {
               gap-2
               text-sm
               font-semibold
-              text-[#B8F27C]
+              text-[#FF6B5E]/60
               transition-all
               duration-200
               group-hover:gap-3
@@ -308,18 +305,17 @@ export const ViewAllPrograms = () => {
       <section className="bg-[#4B4F5D] px-6 py-18 lg:px-8">
         <div className="mx-auto max-w-7xl">
           {/* Section Heading */}
-          <div className="mb-12 max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
+          <div className="mb-10 max-w-3xl text-center mx-auto">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
               Program Categories
             </p>
 
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              Explore your area of expertise.
+            <h2 className="text-4xl md:text-5xl uppercase font-extrabold tracking-tight text-white mb-4 leading-[1.05">
+              Explore your  <span className="text-[#B8F27C]">expertise</span>
             </h2>
 
-            <p className="mt-5 max-w-2xl text-base leading-7 text-white/60 sm:text-lg">
-              Discover programs across fitness, performance, recovery, wellness,
-              movement, and business.
+            <p className="mt-1 max-w-2xl text-base leading-7 mx-auto text-white/60 sm:text-lg">
+              Programs in fitness, wellness, movement, and business.
             </p>
           </div>
 
@@ -379,18 +375,17 @@ export const ViewAllPrograms = () => {
         <div className="mx-auto max-w-7xl">
           {/* Section Heading */}
           <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl text-center mx-auto">
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
                 Popular Programs
               </p>
 
-              <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-                Programs built to help you move forward.
+              <h2 className="text-4xl md:text-5xl uppercase font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
+                Programs for <span className="text-[#B8F27C]">your growth</span>
               </h2>
 
-              <p className="mt-5 text-base leading-7 text-white/60 sm:text-lg">
-                Explore some of our most popular programs designed around
-                strength, performance, and transformation.
+              <p className="mt-2 text-base leading-7 text-white/60 sm:text-lg">
+                Explore popular programs for strength, performance, and transformation.
               </p>
             </div>
 
@@ -465,13 +460,12 @@ export const ViewAllPrograms = () => {
               What's Included
             </p>
 
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              Everything you need to keep moving forward.
+            <h2 className="text-4xl md:text-5xl uppercase font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
+              Keep moving <span className="text-[#B8F27C]">forward</span>
             </h2>
 
-            <p className="mt-5 text-base leading-7 text-white/60 sm:text-lg">
-              Get the tools, guidance, and support you need to make meaningful
-              progress throughout your program.
+            <p className="mt-1 text-base leading-7 text-white/60 sm:text-lg">
+              Get the support you need to make progress.
             </p>
           </div>
 
@@ -534,24 +528,23 @@ export const ViewAllPrograms = () => {
             <div className="relative z-10 flex flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left">
               {/* Content */}
               <div className="max-w-2xl">
-                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
+                {/* <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
                   Not Sure Where to Start?
-                </p>
+                </p> */}
 
-                <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
-                  Find the program that's right for you.
+                <h2 className="text-4xl md:text-5xl uppercase font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
+                  Find your <span className="text-[#B8F27C]">right program</span>
                 </h2>
 
                 <p className="mt-4 text-base leading-7 text-white/60 sm:text-lg">
-                  Take our quick assessment and we'll guide you toward a program
-                  that matches your goals, experience, and needs.
+                  Take our assessment to find the right program for your goals.
                 </p>
               </div>
 
               {/* Button */}
               <Link
                 to="/assessments"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
               >
                 Take Assessment
                 <ArrowRight

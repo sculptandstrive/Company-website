@@ -460,7 +460,7 @@ export function Nutrition() {
             </span>
             <h2
               
-              className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
+              className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]"
             >
               NUTRITION FOR <span className="text-[#B8F27C]">YOUR GOAL</span>
             </h2>
@@ -496,9 +496,9 @@ export function Nutrition() {
           <FadeIn className="text-center mt-12">
             <Link
               to="/get-plan"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-[8px] bg-white text-[#FF6B5E] text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8F27C]"
+              className="group inline-flex items-center gap-2 px-5 py-3 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
             >
-              Start Tracking Your Diet <ArrowRight size={20} />
+              Start Tracking Your Diet <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform"/>
             </Link>
           </FadeIn>
         </div>

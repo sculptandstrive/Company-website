@@ -32,7 +32,7 @@ const trainerImg =
 const programs = [
   {
     name: "Pre & Postnatal",
-    category: "Pre & Postnatal",
+    category: "Pre & Postnatalll",
     desc: "Safe, effective workouts for every stage of motherhood.",
     color: "#F0609B",
     icon: Heart,
@@ -48,7 +48,7 @@ const programs = [
   },
   {
     name: "Women's Fitness",
-    category: "Women's Fitness",
+    // category: "Women's Fitness",
     desc: "Strength, confidence, and wellness designed for women.",
     color: "#7C3AED",
     icon: Users,
@@ -56,7 +56,7 @@ const programs = [
   },
   {
     name: "Youth Fitness (6–16)",
-    category: "Youth Fitness",
+    // category: "Youth Fitness",
     desc: "Build healthy habits, strength, and confidence early.",
     color: "#14B8A6",
     icon: Users,
@@ -64,7 +64,7 @@ const programs = [
   },
   {
     name: "Weight Transformation",
-    category: "Weight Transformation",
+    // category: "Weight Transformation",
     desc: "Personalized training and nutrition for real, lasting results.",
     color: "#FF6B35",
     icon: Dumbbell,
@@ -72,7 +72,7 @@ const programs = [
   },
   {
     name: "Corrective Exercise",
-    category: "Corrective Training",
+    // category: "Corrective Training",
     desc: "Improve posture, reduce pain, and move better every day.",
     color: "#65A30D",
     icon: Users,
@@ -254,7 +254,7 @@ export function Home() {
               {/* Primary CTA */}
               <Link
                 to="/get-plan"
-                className="group inline-flex items-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
                 // className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
               >
                 Start Your Journey
@@ -267,8 +267,8 @@ export function Home() {
               {/* Secondary CTA */}
               <Link
                 to="/programs"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button border border-sculpt-border text-white text-sm md:text-base font-bold transition-all duration-200 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
-              >
+                className="group inline-flex items-center justify-center gap-2 px-6 py-4 min-h-11 rounded-lg border border-sculpt-border bg-transparent text-white text-base font-semibold transition-all duration-300 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime">
+              
                 <Play size={16} className="text-sculpt-coral" />
                 Explore Programs
               </Link>
@@ -302,13 +302,14 @@ export function Home() {
       <section className="bg-[#171A26] py-16 md:py-20">
         <div className="max-w-[1240px] mx-auto px-6 md:px-10">
           {/* Section heading */}
-          <div className="mb-8 md:mb-10">
-            <p className="text-xs md:text-sm font-bold tracking-widest text-sculpt-lime uppercase mb-2">
+          <div className="mb-8 md:mb-10 text-center">
+            <p className="text-xs md:text-sm font-bold tracking-widest text-sculpt-lime uppercase mb-4">
               MEMBERSHIP
             </p>
 
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-              Choose your fitness plan
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white ">
+              CHOOSE YOUR {" "} 
+              <span className="text-[#B8F27C]">FITNESS PLAN</span>
             </h2>
           </div>
 
@@ -432,10 +433,11 @@ export function Home() {
               {/* <span className="w-8 h-px bg-[#B8F27C]/40" /> */}
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#ffff] mb-4">
-              Programs for
+            {/* <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#ffff] mb-4"> */}
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]">
+              PROGRAMS FOR
               <span className="text-[#B8F27C] ml-4">
-                Every Goal &amp; Every Stage
+                EVERY GOAL AND EVERY STAGE
               </span>
             </h2>
             <p className="text-[#5B5F6B] text-base max-w-2xl mx-auto">
@@ -497,20 +499,25 @@ export function Home() {
                             />
                           </div>
 
-                          <span
+                          {/* <span
                             className="text-xs font-bold tracking-widest uppercase mb-2"
                             style={{ color: prog.color }}
                           >
                             {prog.category ?? "Program"}
-                          </span>
-
+                          </span> */}
                           <h3
+                            className="text-xl font-extrabold mb-2"
+                              style={{ color: prog.color }} >
+                                {prog.name}
+                          </h3>
+
+                          {/* <h3
                             className={`text-xl font-extrabold mb-2 ${
                               dark ? "text-white" : "text-[#0F1117]"
                             }`}
                           >
                             {prog.name}
-                          </h3>
+                          </h3> */}
 
                           <p
                             className={`text-sm leading-snug mb-6 ${
@@ -545,16 +552,22 @@ export function Home() {
                             />
                           </div>
 
-                          <span
+                          {/* <span
                             className="text-xs font-bold tracking-widest uppercase mb-2"
                             style={{ color: prog.color }}
                           >
                             {prog.category ?? "Program"}
-                          </span>
-
-                          <h3 className="text-xl font-extrabold text-[#0F1117] mb-2">
+                          </span> */}
+                          <h3
+                          className="text-xl font-extrabold mb-2"
+                          style={{ color: prog.color }}
+                          >
                             {prog.name}
                           </h3>
+
+                          {/* <h3 className="text-xl font-extrabold text-[#0F1117] mb-2">
+                            {prog.name}
+                          </h3> */}
                           <p className="text-[#5B5F6B] text-sm leading-snug mb-4">
                             {prog.desc}
                           </p>
@@ -658,14 +671,14 @@ export function Home() {
                 </span>
 
                 {/* Heading */}
-                <h2 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]">
+                <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]">
                   FITNESS THAT{" "}
                   <span className="text-[#B8F27C]">MOVES WITH YOU</span>
                 </h2>
 
                 {/* Description */}
                 <p className="text-[#A7A8AF] text-base leading-relaxed mb-6">
-                  At Sculpt & Strive, fitness fits your life. Whether you work
+                  At Sculpt And Strive, fitness fits your life. Whether you work
                   out at home, at the gym, or while traveling, our flexible
                   fitness programs make it easy to stay consistent anywhere.
                 </p>
@@ -700,10 +713,10 @@ export function Home() {
                 {/* CTA Button - Coral */}
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+                  className="group inline-flex items-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
                 >
                   Our Story
-                  <ArrowRight size={16} />
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform transition-200"/>
                 </Link>
               </div>
             </FadeIn>
@@ -720,7 +733,7 @@ export function Home() {
             </span>
             <h2
               // className="text-6xl md:text-7xl text-white">
-              className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]"
+              className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]"
             >
               THE DIFFERENCE IS{" "}
               <span className="text-[#B8F27C]">IN THE DETAIL</span>
@@ -782,7 +795,7 @@ export function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-xl font-bold text-[#B8F27C]">
                       {item.title}
                     </h3>
                     <p className="text-white/60 text-sm mt-1">{item.desc}</p>
@@ -803,7 +816,7 @@ export function Home() {
             </span>
             <h2
               // className="text-6xl text-white"
-              className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]"
+              className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]"
             >
               REAL RESULTS, <span className="text-[#B8F27C]">REAL STORIES</span>
             </h2>
@@ -882,7 +895,7 @@ export function Home() {
           <FadeIn>
             <h2
               // className="text-7xl md:text-8xl text-white mb-6"
-              className="text-6xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]"
+              className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]"
             >
               YOUR JOURNEY <span className="text-[#B8F27C]">STARTS NOW</span>
             </h2>
@@ -904,8 +917,7 @@ export function Home() {
               </Link> */}
               <Link
                 to="/signup"
-                className="group inline-flex items-center gap-2 px-7 py-3 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
-                // className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+                className="group inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
               >
                 Get Started Free{" "}
                 <ArrowRight
@@ -915,7 +927,8 @@ export function Home() {
               </Link>
               <Link
                 to="/get-plan"
-                className="flex items-center justify-center gap-3 px-10 py-4 rounded-lg border border-white/25 text-white font-semibold text-lg hover:border-white/50 hover:bg-white/5 transition-all duration-300"
+                className="flex items-center justify-center gap-3 px-10 py-3 rounded-lg border border-white/25 text-white font-semibold text-md hover:border-white/50 hover:bg-white/5 transition-all duration-300"
+                // className="flex items-center justify-center gap-3 px-10 py-4 rounded-lg border border-white/25 text-white font-semibold text-lg hover:border-white/50 hover:bg-white/5 transition-all duration-300"
               >
                 View Plans
               </Link>

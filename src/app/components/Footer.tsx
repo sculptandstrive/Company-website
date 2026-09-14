@@ -9,8 +9,8 @@ import {
 } from "react-icons/fa";
 
 import logoImg from "../../assets/sculpt-and-strive-logo.jpg";
-import app1 from "../../assets/google.svg";
-import app2 from "../../assets/apple.svg";
+import app1 from "../../assets/gplay.svg";
+import app2 from "../../assets/appstore.svg";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -25,8 +25,7 @@ export function Footer() {
           <div className="p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-3xl md:text-4xl font-extrabold leading-tight text-white mb-2">
-                READY TO {" "}
-                <span className="text-[#B8F27C]">TRANSFORM?</span>
+                READY TO <span className="text-[#B8F27C]">TRANSFORM?</span>
               </h3>
               <p className="text-white/60 text-base">
                 Start your personalized fitness journey today.
@@ -37,7 +36,11 @@ export function Footer() {
               className="group inline-flex items-center gap-2 px-5 py-3 bg-[#FF6B5E] rounded-lg text-[#FFFF] font-semibold hover:bg- hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
               // className="shrink-0 flex items-center gap-2 px-7 py-3 min-h-11 rounded-sculpt-button bg-[#FF6B5E] text-white font-bold text-sm md:text-base transition-all duration-200 hover:brightness-95"
             >
-              Get Your Plan <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-200"/>
+              Get Your Plan{" "}
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform duration-200"
+              />
             </Link>
           </div>
         </div>
@@ -232,11 +235,11 @@ export function Footer() {
           {/* Download App */}
 
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5 tracking-wider uppercase">
+            <h4 className="text-white font-semibold text-sm mb-7 tracking-wider uppercase">
               Download App
             </h4>
 
-            <div className="flex flex-col gap-3 -ml-6">
+            <div className="flex flex-col gap-2 -ml-4">
               {/* Google Play */}
               <motion.a
                 href="https://play.google.com"
@@ -245,14 +248,15 @@ export function Footer() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.2 }}
-                className="block w-[210px] h-[55px] rounded-[8px] overflow-hidden border-0 outline-none ring-0 focus:outline-none focus:ring-0"
+                className="block w-[160px] h-11 rounded-[8px] overflow-hidden"
               >
                 <img
                   src={app1}
                   alt="Get it on Google Play"
-                  className="block w-full h-full object-cover border-0 outline-none"
+                  className="h-full w-full object-contain"
                 />
               </motion.a>
+      
 
               {/* Apple App Store */}
               <motion.a
@@ -262,12 +266,12 @@ export function Footer() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.2 }}
-                className="block w-[210px] h-[55px] rounded-[8px] overflow-hidden border-0 outline-none ring-0 focus:outline-none focus:ring-0"
+                className="block w-[160px] h-11 rounded-[8px] overflow-hidden"
               >
                 <img
                   src={app2}
                   alt="Download on the App Store"
-                  className="block w-full h-full object-cover border-0 outline-none"
+                  className="h-full w-full object-contain"
                 />
               </motion.a>
             </div>

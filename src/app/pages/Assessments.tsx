@@ -199,7 +199,7 @@ export function Assessments() {
             {/* Primary CTA */}
             <Link
               to="/get-plan"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+              className="group inline-flex items-center justify-center gap-2 px-5 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
             >
               Book Your Assessment
               <ArrowRight
@@ -383,9 +383,9 @@ export function Assessments() {
                 </div>
                 <Link
                   to="/get-plan"
-                  className="mt-8 inline-flex items-center gap-3 px-8 py-4 bg-white rounded-2xl text-[#FF6B5E] font-bold transition-all duration-300 hover:scale-105"
+                  className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300 mt-5 ml-1"
                 >
-                  Book Your Assessment <ArrowRight size={16} />
+                  Book Your Assessment <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform transition-200"/>
                 </Link>
               </div>
             </FadeIn>
@@ -401,9 +401,10 @@ export function Assessments() {
               Training Methods
             </span>
             <h2
-              className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
+              className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]"
               // className="text-6xl text-white mb-4"
             >
+              
               TRAIN YOUR WAY, <span className="text-[#B8F27C]">ANYWHERE</span>
             </h2>
             <p className="text-white/50 text-base max-w-2xl mx-auto">

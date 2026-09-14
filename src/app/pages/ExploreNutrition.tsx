@@ -103,15 +103,15 @@ export const ExploreNutrition = () => {
     >
       {/* Small Label */}
       <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
-        Sculpt & Strive Nutrition
+        Sculpt And Strive Nutrition
       </span>
 
       {/* Heading */}
       <h1 className="mb-7 text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
-        NOURISH YOUR BODY.
+        NOURISH YOUR BODY
         <br />
         <span className="mt-3 inline-block bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
-          FUEL YOUR GOALS.
+          FUEL YOUR GOALS
         </span>
       </h1>
 
@@ -126,7 +126,7 @@ export const ExploreNutrition = () => {
         {/* Primary CTA */}
         <Link
           to="/get-plan"
-          className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+          className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
         >
           Start Your Journey
           <ArrowRight
@@ -159,7 +159,7 @@ export const ExploreNutrition = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="mb-10 max-w-3xl"
+            className="mb-10 max-w-3xl text-center mx-auto"
           >
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B8F27C]">
               Nutrition Plans
@@ -242,7 +242,7 @@ export const ExploreNutrition = () => {
       </section>
 
       {/* ==================== RESOURCES ==================== */}
-      <section className="bg-[#171A26] px-6 py-20 lg:px-8">
+      <section className="bg-[#171A26] px-6 py-15 lg:px-8">
         <div className="mx-auto max-w-7xl">
           {/* Section heading */}
           <motion.div
@@ -250,20 +250,19 @@ export const ExploreNutrition = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7 }}
-            className="mb-10"
+            className="mb-10 text-center mx-auto"
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF6B5E]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C]">
               Resources
             </p>
 
-            <h2 className="mt-3 max-w-2xl text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-              Everything you need to{" "}
-              <span className="text-[#B8F27C]">eat smarter.</span>
+            <h2 className="text-4xl md:text-5xl uppercase font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
+              Everything to{" "}
+              <span className="text-[#B8F27C]">eat smarter</span>
             </h2>
 
-            <p className="mt-4 max-w-2xl text-base leading-7 text-[#A7A8AF] sm:text-lg">
-              Explore practical nutrition resources to help you make better
-              choices, plan your meals, and stay consistent.
+            <p className="mt-2 max-w-2xl text-base leading-7 text-[#A7A8AF] sm:text-lg mx-auto">
+             Nutrition tips for better choices and meal planning.
             </p>
           </motion.div>
 
@@ -370,19 +369,18 @@ export const ExploreNutrition = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
               >
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF6B5E]">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C]">
                   Your next step
                 </p>
 
-                <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-                  Ready to improve your{" "}
+                <h2 className="text-4xl md:text-5xl uppercase font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
+                  Better{" "}
                   <span className="text-[#B8F27C]">nutrition?</span>
                 </h2>
 
-                <p className="mt-5 max-w-2xl text-base leading-7 text-[#A7A8AF] sm:text-lg">
-                  Take the next step toward better nutrition, stronger habits,
-                  and a healthier lifestyle with guidance built around your
-                  goals.
+                <p className="text-base leading-7 text-[#A7A8AF] sm:text-lg">
+                  Build healthier habits with guidance tailored to your goals.
+
                 </p>
               </motion.div>
 
@@ -399,7 +397,7 @@ export const ExploreNutrition = () => {
               >
                 <Link
                   to="/get-plan"
-                  className="group inline-flex items-center justify-center gap-2 rounded-sculpt-button bg-white px-6 py-3 min-h-11 text-sm font-bold text-sculpt-coral transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime sm:text-base"
+                  className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
                 >
                   Start Your Journey
                   <ArrowRight
@@ -408,9 +406,6 @@ export const ExploreNutrition = () => {
                   />
                 </Link>
 
-                <p className="text-sm text-[#A7A8AF]">
-                  Nutrition plans built around you.
-                </p>
               </motion.div>
             </div>
           </motion.div>

@@ -130,7 +130,7 @@ export function Trainers() {
             <span className="inline-block -translate-y-3 text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4 ml-2">
               Our Expert Trainers
             </span>
-            <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
+            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
               CERTIFIED
               <br />
               <span className="text-[#B8F27C] inline-block mt-3">
@@ -207,7 +207,7 @@ export function Trainers() {
                   {/* Info */}
                   <div className="p-8">
                     <h3
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      
                       className="text-2xl font-bold text-white mb-1"
                     >
                       {trainer.name}
@@ -276,7 +276,7 @@ export function Trainers() {
                         border: `1px solid ${trainer.color}40`,
                       }}
                     >
-                      Book a Session <ArrowRight size={16} />
+                      Book a Session <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform transition-200"/>
                     </Link>
                   </div>
                 </div>
@@ -290,7 +290,7 @@ export function Trainers() {
       <section className="py-24 bg-[#232631]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
               WHY OUR <span className="text-[#B8F27C]">COACHES STAND OUT</span>
             </h2>
           </FadeIn>
@@ -302,7 +302,7 @@ export function Trainers() {
                     <h.icon size={28} className="text-[#B8F27C]" />
                   </div>
                   <h3
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    
                     className="text-xl font-bold text-white mb-3"
                   >
                     {h.label}
@@ -321,7 +321,7 @@ export function Trainers() {
       <section className="py-20 bg-[#171A26]/70">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
               TRAIN WITH <span className="text-[#B8F27C]">THE BEST</span>
             </h2>
             <p className="text-white/50 text-base mb-10">
@@ -330,9 +330,9 @@ export function Trainers() {
             </p>
             <Link
               to="/get-plan"
-              className="group inline-flex items-center justify-center gap-2 px-7 py-4 min-h-11 rounded-[8px] bg-white text-[#FF6B5E] text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8F27C]"
+              className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
             >
-              Get Your Plan <ArrowRight size={20} />
+              Get Your Plan <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform transition-200" />
             </Link>
           </FadeIn>
         </div>

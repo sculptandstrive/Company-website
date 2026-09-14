@@ -5,7 +5,6 @@ import { CheckCircle, X, Mail, MessageCircle } from "lucide-react";
 import heroVideo from "../../assets/hero-video.mp4";
 import { FaWhatsapp } from "react-icons/fa";
 
-
 interface Plan {
   id: string;
   name: string;
@@ -244,103 +243,93 @@ export function GetPlan() {
       {/* Plans Grid */}
 
       <section className="py-24 bg-[#171A26]">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+              CHOOSE<span className="text-[#B8F27C]"> YOUR PLAN</span>
+            </h2>
 
-    {/* Section Header */}
-    <div className="mb-12">
-      <h2
-        style={{ fontFamily: "'Montserrat', sans-serif" }}
-        className="text-3xl md:text-4xl font-bold text-white"
-      >
-        Choose Your Plan
-      </h2>
+            <p className="mt-2 text-white/60 max-w-xl mx-auto text-center">
+              Explore our coaching plans and find the one that suits your goals.
+            </p>
 
-      <p className="mt-2 text-white/60 max-w-xl">
-        Explore our coaching plans and find the one that suits your goals.
-      </p>
-
-      <button
-        onClick={() => setSelectedPlan(plans[0])}
-        className="mt-4 group inline-flex items-center justify-center gap-2 px-12 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-[#FF6B5E]/15 border hover:border-[#FF6B5E]"
-      >
-        Enquire Now
-      </button>
-    </div>
-
-    {/* Plan Cards */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {plans.map((plan, i) => (
-        <FadeIn key={plan.id} delay={i * 0.05}>
-          <div
-            className={`relative group rounded-3xl border transition-all duration-500 bg-[#232631] hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden ${
-              plan.badge
-                ? "border-[#B8F27C]/40 shadow-[0_0_30px_rgba(255,107,44,0.15)]"
-                : "border-white/8 hover:border-white/20"
-            }`}
-          >
-            {plan.badge && (
-              <div className="absolute top-0 left-0 right-0 flex justify-center">
-                <div className="px-5 py-1.5 bg-gradient-to-r from-[#B8F27C] to-[#B8F27C] rounded-b-2xl text-[#171A26] text-xs font-bold">
-                  {plan.badge}
-                </div>
-              </div>
-            )}
-
-            <div className="p-7 pt-8">
-              {plan.category && (
-                <div
-                  className="text-xs font-semibold mb-2 px-2 py-1 rounded-lg inline-block"
-                  style={{
-                    color: plan.color,
-                    backgroundColor: `${plan.color}15`,
-                  }}
-                >
-                  {plan.category}
-                </div>
-              )}
-              <h3
-                
-                className="text-xl font-bold text-white mb-5"
-              >
-                {plan.name}
-              </h3>
-
-              <ul className="space-y-3">
-                {plan.features.map((f) => (
-                  <li
-                    key={f}
-                    className="flex items-start gap-3 text-sm text-white/65"
-                  >
-                    <CheckCircle
-                      size={16}
-                      className="mt-0.5 shrink-0"
-                      style={{ color: plan.color }}
-                    />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <button
+              onClick={() => setSelectedPlan(plans[0])}
+              className="mt-4 group inline-flex items-center justify-center gap-2 px-9 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+            >
+              Enquire Now
+            </button>
           </div>
-        </FadeIn>
-      ))}
-    </div>
-  </div>
-</section>
+
+          {/* Plan Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {plans.map((plan, i) => (
+              <FadeIn key={plan.id} delay={i * 0.05} className="h-full">
+                <div
+                  className={`relative group rounded-3xl border transition-all duration-500 bg-[#232631] hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)] h-full flex flex-col overflow-hidden ${
+                    plan.badge
+                      ? "border-[#B8F27C]/40 shadow-[0_0_30px_rgba(255,107,44,0.15)]"
+                      : "border-white/8 hover:border-white/20"
+                  }`}
+                >
+                  {plan.badge && (
+                    <div className="absolute top-0 left-0 right-0 flex justify-center">
+                      <div className="px-5 py-1.5 bg-gradient-to-r from-[#B8F27C] to-[#B8F27C] rounded-b-2xl text-[#171A26] text-xs font-bold">
+                        {plan.badge}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="p-7 pt-8 flex-1 flex flex-col">
+                    {plan.category && (
+                      <div
+                        className="text-xs font-semibold mb-2 py-1 rounded-lg inline-block"
+                        style={{
+                          color: plan.color,
+                        }}
+                      >
+                        {plan.category}
+                      </div>
+                    )}
+                    <h3 className="text-xl font-bold mb-5"
+                    style={{ color: plan.color }} >
+                      {plan.name}
+                    </h3>
+
+                    <ul className="space-y-3 flex-1">
+                      {plan.features.map((f) => (
+                        <li
+                          key={f}
+                          className="flex items-start gap-3 text-sm text-white/65"
+                        >
+                          <CheckCircle
+                            size={16}
+                            className="mt-0.5 shrink-0"
+                            style={{ color: plan.color }}
+                          />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Contact Info */}
       <section className="py-16 bg-[#232631]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
-            <h2
-              
-              className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
-            >
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
               HAVE QUESTIONS? <span className="text-[#B8F27C]">REACH OUT</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@sculptandstrive.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@sculptandstrive.com"
                 // href="mailto:info@sculptandstrive.com"
                 className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#B8F27C]/50 hover:bg-[#B8F27C]/10 transition-all duration-300"
               >

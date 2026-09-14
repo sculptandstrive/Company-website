@@ -327,9 +327,9 @@ export function Programs() {
               {/* <span className="w-8 h-px bg-[#B8F27C]/40" /> */}
             </div>
 
-            <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
-              Find Your {" "}
-              <span className="text-[#B8F27C]">Perfect Program</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+              FIND YOUR {" "}
+              <span className="text-[#B8F27C]">PERFECT PROGRAM</span>
             </h2>
             <p className="text-[#A7A8AF] text-base max-w-2xl mx-auto">
               Scientifically designed programs to help you move better, feel
@@ -357,14 +357,14 @@ export function Programs() {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
 
-                      <div
+                      {/* <div
                         className="absolute top-4 left-4 w-11 h-11 rounded-full flex items-center justify-center shadow-md"
                         style={{ backgroundColor: prog.color }}
                       >
                         {prog.icon && (
                           <prog.icon size={20} className="text-white" />
                         )}
-                      </div>
+                      </div> */}
 
                       <svg
                         className="absolute -bottom-px left-0 w-full"
@@ -471,7 +471,7 @@ export function Programs() {
             <span className="inline-block text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
               Structure
             </span>
-            <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
               SPECIALIZED{" "}
               <span className="text-[#B8F27C]">PROGRESSION PATHS</span>
             </h2>
@@ -555,117 +555,27 @@ export function Programs() {
 
       {/* CTA */}
 
-      <section className="relative min-h-[400px] overflow-hidden bg-[#171A26]">
-        {/* GREEN BACKGROUND */}
-        <div className="absolute inset-0 bg-[#42C7C5]" />
+      <section className="py-20 bg-[#171A26]/60">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <FadeIn>
+            <h2
+              className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]"
 
-        {/* WAVE / DARK SHAPE */}
-        <motion.div
-          className="absolute left-[-10%] right-[-10%] top-[25%] h-[80%] z-10"
-          initial={{ y: 180 }}
-          whileInView={{ y: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 1.5,
-            ease: [0.76, 0, 0.24, 1],
-          }}
-        >
-          <div
-            className="
-        absolute inset-0
-        bg-[#171A26]
-        rounded-[50%_50%_0_0/20%_20%_0_0]
-      "
-          />
-        </motion.div>
-
-        {/* CTA CONTENT */}
-        <motion.div
-          className="relative z-20 max-w-4xl mx-auto px-4 py-32 text-center"
-          initial={{ opacity: 1 }}
-          whileInView={{ opacity: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            delay: 0.7,
-            duration: 0.5,
-          }}
-        >
-          <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white/60 mb-3">
-            READY TO <span className="text-[#FF6B5E]">BEGIN?</span>
-          </h2>
-
-          <p className="text-white/50 text-base mb-10">
-            Get a personalized plan tailored to your program and goals.
-          </p>
-
-          <Link
-            to="/get-plan"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold"
-          >
-            Get Your Plan
-            <ArrowRight size={20} />
-          </Link>
-        </motion.div>
-
-        {/* SECOND PANEL */}
-        <motion.div
-          className="absolute inset-0 z-30 flex items-center justify-center px-6"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            delay: 1,
-            duration: 0.14,
-          }}
-        >
-          <div className="w-full max-w-md">
-            <div className="mb-10">
-              <p className="text-md font-bold tracking-[0.25em] uppercase text-white">
-                YOUR NEXT STEP
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/[0.06] backdrop-blur-xl p-6">
-              <div className="flex items-center gap-4 py-4 border-b border-white/10">
-                <div className="w-11 h-11 rounded-xl bg-[#B8F27C]/10 flex items-center justify-center">
-                  <Dumbbell size={21} className="text-[#B8F27C]" />
-                </div>
-
-                <div>
-                  <p className="text-white font-bold">Personalized Training</p>
-
-                  <p className="text-white/40 text-sm">
-                    Built around your goals
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 py-4">
-                <div className="w-11 h-11 rounded-xl bg-[#FF6B5E]/10 flex items-center justify-center">
-                  <Target size={21} className="text-[#FF6B5E]" />
-                </div>
-
-                <div>
-                  <p className="text-white font-bold">Goal Focused</p>
-
-                  <p className="text-white/40 text-sm">A plan made for you</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* GET YOUR PLAN BUTTON */}
-          <Link
-            to="/get-plan"
-            className="ml-5 group mt-5 w-40 sm:w-50 inline-flex items-center justify-center gap-2 rounded-sculpt-button bg-white text-sculpt-coral px-4 py-2 text-xs sm:px-8 sm:py-3 sm:text-sm md:text-base font-bold transition-all duration-300 hover:scale-105"
-          >
-            Get Your Plan
-            <ArrowRight
-              size={20}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </Link>
-        </motion.div>
+              // className="text-6xl text-white mb-6"
+            >
+              READY TO <span className="text-[#B8F27C]">BEGIN?</span>
+            </h2>
+            <p className="text-white/50 text-base mb-10">
+              Get a personalized plan tailored to your program and goals.
+            </p>
+            <Link
+              to="/get-plan"
+              className="group inline-flex items-center gap-2 px-9 py-3 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+            >
+              Get Your Plan <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform"/>
+            </Link>
+          </FadeIn>
+        </div>
       </section>
     </div>
   );
