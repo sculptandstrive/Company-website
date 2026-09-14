@@ -3,14 +3,15 @@ import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { Eye, EyeOff, ArrowRight, Zap, X, Mail } from "lucide-react";
 import { supabase } from "../../lib/supabase";
-import { useAuth } from "@/integrations/supabase/AuthContext"; // adjust path to match your project
 
 const bgImg =
   "https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080";
 
-export function SignIn() {
-  const { signIn, resetPassword } = useAuth();
+// This is Repo 1 (the marketing/signup site) — it has no AuthContext.
+// It talks to Supabase directly, same as the original file did.
+const APP_URL = "https://users.sculptandstrive.com";
 
+export function SignIn() {
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -28,15 +29,24 @@ export function SignIn() {
     setLoading(true);
     setError("");
 
-    const { error } = await signIn(form.email, form.password);
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: form.email,
+      password: form.password,
+    });
 
     if (error) {
       setError(error.message);
       setLoading(false);
       return;
     }
-    // AuthProvider's session listener + your router handle redirect after this.
-    setLoading(false);
+
+    const { access_token, refresh_token } = data.session;
+    window.location.href =
+      APP_URL +
+      "/post-measurement#access_token=" +
+      access_token +
+      "&refresh_token=" +
+      refresh_token;
   };
 
   const handleGoogleAuth = async () => {
@@ -71,7 +81,10 @@ export function SignIn() {
     }
 
     setForgotLoading(true);
-    const { error } = await resetPassword(forgotEmail.trim());
+    const { error } = await supabase.auth.resetPasswordForEmail(
+      forgotEmail.trim(),
+      { redirectTo: `${APP_URL}/reset-password` }
+    );
     setForgotLoading(false);
 
     if (error) {
