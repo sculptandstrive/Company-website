@@ -459,11 +459,11 @@ export function Nutrition() {
               Goal-Based Plans
             </span>
             <h2
-              
-              className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]"
-            >
-              NUTRITION FOR <span className="text-[#B8F27C]">YOUR GOAL</span>
-            </h2>
+  
+  className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white mb-4 leading-[1.05]"
+>
+  NUTRITION FOR <span className="text-[#B8F27C]">YOUR GOAL</span>
+</h2>
             <p className="text-white/60 text-base max-w-xl mx-auto">
               Tailored nutrition strategies aligned with your specific fitness
               objectives and lifestyle.
