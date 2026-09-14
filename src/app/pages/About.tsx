@@ -249,6 +249,10 @@ export function About() {
               LED BY{" "}
               <span className="text-[#B8F27C]">USA CERTIFIED COACHES</span>
             </h2>
+             
+  <p className="text-white/60 text-base max-w-xl mx-auto">
+    Meet the certified experts behind every personalized training plan.
+  </p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
