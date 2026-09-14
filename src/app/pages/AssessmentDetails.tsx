@@ -73,7 +73,7 @@ export const AssessmentDetails = () => {
       transition={{ duration: 0.8 }}
     >
       {/* Small Label */}
-      <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
+      <span className="mb-4 ml-1 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
         Fitness Assessment
       </span>
 
@@ -97,7 +97,7 @@ export const AssessmentDetails = () => {
       <div className="mt-7 flex flex-col gap-3 sm:flex-row">
         <Link
           to="/assessments"
-          className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+          className="group inline-flex items-center justify-center gap-2 px-5 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
         >
           Start Your Assessment
           <ArrowRight

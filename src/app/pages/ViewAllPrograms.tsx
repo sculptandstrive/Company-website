@@ -184,13 +184,13 @@ export const ViewAllPrograms = () => {
 
             {/* Heading */}
             <h1 className="mb-7 text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
-              BUILD YOUR KNOWLEDGE.
+              BUILD YOUR KNOWLEDGE
               <br />
               <span className="mt-3 inline-block bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
-                SHAPE YOUR CAREER.
+                SHAPE YOUR CAREER
               </span>
               <br />
-              <span className="mt-3 inline-block">TRANSFORM LIVES.</span>
+              <span className="mt-3 inline-block">TRANSFORM LIVES</span>
             </h1>
 
             {/* Description */}

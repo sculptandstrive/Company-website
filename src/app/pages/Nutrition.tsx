@@ -154,7 +154,7 @@ export function Nutrition() {
                     <Search size={14} className="text-[#B8F27C]" />
                   </div>
                   <h3
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    
                     className="font-bold text-white text-base"
                   >
                     Food Database
@@ -238,7 +238,7 @@ export function Nutrition() {
             <FadeIn delay={0.1} className="xl:col-span-1">
               <div className="rounded-3xl bg-[#232631] border border-white/8 p-6 h-full">
                 <h3
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  
                   className="font-bold text-white text-base mb-1"
                 >
                   Diet Adherence
@@ -284,7 +284,7 @@ export function Nutrition() {
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center rotate-0">
                       <div
-                        style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+                        
                         className="text-3xl text-white"
                       >
                         86%
@@ -349,7 +349,7 @@ export function Nutrition() {
             <FadeIn delay={0.2} className="xl:col-span-1">
               <div className="rounded-3xl bg-[#232631] border border-white/9 p-6 h-full">
                 <h3
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  
                   className="font-bold text-white text-base mb-1"
                 >
                   Today's Nutrition
@@ -480,8 +480,8 @@ export function Nutrition() {
                     <goal.icon size={22} style={{ color: goal.color }} />
                   </div>
                   <h3
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    className="font-bold text-white mb-2"
+                  
+                    className="font-bold text-[#B8F27C] mb-2"
                   >
                     {goal.label}
                   </h3>
