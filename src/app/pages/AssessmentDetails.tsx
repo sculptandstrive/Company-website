@@ -193,7 +193,7 @@ export const AssessmentDetails = () => {
       <h2 className="mt-3 text-3xl font-bold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
         A simple way to{" "}
         <span className="text-[#B8F27C]">
-          get started.
+          get started
         </span>
       </h2>
 
