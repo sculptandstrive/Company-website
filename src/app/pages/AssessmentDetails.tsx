@@ -129,7 +129,7 @@ export const AssessmentDetails = () => {
       <h2 className="mt-3 text-3xl font-bold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
         Find the right{" "}
         <span className="text-[#B8F27C]">
-          starting point.
+          starting point
         </span>
       </h2>
 
