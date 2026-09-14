@@ -293,6 +293,9 @@ export function Trainers() {
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
               WHY OUR <span className="text-[#B8F27C]">COACHES STAND OUT</span>
             </h2>
+             <p className="text-white/50 text-base max-w-xl mx-auto">
+    Trusted expertise and proven results, backed by every client we train.
+  </p>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {highlights.map((h, i) => (
