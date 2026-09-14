@@ -29,24 +29,36 @@ export function SignIn() {
     setLoading(true);
     setError("");
 
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: form.email,
-      password: form.password,
-    });
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: form.email,
+        password: form.password,
+      });
 
-    if (error) {
-      setError(error.message);
+      if (error) {
+        setError(error.message);
+        return;
+      }
+
+      if (!data.session) {
+        // e.g. email not confirmed, MFA required, or any other edge case
+        // where Supabase returns no error but also no session.
+        setError("Sign in failed. Please try again.");
+        return;
+      }
+
+      const { access_token, refresh_token } = data.session;
+      window.location.href =
+        APP_URL +
+        "/post-measurement#access_token=" +
+        access_token +
+        "&refresh_token=" +
+        refresh_token;
+    } catch (err: any) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
       setLoading(false);
-      return;
     }
-
-    const { access_token, refresh_token } = data.session;
-    window.location.href =
-      APP_URL +
-      "/post-measurement#access_token=" +
-      access_token +
-      "&refresh_token=" +
-      refresh_token;
   };
 
   const handleGoogleAuth = async () => {
@@ -55,7 +67,9 @@ export function SignIn() {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: `${window.location.origin}/post-measurement`,
+          // Must match the manual sign-in flow's destination (repo 2),
+          // not repo 1's own origin.
+          redirectTo: `${APP_URL}/post-measurement`,
         },
       });
       if (error) setError(error.message);
