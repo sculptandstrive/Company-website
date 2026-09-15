@@ -240,7 +240,7 @@ export function SignIn() {
             className="max-w-md"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#B8F27C]/20 border border-[#B8F27C]/40 mb-5">
-              <Zap size={14} className="text-[#B8F27C]" />
+              {/* <Zap size={14} className="text-[#B8F27C]" /> */}
               <span className="text-[#B8F27C] text-sm font-semibold">Start Your Journey</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
@@ -249,8 +249,7 @@ export function SignIn() {
               <span className="text-[#B8F27C] block mt-2">COUNTS</span>
             </h2>
             <p className="text-white/90 text-base leading-relaxed max-w-sm">
-              Access your personalized fitness plans, track progress, and
-              connect with your coach — all in one place.
+              Access personalized fitness plans, track your fitness progress, and connect with your coach, all in one place.
             </p>
           </motion.div>
         </div>

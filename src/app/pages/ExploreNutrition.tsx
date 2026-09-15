@@ -192,10 +192,10 @@ export const ExploreNutrition = () => {
               {/* Featured Content */}
               {/* TEXT ON IMAGE */}
               <div className="absolute inset-0 z-10 flex flex-col justify-center p-7 sm:p-9">
-                <h2 className="max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+                <h2 className="max-w-xl text-3xl font-bold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
                   Nutrition designed
                   <span className="inline-block text-[#B8F27C]">
-                    around your goals.
+                    around your goals
                   </span>
                 </h2>
 
@@ -328,15 +328,17 @@ export const ExploreNutrition = () => {
                 className="absolute inset-0 h-full w-full object-cover"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F0F]/80 via-transparent to-transparent" />
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F0F]/80 via-transparent to-transparent" /> */}
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#232631] via-[#232631]/45 to-transparent" />
 
               <div className="absolute bottom-0 left-0 right-0 p-7 sm:p-9">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C]">
-                  Eat well. Live well.
+                  Eat well Live well
                 </p>
 
-                <h3 className="mt-3 max-w-md text-3xl font-bold leading-tight text-white sm:text-4xl">
-                  Make nutrition part of your lifestyle.
+                <h3 className="mt-3 max-w-md text-3xl uppercase font-bold leading-tight text-white sm:text-4xl">
+                  Make nutrition part of <span className="text-[#B8F27C]">your lifestyle</span>
                 </h3>
               </div>
             </motion.div>

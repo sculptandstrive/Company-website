@@ -306,7 +306,7 @@ export function Programs() {
             </h1>
 
             <p className="text-white/60 text-lg max-w-xl leading-relaxed">
-              Whether you're preparing for motherhood, seeking senior vitality,
+              Whether you are preparing for motherhood, seeking senior vitality,
               or training the next generation, we have a specialized path
               designed just for you.
             </p>
@@ -529,7 +529,7 @@ export function Programs() {
                         {step.stage}
                       </div>
                       <h3
-                        style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      
                         className="text-lg font-bold text-white mb-1"
                       >
                         {step.title}

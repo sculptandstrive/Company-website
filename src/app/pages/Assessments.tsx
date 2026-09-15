@@ -183,10 +183,10 @@ export function Assessments() {
             </span>
 
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
-              MOVE BETTER.
+              MOVE BETTER
               <br />
               <span className="text-[#B8F27C] inline-block mt-3">
-                FEEL BETTER.
+                FEEL BETTER
               </span>
             </h1>
             
@@ -369,8 +369,9 @@ export function Assessments() {
                       </div>
                       <div>
                         <h4
-                          style={{ fontFamily: "'Montserrat', sans-serif" }}
-                          className="font-bold text-white mb-1 text-sm"
+                          
+                          className="font-bold mb-1 text-sm"
+                          style={{ color: step.color }}
                         >
                           {step.title}
                         </h4>
@@ -432,7 +433,7 @@ export function Assessments() {
                     </div>
                     <div className="absolute bottom-4 left-4 right-4">
                       <h3
-                        style={{ fontFamily: "'Montserrat', sans-serif" }}
+                        
                         className="text-2xl font-bold text-white"
                       >
                         {method.name}

@@ -36,17 +36,17 @@ const assessmentSteps = [
   {
     title: "Choose an Assessment",
     description:
-      "Select the area you want to understand better, from fitness and movement to nutrition and recovery.",
+      "Choose a fitness, movement, nutrition, or recovery assessment.",
   },
   {
     title: "Complete the Assessment",
     description:
-      "Answer a few simple questions about your current habits, goals, and needs.",
+      "Answer simple questions about your goals, habits, and needs.",
   },
   {
     title: "Understand Your Results",
     description:
-      "Use your results to identify your strengths and discover where to focus next.",
+      "Review your results and discover the right areas to focus on next.",
   },
 ];
 
@@ -122,20 +122,20 @@ export const AssessmentDetails = () => {
       transition={{ duration: 0.7 }}
       className="mb-10 max-w-2xl mx-auto text-center"
     >
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C]">
+      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C] mb-2">
         Explore Assessments
       </p>
 
-      <h2 className="mt-3 text-3xl font-bold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
-        Find the right{" "}
+      <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
+        Find your{" "}
         <span className="text-[#B8F27C]">
           starting point
         </span>
       </h2>
 
-      <p className="mt-4 text-base leading-7 text-[#A7A8AF] sm:text-lg">
-        Choose an assessment to better understand your current strengths,
-        needs, and opportunities for progress.
+      <p className="mt-2 text-base leading-4 text-[#A7A8AF] sm:text-lg">
+        Choose a fitness assessment to understand your strengths, needs, and progress.
+
       </p>
     </motion.div>
 
@@ -186,19 +186,19 @@ export const AssessmentDetails = () => {
       transition={{ duration: 0.7 }}
       className="mb-14 max-w-2xl mx-auto text-center"
     >
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF6B5E]">
+      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C] mb-2">
         How It Works
       </p>
 
-      <h2 className="mt-3 text-3xl font-bold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
-        A simple way to{" "}
+      <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
+       Start Your{" "}
         <span className="text-[#B8F27C]">
-          get started
+          Assessment
         </span>
       </h2>
 
-      <p className="mt-4 text-base leading-7 text-[#A7A8AF] sm:text-lg">
-        Get a clearer picture of where you are and what you can work on next.
+      <p className="mt-4 text-base leading-4 text-[#A7A8AF] sm:text-lg">
+        Understand your fitness level, goals, and next steps with a simple assessment.
       </p>
     </motion.div>
 
@@ -227,7 +227,7 @@ export const AssessmentDetails = () => {
             {String(index + 1).padStart(2, "0")}
           </div>
 
-          <h3 className="mt-7 text-2xl font-bold text-white">
+          <h3 className="mt-7 text-2xl font-bold text-[#B8F27C]">
             {step.title}
           </h3>
 

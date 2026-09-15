@@ -156,7 +156,7 @@ export function SignUp() {
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#B8F27C]/20 border border-[#B8F27C]/40 mb-6">
               <span className="text-[#B8F27C] text-sm font-semibold">
-                Join Sculpt & Strive
+                Join Sculpt And Strive
               </span>
             </div>
 
