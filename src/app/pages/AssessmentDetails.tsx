@@ -122,7 +122,7 @@ export const AssessmentDetails = () => {
       transition={{ duration: 0.7 }}
       className="mb-10 max-w-2xl mx-auto text-center"
     >
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF6B5E]">
+      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C]">
         Explore Assessments
       </p>
 
