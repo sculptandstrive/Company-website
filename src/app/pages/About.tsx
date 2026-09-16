@@ -105,10 +105,10 @@ export function About() {
       {/* Stats */}
       <section className="py-20 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {stats.map((stat, i) => (
               <FadeIn key={stat.label} delay={i * 0.1}>
-                <div className="text-center p-8 rounded-2xl bg-gradient-to-b from-[#B8F27C]/8 to-transparent border border-[#B8F27C]/15 hover:border-[#B8F27C]/40 transition-all duration-500 group">
+                <div className="h-full flex flex-col justify-between text-center p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-[#B8F27C]/8 to-transparent border border-[#B8F27C]/15 hover:border-[#B8F27C]/40 transition-all duration-500 group">
                   <stat.icon
                     size={28}
                     className="text-[#B8F27C] mx-auto mb-3 group-hover:scale-110 transition-transform"
