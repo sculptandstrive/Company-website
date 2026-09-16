@@ -312,7 +312,7 @@ export function Navbar() {
 
               {/* Nutrition */}
               <div className="flex items-center justify-between">
-                {/* Programs → normal Programs page */}
+                {/* Nutrition → normal nutrtion page */}
                 <Link
                   to="/nutrition"
                   onClick={() => setMobileOpen(false)}
@@ -321,7 +321,7 @@ export function Navbar() {
                   Nutrition
                 </Link>
 
-                {/* + → show View All Programs */}
+                {/* + → show View all nutrition */}
                 <button
                   type="button"
                   onClick={() => setMobileNutritionOpen(!mobileNutritionOpen)}
@@ -348,7 +348,7 @@ export function Navbar() {
               {/* Assessments */}
 
               <div className="flex items-center justify-between">
-                {/* Programs → normal Programs page */}
+                {/* assessment → normal assessment page */}
                 <Link
                   to="/assessments"
                   onClick={() => setMobileOpen(false)}
@@ -357,7 +357,7 @@ export function Navbar() {
                   Assessments
                 </Link>
 
-                {/* + → show View All Programs */}
+                {/* + → show View All assessment */}
                 <button
                   type="button"
                   onClick={() =>

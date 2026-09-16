@@ -154,7 +154,7 @@ function FadeIn({
 
 export function Assessments() {
   return (
-    <div>
+    <div className="w-full overflow-x-hidden">
       {/* Hero */}
       <div className="relative h-[70vh] min-h-[650px] flex items-center overflow-hidden bg-[#171A26]">
         <div className="absolute inset-0">
@@ -171,21 +171,21 @@ export function Assessments() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/20" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
           <motion.div
-            className="lg:-translate-x-45 lg:-translate-y-0"
+            className="mt-10 lg:-translate-x-45 lg:-translate-y-0"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block -translate-y-3 text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4 ml-2">
+            <span className="inline-block -translate-y-1 text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4 ml-1">
               Postural Assessment
             </span>
 
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
               MOVE BETTER
               <br />
-              <span className="text-[#B8F27C] inline-block mt-3">
+              <span className="text-[#B8F27C] inline-block mt-1">
                 FEEL BETTER
               </span>
             </h1>
@@ -340,7 +340,7 @@ export function Assessments() {
                   Our Method
                 </span>
                 <h2
-                  className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4 leading-none whitespace-nowrap"
+                  className="text-xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4 leading-none whitespace-nowrap"
                   // className="text-5xl text-white mb-6"
                 >
                   4-POINT{" "}

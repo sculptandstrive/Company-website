@@ -120,14 +120,14 @@ export function Trainers() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#171A26]" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
           <motion.div
             className="lg:-translate-x-40 lg:-translate-y-5"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block -translate-y-3 text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4 ml-2">
+            <span className="inline-block -translate-y-3 text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4 ml-1">
               Our Expert Trainers
             </span>
             <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">

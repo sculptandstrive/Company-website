@@ -113,7 +113,7 @@ export function About() {
                     size={28}
                     className="text-[#B8F27C] mx-auto mb-3 group-hover:scale-110 transition-transform"
                   />
-                  <div className="text-5xl font-bold text-white mb-2">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 whitespace-nowrap">
   {stat.value}
 </div>
                   <div className="text-white/50 text-sm">{stat.label}</div>
