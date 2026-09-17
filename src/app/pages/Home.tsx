@@ -196,7 +196,7 @@ export function Home() {
           style={{ opacity: heroOpacity }}
           className="relative z-10 w-full max-w-[1240px] mx-auto px-6 md:px-10 pt-20"
         >
-          <div className="max-w-[700px] text-left ml-8 md:ml-30">
+          <div className="max-w-[700px] text-left ml-0 md:ml-30">
             {/* Eyebrow */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -205,7 +205,6 @@ export function Home() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sculpt-lime/10 border border-sculpt-lime/30 mb-8"
             >
               {/* <Zap size={14} className="text-sculpt-lime" /> */}
-
               <span className="text-sculpt-lime text-sm font-medium">
                 India and USA Certified Fitness Coaches
               </span>
@@ -255,7 +254,6 @@ export function Home() {
               <Link
                 to="/get-plan"
                 className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
-                // className="group inline-flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-sculpt-button bg-white text-sculpt-coral text-sm md:text-base font-bold transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
               >
                 Start Your Journey
                 <ArrowRight
@@ -282,7 +280,7 @@ export function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+          className="hidden absolute bottom-0 left-1/2 -translate-x-1/2 md:flex flex-col items-center gap-1"
         >
           <span className="text-white/50 text-xs tracking-widest uppercase">
             Scroll
@@ -361,7 +359,7 @@ export function Home() {
                   About Fitness
                 </p>
 
-                <h3 className="max-w-sm text-3xl font-semibold leading-tight text-white md:text-4xl">
+                <h3 className="max-w-sm uppercase text-2xl font-bold leading-tight text-white md:text-4xl">
                   Stronger body
                   <br />
                   Stronger mindset
@@ -618,7 +616,7 @@ export function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* ── IMAGE SIDE ── */}
             <FadeIn>
-              <div className="relative">
+              <div className="relative my-4 sm:my-6">
                 {/* Main Image */}
                 <div className="rounded-3xl overflow-hidden h-[600px]">
                   <img
@@ -629,7 +627,7 @@ export function Home() {
                 </div>
 
                 {/* Experience Card - Coral */}
-                <div className="absolute -bottom-6 -right-6 bg-[#FFFFFF] rounded-3xl p-6 shadow-2xl">
+                <div className="absolute -bottom-3 -right-3 sm:-bottom-6 sm:-right-6 bg-[#FFFFFF] rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl z-10">
                   <div className="text-4xl font-extrabold text-[#FF6B5E] tracking-tight">
                     10+
                   </div>
@@ -640,7 +638,7 @@ export function Home() {
                 </div>
 
                 {/* Certification Card */}
-                <div className="absolute -top-6 -left-6 bg-[#232631] border border-[#4B4F5D] rounded-3xl p-5 shadow-2xl">
+                <div className="absolute -top-3 -left-3 sm:-top-6 sm:-left-6 bg-[#232631] border border-[#4B4F5D] rounded-2xl sm:rounded-3xl p-3 sm:p-5 shadow-2xl">
                   <div className="flex items-center gap-2 mb-2">
                     {[...Array(5)].map((_, i) => (
                       <Star

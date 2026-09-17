@@ -151,13 +151,13 @@ export function Trainers() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {trainers.map((trainer, i) => (
               <FadeIn key={trainer.name} delay={i * 0.15}>
-                <div className="group rounded-3xl overflow-hidden border border-white/8 bg-[#171A26] hover:border-white/20 transition-all duration-500 hover:shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
+                <div className="group rounded-3xl overflow-hidden ring ring-white/8 bg-[#171A26] hover:ring-white/20 transition-all duration-500 hover:shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
                   {/* Image */}
-                  <div className="relative h-96 overflow-hidden">
+                  <div className="relative h-96 w-full overflow-hidden">
                     <img
                       src={trainer.img}
                       alt={trainer.name}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                      className="block w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#171A26] via-[#171A26]/20 to-transparent" />
 

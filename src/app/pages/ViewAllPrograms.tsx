@@ -162,7 +162,8 @@ export const ViewAllPrograms = () => {
         {/* Background */}
         <div className="absolute inset-0">
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/60 to-[#171A26]/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
 
           {/* Bottom fade */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
@@ -175,11 +176,11 @@ export const ViewAllPrograms = () => {
             className="max-w-[700px] text-left md:ml-30"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8 }}
           >
             {/* Small Label */}
             <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
-              Sculpt & Strive
+              Sculpt And Strive
             </span>
 
             {/* Heading */}

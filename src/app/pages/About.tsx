@@ -7,7 +7,6 @@ import trainerManImg from "../../assets/Sagar.jpeg";
 import heroVideo from "../../assets/hero-video.mp4";
 import yoga1 from "../../assets/yoga1.jpg";
 
-
 const groupImg =
   "https://images.unsplash.com/photo-1731325632701-90d4e869a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3b3Jrb3V0JTIwdGVhbSUyMGdyb3VwJTIwZml0bmVzcyUyMGNsYXNzfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=600";
 
@@ -78,7 +77,7 @@ export function About() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-          className="lg:-translate-x-40 lg:-translate-y-5"
+            className="lg:-translate-x-40 lg:-translate-y-5"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -86,13 +85,12 @@ export function About() {
             <span className="inline-block -translate-y-3 text-[#B8F27C] text-sm font-semibold tracking-[0.3em] uppercase mb-4 ml-2">
               About Us
             </span>
-            <h1
-              
-              className="text-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6"
-            >
+            <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6">
               SCULPT
               <br />
-              <span className="text-[#B8F27C] inline-block mt-3">AND STRIVE</span>
+              <span className="text-[#B8F27C] inline-block mt-3">
+                AND STRIVE
+              </span>
             </h1>
             <p className="text-white/60 text-lg max-w-xl leading-relaxed">
               A results-driven fitness brand dedicated to helping individuals of
@@ -114,8 +112,8 @@ export function About() {
                     className="text-[#B8F27C] mx-auto mb-3 group-hover:scale-110 transition-transform"
                   />
                   <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 whitespace-nowrap">
-  {stat.value}
-</div>
+                    {stat.value}
+                  </div>
                   <div className="text-white/50 text-sm">{stat.label}</div>
                 </div>
               </FadeIn>
@@ -134,7 +132,7 @@ export function About() {
                   Our Story
                 </span>
                 <h2
-                className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
+                  className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.05]"
                   // className="text-5xl md:text-6xl text-white mb-6"
                 >
                   FITNESS THAT{" "}
@@ -184,13 +182,13 @@ export function About() {
                 <div className="w-14 h-14 rounded-2xl bg-[#B8F27C]/20 flex items-center justify-center mb-6">
                   <Target size={26} className="text-[#B8F27C]" />
                 </div>
-               <h3 className="text-4xl font-bold text-white mb-4">
-  OUR MISSION
-</h3>
+                <h3 className="text-4xl font-bold text-white mb-4">
+                  OUR MISSION
+                </h3>
                 <p className="text-white/60 leading-relaxed">
-                  Sculpt And Strive Fitness is dedicated to creating a space where
-                  every member feels supported, challenged, and motivated to
-                  reach their personal best. We believe that fitness is not a
+                  Sculpt And Strive Fitness is dedicated to creating a space
+                  where every member feels supported, challenged, and motivated
+                  to reach their personal best. We believe that fitness is not a
                   destination, it is a lifelong commitment to becoming the best
                   version of yourself.
                 </p>
@@ -201,9 +199,9 @@ export function About() {
                 <div className="w-14 h-14 rounded-2xl bg-[#42C7C5]/20 flex items-center justify-center mb-6">
                   <Eye size={26} className="text-[#42C7C5]" />
                 </div>
-               <h3 className="text-4xl font-bold text-white mb-4">
-  OUR VISION
-</h3>
+                <h3 className="text-4xl font-bold text-white mb-4">
+                  OUR VISION
+                </h3>
                 <p className="text-white/60 leading-relaxed">
                   At Sculpt And Strive, we believe true fitness is both an art
                   and a science deeply personal, purpose-driven, and guided by
@@ -231,10 +229,11 @@ export function About() {
               LED BY{" "}
               <span className="text-[#B8F27C]">USA CERTIFIED COACHES</span>
             </h2>
-             
-  <p className="text-white/60 text-base max-w-xl mx-auto">
-    Meet the certified experts behind every personalized training plan.
-  </p>
+
+            <p className="text-white/60 text-base max-w-xl mx-auto">
+              Meet the certified experts behind every personalized training
+              plan.
+            </p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -258,13 +257,13 @@ export function About() {
             ].map((trainer, i) => (
               <FadeIn key={trainer.name} delay={i * 0.15}>
                 <div className="rounded-3xl overflow-hidden border border-white/8 bg-[#171A26] hover:border-white/15 transition-all duration-500 group">
-                  <div className="relative h-80 overflow-hidden">
+                  <div className="relative w-full h-80 overflow-hidden">
                     <img
                       src={trainer.img}
                       alt={trainer.name}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                      className="block w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#171A26] via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#171A26] via-[#171A26]/60 to-transparent pointer-events-none" />
                     <div className="absolute top-4 right-4">
                       <div className="px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 text-xs text-white font-semibold">
                         {trainer.exp}
@@ -272,10 +271,7 @@ export function About() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3
-                      
-                      className="text-xl font-bold text-white mb-1"
-                    >
+                    <h3 className="text-xl font-bold text-white mb-1">
                       {trainer.name}
                     </h3>
                     <p
@@ -314,7 +310,11 @@ export function About() {
               to="/trainers"
               className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
             >
-              Meet Our Trainers <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform transition-200"/>
+              Meet Our Trainers{" "}
+              <ArrowRight
+                size={16}
+                className="group-hover:translate-x-1 transition-transform transition-200"
+              />
             </Link>
           </FadeIn>
         </div>
