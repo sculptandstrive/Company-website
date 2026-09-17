@@ -170,7 +170,7 @@ export function Home() {
       {/* ── HERO ── */}
       <div
         ref={heroRef}
-        className="relative min-h-[600px] md:min-h-[680px] flex items-center justify-center overflow-hidden"
+        className="relative min-h-[680px] md:min-h-[680px] flex items-center justify-center overflow-hidden"
       >
         <motion.div style={{ y: heroY }} className="absolute inset-0">
           <video
@@ -281,6 +281,7 @@ export function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
           className="hidden absolute bottom-0 left-1/2 -translate-x-1/2 md:flex flex-col items-center gap-1"
+          
         >
           <span className="text-white/50 text-xs tracking-widest uppercase">
             Scroll
