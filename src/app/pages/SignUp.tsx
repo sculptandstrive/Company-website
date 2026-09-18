@@ -107,7 +107,7 @@ export function SignUp() {
             }, { onConflict: "user_id" });
 
             await supabase.from("notifications").insert({
-              user_id: authedUserId,
+              user_id: null,
               recipient_type: "admin",
               sender_type: "user",
               sender_id: authedUserId,
