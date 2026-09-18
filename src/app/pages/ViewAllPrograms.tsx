@@ -22,35 +22,30 @@ import { Link } from "react-router";
 
 const programPaths = [
   {
-    
     title: "Become a Certified Personal Trainer",
     description:
       "Start your fitness career with confidence through a structured certification pathway.",
     button: "Explore Personal Trainer Programs",
   },
   {
-    
     title: "Fitness + Nutrition",
     description:
       "Go beyond training with education across fitness, nutrition, and wellness.",
     button: "Explore Fitness & Nutrition",
   },
   {
-    
     title: "Career-Focused Bundles",
     description:
       "Build multiple professional skills through comprehensive education bundles.",
     button: "Compare Career Bundles",
   },
   {
-    
     title: "Specialize Your Expertise",
     description:
       "Develop focused knowledge for specific populations, goals, and training areas.",
     button: "Explore Specializations",
   },
   {
-    
     title: "Group Fitness",
     description: "Develop the skills to lead and train groups.",
     button: "Explore Group Fitness",
@@ -206,7 +201,6 @@ export const ViewAllPrograms = () => {
                 to="/programs"
                 className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
               >
-                
                 Explore Programs
                 <ArrowRight
                   size={18}
@@ -242,7 +236,6 @@ export const ViewAllPrograms = () => {
 
             <p className="mt-2 text-base leading-7 text-white/60 sm:text-lg">
               Explore flexible pathways to start and grow your fitness career.
-
             </p>
           </div>
 
@@ -265,17 +258,17 @@ export const ViewAllPrograms = () => {
             hover:shadow-lg
           "
               >
-                {/* Small Number */}
+                <div>
+                  {/* Program Title */}
+                  <h3 className="text-xl font-bold leading-tight text-[#B8F27C]">
+                    {path.title}
+                  </h3>
 
-                {/* Program Title */}
-                <h3 className="text-xl font-bold leading-tight text-[#B8F27C]">
-                  {path.title}
-                </h3>
-
-                {/* Description */}
-                <p className="mt-3 max-w-sm text-sm leading-[1.4] text-[#A7A8AF]">
-                  {path.description}
-                </p>
+                  {/* Description */}
+                  <p className="mt-2 max-w-sm text-xs leading-normal text-[#A7A8AF] line-clamp-2">
+                    {path.description}
+                  </p>
+                </div>
 
                 {/* Explore Button */}
                 <button
@@ -312,7 +305,7 @@ export const ViewAllPrograms = () => {
             </p>
 
             <h2 className="text-4xl md:text-5xl uppercase font-extrabold tracking-tight text-white mb-4 leading-[1.05">
-              Explore your  <span className="text-[#B8F27C]">expertise</span>
+              Explore your <span className="text-[#B8F27C]">expertise</span>
             </h2>
 
             <p className="mt-1 max-w-2xl text-base leading-7 mx-auto text-white/60 sm:text-lg">
@@ -335,7 +328,7 @@ export const ViewAllPrograms = () => {
                     duration: 0.5,
                     delay: index * 0.08,
                   }}
-                  className="group flex items-center justify-between rounded-2xl border border-[#26313D] bg-[#171A26] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#B8F27C]/50"
+                  className="group flex h-[100px] items-center justify-between rounded-2xl border border-[#26313D] bg-[#171A26] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#B8F27C]/50"
                 >
                   {/* Left */}
                   <div className="flex items-center gap-5">
@@ -350,7 +343,7 @@ export const ViewAllPrograms = () => {
 
                     {/* Text */}
                     <div>
-                      <h3 className="text-lg font-semibold text-white">
+                      <h3 className="text-md font-semibold text-white">
                         {category.title}
                       </h3>
 
@@ -386,7 +379,8 @@ export const ViewAllPrograms = () => {
               </h2>
 
               <p className="mt-2 text-base leading-7 text-white/60 sm:text-lg">
-                Explore popular programs for strength, performance, and transformation.
+                Explore popular programs for strength, performance, and
+                transformation.
               </p>
             </div>
 
@@ -534,7 +528,8 @@ export const ViewAllPrograms = () => {
                 </p> */}
 
                 <h2 className="text-4xl md:text-5xl uppercase font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
-                  Find your <span className="text-[#B8F27C]">right program</span>
+                  Find your{" "}
+                  <span className="text-[#B8F27C]">right program</span>
                 </h2>
 
                 <p className="mt-4 text-base leading-7 text-white/60 sm:text-lg">
