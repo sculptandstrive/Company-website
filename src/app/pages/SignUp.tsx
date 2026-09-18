@@ -89,6 +89,39 @@ export function SignUp() {
       }
 
       if (session) {
+        try {
+          const authedUserId = session.user?.id || signUpData?.user?.id;
+          if (authedUserId) {
+            const expiryDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+            await supabase.from("profiles").upsert({
+              id: authedUserId,
+              user_id: authedUserId,
+              email: form.email.trim().toLowerCase(),
+              full_name: form.name.trim(),
+            }, { onConflict: "id" });
+
+            await supabase.from("user_roles").upsert({
+              user_id: authedUserId,
+              role: "trial_user",
+              expiry_time: expiryDate,
+            }, { onConflict: "user_id" });
+
+            await supabase.from("notifications").insert({
+              user_id: authedUserId,
+              recipient_type: "admin",
+              sender_type: "user",
+              sender_id: authedUserId,
+              is_completed: false,
+              title: "New User Registration",
+              description: `${form.name.trim()} (${form.email.trim().toLowerCase()}) registered via website`,
+              notification_date: new Date().toISOString().split("T")[0],
+              created_at: new Date().toISOString(),
+            });
+          }
+        } catch (syncErr) {
+          console.warn("SignUp profile/role/notification sync note:", syncErr);
+        }
+
         const { access_token, refresh_token } = session;
         window.location.href =
           APP_URL +
