@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Eye, EyeOff, ArrowRight, CheckCircle } from "lucide-react";
 import { supabase } from "../../lib/supabase";
+import { getUserAppUrl } from "../../lib/urls";
 
 const bgImg =
   "https://images.unsplash.com/photo-1758875569071-717cfaa97c4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGZpdG5lc3MlMjBzdHJlbmd0aCUyMHRyYWluaW5nJTIwZ3ltfGVufDF8fHx8MTc3NTg3NjU1M3ww&ixlib=rb-4.1.0&q=80&w=1080";
@@ -14,9 +15,8 @@ const perks = [
   "Progress analytics & insights",
 ];
 
-const APP_URL = "https://users.sculptandstrive.com";
-
 export function SignUp() {
+  const appUrl = getUserAppUrl();
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -124,7 +124,7 @@ export function SignUp() {
 
         const { access_token, refresh_token } = session;
         window.location.href =
-          APP_URL +
+          appUrl +
           "/post-measurement#access_token=" +
           access_token +
           "&refresh_token=" +
@@ -147,7 +147,7 @@ export function SignUp() {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: `${APP_URL}/post-measurement`,
+          redirectTo: `${appUrl}/post-measurement`,
         },
       });
       if (error) {

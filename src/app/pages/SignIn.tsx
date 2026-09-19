@@ -3,15 +3,13 @@ import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { Eye, EyeOff, ArrowRight, Zap, X, Mail } from "lucide-react";
 import { supabase } from "../../lib/supabase";
+import { getUserAppUrl } from "../../lib/urls";
 
 const bgImg =
   "https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080";
 
-// This is Repo 1 (the marketing/signup site) — it has no AuthContext.
-// It talks to Supabase directly, same as the original file did.
-const APP_URL = "https://users.sculptandstrive.com";
-
 export function SignIn() {
+  const appUrl = getUserAppUrl();
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -49,7 +47,7 @@ export function SignIn() {
 
       const { access_token, refresh_token } = data.session;
       window.location.href =
-        APP_URL +
+        appUrl +
         "/post-measurement#access_token=" +
         access_token +
         "&refresh_token=" +
@@ -69,7 +67,7 @@ export function SignIn() {
         options: {
           // Must match the manual sign-in flow's destination (repo 2),
           // not repo 1's own origin.
-          redirectTo: `${APP_URL}/post-measurement`,
+          redirectTo: `${appUrl}/post-measurement`,
         },
       });
       if (error) setError(error.message);
@@ -97,7 +95,7 @@ export function SignIn() {
     setForgotLoading(true);
     const { error } = await supabase.auth.resetPasswordForEmail(
       forgotEmail.trim(),
-      { redirectTo: `${APP_URL}/reset-password` }
+      { redirectTo: `${appUrl}/reset-password` }
     );
     setForgotLoading(false);
 
