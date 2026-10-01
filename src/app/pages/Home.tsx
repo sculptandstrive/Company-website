@@ -10,6 +10,11 @@ import card4 from "../../assets/youth.jpg";
 import card5 from "../../assets/waight.jpg";
 import card6 from "../../assets/corrective.jpg";
 
+import reel1 from "../../assets/reels/reel-1.mp4";
+import reel2 from "../../assets/reels/reel-2.mp4";
+import reel3 from "../../assets/reels/reel-3.mp4";
+import reel4 from "../../assets/reels/reel-4.mp4";
+
 import {
   ArrowRight,
   Play,
@@ -108,6 +113,12 @@ const features = [
     desc: "Beyond physical fitness, we focus on strength, confidence, and overall well-being.",
   },
 ];
+const reels = [
+  { src: reel1, title: "Russian Twist" },
+  { src: reel2, title: "Hip Thrust" },
+  { src: reel3, title: "Cable Crossover" },
+  { src: reel4, title: "Incline Press" },
+];
 
 function FadeIn({
   children,
@@ -165,6 +176,23 @@ export function Home() {
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
+  const reelRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  const handleMouseEnter = (index: number) => {
+    const video = reelRefs.current[index];
+    if (video) {
+      video.play();
+    }
+  };
+
+  const handleMouseLeave = (index: number) => {
+    const video = reelRefs.current[index];
+    if (video) {
+      video.pause();
+      video.currentTime = 0; // optional: rewind to start on leave
+    }
+  };
+
   return (
     <div>
       {/* ── HERO ── */}
@@ -218,7 +246,7 @@ export function Home() {
                 delay: 0.3,
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
-              // style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.03em', lineHeight: '0.95' }}
+              
               className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-none tracking-tight text-white mb-6"
             >
               SCULPT
@@ -265,8 +293,8 @@ export function Home() {
               {/* Secondary CTA */}
               <Link
                 to="/programs"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-4 min-h-11 rounded-lg border border-sculpt-border bg-transparent text-white text-base font-semibold transition-all duration-300 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime">
-              
+                className="group inline-flex items-center justify-center gap-2 px-6 py-4 min-h-11 rounded-lg border border-sculpt-border bg-transparent text-white text-base font-semibold transition-all duration-300 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+              >
                 <Play size={16} className="text-sculpt-coral" />
                 Explore Programs
               </Link>
@@ -281,7 +309,6 @@ export function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
           className="hidden absolute bottom-0 left-1/2 -translate-x-1/2 md:flex flex-col items-center gap-1"
-          
         >
           <span className="text-white/50 text-xs tracking-widest uppercase">
             Scroll
@@ -307,8 +334,7 @@ export function Home() {
             </p>
 
             <h2 className="text-4xl md:text-5xl font-extrabold text-white ">
-              CHOOSE YOUR {" "} 
-              <span className="text-[#B8F27C]">FITNESS PLAN</span>
+              CHOOSE YOUR <span className="text-[#B8F27C]">FITNESS PLAN</span>
             </h2>
           </div>
 
@@ -419,6 +445,60 @@ export function Home() {
         </div>
       </section>
 
+      {/* reels section */}
+      <section className="bg-[#171A26] py-10 md:py-16 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-center text-[#B8F27C] mb-10">
+            
+            Fitness Reels - Sculpt And Strive Videos
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 justify-items-center">
+            {reels.map((reel, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.03 }}
+                onMouseEnter={() => handleMouseEnter(i)}
+                onMouseLeave={() => handleMouseLeave(i)}
+                className="relative w-full rounded-xl overflow-hidden group cursor-pointer"
+                style={{ aspectRatio: "9 / 14" }}
+              >
+                <video
+                  ref={(el) => (reelRefs.current[i] = el)}
+                  src={reel.src}
+                  
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#171A26]/50 via-[#171A26]/10 to-transparent" />
+                {/* play icon on hover */}
+                <div
+                  className="absolute bottom-2
+                left-2 opacity-100 group-hover:opacity-0
+                 transition-opacity"
+                >
+                  <div className="w-12 h-12 rounded-full bg-[#B8F27C]/20 backdrop-blur-sm flex items-center justify-center">
+                    <div className="w-0 h-0 border-y-8 border-y-transparent border-l-[14px] border-l-[#B8F27C] ml-1" />
+                  </div>
+                </div>
+                {/* workout name */}
+                {/* <div className="absolute bottom-2 right-2">
+                  <p className="text-[#B8F27C] text-sm font-semibold drop-shadow-md line-clamp-2">
+                    {reel.title}
+                  </p>
+                </div> */}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FEATURED PROGRAMS ── */}
 
       <section className="py-24 bg-[#171A26]">
@@ -506,8 +586,9 @@ export function Home() {
                           </span> */}
                           <h3
                             className="text-xl font-extrabold mb-2"
-                              style={{ color: prog.color }} >
-                                {prog.name}
+                            style={{ color: prog.color }}
+                          >
+                            {prog.name}
                           </h3>
 
                           {/* <h3
@@ -558,8 +639,8 @@ export function Home() {
                             {prog.category ?? "Program"}
                           </span> */}
                           <h3
-                          className="text-xl font-extrabold mb-2"
-                          style={{ color: prog.color }}
+                            className="text-xl font-extrabold mb-2"
+                            style={{ color: prog.color }}
                           >
                             {prog.name}
                           </h3>
@@ -715,7 +796,10 @@ export function Home() {
                   className="group inline-flex items-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
                 >
                   Our Story
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform transition-200"/>
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-1 transition-transform transition-200"
+                  />
                 </Link>
               </div>
             </FadeIn>

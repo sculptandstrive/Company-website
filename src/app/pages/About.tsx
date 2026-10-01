@@ -1,11 +1,18 @@
 import { Link } from "react-router";
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Users, Award, Clock, CheckCircle } from "lucide-react";
 import trainerWomanImg from "../../assets/Namita.jpeg";
 import trainerManImg from "../../assets/Sagar.jpeg";
 import heroVideo from "../../assets/hero-video.mp4";
 import yoga1 from "../../assets/yoga1.jpg";
+
+import reel9 from "../../assets/reels/reel-6.mp4";
+import reel10 from "../../assets/reels/reel-7.mp4";
+import reel11 from "../../assets/reels/reel-8.mp4";
+import reel12 from "../../assets/reels/reel-11.mp4";
+import reel13 from "../../assets/reels/reel-12.mp4";
+import reel14 from "../../assets/reels/reel-14.mp4";
 
 const groupImg =
   "https://images.unsplash.com/photo-1731325632701-90d4e869a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3b3Jrb3V0JTIwdGVhbSUyMGdyb3VwJTIwZml0bmVzcyUyMGNsYXNzfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=600";
@@ -15,6 +22,15 @@ const stats = [
   { value: "2+", label: "Expert Trainers", icon: Award },
   { value: "10+", label: "Years Experience", icon: Clock },
   { value: "100%", label: "USA Certified", icon: CheckCircle },
+];
+
+const reels = [
+  { src: reel9, title: "Glute Kickback" },
+  { src: reel10, title: "Side Raise" },
+  { src: reel11, title: "Kettlebell Snatch" },
+  { src: reel12, title: "Bicep Curl" },
+  { src: reel13, title: "Banded Deadlift" },
+  { src: reel14, title: "Lat Pulldown" },
 ];
 
 const certifications = {
@@ -58,6 +74,22 @@ function FadeIn({
 }
 
 export function About() {
+  const reelRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  const handleMouseEnter = (index: number) => {
+    const video = reelRefs.current[index];
+    if (video) {
+      video.play();
+    }
+  };
+
+  const handleMouseLeave = (index: number) => {
+    const video = reelRefs.current[index];
+    if (video) {
+      video.pause();
+      video.currentTime = 0; // optional: rewind to start on leave
+    }
+  };
   return (
     <div>
       {/* Hero */}
@@ -211,6 +243,59 @@ export function About() {
                 </p>
               </div>
             </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* reels section */}
+      <section className="bg-[#171A26] py-10 md:py-16 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-center text-[#B8F27C] mb-10">
+            Fitness Reels - Sculpt And Strive Videos
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 justify-items-center">
+            {reels.map((reel, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.03 }}
+                onMouseEnter={() => handleMouseEnter(i)}
+                onMouseLeave={() => handleMouseLeave(i)}
+                className="relative w-full rounded-xl overflow-hidden group cursor-pointer"
+                style={{ aspectRatio: "9 / 14" }}
+              >
+                <video
+                  ref={(el) => (reelRefs.current[i] = el)}
+                  src={reel.src}
+                  
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#171A26]/50 via-[#171A26]/10 to-transparent" />
+                {/* play icon on hover */}
+                <div
+                  className="absolute bottom-2
+                            left-2 opacity-100 group-hover:opacity-0
+                             transition-opacity"
+                >
+                  <div className="w-12 h-12 rounded-full bg-[#B8F27C]/20 backdrop-blur-sm flex items-center justify-center">
+                    <div className="w-0 h-0 border-y-8 border-y-transparent border-l-[14px] border-l-[#B8F27C] ml-1" />
+                  </div>
+                </div>
+                {/* workout name */}
+                {/* <div className="absolute bottom-2 right-2">
+                              <p className="text-[#B8F27C] text-sm font-semibold drop-shadow-md line-clamp-2">
+                                {reel.title}
+                              </p>
+                            </div> */}
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

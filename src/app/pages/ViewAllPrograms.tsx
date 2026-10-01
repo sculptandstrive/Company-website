@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Navbar } from "../components/Navbar";
 import { motion } from "motion/react";
 import yoga1 from "../../assets/yoga1.jpg";
 import yoga2 from "../../assets/yoga2.jpg";
 import yoga3 from "../../assets/yoga3.jpg";
+
+import reel5 from "../../assets/reels/reel-5.mp4";
+import reel6 from "../../assets/reels/reel-13.mp4";
+import reel7 from "../../assets/reels/reel-9.mp4";
+import reel8 from "../../assets/reels/reel-10.mp4";
 import {
   Dumbbell,
   PersonStanding,
@@ -149,7 +154,31 @@ const programFeatures = [
   },
 ];
 
+const reels = [
+  { src: reel5, title: "Barbell Squat" },
+  { src: reel6, title: "Banded Squat" },
+  { src: reel7, title: "Kettlebell Swing" },
+  { src: reel8, title: "Overhead Press" },
+];
+
 export const ViewAllPrograms = () => {
+
+  const reelRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  
+    const handleMouseEnter = (index: number) => {
+      const video = reelRefs.current[index];
+      if (video) {
+        video.play();
+      }
+    };
+  
+    const handleMouseLeave = (index: number) => {
+      const video = reelRefs.current[index];
+      if (video) {
+        video.pause();
+        video.currentTime = 0; // optional: rewind to start on leave
+      }
+    };
   return (
     <div>
       {/* 1. Hero */}
@@ -294,6 +323,59 @@ export const ViewAllPrograms = () => {
           </div>
         </div>
       </section>
+
+      {/* reels section */}
+            <section className="bg-[#171A26] py-10 md:py-16 px-4 md:px-8">
+              <div className="max-w-7xl mx-auto">
+                <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-center text-[#B8F27C] mb-10">
+                  
+                Move Like a Pro
+                </h2>
+      
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 justify-items-center">
+                  {reels.map((reel, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      whileHover={{ scale: 1.03 }}
+                      onMouseEnter={() => handleMouseEnter(i)}
+                      onMouseLeave={() => handleMouseLeave(i)}
+                      className="relative w-full rounded-xl overflow-hidden group cursor-pointer"
+                      style={{ aspectRatio: "9 / 14" }}
+                    >
+                      <video
+                        ref={(el) => (reelRefs.current[i] = el)}
+                        src={reel.src}
+                        muted
+                        loop
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover object-center"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#171A26]/50 via-[#171A26]/10 to-transparent" />
+                      {/* play icon on hover */}
+                      <div
+                        className="absolute bottom-2
+                      left-2 opacity-100 group-hover:opacity-0
+                       transition-opacity"
+                      >
+                        <div className="w-12 h-12 rounded-full bg-[#B8F27C]/20 backdrop-blur-sm flex items-center justify-center">
+                          <div className="w-0 h-0 border-y-8 border-y-transparent border-l-[14px] border-l-[#B8F27C] ml-1" />
+                        </div>
+                      </div>
+                      {/* workout name */}
+                      {/* <div className="absolute bottom-2 right-2">
+                        <p className="text-[#B8F27C] text-sm font-semibold drop-shadow-md line-clamp-2">
+                          {reel.title}
+                        </p>
+                      </div> */}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
 
       {/* 3. Program Categories */}
       <section className="bg-[#4B4F5D] px-6 py-18 lg:px-8">
