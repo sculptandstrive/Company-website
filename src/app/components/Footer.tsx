@@ -73,13 +73,12 @@ export function Footer() {
             </p>
             <div className="space-y-3">
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@sculptandstrive.com"
-                // href="mailto:info@sculptandstrive.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=sculptandstrive@gmail.com"
+                // href="mailto:sculptandstrive@gmail.com"
                 className="flex items-center gap-3 text-white/50 hover:text-[#FF6B5E] transition-colors text-sm"
               >
                 <Mail size={14} className="text-[#FF6B5E] shrink-0" />
-                {/* sculptandstrive@gmail.com */}
-                info@sculptandstrive.com
+                sculptandstrive@gmail.com
               </a>
               <a
                 href="tel:+917302113369"

@@ -9,11 +9,10 @@ import { Trainers } from "./pages/Trainers";
 import { GetPlan } from "./pages/GetPlan";
 import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
+import { AuthCallback } from "./pages/AuthCallback";
 import { ViewAllPrograms } from "./pages/ViewAllPrograms";
 import { ExploreNutrition } from "./pages/ExploreNutrition";
 import { AssessmentDetails } from "./pages/AssessmentDetails";
-
-
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +31,7 @@ export const router = createBrowserRouter([
       { path: "get-plan", Component: GetPlan },
       { path: "signin", Component: SignIn },
       { path: "signup", Component: SignUp },
+      { path: "auth/callback", Component: AuthCallback },
     ],
   },
 ]);

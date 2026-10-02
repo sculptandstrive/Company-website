@@ -329,13 +329,13 @@ export function GetPlan() {
             </h2>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@sculptandstrive.com"
-                // href="mailto:info@sculptandstrive.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=sculptandstrive@gmail.com"
+                // href="mailto:sculptandstrive@gmail.com"
                 className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#B8F27C]/50 hover:bg-[#B8F27C]/10 transition-all duration-300"
               >
                 <Mail size={18} className="text-[#B8F27C]" />
                 <span className="text-white/70 text-sm">
-                  info@sculptandstrive.com
+                  sculptandstrive@gmail.com
                 </span>
               </a>
               <a
