@@ -9,6 +9,7 @@ import reel5 from "../../assets/reels/reel-5.mp4";
 import reel6 from "../../assets/reels/reel-13.mp4";
 import reel7 from "../../assets/reels/reel-9.mp4";
 import reel8 from "../../assets/reels/reel-10.mp4";
+import heroVideo4 from "../../assets/herovideo/herovideo4.mp4";
 import {
   Dumbbell,
   PersonStanding,
@@ -162,32 +163,41 @@ const reels = [
 ];
 
 export const ViewAllPrograms = () => {
-
   const reelRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  
-    const handleMouseEnter = (index: number) => {
-      const video = reelRefs.current[index];
-      if (video) {
-        video.play();
-      }
-    };
-  
-    const handleMouseLeave = (index: number) => {
-      const video = reelRefs.current[index];
-      if (video) {
-        video.pause();
-        video.currentTime = 0; // optional: rewind to start on leave
-      }
-    };
+
+  const handleMouseEnter = (index: number) => {
+    const video = reelRefs.current[index];
+    if (video) {
+      video.play();
+    }
+  };
+
+  const handleMouseLeave = (index: number) => {
+    const video = reelRefs.current[index];
+    if (video) {
+      video.pause();
+      video.currentTime = 0; // optional: rewind to start on leave
+    }
+  };
   return (
     <div>
       {/* 1. Hero */}
       <section className="relative h-[70vh] min-h-[680px] flex items-center overflow-hidden bg-[#171A26]">
         {/* Background */}
         <div className="absolute inset-0">
+          <video
+            src={heroVideo4}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover object-center"
+          />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/60 to-[#171A26]/30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/60 to-[#171A26]/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" /> */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#171A26]/60 via-[#171A26]/30 to-[#171A26]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" />
 
           {/* Bottom fade */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
@@ -325,57 +335,56 @@ export const ViewAllPrograms = () => {
       </section>
 
       {/* reels section */}
-            <section className="bg-[#171A26] py-10 md:py-16 px-4 md:px-8">
-              <div className="max-w-7xl mx-auto">
-                <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-center text-[#B8F27C] mb-10">
-                  
-                Move Like a Pro
-                </h2>
-      
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 justify-items-center">
-                  {reels.map((reel, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 }}
-                      whileHover={{ scale: 1.03 }}
-                      onMouseEnter={() => handleMouseEnter(i)}
-                      onMouseLeave={() => handleMouseLeave(i)}
-                      className="relative w-full rounded-xl overflow-hidden group cursor-pointer"
-                      style={{ aspectRatio: "9 / 14" }}
-                    >
-                      <video
-                        ref={(el) => (reelRefs.current[i] = el)}
-                        src={reel.src}
-                        muted
-                        loop
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover object-center"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#171A26]/50 via-[#171A26]/10 to-transparent" />
-                      {/* play icon on hover */}
-                      <div
-                        className="absolute bottom-2
+      <section className="bg-[#171A26] py-10 md:py-16 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-center text-[#B8F27C] mb-10">
+            Move Like a Pro
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 justify-items-center">
+            {reels.map((reel, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.03 }}
+                onMouseEnter={() => handleMouseEnter(i)}
+                onMouseLeave={() => handleMouseLeave(i)}
+                className="relative w-full rounded-xl overflow-hidden group cursor-pointer"
+                style={{ aspectRatio: "9 / 14" }}
+              >
+                <video
+                  ref={(el) => (reelRefs.current[i] = el)}
+                  src={reel.src}
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#171A26]/50 via-[#171A26]/10 to-transparent" />
+                {/* play icon on hover */}
+                <div
+                  className="absolute bottom-2
                       left-2 opacity-100 group-hover:opacity-0
                        transition-opacity"
-                      >
-                        <div className="w-12 h-12 rounded-full bg-[#B8F27C]/20 backdrop-blur-sm flex items-center justify-center">
-                          <div className="w-0 h-0 border-y-8 border-y-transparent border-l-[14px] border-l-[#B8F27C] ml-1" />
-                        </div>
-                      </div>
-                      {/* workout name */}
-                      {/* <div className="absolute bottom-2 right-2">
+                >
+                  <div className="w-12 h-12 rounded-full bg-[#B8F27C]/20 backdrop-blur-sm flex items-center justify-center">
+                    <div className="w-0 h-0 border-y-8 border-y-transparent border-l-[14px] border-l-[#B8F27C] ml-1" />
+                  </div>
+                </div>
+                {/* workout name */}
+                {/* <div className="absolute bottom-2 right-2">
                         <p className="text-[#B8F27C] text-sm font-semibold drop-shadow-md line-clamp-2">
                           {reel.title}
                         </p>
                       </div> */}
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </section>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* 3. Program Categories */}
       <section className="bg-[#4B4F5D] px-6 py-18 lg:px-8">

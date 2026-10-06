@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Users, Award, Clock, CheckCircle } from "lucide-react";
 import trainerWomanImg from "../../assets/Namita.jpeg";
 import trainerManImg from "../../assets/Sagar.jpeg";
-import heroVideo from "../../assets/hero-video.mp4";
+import heroVideo5 from "../../assets/herovideo/herovideo5.mp4";
 import yoga1 from "../../assets/yoga1.jpg";
 
 import reel9 from "../../assets/reels/reel-6.mp4";
@@ -96,7 +96,7 @@ export function About() {
       <div className="relative h-[75vh] min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <video
-            src={heroVideo}
+            src={heroVideo5}
             autoPlay
             muted
             loop
@@ -104,8 +104,10 @@ export function About() {
             className="w-full h-full object-cover object-center"
           />
           {/* <img src={heroImg} alt="About" className="w-full h-full object-cover" /> */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#171A26]" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#171A26]" /> */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#171A26]/60 via-[#171A26]/40 to-[#171A26]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import React from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Clock, BarChart2, CheckCircle } from "lucide-react";
-import heroVideo from "../../assets/hero-video.mp4";
+import heroVideo3 from "../../assets/herovideo/herovideo3.mp4";
 
 // const heroImg =
 //   "https://images.unsplash.com/photo-1739776073455-c53292998b84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3N0dXJlJTIwYXNzZXNzbWVudCUyMHBoeXNpY2FsJTIwdGhlcmFweSUyMGJvZHklMjBhbGlnbm1lbnR8ZW58MXx8fHwxNzc1ODc2NTU5fDA&ixlib=rb-4.1.0&q=80&w=1080";
@@ -159,7 +159,7 @@ export function Assessments() {
       <div className="relative h-[70vh] min-h-[650px] flex items-center overflow-hidden bg-[#171A26]">
         <div className="absolute inset-0">
           <video
-            src={heroVideo}
+            src={heroVideo3}
             autoPlay
             muted
             loop
@@ -168,8 +168,10 @@ export function Assessments() {
           />
 
           {/* <img src={heroImg} alt="Assessments" className="w-full h-full object-cover object-top" /> */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/20" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" /> */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#171A26]/60 via-[#171A26]/40 to-[#171A26]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
           <motion.div

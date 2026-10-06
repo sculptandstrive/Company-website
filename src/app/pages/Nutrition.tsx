@@ -11,7 +11,7 @@ import {
   Heart,
   Activity,
 } from "lucide-react";
-import heroVideo from "../../assets/hero-video.mp4";
+import heroVideo7 from "../../assets/herovideo/herovideo7.mp4";
 
 const dailyData = [
   { day: "Mon", pct: 92 },
@@ -106,7 +106,7 @@ export function Nutrition() {
       <div className="relative h-[65vh] min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <video
-            src={heroVideo}
+            src={heroVideo7}
             autoPlay
             muted
             loop
@@ -114,8 +114,10 @@ export function Nutrition() {
             className="w-full h-full object-cover object-center"
           />
           {/* <img src={heroImg} alt="Nutrition" className="w-full h-full object-cover" /> */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#171A26]" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#171A26]" /> */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#171A26]/60 via-[#171A26]/40 to-[#171A26]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

@@ -19,7 +19,8 @@ import {
   Venus,
   Waypoints,
 } from "lucide-react";
-import heroVideo from "../../assets/hero-video.mp4";
+import heroVideo2 from "../../assets/herovideo/herovideo2.mp4";
+
 
 // const heroImg =
 //   "https://images.unsplash.com/photo-1731325632701-90d4e869a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3b3Jrb3V0JTIwdGVhbSUyMGdyb3VwJTIwZml0bmVzcyUyMGNsYXNzfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=1080";
@@ -275,7 +276,7 @@ export function Programs() {
       <div className="relative h-[70vh] min-h-[650px] flex items-center overflow-hidden bg-[#171A26]">
         <div className="absolute inset-0">
           <video
-            src={heroVideo}
+            src={heroVideo2}
             autoPlay
             muted
             loop
@@ -283,8 +284,11 @@ export function Programs() {
             className="w-full h-full object-cover object-center"
           />
           {/* <img src={heroImg} alt="Programs" className="w-full h-full object-cover" /> */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/60 to-[#171A26]/30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#171A26]/60 via-[#171A26]/40 to-[#171A26]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/60 via-[#171A26]/40 to-[#171A26]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" /> */}
+          {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" /> */}
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
           <motion.div

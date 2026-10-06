@@ -2,7 +2,7 @@ import { useState } from "react";
 import React from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { CheckCircle, X, Mail, MessageCircle } from "lucide-react";
-import heroVideo from "../../assets/hero-video.mp4";
+import heroVideo10 from "../../assets/herovideo/herovideo10.mp4";
 import { FaWhatsapp } from "react-icons/fa";
 
 interface Plan {
@@ -205,15 +205,17 @@ export function GetPlan() {
       <div className="relative h-[65vh] min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <video
-            src={heroVideo}
+            src={heroVideo10}
             autoPlay
             muted
             loop
             playsInline
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/97 via-[#171A26]/80 to-[#171A26]/50" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#171A26]" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/97 via-[#171A26]/80 to-[#171A26]/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#171A26]" /> */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#171A26]/60 via-[#171A26]/40 to-[#171A26]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

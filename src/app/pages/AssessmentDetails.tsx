@@ -1,8 +1,8 @@
-import { ArrowRight } from 'lucide-react'
-import { motion } from 'motion/react'
-import React from 'react'
-import { Link } from 'react-router'
-
+import { ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
+import React from "react";
+import { Link } from "react-router";
+import heroVideo8 from "../../assets/herovideo/herovideo8.mp4"
 
 const assessments = [
   {
@@ -40,8 +40,7 @@ const assessmentSteps = [
   },
   {
     title: "Complete the Assessment",
-    description:
-      "Answer simple questions about your goals, habits, and needs.",
+    description: "Answer simple questions about your goals, habits, and needs.",
   },
   {
     title: "Understand Your Results",
@@ -51,196 +50,192 @@ const assessmentSteps = [
 ];
 
 export const AssessmentDetails = () => {
-    
   return (
     <div>
-        <section className="relative h-[70vh] min-h-[680px] flex items-center overflow-hidden bg-[#171A26]">
-  {/* Background */}
-  <div className="absolute inset-0">
-    {/* Dark overlay */}
-    <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
-
-    {/* Bottom fade */}
-    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
-  </div>
-
-  {/* Hero Content */}
-  <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 md:px-10 pt-2">
-    <motion.div
-      className="max-w-[700px] text-left md:ml-29"
-      initial={{ opacity: 0, x: -40 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      {/* Small Label */}
-      <span className="mb-4 ml-1 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
-        Fitness Assessment
-      </span>
-
-      {/* Heading */}
-      <h1 className="mb-7 text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
-        FIND YOUR
-        <br />
-        <span className="mt-3 inline-block bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
-          RIGHT PATH
-        </span>
-      </h1>
-
-      {/* Description */}
-      <p className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
-        Discover your fitness level, goals, and needs through our comprehensive
-        assessment. Get personalized insights and take the right first step
-        toward your transformation.
-      </p>
-
-      {/* Button */}
-      <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-        <Link
-          to="/assessments"
-          className="group inline-flex items-center justify-center gap-2 px-5 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
-        >
-          Start Your Assessment
-          <ArrowRight
-            size={18}
-            className="transition-transform duration-200 group-hover:translate-x-1"
+      <section className="relative h-[70vh] min-h-[680px] flex items-center overflow-hidden bg-[#171A26]">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <video
+            src={heroVideo8}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover object-center"
           />
-        </Link>
-      </div>
-    </motion.div>
-  </div>
-</section>
+          {/* Dark overlay */}
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" /> */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#171A26]/60 via-[#171A26]/40 to-[#171A26]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" />
+        </div>
 
+        {/* Hero Content */}
+        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 md:px-10 pt-2">
+          <motion.div
+            className="max-w-[700px] text-left md:ml-29"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Small Label */}
+            <span className="mb-4 ml-1 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
+              Fitness Assessment
+            </span>
 
-<section className="bg-[#232631] px-6 py-20 lg:px-8">
-  <div className="mx-auto max-w-7xl">
+            {/* Heading */}
+            <h1 className="mb-7 text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
+              FIND YOUR
+              <br />
+              <span className="mt-3 inline-block bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
+                RIGHT PATH
+              </span>
+            </h1>
 
-    {/* Section heading */}
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.7 }}
-      className="mb-10 max-w-2xl mx-auto text-center"
-    >
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C] mb-2">
-        Explore Assessments
-      </p>
-
-      <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
-        Find your{" "}
-        <span className="text-[#B8F27C]">
-          starting point
-        </span>
-      </h2>
-
-      <p className="mt-2 text-base leading-4 text-[#A7A8AF] sm:text-lg">
-        Choose a fitness assessment to understand your strengths, needs, and progress.
-
-      </p>
-    </motion.div>
-
-    {/* Assessment list */}
-    <div className="overflow-hidden rounded-3xl border border-[#26313D]">
-      {assessments.map((assessment, index) => (
-        <motion.div
-          key={assessment.title}
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{
-            duration: 0.7,
-            delay: index * 0.1,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="group flex items-center gap-6 border-b border-[#26313D] bg-[#171A26] px-6 py-7 transition-colors duration-300 last:border-b-0 hover:bg-[#232631] sm:px-8 sm:py-8 lg:px-10"
-        >
-          <div className="flex-1">
-            <h3 className="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-[#B8F27C] sm:text-2xl">
-              {assessment.title}
-            </h3>
-
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-[#A7A8AF] sm:text-base">
-              {assessment.description}
+            {/* Description */}
+            <p className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
+              Discover your fitness level, goals, and needs through our
+              comprehensive assessment. Get personalized insights and take the
+              right first step toward your transformation.
             </p>
+
+            {/* Button */}
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/assessments"
+                className="group inline-flex items-center justify-center gap-2 px-5 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+              >
+                Start Your Assessment
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-200 group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="bg-[#232631] px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          {/* Section heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+            className="mb-10 max-w-2xl mx-auto text-center"
+          >
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C] mb-2">
+              Explore Assessments
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
+              Find your <span className="text-[#B8F27C]">starting point</span>
+            </h2>
+
+            <p className="mt-2 text-base leading-4 text-[#A7A8AF] sm:text-lg">
+              Choose a fitness assessment to understand your strengths, needs,
+              and progress.
+            </p>
+          </motion.div>
+
+          {/* Assessment list */}
+          <div className="overflow-hidden rounded-3xl border border-[#26313D]">
+            {assessments.map((assessment, index) => (
+              <motion.div
+                key={assessment.title}
+                initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="group flex items-center gap-6 border-b border-[#26313D] bg-[#171A26] px-6 py-7 transition-colors duration-300 last:border-b-0 hover:bg-[#232631] sm:px-8 sm:py-8 lg:px-10"
+              >
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-[#B8F27C] sm:text-2xl">
+                    {assessment.title}
+                  </h3>
+
+                  <p className="mt-2 max-w-3xl text-sm leading-6 text-[#A7A8AF] sm:text-base">
+                    {assessment.description}
+                  </p>
+                </div>
+
+                <ArrowRight
+                  size={22}
+                  className="shrink-0 text-[#52606D] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#B8F27C]"
+                />
+              </motion.div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <ArrowRight
-            size={22}
-            className="shrink-0 text-[#52606D] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#B8F27C]"
-          />
-        </motion.div>
-      ))}
-    </div>
+      <section className="bg-[#4B4F5D] px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          {/* Section heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+            className="mb-14 max-w-2xl mx-auto text-center"
+          >
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C] mb-2">
+              How It Works
+            </p>
 
-  </div>
-</section>
+            <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
+              Start Your <span className="text-[#B8F27C]">Assessment</span>
+            </h2>
 
-<section className="bg-[#4B4F5D] px-6 py-20 lg:px-8">
-  <div className="mx-auto max-w-7xl">
+            <p className="mt-4 text-base leading-4 text-[#A7A8AF] sm:text-lg">
+              Understand your fitness level, goals, and next steps with a simple
+              assessment.
+            </p>
+          </motion.div>
 
-    {/* Section heading */}
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.7 }}
-      className="mb-14 max-w-2xl mx-auto text-center"
-    >
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B8F27C] mb-2">
-        How It Works
-      </p>
+          {/* Steps */}
+          <div className="grid gap-10 lg:grid-cols-3 lg:gap-0">
+            {assessmentSteps.map((step, index) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.15,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="relative lg:px-8 first:lg:pl-0 last:lg:pr-0"
+              >
+                {/* Connecting line */}
+                {index < assessmentSteps.length - 1 && (
+                  <div className="absolute right-0 top-6 hidden h-px w-8 bg-[#26313D] lg:block" />
+                )}
 
-      <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
-       Start Your{" "}
-        <span className="text-[#B8F27C]">
-          Assessment
-        </span>
-      </h2>
+                {/* Step indicator */}
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#B8F27C] text-sm font-bold text-[#B8F27C]">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
 
-      <p className="mt-4 text-base leading-4 text-[#A7A8AF] sm:text-lg">
-        Understand your fitness level, goals, and next steps with a simple assessment.
-      </p>
-    </motion.div>
+                <h3 className="mt-7 text-2xl font-bold text-[#B8F27C]">
+                  {step.title}
+                </h3>
 
-    {/* Steps */}
-    <div className="grid gap-10 lg:grid-cols-3 lg:gap-0">
-      {assessmentSteps.map((step, index) => (
-        <motion.div
-          key={step.title}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{
-            duration: 0.7,
-            delay: index * 0.15,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="relative lg:px-8 first:lg:pl-0 last:lg:pr-0"
-        >
-          {/* Connecting line */}
-          {index < assessmentSteps.length - 1 && (
-            <div className="absolute right-0 top-6 hidden h-px w-8 bg-[#26313D] lg:block" />
-          )}
-
-          {/* Step indicator */}
-          <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#B8F27C] text-sm font-bold text-[#B8F27C]">
-            {String(index + 1).padStart(2, "0")}
+                <p className="mt-3 max-w-sm text-sm leading-6 text-[#A7A8AF] sm:text-base">
+                  {step.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
-
-          <h3 className="mt-7 text-2xl font-bold text-[#B8F27C]">
-            {step.title}
-          </h3>
-
-          <p className="mt-3 max-w-sm text-sm leading-6 text-[#A7A8AF] sm:text-base">
-            {step.description}
-          </p>
-        </motion.div>
-      ))}
+        </div>
+      </section>
     </div>
-
-  </div>
-</section>
-    </div>
-  )
-}
-
+  );
+};

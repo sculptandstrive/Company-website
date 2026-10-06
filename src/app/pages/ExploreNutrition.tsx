@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import dietPlanImg from "../../assets/diet-plan.jpg";
 import nutritionImg from "../../assets/resources.jpg";
+import heroVideo9 from "../../assets/herovideo/heroVideo9.mp4"
 
 const nutritionPlans = [
   {
@@ -84,73 +85,81 @@ export const ExploreNutrition = () => {
     <div>
       {/* hero */}
       <section className="relative h-[70vh] min-h-[680px] flex items-center overflow-hidden bg-[#171A26]">
-  {/* Background */}
-  <div className="absolute inset-0">
-    {/* Left dark overlay for text */}
-    <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
-
-    {/* Bottom fade */}
-    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" />
-  </div>
-
-  {/* Hero Content */}
-  <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 md:px-10 pt-10">
-    <motion.div
-      className="max-w-[700px] text-left md:ml-30"
-      initial={{ opacity: 0, x: -40 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      {/* Small Label */}
-      <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
-        Sculpt And Strive Nutrition
-      </span>
-
-      {/* Heading */}
-      <h1 className="mb-7 text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
-        NOURISH YOUR BODY
-        <br />
-        <span className="mt-3 inline-block bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
-          FUEL YOUR GOALS
-        </span>
-      </h1>
-
-      {/* Description */}
-      <p className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
-        Discover nutrition plans designed to support your health, fuel
-        your training, and help you build healthier habits that last.
-      </p>
-
-      {/* Buttons */}
-      <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-        {/* Primary CTA */}
-        <Link
-          to="/get-plan"
-          className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
-          // className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
-        >
-          Start Your Journey
-          <ArrowRight
-            size={18}
-            className="transition-transform duration-200 group-hover:translate-x-1"
+        {/* Background */}
+        <div className="absolute inset-0">
+          <video
+            src={heroVideo9}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover object-center"
           />
-        </Link>
+          {/* Left dark overlay for text */}
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/95 via-[#171A26]/70 to-[#171A26]/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171A26]" /> */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#171A26]/60 via-[#171A26]/40 to-[#171A26]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#171A26]/80 via-transparent to-[#171A26]/40" />
+        </div>
 
-        {/* Secondary CTA */}
-        <Link
-          to="/nutrition"
-          className="group inline-flex items-center justify-center gap-2 px-6 py-4 min-h-11 rounded-lg border border-sculpt-border bg-transparent text-white text-base font-semibold transition-all duration-300 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
-        >
-          <Play
-            size={16}
-            className="text-sculpt-coral transition-colors group-hover:text-white"
-          />
-          Explore Nutrition
-        </Link>
-      </div>
-    </motion.div>
-  </div>
-</section>
+        {/* Hero Content */}
+        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 md:px-10 pt-10">
+          <motion.div
+            className="max-w-[700px] text-left md:ml-30"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Small Label */}
+            <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.3em] text-[#B8F27C]">
+              Sculpt And Strive Nutrition
+            </span>
+
+            {/* Heading */}
+            <h1 className="mb-7 text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
+              NOURISH YOUR BODY
+              <br />
+              <span className="mt-3 inline-block bg-gradient-to-r from-[#B8F27C] to-[#42C7C5] bg-clip-text text-transparent">
+                FUEL YOUR GOALS
+              </span>
+            </h1>
+
+            {/* Description */}
+            <p className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
+              Discover nutrition plans designed to support your health, fuel
+              your training, and help you build healthier habits that last.
+            </p>
+
+            {/* Buttons */}
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              {/* Primary CTA */}
+              <Link
+                to="/get-plan"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+                // className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+              >
+                Start Your Journey
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-200 group-hover:translate-x-1"
+                />
+              </Link>
+
+              {/* Secondary CTA */}
+              <Link
+                to="/nutrition"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-4 min-h-11 rounded-lg border border-sculpt-border bg-transparent text-white text-base font-semibold transition-all duration-300 hover:bg-white/5 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sculpt-lime"
+              >
+                <Play
+                  size={16}
+                  className="text-sculpt-coral transition-colors group-hover:text-white"
+                />
+                Explore Nutrition
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       <section className="bg-[#232631] px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -258,12 +267,11 @@ export const ExploreNutrition = () => {
             </p>
 
             <h2 className="text-4xl md:text-5xl uppercase font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
-              Everything to{" "}
-              <span className="text-[#B8F27C]">eat smarter</span>
+              Everything to <span className="text-[#B8F27C]">eat smarter</span>
             </h2>
 
             <p className="mt-2 max-w-2xl text-base leading-7 text-[#A7A8AF] sm:text-lg mx-auto">
-             Nutrition tips for better choices and meal planning.
+              Nutrition tips for better choices and meal planning.
             </p>
           </motion.div>
 
@@ -339,7 +347,8 @@ export const ExploreNutrition = () => {
                 </p>
 
                 <h3 className="mt-3 max-w-md text-3xl uppercase font-bold leading-tight text-white sm:text-4xl">
-                  Make nutrition part of <span className="text-[#B8F27C]">your lifestyle</span>
+                  Make nutrition part of{" "}
+                  <span className="text-[#B8F27C]">your lifestyle</span>
                 </h3>
               </div>
             </motion.div>
@@ -377,13 +386,11 @@ export const ExploreNutrition = () => {
                 </p>
 
                 <h2 className="text-4xl md:text-5xl uppercase font-extrabold tracking-tight text-white mb-4 leading-[1.05]">
-                  Better{" "}
-                  <span className="text-[#B8F27C]">nutrition?</span>
+                  Better <span className="text-[#B8F27C]">nutrition?</span>
                 </h2>
 
                 <p className="text-base leading-7 text-[#A7A8AF] sm:text-lg">
                   Build healthier habits with guidance tailored to your goals.
-
                 </p>
               </motion.div>
 
@@ -408,7 +415,6 @@ export const ExploreNutrition = () => {
                     className="transition-transform duration-200 group-hover:translate-x-1"
                   />
                 </Link>
-
               </motion.div>
             </div>
           </motion.div>

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import React from "react";
 import { Link } from "react-router";
 import { motion, MotionValue, useScroll, useTransform } from "motion/react";
-import heroVideo from "../../assets/hero-video.mp4";
+import heroVideo1 from "../../assets/herovideo/herovideo1.mp4";
 import card1 from "../../assets/prenatal.jpg";
 import card2 from "../../assets/elderly.jpg";
 import card3 from "../../assets/w-fitness.jpg";
@@ -202,7 +202,7 @@ export function Home() {
       >
         <motion.div style={{ y: heroY }} className="absolute inset-0">
           <video
-            src={heroVideo}
+            src={heroVideo1}
             autoPlay
             muted
             loop
