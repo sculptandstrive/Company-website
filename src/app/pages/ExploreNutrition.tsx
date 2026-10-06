@@ -10,7 +10,8 @@ import {
 } from "lucide-react";
 import dietPlanImg from "../../assets/diet-plan.jpg";
 import nutritionImg from "../../assets/resources.jpg";
-import heroVideo9 from "../../assets/herovideo/heroVideo9.mp4"
+
+import heroVideo9 from "../../assets/herovideo/herovideo9.mp4"
 
 const nutritionPlans = [
   {
