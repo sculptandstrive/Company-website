@@ -172,10 +172,26 @@ export default function ProgramsDropdown({
                 </a>
               </li>
             ))}
+
+            <div className="flex cursor-default items-center gap-3 rounded-lg border border-[#B8F27C]/60 bg-[#B8F27C]/10 p-2 transition-shadow duration-300 ease-in-out hover:shadow-[0_0_24px_rgba(182,242,107,0.35)]">
+              <img
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1520&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+                className="h-11 w-11 shrink-0 rounded-md object-cover"
+              />
+              <span>
+                <span className="block text-[15px] font-medium text-white">
+                  Yoga Fitness
+                </span>
+                <span className="mt-1 inline-block whitespace-nowrap rounded-md bg-[#B8F27C] px-2 py-0.5 text-[10px] font-bold tracking-wide text-[#171A26]">
+                  COMING SOON
+                </span>
+              </span>
+            </div>
           </ul>
           <Link
             to="/programs/all-program"
-            className="mt-3 flex h-[42px] w-full items-center justify-center gap-2 rounded-lg border border-[#52606D] px-[18px] text-[14px] font-semibold text-white transition-all duration-200 ease-in-out hover:border-[#FF4D4F] hover:bg-[#FF4D4F] active:shadow-[0_0_20px_rgba(255,77,79,0.45)]"
+            className="mt-3 flex h-[42px] w-full items-center justify-center gap-2 rounded-md border border-[#52606D] px-[18px] text-[14px] font-semibold text-white transition-all duration-200 ease-in-out hover:border-[#FF4D4F] hover:bg-[#FF4D4F] active:shadow-[0_0_20px_rgba(255,77,79,0.45)]"
           >
             <PlayCircle
               size={16}
@@ -209,7 +225,7 @@ export default function ProgramsDropdown({
             </p>
             <Link
               to="/assessments"
-              className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-[#FF6B5E] px-3 py-2 text-[14px] font-semibold text-[#FF6B5E] transition-colors duration-200 ease-in-out hover:bg-[#FF6B5E] hover:text-white"
+              className="mt-3 inline-flex items-center gap-1.5 rounded-md border border-[#FF6B5E] px-3 py-2 text-[14px] font-semibold text-[#FF6B5E] transition-colors duration-200 ease-in-out hover:bg-[#FF6B5E] hover:text-white"
             >
               Take Assessment <ArrowRight size={14} />
             </Link>

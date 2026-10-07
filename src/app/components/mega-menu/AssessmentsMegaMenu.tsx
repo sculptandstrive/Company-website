@@ -113,7 +113,7 @@ export default function AssessmentMegaMenu() {
                 className="
     mt-auto flex h-[42px] w-full
     items-center justify-center gap-1.5
-    rounded-lg border border-[#FF6B5E]
+    rounded-md border border-[#FF6B5E]
     px-[18px] text-[14px] font-semibold
     text-[#FF6B5E]
     transition-colors duration-200

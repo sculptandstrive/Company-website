@@ -203,7 +203,7 @@ export default function NutritionDropdown() {
               to="/nutrition/explore"
               className="
     mt-5 inline-flex items-center gap-1.5
-    rounded-lg border border-[#FF6B5E]
+    rounded-md border border-[#FF6B5E]
     px-3 py-2
     text-[14px] font-semibold text-[#FF6B5E]
     transition-colors duration-200

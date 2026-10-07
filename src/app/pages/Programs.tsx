@@ -10,17 +10,19 @@ import {
   CheckCircle,
   ChevronRight,
   Dumbbell,
+  Flower2,
   HeartPulse,
   Move,
   PersonStanding,
   Scale,
   Target,
+  Thermometer,
   Users,
   Venus,
   Waypoints,
 } from "lucide-react";
 import heroVideo2 from "../../assets/herovideo/herovideo2.mp4";
-
+import bannervideo from "../../assets/herovideo/herovideo5.mp4"
 
 // const heroImg =
 //   "https://images.unsplash.com/photo-1731325632701-90d4e869a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3b3Jrb3V0JTIwdGVhbSUyMGdyb3VwJTIwZml0bmVzcyUyMGNsYXNzfGVufDF8fHx8MTc3NTg3NjU2OXww&ixlib=rb-4.1.0&q=80&w=1080";
@@ -76,6 +78,32 @@ const programs = [
       "Hormonal cycle training",
       "Bone density focus",
       "Metabolic optimization",
+    ],
+  },
+  {
+    name: "Perimenopause Fitness",
+    color: "#E879F9",
+    bg: "from-fuchsia-900/20 to-transparent",
+    img: "https://plus.unsplash.com/premium_photo-1661779396815-56fe1ca9877c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "Support your body through hormonal changes with strength, balance and recovery-focused training.",
+    icon: Flower2,
+    features: [
+      "Hormonal change support",
+      "Strength & bone health",
+      "Sleep & energy balance",
+    ],
+  },
+  {
+    name: "Menopause Fitness",
+    color: "#38BDF8",
+    bg: "from-sky-900/20 to-transparent",
+    img: "https://plus.unsplash.com/premium_photo-1664299279525-98ab4cf88f7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBlcmltZW5vcGF1c2V8ZW58MHx8MHx8fDA%3D",
+    desc: "Build lasting strength, protect your bones and feel confident through every stage of menopause.",
+    icon: Thermometer,
+    features: [
+      "Bone density focus",
+      "Joint-friendly strength",
+      "Metabolic health support",
     ],
   },
   {
@@ -319,21 +347,19 @@ export function Programs() {
       </div>
 
       {/* Programs Grid */}
-
       <section className="py-24 bg-[#171A26]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
               {/* <span className="w-8 h-px bg-[#B8F27C]/40" /> */}
               <span className="inline-flex items-center gap-2 text-[#B8F27C] text-sm font-bold tracking-[0.2em] uppercase">
-                 Our Programs
+                Our Programs
               </span>
               {/* <span className="w-8 h-px bg-[#B8F27C]/40" /> */}
             </div>
 
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-              FIND YOUR {" "}
-              <span className="text-[#B8F27C]">PERFECT PROGRAM</span>
+              FIND YOUR <span className="text-[#B8F27C]">PERFECT PROGRAM</span>
             </h2>
             <p className="text-[#A7A8AF] text-base max-w-2xl mx-auto">
               Scientifically designed programs to help you move better, feel
@@ -344,13 +370,30 @@ export function Programs() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-10 gap-3">
             {programs.map((prog, i) => {
               // control which cards are "wide" — adjust indices to match your data order
-              const isWide = i === 7 || i === 8; // Core & Strength, Travel & Bodyweight
-
+              // Core & Strength, Travel & Bodyweight
+              // const isWide = i === 7 || i === 8;
+              const spans = [
+                // Row 1: 5 cards
+                "lg:col-span-2",
+                "lg:col-span-2",
+                "lg:col-span-2",
+                "lg:col-span-2",
+                "lg:col-span-2",
+                // Row 2: 3 cards
+                "lg:col-span-3",
+                "lg:col-span-3",
+                "lg:col-span-4",
+                // Row 3: 3 cards
+                "lg:col-span-3",
+                "lg:col-span-3",
+                "lg:col-span-4",
+              ];
               return (
                 <FadeIn
                   key={prog.name}
                   delay={i * 0.06}
-                  className={isWide ? "lg:col-span-3" : "lg:col-span-2"}
+                  className={spans[i] ?? "lg:col-span-2"}
+                  // className={isWide ? "lg:col-span-3" : "lg:col-span-2"}
                 >
                   <div className="group rounded-2xl overflow-hidden border border-black/5 bg-[#4B4F5D]/50 shadow-sm hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
                     {/* Image + icon badge + wave */}
@@ -423,46 +466,23 @@ export function Programs() {
                           </li>
                         ))}
                       </ul>
-
-                      {/* <Link
-                        to="/get-plan"
-                        className="mt-auto self-start flex items-center gap-1.5 text-xs font-bold rounded-full px-4 py-2 border transition-all duration-300"
-                        style={{
-                          color: prog.color,
-                          borderColor: `${prog.color}66`,
-                        }}
-                        onMouseEnter={(e) => {
-                          (
-                            e.currentTarget as HTMLElement
-                          ).style.backgroundColor = prog.color;
-                          (e.currentTarget as HTMLElement).style.color = "#fff";
-                        }}
-                        onMouseLeave={(e) => {
-                          (
-                            e.currentTarget as HTMLElement
-                          ).style.backgroundColor = "transparent";
-                          (e.currentTarget as HTMLElement).style.color =
-                            prog.color;
-                        }}
-                      >
-                        Learn More <ArrowRight size={12} />
-                      </Link> */}
                     </div>
                   </div>
                 </FadeIn>
               );
             })}
           </div>
-
           {/* One Learn More button for all programs */}
           <div className="flex justify-center mt-12">
             <Link
               to="/get-plan"
               className="group inline-flex items-center gap-2 px-9 py-3 bg-[#FFFFFF] rounded-lg text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
-              
             >
               Learn More
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform"/>
+              <ArrowRight
+                size={16}
+                className="group-hover:translate-x-1 transition-transform"
+              />
             </Link>
           </div>
         </div>
@@ -532,10 +552,7 @@ export function Programs() {
                       <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-[#FFFFFF] text-[#FF6B5E] font-bold text-lg group-hover:scale-110 transition-transform duration-300 shrink-0 shadow-sm">
                         {step.stage}
                       </div>
-                      <h3
-                      
-                        className="text-lg font-bold text-white mb-1"
-                      >
+                      <h3 className="text-lg font-bold text-white mb-1">
                         {step.title}
                       </h3>
                       {step.sub && (
@@ -548,7 +565,9 @@ export function Programs() {
                       </p>
                     </div>
                     <div className="pt-4 flex items-center justify-between border-t border-white/5 mt-4">
-                      <span className="text-[11px] font-semibold text-white/40 group-hover:text-[#B8F27C] transition-colors">Stage {step.stage}</span>
+                      <span className="text-[11px] font-semibold text-white/40 group-hover:text-[#B8F27C] transition-colors">
+                        Stage {step.stage}
+                      </span>
                       <ChevronRight
                         size={16}
                         className="text-[#B8F27C] transform group-hover:translate-x-1 transition-all duration-300 opacity-60 group-hover:opacity-100"
@@ -566,7 +585,12 @@ export function Programs() {
       <section className="relative py-24 bg-[#171A26] overflow-hidden">
         {/* Subtle Ambient Wave Background */}
         <div className="absolute inset-0 pointer-events-none opacity-20">
-          <svg className="w-full h-full object-cover" viewBox="0 0 1440 320" fill="none" preserveAspectRatio="none">
+          <svg
+            className="w-full h-full object-cover"
+            viewBox="0 0 1440 320"
+            fill="none"
+            preserveAspectRatio="none"
+          >
             <path
               fill="#B8F27C"
               fillOpacity="0.08"
@@ -586,13 +610,18 @@ export function Programs() {
               READY TO <span className="text-[#B8F27C]">BEGIN?</span>
             </h2>
             <p className="text-white/60 text-base max-w-lg mx-auto mb-10 leading-relaxed">
-              Get a personalized plan tailored to your specific fitness goals, routine, and lifestyle.
+              Get a personalized plan tailored to your specific fitness goals,
+              routine, and lifestyle.
             </p>
             <Link
               to="/get-plan"
               className="group inline-flex items-center gap-2 px-9 py-3.5 bg-[#FFFFFF] rounded-xl text-[#FF6B5E] font-semibold hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
             >
-              Get Your Plan <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform duration-300"/>
+              Get Your Plan{" "}
+              <ArrowRight
+                size={20}
+                className="group-hover:translate-x-1.5 transition-transform duration-300"
+              />
             </Link>
           </motion.div>
         </div>

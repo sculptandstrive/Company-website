@@ -1,7 +1,20 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, MapPin, Smartphone, User, ShoppingCart } from "lucide-react";
+import { MdOutlineSelfImprovement } from "react-icons/md";
+import {
+  Menu,
+  X,
+  MapPin,
+  Smartphone,
+  User,
+  ShoppingCart,
+  Flower2,
+  XCircle,
+  FilePen,
+  Apple,
+  ClipboardCheck,
+} from "lucide-react";
 import logo from "../../assets/sculpt-and-strive-logo.jpg";
 import ProgramsMegaMenu from "./mega-menu/ProgramsMegaMenu";
 import NutritionMegaMenu from "./mega-menu/NutritionMegaMenu";
@@ -250,7 +263,7 @@ export function Navbar() {
             >
               <User size={20} />
             </Link>
-            
+
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -281,7 +294,7 @@ export function Navbar() {
                 <Link
                   to="/programs"
                   onClick={() => setMobileOpen(false)}
-                  className="flex-1 px-4 py-3 rounded-xl text-base font-bold text-white hover:text-[#B8F27C]"
+                  className="flex-1 px-4 py-3 rounded-md text-base font-bold text-white hover:text-[#B8F27C]"
                 >
                   Programs
                 </Link>
@@ -291,7 +304,7 @@ export function Navbar() {
                   type="button"
                   onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
                   aria-label="Show Programs options"
-                  className="w-12 h-12 flex items-center justify-center rounded-xl text-white border border-transparent hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
+                  className="w-12 h-12 flex items-center justify-center rounded-md text-white border border-transparent hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
                 >
                   {mobileProgramsOpen ? "-" : "+"}
                 </button>
@@ -303,10 +316,35 @@ export function Navbar() {
                   <Link
                     to="/programs/all-program"
                     onClick={() => setMobileOpen(false)}
-                    className="block px-4 py-3 rounded-xl text-sm text-white border border-transparent transition-colors duration-200 hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
+                    className="flex items-center gap-3 px-4 py-3 rounded-md text-sm text-white border border-[#B8F27C]/60 bg-[#B8F27C]/10 transition-shadow duration-300 ease-in-out hover:shadow-[0_0_24px_rgba(182,242,107,0.35)]"
                   >
+                    <FilePen size={24} className="shrink-0 text-white" />
                     View All Programs
                   </Link>
+
+                  <div
+                    aria-disabled="true"
+                    className="mt-3 flex items-center gap-3 rounded-md border border-[#B8F27C]/60 bg-[#B8F27C]/10 p-3 transition-shadow duration-300 ease-in-out hover:shadow-[0_0_24px_rgba(182,242,107,0.35)]"
+                  >
+                    <MdOutlineSelfImprovement
+                      size={30}
+                      className="shrink-0 text-white"
+                    />
+
+                    <div className="min-w-0">
+                      <p className="text-[15px] font-medium text-white">
+                        Yoga Fitness
+                      </p>
+                      <span className="mt-1 inline-block whitespace-nowrap rounded-md bg-[#B8F27C] px-2 py-0.5 text-[10px] font-bold tracking-wide text-[#171A26]">
+                        COMING SOON
+                      </span>
+                    </div>
+
+                    {/* <XCircle
+                      size={20}
+                      className="ml-auto shrink-0 text-gray-400"
+                    /> */}
+                  </div>
                 </div>
               )}
 
@@ -316,7 +354,7 @@ export function Navbar() {
                 <Link
                   to="/nutrition"
                   onClick={() => setMobileOpen(false)}
-                  className="flex-1 px-4 py-3 rounded-xl text-base font-bold text-white hover:text-[#B8F27C]"
+                  className="flex-1 px-4 py-3 rounded-md text-base font-bold text-white hover:text-[#B8F27C]"
                 >
                   Nutrition
                 </Link>
@@ -326,7 +364,7 @@ export function Navbar() {
                   type="button"
                   onClick={() => setMobileNutritionOpen(!mobileNutritionOpen)}
                   aria-label="Show Programs options"
-                  className="w-12 h-12 flex items-center justify-center rounded-xl text-white border border-transparent hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
+                  className="w-12 h-12 flex items-center justify-center rounded-md text-white border border-transparent hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
                 >
                   {mobileNutritionOpen ? "-" : "+"}
                 </button>
@@ -338,8 +376,9 @@ export function Navbar() {
                   <Link
                     to="/nutrition/explore"
                     onClick={() => setMobileOpen(false)}
-                    className="block px-4 py-3 rounded-xl text-sm text-white border border-transparent transition-colors duration-200 hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
+                    className="flex items-center gap-3 px-4 py-3 rounded-md text-sm text-white border border-[#B8F27C]/60 bg-[#B8F27C]/10 transition-shadow duration-300 ease-in-out hover:shadow-[0_0_24px_rgba(182,242,107,0.35)]"
                   >
+                    <Apple size={24} className="shrink-0 text-white" />
                     Explore Nutrition
                   </Link>
                 </div>
@@ -352,7 +391,7 @@ export function Navbar() {
                 <Link
                   to="/assessments"
                   onClick={() => setMobileOpen(false)}
-                  className="flex-1 px-4 py-3 rounded-xl text-base font-bold text-white hover:text-[#B8F27C]"
+                  className="flex-1 px-4 py-3 rounded-md text-base font-bold text-white hover:text-[#B8F27C]"
                 >
                   Assessments
                 </Link>
@@ -364,7 +403,7 @@ export function Navbar() {
                     setMobileAssessmentsOpen(!mobileAssessmentsOpen)
                   }
                   aria-label="Show Programs options"
-                  className="w-12 h-12 flex items-center justify-center rounded-xl text-white border border-transparent hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
+                  className="w-12 h-12 flex items-center justify-center rounded-md text-white border border-transparent hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
                 >
                   {mobileAssessmentsOpen ? "-" : "+"}
                 </button>
@@ -376,8 +415,9 @@ export function Navbar() {
                   <Link
                     to="/assessments/details"
                     onClick={() => setMobileOpen(false)}
-                    className="block px-4 py-3 rounded-xl text-sm text-white border border-transparent transition-colors duration-200 hover:bg-[#B8F27C]/20 hover:border-[#B8F27C]"
+                    className="flex items-center gap-3 px-4 py-3 rounded-md text-sm text-white border border-[#B8F27C]/60 bg-[#B8F27C]/10 transition-shadow duration-300 ease-in-out hover:shadow-[0_0_24px_rgba(182,242,107,0.35)]"
                   >
+                    <ClipboardCheck size={24} className="shrink-0 text-white" />
                     Start Your Assessment
                   </Link>
                 </div>
@@ -404,12 +444,11 @@ export function Navbar() {
               <div className="pt-4 flex flex-col gap-3">
                 <button
                   type="button"
-                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold bg-white text-[#FF6B5E] hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-md text-sm font-bold bg-white text-[#FF6B5E] hover:bg-[#FF6B5E] hover:text-white hover:shadow-[0_8px_30px_rgba(255,107,94,0.35)] transition-all duration-300"
                 >
                   <Smartphone size={16} />
                   GET APP
                 </button>
-                
               </div>
             </div>
           </motion.div>
