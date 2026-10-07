@@ -14,16 +14,20 @@ const perks = [
   "Direct access to certified coaches",
   "Progress analytics & insights",
 ];
-
+const TERMS_VERSION = "2026-10-07";
 export function SignUp() {
   const appUrl = getUserAppUrl();
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  
   const [successMsg, setSuccessMsg] = useState("");
+    const [accepted, setAccepted] = useState(false);
 
   const [form, setForm] = useState({
     name: "",
+
+    
     email: "",
     password: "",
   });
@@ -33,7 +37,11 @@ export function SignUp() {
     setLoading(true);
     setError("");
     setSuccessMsg("");
-
+    if (!accepted) {
+      setError("Please agree to the Terms & Conditions and Privacy Policy to continue.");
+      setLoading(false);
+      return;
+    }
     if (!form.name.trim()) {
       setError("Please enter your full name.");
       setLoading(false);
@@ -60,6 +68,9 @@ export function SignUp() {
               full_name: form.name,
               name: form.name,
               signup_source: "trial_user",
+                            terms_accepted: true,
+              terms_version: TERMS_VERSION,
+              terms_accepted_at: new Date().toISOString(),
             },
           },
         });
@@ -146,6 +157,10 @@ export function SignUp() {
 
   const handleGoogleAuth = async () => {
     try {
+          if (!accepted) {
+      setError("Please agree to the Terms & Conditions and Privacy Policy to continue.");
+      return;
+    }
       setError("");
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
@@ -321,7 +336,24 @@ export function SignUp() {
                 </button>
               </div>
             </div>
-
+                         <label className="flex items-start gap-2.5 text-xs text-white/60 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={accepted}
+                onChange={(e) => setAccepted(e.target.checked)}
+                className="mt-0.5 h-4 w-4 accent-[#B8F27C]"
+              />
+              <span>
+                I agree to the{" "}
+                <a href={`${appUrl}/terms`} target="_blank" rel="noopener noreferrer" className="text-[#B8F27C] font-semibold hover:underline">
+                  Terms &amp; Conditions
+                </a>{" "}
+                and{" "}
+                <a href={`${appUrl}/privacy`} target="_blank" rel="noopener noreferrer" className="text-[#B8F27C] font-semibold hover:underline">
+                  Privacy Policy
+                </a>
+              </span>
+            </label>
             {error && <p className="text-red-400 text-sm">{error}</p>}
             {successMsg && (
               <p className="text-[#B8F27C] text-sm">{successMsg}</p>
@@ -331,7 +363,7 @@ export function SignUp() {
             <motion.button
               whileTap={{ scale: 0.98 }}
               type="submit"
-              disabled={loading}
+              disabled={loading || !accepted}
               className="group w-full h-12 rounded-xl bg-[#B8F27C] text-[#171A26] text-sm font-extrabold leading-none flex items-center justify-center gap-2 shadow-lg shadow-[#B8F27C]/20 hover:bg-[#cbf794] hover:shadow-[#B8F27C]/30 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               <span>
@@ -346,17 +378,6 @@ export function SignUp() {
               )}
             </motion.button>
 
-            {/* Terms */}
-            <p className="text-center text-white/30 text-xs leading-relaxed">
-              By signing up, you agree to our{" "}
-              <a href="#" className="text-[#B8F27C] hover:underline font-medium">
-                Terms
-              </a>{" "}
-              and{" "}
-              <a href="#" className="text-[#B8F27C] hover:underline font-medium">
-                Privacy Policy
-              </a>
-            </p>
           </form>
 
           {/* Divider */}
@@ -373,6 +394,7 @@ export function SignUp() {
             {/* Google Button */}
             <button
               type="button"
+                            disabled={!accepted}
               onClick={handleGoogleAuth}
               className="w-full flex items-center justify-center gap-3 h-11 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-white/10 hover:border-white/20 transition-all duration-200 cursor-pointer"
             >
