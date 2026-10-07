@@ -20,11 +20,14 @@ export function SignUp() {
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  
   const [successMsg, setSuccessMsg] = useState("");
     const [accepted, setAccepted] = useState(false);
 
   const [form, setForm] = useState({
     name: "",
+
+    
     email: "",
     password: "",
   });

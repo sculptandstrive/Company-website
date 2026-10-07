@@ -6,6 +6,8 @@ import { supabase } from "../../lib/supabase";
 import { getUserAppUrl } from "../../lib/urls";
 
 const bgImg =
+
+
   "https://images.unsplash.com/photo-1770513649465-2c60c8039806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwZ3ltJTIwZGFyayUyMGRyYW1hdGljJTIwaGVybyUyMHdvcmtvdXR8ZW58MXx8fHwxNzc1ODc2NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080";
 
 export function SignIn() {
@@ -13,6 +15,7 @@ export function SignIn() {
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [accepted, setAccepted] = useState(false);
   const [form, setForm] = useState({ email: "", password: "" });
 
   // Forgot-password modal state
@@ -59,24 +62,29 @@ export function SignIn() {
     }
   };
 
-  const handleGoogleAuth = async () => {
-    try {
-      setError("");
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: "google",
-        options: {
-          redirectTo: `${window.location.origin}/auth/callback`,
-          queryParams: {
-            access_type: "offline",
-            prompt: "consent",
-          },
+ const handleGoogleAuth = async () => {
+  if (!accepted) {
+    setError("Please agree to the Terms & Conditions and Privacy Policy to continue with Google.");
+    return;
+  }
+  localStorage.setItem("terms_accepted_at", new Date().toISOString());
+  try {
+    setError("");
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+        queryParams: {
+          access_type: "offline",
+          prompt: "consent",
         },
-      });
-      if (error) setError(error.message);
-    } catch (err: any) {
-      setError(err.message || "Failed to initiate Google sign in.");
-    }
-  };
+      },
+    });
+    if (error) setError(error.message);
+  } catch (err: any) {
+    setError(err.message || "Failed to initiate Google sign in.");
+  }
+};
 
   const openForgotModal = () => {
     setForgotEmail(form.email); // prefill with whatever they already typed
@@ -200,6 +208,25 @@ export function SignIn() {
           </div>
 
           <div className="mt-4 space-y-3">
+          <label className="flex items-start gap-2.5 text-xs text-white/60 cursor-pointer">
+  <input
+    type="checkbox"
+    checked={accepted}
+    onChange={(e) => setAccepted(e.target.checked)}
+    className="mt-0.5 h-4 w-4 accent-[#B8F27C]"
+  />
+  <span>
+    New to Sculpt And Strive? I agree to the{" "}
+    <a href={`${appUrl}/terms`} target="_blank" rel="noopener noreferrer" className="text-[#B8F27C] font-semibold hover:underline">
+      Terms &amp; Conditions
+    </a>{" "}
+    and{" "}
+    <a href={`${appUrl}/privacy`} target="_blank" rel="noopener noreferrer" className="text-[#B8F27C] font-semibold hover:underline">
+      Privacy Policy
+    </a>
+  </span>
+</label>
+{error && <p className="text-red-400 text-sm">{error}</p>} 
             <button
               type="button"
               onClick={handleGoogleAuth}
