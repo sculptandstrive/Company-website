@@ -14,7 +14,8 @@ export function SignIn() {
   const appUrl = getUserAppUrl();
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [signInError, setSignInError] = useState("");
+  const [googleError, setGoogleError] = useState("");
   const [accepted, setAccepted] = useState(false);
   const [form, setForm] = useState({ email: "", password: "" });
 
@@ -28,7 +29,8 @@ export function SignIn() {
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
+    setSignInError("");
+    setGoogleError("");
 
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
@@ -37,14 +39,14 @@ export function SignIn() {
       });
 
       if (error) {
-        setError(error.message);
+        setSignInError(error.message);
         return;
       }
 
       if (!data.session) {
         // e.g. email not confirmed, MFA required, or any other edge case
         // where Supabase returns no error but also no session.
-        setError("Sign in failed. Please try again.");
+        setSignInError("Sign in failed. Please try again.");
         return;
       }
 
@@ -56,20 +58,21 @@ export function SignIn() {
         "&refresh_token=" +
         refresh_token;
     } catch (err: any) {
-      setError(err.message || "Something went wrong. Please try again.");
+      setSignInError(err.message || "Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
  const handleGoogleAuth = async () => {
+  setSignInError("");
   if (!accepted) {
-    setError("Please agree to the Terms & Conditions and Privacy Policy to continue with Google.");
+    setGoogleError("Please agree to the Terms & Conditions and Privacy Policy to continue with Google.");
     return;
   }
   localStorage.setItem("terms_accepted_at", new Date().toISOString());
   try {
-    setError("");
+    setGoogleError("");
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
@@ -80,9 +83,9 @@ export function SignIn() {
         },
       },
     });
-    if (error) setError(error.message);
+    if (error) setGoogleError(error.message);
   } catch (err: any) {
-    setError(err.message || "Failed to initiate Google sign in.");
+    setGoogleError(err.message || "Failed to initiate Google sign in.");
   }
 };
 
@@ -144,9 +147,10 @@ export function SignIn() {
                 type="email"
                 required
                 value={form.email}
-                onChange={(e) =>
-                  setForm((p) => ({ ...p, email: e.target.value }))
-                }
+                onChange={(e) => {
+                  setForm((p) => ({ ...p, email: e.target.value }));
+                  if (signInError) setSignInError("");
+                }}
                 placeholder="your@email.com"
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all"
               />
@@ -170,9 +174,10 @@ export function SignIn() {
                   type={showPass ? "text" : "password"}
                   required
                   value={form.password}
-                  onChange={(e) =>
-                    setForm((p) => ({ ...p, password: e.target.value }))
-                  }
+                  onChange={(e) => {
+                    setForm((p) => ({ ...p, password: e.target.value }));
+                    if (signInError) setSignInError("");
+                  }}
                   placeholder="••••••••"
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#B8F27C]/60 focus:bg-[#B8F27C]/5 transition-all pr-12"
                 />
@@ -186,7 +191,7 @@ export function SignIn() {
               </div>
             </div>
 
-            {error && <p className="text-red-400 text-sm">{error}</p>}
+            {signInError && <p className="text-red-400 text-sm">{signInError}</p>}
 
             <motion.button
               type="submit"
@@ -212,7 +217,10 @@ export function SignIn() {
   <input
     type="checkbox"
     checked={accepted}
-    onChange={(e) => setAccepted(e.target.checked)}
+    onChange={(e) => {
+      setAccepted(e.target.checked);
+      if (e.target.checked) setGoogleError("");
+    }}
     className="mt-0.5 h-4 w-4 accent-[#B8F27C]"
   />
   <span>
@@ -226,7 +234,7 @@ export function SignIn() {
     </a>
   </span>
 </label>
-{error && <p className="text-red-400 text-sm">{error}</p>} 
+{googleError && <p className="text-red-400 text-sm">{googleError}</p>} 
             <button
               type="button"
               onClick={handleGoogleAuth}
