@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { CheckCircle, X, Mail, MessageCircle } from "lucide-react";
 import heroVideo10 from "../../assets/herovideo/herovideo10.mp4";
 import { FaWhatsapp } from "react-icons/fa";
+import { supabase } from "../../lib/supabase";
 
 interface Plan {
   id: string;
@@ -189,9 +190,24 @@ export function GetPlan() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+
+    try {
+      await supabase.from("notifications").insert({
+        recipient_type: "admin",
+        sender_type: "visitor",
+        is_completed: false,
+        title: `Coaching Plan Enquiry: ${selectedPlan?.name || "General"}`,
+        description: `Name: ${formData.name.trim()} | Email: ${formData.email.trim()} | Phone: ${formData.phone.trim()}${formData.message ? ` | Notes: ${formData.message.trim()}` : ""}`,
+        notification_date: new Date().toISOString().split("T")[0],
+        created_at: new Date().toISOString(),
+      });
+    } catch (err) {
+      console.warn("Could not record enquiry notification:", err);
+    }
+
     setTimeout(() => {
       setSubmitted(false);
       setSelectedPlan(null);
